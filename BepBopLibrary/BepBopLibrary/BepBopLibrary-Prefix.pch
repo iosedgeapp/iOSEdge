@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'BepBopLibrary' target in the 'BepBopLibrary' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
