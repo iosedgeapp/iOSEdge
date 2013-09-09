@@ -16,7 +16,6 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(50, 200, 200, 50)];
-    label.height = 50;
     label.text = @"Hello Bleeding Edge Press Developers!";
     label.numberOfLines = 2;
     label.textAlignment = NSTextAlignmentCenter;
