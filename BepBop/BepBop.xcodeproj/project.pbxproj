@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */; };
+		03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03175DE617DEB2A5005D3C62 /* BEPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMainViewController.h; sourceTree = "<group>"; };
+		03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMainViewController.m; sourceTree = "<group>"; };
+		03175DEB17DEB606005D3C62 /* BEPDynamicTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicTypeViewController.h; sourceTree = "<group>"; };
+		03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicTypeViewController.m; sourceTree = "<group>"; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C3EA83717D3C76F000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +104,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03175DE317DEB275005D3C62 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03175DE617DEB2A5005D3C62 /* BEPMainViewController.h */,
+				03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */,
+				03175DE917DEB5C7005D3C62 /* Chapter 1 */,
+				03175DEA17DEB5D2005D3C62 /* Chapter 2 */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		03175DE917DEB5C7005D3C62 /* Chapter 1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 1";
+			sourceTree = "<group>";
+		};
+		03175DEA17DEB5D2005D3C62 /* Chapter 2 */ = {
+			isa = PBXGroup;
+			children = (
+				03175DEB17DEB606005D3C62 /* BEPDynamicTypeViewController.h */,
+				03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */,
+			);
+			name = "Chapter 2";
+			sourceTree = "<group>";
+		};
 		3C3EA82917D3C76F000122BD = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +166,7 @@
 		3C3EA83B17D3C76F000122BD /* BepBop */ = {
 			isa = PBXGroup;
 			children = (
+				03175DE317DEB275005D3C62 /* View Controllers */,
 				3C3EA84417D3C76F000122BD /* BEPAppDelegate.h */,
 				3C3EA84517D3C76F000122BD /* BEPAppDelegate.m */,
 				3C3EA83C17D3C76F000122BD /* Supporting Files */,
@@ -318,6 +352,8 @@
 			files = (
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
+				03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */,
+				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "BEPAppDelegate.h"
+#import "BEPMainViewController.h"
 
 @implementation BEPAppDelegate
 
@@ -15,12 +16,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(50, 200, 200, 50)];
-    label.height = 50;
-    label.text = @"Hello Bleeding Edge Press Developers!";
-    label.numberOfLines = 2;
-    label.textAlignment = NSTextAlignmentCenter;
-    [self.window addSubview:label];
+    
+    BEPMainViewController *mainViewController = [[BEPMainViewController alloc] initWithNibName:nil bundle:nil];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.window.rootViewController = navigationController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
