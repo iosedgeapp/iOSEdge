@@ -101,7 +101,7 @@
     else if (indexPath.row == 1)
     {
         BEPDynamicTypeViewController *viewController =
-        [[BEPDynamicTypeViewController alloc] initWithNibName:nil bundle:nil];
+        [[BEPDynamicTypeViewController alloc] init];
         
         [self.navigationController pushViewController:viewController animated:YES];
     }

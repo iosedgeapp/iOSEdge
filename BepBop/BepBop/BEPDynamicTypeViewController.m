@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.headlineLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 70, 300, 60)];
     self.headlineLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     self.headlineLabel.text = @"Apple announces iPhone 5S";
