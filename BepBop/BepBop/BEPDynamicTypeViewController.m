@@ -23,6 +23,7 @@
     if (self)
     {
         // Custom initialization
+        self.title = NSLocalizedString(@"Chapter 2", nil);
     }
     return self;
 }
