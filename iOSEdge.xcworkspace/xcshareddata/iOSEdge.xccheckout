@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CEC4840B-EC81-4540-8752-5573DC73F426</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iOSEdge</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>46A8891F-E642-44A7-BC8D-18F460FB8DDF</key>
+		<string>https://github.com/iosedgeapp/iOSEdge</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOSEdge.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>46A8891F-E642-44A7-BC8D-18F460FB8DDF</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iosedgeapp/iOSEdge</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>46A8891F-E642-44A7-BC8D-18F460FB8DDF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>46A8891F-E642-44A7-BC8D-18F460FB8DDF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSEdge</string>
+		</dict>
+	</array>
+</dict>
+</plist>
