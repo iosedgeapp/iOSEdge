@@ -17,6 +17,12 @@
 		3C3EA82017D3C753000122BD /* BepBopLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3EA81F17D3C753000122BD /* BepBopLibraryTests.m */; };
 		3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3EA86F17D3CA4A000122BD /* UIView+Dimensions.m */; };
 		3C3EA87817D3CBC8000122BD /* UIView+Dimensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C3EA86E17D3CA4A000122BD /* UIView+Dimensions.h */; };
+		8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4717E0D76B00B728C8 /* UIActionSheet+Blocks.m */; };
+		8727AA4B17E0D76B00B728C8 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */; };
+		8727AA4E17E0D78600B728C8 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4D17E0D78600B728C8 /* RIButtonItem.m */; };
+		8727AA4F17E0D81900B728C8 /* RIButtonItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4C17E0D78600B728C8 /* RIButtonItem.h */; };
+		8727AA5017E0D81900B728C8 /* UIActionSheet+Blocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4617E0D76B00B728C8 /* UIActionSheet+Blocks.h */; };
+		8727AA5117E0D81900B728C8 /* UIAlertView+Blocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4817E0D76B00B728C8 /* UIAlertView+Blocks.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,9 @@
 			files = (
 				3C3EA87817D3CBC8000122BD /* UIView+Dimensions.h in CopyFiles */,
 				3C3EA80717D3C752000122BD /* BepBopLibrary.h in CopyFiles */,
+				8727AA4F17E0D81900B728C8 /* RIButtonItem.h in CopyFiles */,
+				8727AA5017E0D81900B728C8 /* UIActionSheet+Blocks.h in CopyFiles */,
+				8727AA5117E0D81900B728C8 /* UIAlertView+Blocks.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +66,12 @@
 		3C3EA81F17D3C753000122BD /* BepBopLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopLibraryTests.m; sourceTree = "<group>"; };
 		3C3EA86E17D3CA4A000122BD /* UIView+Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Dimensions.h"; sourceTree = "<group>"; };
 		3C3EA86F17D3CA4A000122BD /* UIView+Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Dimensions.m"; sourceTree = "<group>"; };
+		8727AA4617E0D76B00B728C8 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		8727AA4717E0D76B00B728C8 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		8727AA4817E0D76B00B728C8 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		8727AA4C17E0D78600B728C8 /* RIButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
+		8727AA4D17E0D78600B728C8 /* RIButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +169,10 @@
 		3C3EA86D17D3CA29000122BD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				8727AA4617E0D76B00B728C8 /* UIActionSheet+Blocks.h */,
+				8727AA4717E0D76B00B728C8 /* UIActionSheet+Blocks.m */,
+				8727AA4817E0D76B00B728C8 /* UIAlertView+Blocks.h */,
+				8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */,
 				3C3EA86E17D3CA4A000122BD /* UIView+Dimensions.h */,
 				3C3EA86F17D3CA4A000122BD /* UIView+Dimensions.m */,
 			);
@@ -163,6 +182,8 @@
 		3C3EA87117D3CA59000122BD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				8727AA4C17E0D78600B728C8 /* RIButtonItem.h */,
+				8727AA4D17E0D78600B728C8 /* RIButtonItem.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -279,7 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8727AA4B17E0D76B00B728C8 /* UIAlertView+Blocks.m in Sources */,
 				3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */,
+				8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */,
+				8727AA4E17E0D78600B728C8 /* RIButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
