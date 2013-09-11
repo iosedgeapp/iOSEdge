@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>CEC4840B-EC81-4540-8752-5573DC73F426</string>
+	<string>94BA1D33-278A-4878-9878-6DAE383060F6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>iOSEdge</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>46A8891F-E642-44A7-BC8D-18F460FB8DDF</key>
-		<string>https://github.com/iosedgeapp/iOSEdge</string>
+		<key>FEC9CA1E-8B5C-4977-8A85-C9B65454F5B5</key>
+		<string>https://github.com/iosedgeapp/iOSEdge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iOSEdge.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>46A8891F-E642-44A7-BC8D-18F460FB8DDF</key>
+		<key>FEC9CA1E-8B5C-4977-8A85-C9B65454F5B5</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/iosedgeapp/iOSEdge</string>
+	<string>https://github.com/iosedgeapp/iOSEdge.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>46A8891F-E642-44A7-BC8D-18F460FB8DDF</string>
+	<string>FEC9CA1E-8B5C-4977-8A85-C9B65454F5B5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>46A8891F-E642-44A7-BC8D-18F460FB8DDF</string>
+			<string>FEC9CA1E-8B5C-4977-8A85-C9B65454F5B5</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOSEdge</string>
 		</dict>

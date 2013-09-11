@@ -9,6 +9,7 @@
 #import "BEPMainViewController.h"
 #import "BEPDynamicTypeViewController.h"
 #import "BEPLookAndFeelViewController.h"
+#import "BEPMultipeerConnectivityViewController.h"
 
 @interface BEPMainViewController ()
 
@@ -118,6 +119,10 @@
     {
         viewController =
             [[BEPDynamicTypeViewController alloc] init];
+    }
+    else if (indexPath.row == 9)
+    {
+        viewController = [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil];
     }
 
     if (viewController)

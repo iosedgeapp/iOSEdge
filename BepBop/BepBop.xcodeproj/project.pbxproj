@@ -30,6 +30,11 @@
 		3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */; };
 		3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */; };
 		3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */; };
+		8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA3917E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m */; };
+		8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8727AA3D17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib */; };
+		8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */; };
+		8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */; };
+		8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,13 @@
 		3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPThemedViewController.m; sourceTree = "<group>"; };
 		3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationController.h; sourceTree = "<group>"; };
 		3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationController.m; sourceTree = "<group>"; };
+		8727AA3817E0B96200B728C8 /* BEPMultipeerConnectivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMultipeerConnectivityViewController.h; sourceTree = "<group>"; };
+		8727AA3917E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultipeerConnectivityViewController.m; sourceTree = "<group>"; };
+		8727AA3D17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPMultipeerConnectivityViewController.xib; sourceTree = "<group>"; };
+		8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		8727AA5217E0D9A500B728C8 /* BEPSimpleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPSimpleImageViewController.h; sourceTree = "<group>"; };
+		8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPSimpleImageViewController.m; sourceTree = "<group>"; };
+		8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPSimpleImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */,
 				3C3EA86B17D3C81F000122BD /* libBepBopLibrary.a in Frameworks */,
 				3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */,
 				3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */,
@@ -233,6 +246,12 @@
 		0394ADA017DFFDF300769A12 /* Chapter 10 */ = {
 			isa = PBXGroup;
 			children = (
+				8727AA3817E0B96200B728C8 /* BEPMultipeerConnectivityViewController.h */,
+				8727AA3917E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m */,
+				8727AA3D17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib */,
+				8727AA5217E0D9A500B728C8 /* BEPSimpleImageViewController.h */,
+				8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */,
+				8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */,
 			);
 			name = "Chapter 10";
 			sourceTree = "<group>";
@@ -281,6 +300,7 @@
 		3C3EA83417D3C76F000122BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */,
 				3C3EA86A17D3C81F000122BD /* libBepBopLibrary.a */,
 				3C3EA83517D3C76F000122BD /* UIKit.framework */,
 				3C3EA83717D3C76F000122BD /* Foundation.framework */,
@@ -391,6 +411,11 @@
 				CLASSPREFIX = BEP;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Bleeding Edge Press";
+				TargetAttributes = {
+					3C3EA83117D3C76F000122BD = {
+						DevelopmentTeam = MFRY9RPA96;
+					};
+				};
 			};
 			buildConfigurationList = 3C3EA82D17D3C76F000122BD /* Build configuration list for PBXProject "BepBop" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -438,11 +463,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */,
 				3C3EA84017D3C76F000122BD /* InfoPlist.strings in Resources */,
 				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
+				8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */,
 				3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +507,9 @@
 			files = (
 				3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */,
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
+				8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
+				8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */,
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
 				03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */,
 				0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */,
@@ -586,6 +615,8 @@
 		3C3EA86517D3C76F000122BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
@@ -599,6 +630,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -606,6 +638,8 @@
 		3C3EA86617D3C76F000122BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
@@ -619,6 +653,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
