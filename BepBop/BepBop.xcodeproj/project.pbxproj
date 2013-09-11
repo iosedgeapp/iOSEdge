@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */; };
 		03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */; };
+		0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */; };
+		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -58,6 +60,9 @@
 		03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMainViewController.m; sourceTree = "<group>"; };
 		03175DEB17DEB606005D3C62 /* BEPDynamicTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicTypeViewController.h; sourceTree = "<group>"; };
 		03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicTypeViewController.m; sourceTree = "<group>"; };
+		0394ADA417DFFE5200769A12 /* BEPCaptureVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPCaptureVideoViewController.h; sourceTree = "<group>"; };
+		0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPCaptureVideoViewController.m; sourceTree = "<group>"; };
+		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C3EA83717D3C76F000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +125,18 @@
 				03175DE917DEB5C7005D3C62 /* Chapter 1 */,
 				03175DEA17DEB5D2005D3C62 /* Chapter 2 */,
 				0394AD9317DFFCD300769A12 /* main */,
+				0394AD9717DFFD9800769A12 /* Chapter 3 */,
+				0394AD9817DFFDAA00769A12 /* Chapter 4 */,
+				0394AD9917DFFDAF00769A12 /* Chapter 5 */,
+				0394AD9A17DFFDB600769A12 /* Chapter 6 */,
+				0394ADA317DFFE0900769A12 /* Chapter 7 */,
+				0394ADA217DFFE0300769A12 /* Chapter 8 */,
+				0394ADA117DFFDFC00769A12 /* Chapter 9 */,
+				0394ADA017DFFDF300769A12 /* Chapter 10 */,
+				0394AD9E17DFFDD500769A12 /* Chapter 11 */,
+				0394AD9D17DFFDCE00769A12 /* Chapter 12 */,
+				0394AD9C17DFFDC600769A12 /* Chapter 13 */,
+				0394AD9B17DFFDBD00769A12 /* Chapter 14 */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -147,6 +164,93 @@
 				03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */,
 			);
 			name = main;
+			sourceTree = "<group>";
+		};
+		0394AD9717DFFD9800769A12 /* Chapter 3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 3";
+			sourceTree = "<group>";
+		};
+		0394AD9817DFFDAA00769A12 /* Chapter 4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 4";
+			sourceTree = "<group>";
+		};
+		0394AD9917DFFDAF00769A12 /* Chapter 5 */ = {
+			isa = PBXGroup;
+			children = (
+				0394ADA417DFFE5200769A12 /* BEPCaptureVideoViewController.h */,
+				0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */,
+				0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */,
+			);
+			name = "Chapter 5";
+			sourceTree = "<group>";
+		};
+		0394AD9A17DFFDB600769A12 /* Chapter 6 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 6";
+			sourceTree = "<group>";
+		};
+		0394AD9B17DFFDBD00769A12 /* Chapter 14 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 14";
+			sourceTree = "<group>";
+		};
+		0394AD9C17DFFDC600769A12 /* Chapter 13 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 13";
+			sourceTree = "<group>";
+		};
+		0394AD9D17DFFDCE00769A12 /* Chapter 12 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 12";
+			sourceTree = "<group>";
+		};
+		0394AD9E17DFFDD500769A12 /* Chapter 11 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 11";
+			sourceTree = "<group>";
+		};
+		0394ADA017DFFDF300769A12 /* Chapter 10 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 10";
+			sourceTree = "<group>";
+		};
+		0394ADA117DFFDFC00769A12 /* Chapter 9 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 9";
+			sourceTree = "<group>";
+		};
+		0394ADA217DFFE0300769A12 /* Chapter 8 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 8";
+			sourceTree = "<group>";
+		};
+		0394ADA317DFFE0900769A12 /* Chapter 7 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Chapter 7";
 			sourceTree = "<group>";
 		};
 		3C3EA82917D3C76F000122BD = {
@@ -330,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C3EA84017D3C76F000122BD /* InfoPlist.strings in Resources */,
+				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
@@ -372,6 +477,7 @@
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
 				03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */,
+				0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,
 			);
