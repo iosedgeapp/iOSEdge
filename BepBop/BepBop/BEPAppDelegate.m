@@ -8,8 +8,10 @@
 
 #import "BEPAppDelegate.h"
 #import "BEPMainViewController.h"
+#import "BEPNavigationController.h"
 
 @implementation BEPAppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -19,7 +21,10 @@
     
     BEPMainViewController *mainViewController = [[BEPMainViewController alloc] initWithNibName:nil bundle:nil];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    BEPNavigationController *navigationController = [[BEPNavigationController alloc] initWithRootViewController:mainViewController];
+    [navigationController.navigationBar setTranslucent:NO];
+    navigationController.navigationBar.barTintColor = [UIColor lightGrayColor];
+    
     self.window.rootViewController = navigationController;
     
     [self.window makeKeyAndVisible];

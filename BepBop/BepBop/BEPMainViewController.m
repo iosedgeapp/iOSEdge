@@ -60,9 +60,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view.
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
+    self.navigationItem.title = @"Bleeding Edge Press";
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+
+}
 
 #pragma mark - UITableViewController
 

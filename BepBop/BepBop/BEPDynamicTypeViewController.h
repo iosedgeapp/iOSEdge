@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BEPThemedViewController.h"
 
-@interface BEPDynamicTypeViewController : UIViewController
+@interface BEPDynamicTypeViewController : BEPThemedViewController
 
 @end
