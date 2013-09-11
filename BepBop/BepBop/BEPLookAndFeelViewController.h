@@ -1,14 +1,14 @@
 //
-//  BEPDynamicTypeViewController.h
+//  BEPLookAndFeelViewController.h
 //  BepBop
 //
-//  Created by Josh Brown on 9/9/13.
+//  Created by Hiedi Utley on 9/10/13.
 //  Copyright (c) 2013 Bleeding Edge Press. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "BEPThemedViewController.h"
 
-@interface BEPDynamicTypeViewController : UIViewController
+@interface BEPLookAndFeelViewController : BEPThemedViewController
 
 @end

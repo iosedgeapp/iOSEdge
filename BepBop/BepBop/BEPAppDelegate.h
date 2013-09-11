@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define IS_IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] > 6.1)
+
 @interface BEPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
