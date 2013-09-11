@@ -107,8 +107,7 @@
 		03175DE317DEB275005D3C62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				03175DE617DEB2A5005D3C62 /* BEPMainViewController.h */,
-				03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */,
+				0394AD9317DFFCD300769A12 /* main */,
 				03175DE917DEB5C7005D3C62 /* Chapter 1 */,
 				03175DEA17DEB5D2005D3C62 /* Chapter 2 */,
 			);
@@ -129,6 +128,15 @@
 				03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */,
 			);
 			name = "Chapter 2";
+			sourceTree = "<group>";
+		};
+		0394AD9317DFFCD300769A12 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				03175DE617DEB2A5005D3C62 /* BEPMainViewController.h */,
+				03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */,
+			);
+			name = main;
 			sourceTree = "<group>";
 		};
 		3C3EA82917D3C76F000122BD = {
