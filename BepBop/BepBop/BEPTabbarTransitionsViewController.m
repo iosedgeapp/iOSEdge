@@ -12,7 +12,7 @@
 
 #import "BEPNavigationTransitionsViewController.h"
 
-
+#import "BEPNavigationTransitionsRootViewController.h"
 
 @interface BEPTabbarTransitionsViewController ()
 
@@ -20,11 +20,15 @@
 
 @implementation BEPTabbarTransitionsViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -35,9 +39,11 @@
     
     self.delegate = self;
     
+    UIViewController * root = [[BEPNavigationTransitionsRootViewController alloc] initWithNibName:nil bundle:nil];
+    
     NSArray * vcs = @[
                       [[BEPPresentationTransitionsViewController alloc] initWithNibName:nil bundle:nil],
-                      [[BEPNavigationTransitionsViewController alloc] initWithNibName:nil bundle:nil]
+                      [[BEPNavigationTransitionsViewController alloc] initWithRootViewController:root]
                       ];
     
     

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPNavigationTransitionsViewController : UIViewController
+@interface BEPNavigationTransitionsViewController : UINavigationController
 <
     UINavigationControllerDelegate
 >
 
-- (IBAction)pushButtonTapped:(id)sender;
+
 @end

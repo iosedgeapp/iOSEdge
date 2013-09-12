@@ -15,8 +15,6 @@
 
 @interface BEPNavigationTransitionsViewController ()
 
-@property (nonatomic, weak) id<UINavigationControllerDelegate> previousNavigationDelegate;
-
 @end
 
 @implementation BEPNavigationTransitionsViewController
@@ -28,6 +26,8 @@
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Navigation"
                                                         image:nil
                                                           tag:0];
+        self.delegate = self;
+        
     }
     return self;
 }
@@ -35,25 +35,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+    {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    
+    if ([self.navigationBar respondsToSelector:@selector(setBarTintColor:)])
+    {
+        self.navigationBar.barTintColor = [UIColor lightGrayColor];
+    }
 
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.view.bounds = self.tabBarController.view.bounds;
+    self.view.center = self.tabBarController.view.center;
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    // save our navigation controller current delegate, just in case.
-    self.previousNavigationDelegate = self.navigationController.delegate;
-    self.navigationController.delegate = self;
+    
+    NSLog(@"nav frame: %@", NSStringFromCGRect(self.view.frame));
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    if (self.navigationController.topViewController == self) {
-        self.navigationController.delegate = self.previousNavigationDelegate;
-        self.previousNavigationDelegate = nil;
-
-    }
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,13 +76,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pushButtonTapped:(id)sender {
-    BEPSimpleImageViewController * imageVC = [[BEPSimpleImageViewController alloc] init];
-    
-    imageVC.image = [UIImage imageNamed:@"Canyon.jpg"];
-    
-    [self.navigationController pushViewController:imageVC animated:YES];
-}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Navigation Controller Delegate
 ////////////////////////////////////////////////////////////////////////////////////////////////

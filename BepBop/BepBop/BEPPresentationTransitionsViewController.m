@@ -18,12 +18,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Presentation"
-                                                        image:nil
-                                                          tag:0];
+        
+        self.title = @"Presentation";
     }
     return self;
 }
+
+
 
 - (void)viewDidLoad
 {
