@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		175C201E17E15B90008D6F4E /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C201D17E15B90008D6F4E /* UIColor+Extensions.m */; };
 		3C3EA80217D3C752000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA80117D3C752000122BD /* Foundation.framework */; };
 		3C3EA80717D3C752000122BD /* BepBopLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C3EA80617D3C752000122BD /* BepBopLibrary.h */; };
 		3C3EA81117D3C752000122BD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA81017D3C752000122BD /* SenTestingKit.framework */; };
@@ -53,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		175C201C17E15B90008D6F4E /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		175C201D17E15B90008D6F4E /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBepBopLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA80117D3C752000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C3EA80517D3C752000122BD /* BepBopLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */,
 				3C3EA86E17D3CA4A000122BD /* UIView+Dimensions.h */,
 				3C3EA86F17D3CA4A000122BD /* UIView+Dimensions.m */,
+				175C201C17E15B90008D6F4E /* UIColor+Extensions.h */,
+				175C201D17E15B90008D6F4E /* UIColor+Extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */,
 				8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */,
 				8727AA4E17E0D78600B728C8 /* RIButtonItem.m in Sources */,
+				175C201E17E15B90008D6F4E /* UIColor+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

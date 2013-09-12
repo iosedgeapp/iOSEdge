@@ -11,6 +11,7 @@
 		03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */; };
 		0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */; };
 		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
+		175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -69,6 +70,7 @@
 		0394ADA417DFFE5200769A12 /* BEPCaptureVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPCaptureVideoViewController.h; sourceTree = "<group>"; };
 		0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPCaptureVideoViewController.m; sourceTree = "<group>"; };
 		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
+		175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPLookAndFeelView.xib; sourceTree = "<group>"; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C3EA83717D3C76F000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,6 +164,7 @@
 			children = (
 				3C9DF0B317E0149C002F5FB9 /* BEPLookAndFeelViewController.h */,
 				3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */,
+				175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */,
 			);
 			name = "Chapter 1";
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
+				175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
 				8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */,
 				3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */,
