@@ -8,13 +8,18 @@
 
 #import "BEPLookAndFeelViewController.h"
 
+@interface BEPLookAndFeelViewController ()
+
+@property (nonatomic, weak) UINavigationController* navController;
+@property (nonatomic, weak) IBOutlet UILabel* tintedLabel;
+@property (nonatomic, weak) IBOutlet UIButton* changeTintButton;
+
+@property (nonatomic, strong) UIColor* savedTintColor;
+
+@end
+
 @implementation BEPLookAndFeelViewController
-{
-    @private
-    __weak UINavigationController* _navController;
-    IBOutlet UILabel*  _tintedLabel;
-    IBOutlet UIButton* _changeTintButton;
-}
+
 - (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName:@"BEPLookAndFeelView" bundle:nibBundleOrNil];
@@ -38,6 +43,8 @@
 {
     [super viewWillAppear:animated];
     _navController = self.navigationController;
+    self.savedTintColor = _navController.view.tintColor;
+    
     [self changeTintColorTo:[UIColor randomColor]];
 }
 
@@ -48,7 +55,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
                        if ([_navController.view respondsToSelector:@selector(setTintColor:)])
                        {
-                           _navController.view.tintColor = [UIColor blueColor];
+                           _navController.view.tintColor = _savedTintColor;
                        }
                    });
 }
