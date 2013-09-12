@@ -110,8 +110,8 @@ static CGFloat _startScale;
     [inView insertSubview:bottomRight aboveSubview:fromView];
     
     [inView insertSubview:toView belowSubview:fromView];
-    [fromView removeFromSuperview];
-    
+
+    fromView.hidden = YES;
     
     [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext]
                                    delay:0.0
@@ -153,12 +153,22 @@ static CGFloat _startScale;
                                                                 }];
                               }
                               completion:^(BOOL finished) {
+
+                                  if (topLeft.alpha > 0) {
+                                      fromView.hidden = NO;
+                                      [transitionContext completeTransition:NO];
+                                  }
+                                  else {
+                                      [transitionContext completeTransition:YES];
+                                  }
                                   [topLeft removeFromSuperview];
                                   [topRight removeFromSuperview];
                                   [bottomLeft removeFromSuperview];
                                   [bottomRight removeFromSuperview];
+
                                   
-                                  [transitionContext completeTransition:YES];
+                                  
+
                               }];
     
     

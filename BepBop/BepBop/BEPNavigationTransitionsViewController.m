@@ -15,6 +15,8 @@
 
 @interface BEPNavigationTransitionsViewController ()
 
+@property (nonatomic, strong) BEPNavigationTransitionsPopAnimator * popper;
+
 @end
 
 @implementation BEPNavigationTransitionsViewController
@@ -60,6 +62,9 @@
 {
     [super viewDidAppear:animated];
     
+    self.popper = [[BEPNavigationTransitionsPopAnimator alloc] initWithNavigationController:self];
+    _popper.interactive = NO;
+    
     NSLog(@"nav frame: %@", NSStringFromCGRect(self.view.frame));
 
 }
@@ -87,10 +92,20 @@
                                                    toViewController:(UIViewController *)toVC
 {
     if (operation == UINavigationControllerOperationPop && fromVC != self.tabBarController) {
-        return [[BEPNavigationTransitionsPopAnimator alloc] init];
+        return _popper;
     }
     else if (operation == UINavigationControllerOperationPush) {
         return [[BEPNavigationTransitionsPushAnimator alloc] init];
+    }
+    else {
+        return nil;
+    }
+}
+
+- (id <UIViewControllerInteractiveTransitioning>) navigationController:(UINavigationController *)navigationController
+                           interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
+    if (animationController == _popper && _popper.interactive) {
+        return _popper;
     }
     else {
         return nil;
