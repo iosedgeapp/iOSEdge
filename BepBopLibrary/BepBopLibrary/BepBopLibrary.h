@@ -11,3 +11,4 @@
 #import "RIButtonItem.h"
 #import "UIAlertView+Blocks.h"
 #import "UIColor+Extensions.h"
+#import "BEPTintedLabel.h"

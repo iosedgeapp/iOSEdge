@@ -23,6 +23,11 @@
     {
         [self setNeedsStatusBarAppearanceUpdate];
     }
+
+    BEPTintedLabel* tintedLabel = [[BEPTintedLabel alloc] init];
+    tintedLabel.text = self.title;
+    [tintedLabel sizeToFit];
+    self.navigationItem.titleView = tintedLabel;
 }
 
 @end
