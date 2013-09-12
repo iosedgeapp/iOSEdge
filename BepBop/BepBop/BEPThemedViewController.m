@@ -24,10 +24,13 @@
         [self setNeedsStatusBarAppearanceUpdate];
     }
 
-    BEPTintedLabel* tintedLabel = [[BEPTintedLabel alloc] init];
-    tintedLabel.text = self.title;
-    [tintedLabel sizeToFit];
-    self.navigationItem.titleView = tintedLabel;
+    if (IS_IOS_7)
+    {
+        BEPTintedLabel* tintedLabel = [[BEPTintedLabel alloc] init];
+        tintedLabel.text = self.title;
+        [tintedLabel sizeToFit];
+        self.navigationItem.titleView = tintedLabel;
+    }
 }
 
 @end

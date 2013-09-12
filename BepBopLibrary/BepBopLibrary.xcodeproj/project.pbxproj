@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		175C201E17E15B90008D6F4E /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C201D17E15B90008D6F4E /* UIColor+Extensions.m */; };
 		175C202217E15F9B008D6F4E /* BEPTintedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C202117E15F9B008D6F4E /* BEPTintedLabel.m */; };
+		175C202B17E1734E008D6F4E /* BEPTintedSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C202A17E1734E008D6F4E /* BEPTintedSwitch.m */; };
 		3C3EA80217D3C752000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA80117D3C752000122BD /* Foundation.framework */; };
 		3C3EA80717D3C752000122BD /* BepBopLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C3EA80617D3C752000122BD /* BepBopLibrary.h */; };
 		3C3EA81117D3C752000122BD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA81017D3C752000122BD /* SenTestingKit.framework */; };
@@ -59,6 +60,8 @@
 		175C201D17E15B90008D6F4E /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		175C202017E15F9B008D6F4E /* BEPTintedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPTintedLabel.h; sourceTree = "<group>"; };
 		175C202117E15F9B008D6F4E /* BEPTintedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedLabel.m; sourceTree = "<group>"; };
+		175C202917E1734E008D6F4E /* BEPTintedSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPTintedSwitch.h; sourceTree = "<group>"; };
+		175C202A17E1734E008D6F4E /* BEPTintedSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedSwitch.m; sourceTree = "<group>"; };
 		3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBepBopLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA80117D3C752000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C3EA80517D3C752000122BD /* BepBopLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				8727AA4D17E0D78600B728C8 /* RIButtonItem.m */,
 				175C202017E15F9B008D6F4E /* BEPTintedLabel.h */,
 				175C202117E15F9B008D6F4E /* BEPTintedLabel.m */,
+				175C202917E1734E008D6F4E /* BEPTintedSwitch.h */,
+				175C202A17E1734E008D6F4E /* BEPTintedSwitch.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8727AA4B17E0D76B00B728C8 /* UIAlertView+Blocks.m in Sources */,
+				175C202B17E1734E008D6F4E /* BEPTintedSwitch.m in Sources */,
 				3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */,
 				175C202217E15F9B008D6F4E /* BEPTintedLabel.m in Sources */,
 				8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */,

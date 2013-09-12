@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BEPLookAndFeelViewController">
             <connections>
+                <outlet property="_changeTintButton" destination="zV1-sX-oKn" id="dn6-st-bg4"/>
+                <outlet property="_tintedLabel" destination="E6w-63-SD0" id="Pzd-8Z-n81"/>
                 <outlet property="view" destination="1" id="D8E-yv-3rt"/>
             </connections>
         </placeholder>
@@ -16,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="UdN-wY-NCj">
-                    <rect key="frame" x="95" y="309" width="122" height="29"/>
+                    <rect key="frame" x="73" y="309" width="180" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="First"/>
@@ -27,7 +29,7 @@
                     <rect key="frame" x="101" y="188" width="118" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </slider>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eE7-De-529">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eE7-De-529" customClass="BEPTintedSwitch">
                     <rect key="frame" x="132" y="247" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>

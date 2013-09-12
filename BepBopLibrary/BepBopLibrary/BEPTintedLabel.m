@@ -11,9 +11,21 @@
 
 @implementation BEPTintedLabel
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
+
 -(void)tintColorDidChange
 {
-    self.textColor = self.tintColor;
+    if ([self respondsToSelector:@selector(tintColor)])
+    {
+        self.textColor = self.tintColor;
+    }
 }
 
 @end

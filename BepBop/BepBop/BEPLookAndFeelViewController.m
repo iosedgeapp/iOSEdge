@@ -12,6 +12,8 @@
 {
     @private
     __weak UINavigationController* _navController;
+    IBOutlet UILabel* _tintedLabel;
+    IBOutlet UIButton* _changeTintButton;
 }
 - (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -28,7 +30,9 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    //_tintedLabel.hidden = !IS_IOS_7;
+    //_changeTintButton.hidden = !IS_IOS_7;
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -43,7 +47,10 @@
     [super viewDidDisappear:animated];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        _navController.view.tintColor = [UIColor blueColor];
+        if ([_navController.view respondsToSelector:@selector(setTintColor:)])
+        {
+            _navController.view.tintColor = [UIColor blueColor];
+        }
     });
     
 }
@@ -52,12 +59,27 @@
 
 -(IBAction)changeTintColor:(id)sender
 {
-    [self changeTintColorTo:[UIColor randomColor]];
+    if (IS_IOS_7)
+    {
+        [self changeTintColorTo:[UIColor randomColor]];
+
+    }
+    else
+    {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"iOS6 No-Op" message:@"Since you are running IOS6 you have to use the appearance proxy to change the tintColors..." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    
 }
 
 -(void) changeTintColorTo:(UIColor*)color
 {
-    _navController.view.tintColor = color;
+    if ([_navController.view respondsToSelector:@selector(setTintColor:)])
+    {
+        _navController.view.tintColor = color;
+    }
+   
+
 }
 
 @end
