@@ -43,11 +43,12 @@
 		8796464417E1C0F9009B989A /* BEPTabbarTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796464317E1C0F9009B989A /* BEPTabbarTransitionsViewController.m */; };
 		8796464B17E1C133009B989A /* BEPPresentationTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796464917E1C133009B989A /* BEPPresentationTransitionsViewController.m */; };
 		8796464C17E1C133009B989A /* BEPPresentationTransitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8796464A17E1C133009B989A /* BEPPresentationTransitionsViewController.xib */; };
-		8796465217E1C3BD009B989A /* BEPTransitionsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465117E1C3BD009B989A /* BEPTransitionsMasterViewController.m */; };
 		8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */; };
 		8796465717E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */; };
 		8796465A17E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465917E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m */; };
 		8796465D17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465C17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m */; };
+		8796465F17E1E54D009B989A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8796465E17E1E54D009B989A /* QuartzCore.framework */; };
+		8796466117E1E740009B989A /* Canyon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8796466017E1E740009B989A /* Canyon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +128,6 @@
 		8796464817E1C133009B989A /* BEPPresentationTransitionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPPresentationTransitionsViewController.h; sourceTree = "<group>"; };
 		8796464917E1C133009B989A /* BEPPresentationTransitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPPresentationTransitionsViewController.m; sourceTree = "<group>"; };
 		8796464A17E1C133009B989A /* BEPPresentationTransitionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPPresentationTransitionsViewController.xib; sourceTree = "<group>"; };
-		8796465017E1C3BD009B989A /* BEPTransitionsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPTransitionsMasterViewController.h; sourceTree = "<group>"; };
-		8796465117E1C3BD009B989A /* BEPTransitionsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTransitionsMasterViewController.m; sourceTree = "<group>"; };
 		8796465317E1CB4C009B989A /* BEPNavigationTransitionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationTransitionsViewController.h; sourceTree = "<group>"; };
 		8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationTransitionsViewController.m; sourceTree = "<group>"; };
 		8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPNavigationTransitionsViewController.xib; sourceTree = "<group>"; };
@@ -136,6 +135,8 @@
 		8796465917E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationTransitionsPopAnimator.m; sourceTree = "<group>"; };
 		8796465B17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationTransitionsPushAnimator.h; sourceTree = "<group>"; };
 		8796465C17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationTransitionsPushAnimator.m; sourceTree = "<group>"; };
+		8796465E17E1E54D009B989A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8796466017E1E740009B989A /* Canyon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Canyon.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8796465F17E1E54D009B989A /* QuartzCore.framework in Frameworks */,
 				03362E0A17E158FC003829C9 /* CoreLocation.framework in Frameworks */,
 				03362E0817E1520C003829C9 /* MapKit.framework in Frameworks */,
 				8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */,
@@ -268,6 +270,7 @@
 		3C3EA83417D3C76F000122BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8796465E17E1E54D009B989A /* QuartzCore.framework */,
 				03362E0917E158FC003829C9 /* CoreLocation.framework */,
 				03362E0717E1520C003829C9 /* MapKit.framework */,
 				8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */,
@@ -294,6 +297,7 @@
 		3C3EA83C17D3C76F000122BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8796466017E1E740009B989A /* Canyon.jpg */,
 				3C3EA83D17D3C76F000122BD /* BepBop-Info.plist */,
 				3C3EA83E17D3C76F000122BD /* InfoPlist.strings */,
 				3C3EA84117D3C76F000122BD /* main.m */,
@@ -341,8 +345,6 @@
 				8796464817E1C133009B989A /* BEPPresentationTransitionsViewController.h */,
 				8796464917E1C133009B989A /* BEPPresentationTransitionsViewController.m */,
 				8796464A17E1C133009B989A /* BEPPresentationTransitionsViewController.xib */,
-				8796465017E1C3BD009B989A /* BEPTransitionsMasterViewController.h */,
-				8796465117E1C3BD009B989A /* BEPTransitionsMasterViewController.m */,
 				8796465317E1CB4C009B989A /* BEPNavigationTransitionsViewController.h */,
 				8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */,
 				8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */,
@@ -464,6 +466,7 @@
 				175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */,
 				03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
+				8796466117E1E740009B989A /* Canyon.jpg in Resources */,
 				8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */,
 				3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */,
 			);
@@ -514,7 +517,6 @@
 				0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */,
 				03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
-				8796465217E1C3BD009B989A /* BEPTransitionsMasterViewController.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,
 				8796465A17E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m in Sources */,
 			);

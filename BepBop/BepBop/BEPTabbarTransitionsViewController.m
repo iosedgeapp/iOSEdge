@@ -12,7 +12,7 @@
 
 #import "BEPNavigationTransitionsViewController.h"
 
-#import "BEPTransitionsMasterViewController.h"
+
 
 @interface BEPTabbarTransitionsViewController ()
 

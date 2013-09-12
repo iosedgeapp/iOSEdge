@@ -8,7 +8,7 @@
 
 #import "BEPNavigationTransitionsViewController.h"
 
-#import "BEPTransitionsMasterViewController.h"
+#import "BEPSimpleImageViewController.h"
 
 #import "BEPNavigationTransitionsPopAnimator.h"
 #import "BEPNavigationTransitionsPushAnimator.h"
@@ -63,8 +63,11 @@
 }
 
 - (IBAction)pushButtonTapped:(id)sender {
-    UIViewController * listVC = [[BEPTransitionsMasterViewController alloc] initWithStyle:UITableViewStylePlain];
-    [self.navigationController pushViewController:listVC animated:YES];
+    BEPSimpleImageViewController * imageVC = [[BEPSimpleImageViewController alloc] init];
+    
+    imageVC.image = [UIImage imageNamed:@"Canyon.jpg"];
+    
+    [self.navigationController pushViewController:imageVC animated:YES];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Navigation Controller Delegate
