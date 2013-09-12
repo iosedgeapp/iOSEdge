@@ -10,6 +10,6 @@
 
 @interface BEPNavigationTransitionsRootViewController : UIViewController
 
-- (IBAction)pushButtonTapped:(id)sender;
+- (IBAction) pushButtonTapped:(id)sender;
 
 @end

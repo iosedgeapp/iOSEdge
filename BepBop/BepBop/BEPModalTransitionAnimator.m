@@ -16,12 +16,13 @@
 
 @implementation BEPModalTransitionAnimator
 
-- (instancetype)initWithDirection:(BEPModalTransitionDirection)direction
+- (instancetype) initWithDirection:(BEPModalTransitionDirection)direction
 {
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         _direction = direction;
     }
-    
+
     return self;
 }
 
@@ -29,56 +30,55 @@
 #pragma mark - Animated Transition
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
+- (NSTimeInterval) transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     return 0.75;
 }
 
-- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
+- (void) animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     static const CGFloat DampingConstant = 0.75;
     static const CGFloat InitialVelocity = 0.0;
-    
-    UIView * inView = [transitionContext containerView];
-    UIViewController * fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIView * fromView = [fromVC view];
-    UIViewController * toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIView * toView = [toVC view];
-    
+
+    UIView* inView = [transitionContext containerView];
+    UIViewController* fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIView* fromView         = [fromVC view];
+    UIViewController* toVC   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIView* toView = [toVC view];
+
     inView.backgroundColor = [UIColor blackColor];
 
-    
-    if (self.direction == BEPModelTransitionDirectionPresent) {
-        CGRect finalRect = CGRectInset(fromView.frame, CGRectGetWidth(fromView.frame)/4,CGRectGetHeight(fromView.frame)/4);
+
+    if (self.direction == BEPModelTransitionDirectionPresent)
+    {
+        CGRect finalRect   = CGRectInset(fromView.frame, CGRectGetWidth(fromView.frame)/4, CGRectGetHeight(fromView.frame)/4);
         CGRect initialRect = CGRectOffset(finalRect, 0, -500);
-        toView.alpha = 0.0;
-        toView.frame = initialRect;
+        toView.alpha     = 0.0;
+        toView.frame     = initialRect;
         toView.transform = CGAffineTransformMakeRotation(M_PI);
-        
-        
-        
+
+
+
         [inView insertSubview:toView aboveSubview:fromView];
-        
+
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                               delay:0.0
              usingSpringWithDamping:DampingConstant
               initialSpringVelocity:InitialVelocity
                             options:0
                          animations:^{
-                             toView.alpha = 1.0;
-                             toView.frame = finalRect;
-                             toView.transform = CGAffineTransformIdentity;
-                             
-                         }
+             toView.alpha = 1.0;
+             toView.frame = finalRect;
+             toView.transform = CGAffineTransformIdentity;
+         }
                          completion:^(BOOL finished) {
-                             
-                             [transitionContext completeTransition:YES];
-                         }];
-
+             [transitionContext completeTransition:YES];
+         }];
     }
-    else {
+    else
+    {
         CGRect initialRect = fromView.frame;
-        CGRect finalRect = CGRectOffset(initialRect, 0, 500);
+        CGRect finalRect   = CGRectOffset(initialRect, 0, 500);
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                               delay:0.0
@@ -86,13 +86,11 @@
               initialSpringVelocity:InitialVelocity
                             options:0
                          animations:^{
-                             fromView.frame = finalRect;
-                             
-                         }
+             fromView.frame = finalRect;
+         }
                          completion:^(BOOL finished) {
-                             
-                             [transitionContext completeTransition:YES];
-                         }];
+             [transitionContext completeTransition:YES];
+         }];
     }
 }
 

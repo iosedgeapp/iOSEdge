@@ -16,32 +16,34 @@
 
 @implementation BEPNavigationTransitionsRootViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         self.title = @"Navigation";
     }
     return self;
 }
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pushButtonTapped:(id)sender {
-    BEPSimpleImageViewController * imageVC = [[BEPSimpleImageViewController alloc] init];
-    
+- (IBAction) pushButtonTapped:(id)sender
+{
+    BEPSimpleImageViewController* imageVC = [[BEPSimpleImageViewController alloc] init];
+
     imageVC.image = [UIImage imageNamed:@"Canyon.jpg"];
-    
+
     [self.navigationController pushViewController:imageVC animated:YES];
 }
 

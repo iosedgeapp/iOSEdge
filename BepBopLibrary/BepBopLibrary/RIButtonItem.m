@@ -12,23 +12,25 @@
 @synthesize label;
 @synthesize action;
 
-+(id)item
++ (id) item
 {
     return [self new];
 }
 
-+(id)itemWithLabel:(NSString *)inLabel
++ (id) itemWithLabel:(NSString*)inLabel
 {
-    RIButtonItem *newItem = [self item];
+    RIButtonItem* newItem = [self item];
+
     [newItem setLabel:inLabel];
     return newItem;
 }
 
-+(id)itemWithLabel:(NSString *)inLabel action:(void(^)(void))action
++ (id) itemWithLabel:(NSString*)inLabel action:(void (^)(void))action
 {
-  RIButtonItem *newItem = [self itemWithLabel:inLabel];
-  [newItem setAction:action];
-  return newItem;
+    RIButtonItem* newItem = [self itemWithLabel:inLabel];
+
+    [newItem setAction:action];
+    return newItem;
 }
 
 @end

@@ -21,8 +21,7 @@
     BEPMainViewController* mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
 
     BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:mainViewController];
-    
-    IS_IOS_7 ? [navigationController.navigationBar setTranslucent:YES] : [navigationController.navigationBar setTranslucent:NO];
+    navigationController.navigationBar.translucent = IS_IOS_7;
 
     if ([navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
     {

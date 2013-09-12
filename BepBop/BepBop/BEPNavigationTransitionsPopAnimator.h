@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface BEPNavigationTransitionsPopAnimator : UIPercentDrivenInteractiveTransition <
-UIViewControllerAnimatedTransitioning
->
+        UIViewControllerAnimatedTransitioning
+        >
 
-- (instancetype)initWithNavigationController:(UINavigationController *)nc;
+- (instancetype) initWithNavigationController:(UINavigationController*)nc;
 
-@property(nonatomic,weak) UINavigationController *parent;
-@property(nonatomic,getter = isInteractive) BOOL interactive;
+@property (nonatomic, weak) UINavigationController* parent;
+@property (nonatomic, getter = isInteractive) BOOL  interactive;
 
 @end

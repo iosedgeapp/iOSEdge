@@ -8,17 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, BEPModalTransitionDirection) {
+typedef NS_ENUM(NSInteger, BEPModalTransitionDirection)
+{
     BEPModelTransitionDirectionPresent,
     BEPModelTransitionDirectionDismiss
 };
 
-@interface BEPModalTransitionAnimator : NSObject
-<
-    UIViewControllerAnimatedTransitioning
->
+@interface BEPModalTransitionAnimator : NSObject<UIViewControllerAnimatedTransitioning>
 
-- (instancetype)initWithDirection:(BEPModalTransitionDirection)direction;
+- (instancetype) initWithDirection:(BEPModalTransitionDirection)direction;
 
 
 @end

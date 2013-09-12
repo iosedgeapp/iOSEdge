@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPNavigationTransitionsViewController : UINavigationController
-<
-    UINavigationControllerDelegate
->
-
+@interface BEPNavigationTransitionsViewController : UINavigationController<UINavigationControllerDelegate>
 
 @end
