@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
