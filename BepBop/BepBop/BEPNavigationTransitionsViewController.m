@@ -78,7 +78,7 @@
                                                  fromViewController:(UIViewController *)fromVC
                                                    toViewController:(UIViewController *)toVC
 {
-    if (operation == UINavigationControllerOperationPop) {
+    if (operation == UINavigationControllerOperationPop && fromVC != self.tabBarController) {
         return [[BEPNavigationTransitionsPopAnimator alloc] init];
     }
     else if (operation == UINavigationControllerOperationPush) {
