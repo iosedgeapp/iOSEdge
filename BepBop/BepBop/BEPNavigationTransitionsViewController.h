@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BEPNavigationTransitionsViewController : UIViewController
+<
+    UINavigationControllerDelegate
+>
 
+- (IBAction)pushButtonTapped:(id)sender;
 @end

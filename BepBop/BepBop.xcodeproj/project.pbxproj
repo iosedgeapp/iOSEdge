@@ -46,6 +46,8 @@
 		8796465217E1C3BD009B989A /* BEPTransitionsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465117E1C3BD009B989A /* BEPTransitionsMasterViewController.m */; };
 		8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */; };
 		8796465717E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */; };
+		8796465A17E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465917E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m */; };
+		8796465D17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465C17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,10 @@
 		8796465317E1CB4C009B989A /* BEPNavigationTransitionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationTransitionsViewController.h; sourceTree = "<group>"; };
 		8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationTransitionsViewController.m; sourceTree = "<group>"; };
 		8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPNavigationTransitionsViewController.xib; sourceTree = "<group>"; };
+		8796465817E1D112009B989A /* BEPNavigationTransitionsPopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationTransitionsPopAnimator.h; sourceTree = "<group>"; };
+		8796465917E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationTransitionsPopAnimator.m; sourceTree = "<group>"; };
+		8796465B17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationTransitionsPushAnimator.h; sourceTree = "<group>"; };
+		8796465C17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationTransitionsPushAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +346,10 @@
 				8796465317E1CB4C009B989A /* BEPNavigationTransitionsViewController.h */,
 				8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */,
 				8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */,
+				8796465817E1D112009B989A /* BEPNavigationTransitionsPopAnimator.h */,
+				8796465917E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m */,
+				8796465B17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.h */,
+				8796465C17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m */,
 			);
 			name = "VC Transitions";
 			sourceTree = "<group>";
@@ -494,6 +504,7 @@
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
 				8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
+				8796465D17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m in Sources */,
 				8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */,
 				8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */,
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
@@ -505,6 +516,7 @@
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				8796465217E1C3BD009B989A /* BEPTransitionsMasterViewController.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,
+				8796465A17E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
