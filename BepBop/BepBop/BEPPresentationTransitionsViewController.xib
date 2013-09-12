@@ -21,6 +21,9 @@
                     <state key="normal" title="Present a View">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="presentTapped:" destination="-1" eventType="touchUpInside" id="H92-t1-lwb"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BEPPresentationTransitionsViewController : UIViewController
+<
+    UIViewControllerTransitioningDelegate
+>
 
+- (IBAction)presentTapped:(UIButton *)sender;
 @end
