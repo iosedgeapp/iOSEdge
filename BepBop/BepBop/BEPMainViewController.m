@@ -11,11 +11,14 @@
 #import "BEPLookAndFeelViewController.h"
 #import "BEPMultipeerConnectivityViewController.h"
 #import "BEPMapViewController.h"
+#import "BEPTabbarTransitionsViewController.h"
 
 #define kLookAndFeelRow 0
 #define kDynamicTypeRow 1
 #define kMultipeerRow 2
+#define kTransitionsRow 5
 #define kMapsRow 8
+
 
 
 @interface BEPMainViewController ()
@@ -123,6 +126,10 @@
     else if (indexPath.row == kMultipeerRow)
     {
         viewController = [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil];
+    }
+    else if (indexPath.row == kTransitionsRow)
+    {
+        viewController = [[BEPTabbarTransitionsViewController alloc] init];
     }
     else if (indexPath.row == kMapsRow)
     {

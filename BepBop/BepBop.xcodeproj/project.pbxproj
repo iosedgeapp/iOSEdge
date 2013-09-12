@@ -40,6 +40,12 @@
 		8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */; };
 		8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */; };
 		8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */; };
+		8796464417E1C0F9009B989A /* BEPTabbarTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796464317E1C0F9009B989A /* BEPTabbarTransitionsViewController.m */; };
+		8796464B17E1C133009B989A /* BEPPresentationTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796464917E1C133009B989A /* BEPPresentationTransitionsViewController.m */; };
+		8796464C17E1C133009B989A /* BEPPresentationTransitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8796464A17E1C133009B989A /* BEPPresentationTransitionsViewController.xib */; };
+		8796465217E1C3BD009B989A /* BEPTransitionsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465117E1C3BD009B989A /* BEPTransitionsMasterViewController.m */; };
+		8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */; };
+		8796465717E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +120,16 @@
 		8727AA5217E0D9A500B728C8 /* BEPSimpleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPSimpleImageViewController.h; sourceTree = "<group>"; };
 		8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPSimpleImageViewController.m; sourceTree = "<group>"; };
 		8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPSimpleImageViewController.xib; sourceTree = "<group>"; };
+		8796464217E1C0F9009B989A /* BEPTabbarTransitionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPTabbarTransitionsViewController.h; sourceTree = "<group>"; };
+		8796464317E1C0F9009B989A /* BEPTabbarTransitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTabbarTransitionsViewController.m; sourceTree = "<group>"; };
+		8796464817E1C133009B989A /* BEPPresentationTransitionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPPresentationTransitionsViewController.h; sourceTree = "<group>"; };
+		8796464917E1C133009B989A /* BEPPresentationTransitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPPresentationTransitionsViewController.m; sourceTree = "<group>"; };
+		8796464A17E1C133009B989A /* BEPPresentationTransitionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPPresentationTransitionsViewController.xib; sourceTree = "<group>"; };
+		8796465017E1C3BD009B989A /* BEPTransitionsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPTransitionsMasterViewController.h; sourceTree = "<group>"; };
+		8796465117E1C3BD009B989A /* BEPTransitionsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTransitionsMasterViewController.m; sourceTree = "<group>"; };
+		8796465317E1CB4C009B989A /* BEPNavigationTransitionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationTransitionsViewController.h; sourceTree = "<group>"; };
+		8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationTransitionsViewController.m; sourceTree = "<group>"; };
+		8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPNavigationTransitionsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,12 +167,13 @@
 				3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */,
 				3CD0FD1217E00C67007CA40E /* BEPThemedViewController.h */,
 				3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */,
+				0394AD9317DFFCD300769A12 /* main */,
 				03175DE917DEB5C7005D3C62 /* Look and Feel */,
 				03175DEA17DEB5D2005D3C62 /* Accessibility */,
-				0394AD9317DFFCD300769A12 /* main */,
 				0394AD9917DFFDAF00769A12 /* Video */,
 				0394ADA117DFFDFC00769A12 /* Maps */,
 				0394ADA017DFFDF300769A12 /* Multipeer */,
+				8796463F17E1C097009B989A /* VC Transitions */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -310,6 +327,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8796463F17E1C097009B989A /* VC Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				8796464217E1C0F9009B989A /* BEPTabbarTransitionsViewController.h */,
+				8796464317E1C0F9009B989A /* BEPTabbarTransitionsViewController.m */,
+				8796464817E1C133009B989A /* BEPPresentationTransitionsViewController.h */,
+				8796464917E1C133009B989A /* BEPPresentationTransitionsViewController.m */,
+				8796464A17E1C133009B989A /* BEPPresentationTransitionsViewController.xib */,
+				8796465017E1C3BD009B989A /* BEPTransitionsMasterViewController.h */,
+				8796465117E1C3BD009B989A /* BEPTransitionsMasterViewController.m */,
+				8796465317E1CB4C009B989A /* BEPNavigationTransitionsViewController.h */,
+				8796465417E1CB4C009B989A /* BEPNavigationTransitionsViewController.m */,
+				8796465517E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib */,
+			);
+			name = "VC Transitions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,6 +446,8 @@
 			files = (
 				8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */,
 				3C3EA84017D3C76F000122BD /* InfoPlist.strings in Resources */,
+				8796464C17E1C133009B989A /* BEPPresentationTransitionsViewController.xib in Resources */,
+				8796465717E1CB4C009B989A /* BEPNavigationTransitionsViewController.xib in Resources */,
 				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
@@ -458,12 +494,16 @@
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
 				8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
+				8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */,
 				8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */,
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
 				03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */,
+				8796464B17E1C133009B989A /* BEPPresentationTransitionsViewController.m in Sources */,
+				8796464417E1C0F9009B989A /* BEPTabbarTransitionsViewController.m in Sources */,
 				0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */,
 				03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
+				8796465217E1C3BD009B989A /* BEPTransitionsMasterViewController.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
