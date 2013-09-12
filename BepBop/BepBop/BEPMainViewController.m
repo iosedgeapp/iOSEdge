@@ -10,6 +10,13 @@
 #import "BEPDynamicTypeViewController.h"
 #import "BEPLookAndFeelViewController.h"
 #import "BEPMultipeerConnectivityViewController.h"
+#import "BEPMapViewController.h"
+
+#define kLookAndFeelRow 0
+#define kDynamicTypeRow 1
+#define kMultipeerRow 2
+#define kMapsRow 8
+
 
 @interface BEPMainViewController ()
 
@@ -36,26 +43,20 @@
               @"Chapter 8",
               @"Chapter 9",
               @"Chapter 10",
-              @"Chapter 11",
-              @"Chapter 12",
-              @"Chapter 13",
-              @"Chapter 14"];
+              @"Chapter 11"];
 
         self.chapterTitles =
             @[@"iOS 6 App Look and Feel Migration",
               @"Designing accessible interfaces with Dynamic Type",
-              @"Sharing photos with AirDrop",
+              @"Direct Wireless Connectivity with Multipeer Networking, AirDrop, and more",
               @"Keeping content up to date while running in the background",
               @"Adding effects to video",
               @"View transition animations",
               @"Animating with gravity and collisions",
               @"Dynamically updating your app snapshot in the App Switcher",
-              @"Sharing audio with other apps",
-              @"Multipeer networking",
               @"Map directions in 3D",
               @"Taking advantage of the new build improvements",
-              @"Unit Testing on Steroids",
-              @"Accessories: iBeacons"];
+              @"Unit Testing on Steroids"];
     }
     return self;
 }
@@ -111,18 +112,21 @@
 {
     UIViewController* viewController;
 
-    if (indexPath.row == 0)
+    if (indexPath.row == kLookAndFeelRow)
     {
         viewController = [[BEPLookAndFeelViewController alloc] init];
     }
-    else if (indexPath.row == 1)
+    else if (indexPath.row == kDynamicTypeRow)
     {
-        viewController =
-            [[BEPDynamicTypeViewController alloc] init];
+        viewController = [[BEPDynamicTypeViewController alloc] init];
     }
-    else if (indexPath.row == 9)
+    else if (indexPath.row == kMultipeerRow)
     {
         viewController = [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil];
+    }
+    else if (indexPath.row == kMapsRow)
+    {
+        viewController = [[BEPMapViewController alloc] initWithNibName:nil bundle:nil];
     }
 
     if (viewController)

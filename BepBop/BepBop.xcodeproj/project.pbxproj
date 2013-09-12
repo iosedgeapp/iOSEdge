@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */; };
 		03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */; };
+		03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03362E0117E14D3E003829C9 /* BEPMapViewController.m */; };
+		03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03362E0217E14D3E003829C9 /* BEPMapViewController.xib */; };
+		03362E0817E1520C003829C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03362E0717E1520C003829C9 /* MapKit.framework */; };
+		03362E0A17E158FC003829C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03362E0917E158FC003829C9 /* CoreLocation.framework */; };
 		0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */; };
 		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
 		175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */; };
@@ -67,6 +71,11 @@
 		03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMainViewController.m; sourceTree = "<group>"; };
 		03175DEB17DEB606005D3C62 /* BEPDynamicTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicTypeViewController.h; sourceTree = "<group>"; };
 		03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicTypeViewController.m; sourceTree = "<group>"; };
+		03362E0017E14D3E003829C9 /* BEPMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMapViewController.h; sourceTree = "<group>"; };
+		03362E0117E14D3E003829C9 /* BEPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMapViewController.m; sourceTree = "<group>"; };
+		03362E0217E14D3E003829C9 /* BEPMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPMapViewController.xib; sourceTree = "<group>"; };
+		03362E0717E1520C003829C9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		03362E0917E158FC003829C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0394ADA417DFFE5200769A12 /* BEPCaptureVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPCaptureVideoViewController.h; sourceTree = "<group>"; };
 		0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPCaptureVideoViewController.m; sourceTree = "<group>"; };
 		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03362E0A17E158FC003829C9 /* CoreLocation.framework in Frameworks */,
+				03362E0817E1520C003829C9 /* MapKit.framework in Frameworks */,
 				8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */,
 				3C3EA86B17D3C81F000122BD /* libBepBopLibrary.a in Frameworks */,
 				3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */,
@@ -140,42 +151,33 @@
 				3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */,
 				3CD0FD1217E00C67007CA40E /* BEPThemedViewController.h */,
 				3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */,
-				03175DE917DEB5C7005D3C62 /* Chapter 1 */,
-				03175DEA17DEB5D2005D3C62 /* Chapter 2 */,
+				03175DE917DEB5C7005D3C62 /* Look and Feel */,
+				03175DEA17DEB5D2005D3C62 /* Accessibility */,
 				0394AD9317DFFCD300769A12 /* main */,
-				0394AD9717DFFD9800769A12 /* Chapter 3 */,
-				0394AD9817DFFDAA00769A12 /* Chapter 4 */,
-				0394AD9917DFFDAF00769A12 /* Chapter 5 */,
-				0394AD9A17DFFDB600769A12 /* Chapter 6 */,
-				0394ADA317DFFE0900769A12 /* Chapter 7 */,
-				0394ADA217DFFE0300769A12 /* Chapter 8 */,
-				0394ADA117DFFDFC00769A12 /* Chapter 9 */,
-				0394ADA017DFFDF300769A12 /* Chapter 10 */,
-				0394AD9E17DFFDD500769A12 /* Chapter 11 */,
-				0394AD9D17DFFDCE00769A12 /* Chapter 12 */,
-				0394AD9C17DFFDC600769A12 /* Chapter 13 */,
-				0394AD9B17DFFDBD00769A12 /* Chapter 14 */,
+				0394AD9917DFFDAF00769A12 /* Video */,
+				0394ADA117DFFDFC00769A12 /* Maps */,
+				0394ADA017DFFDF300769A12 /* Multipeer */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		03175DE917DEB5C7005D3C62 /* Chapter 1 */ = {
+		03175DE917DEB5C7005D3C62 /* Look and Feel */ = {
 			isa = PBXGroup;
 			children = (
 				3C9DF0B317E0149C002F5FB9 /* BEPLookAndFeelViewController.h */,
 				3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */,
 				175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */,
 			);
-			name = "Chapter 1";
+			name = "Look and Feel";
 			sourceTree = "<group>";
 		};
-		03175DEA17DEB5D2005D3C62 /* Chapter 2 */ = {
+		03175DEA17DEB5D2005D3C62 /* Accessibility */ = {
 			isa = PBXGroup;
 			children = (
 				03175DEB17DEB606005D3C62 /* BEPDynamicTypeViewController.h */,
 				03175DEC17DEB606005D3C62 /* BEPDynamicTypeViewController.m */,
 			);
-			name = "Chapter 2";
+			name = Accessibility;
 			sourceTree = "<group>";
 		};
 		0394AD9317DFFCD300769A12 /* main */ = {
@@ -187,66 +189,17 @@
 			name = main;
 			sourceTree = "<group>";
 		};
-		0394AD9717DFFD9800769A12 /* Chapter 3 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 3";
-			sourceTree = "<group>";
-		};
-		0394AD9817DFFDAA00769A12 /* Chapter 4 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 4";
-			sourceTree = "<group>";
-		};
-		0394AD9917DFFDAF00769A12 /* Chapter 5 */ = {
+		0394AD9917DFFDAF00769A12 /* Video */ = {
 			isa = PBXGroup;
 			children = (
 				0394ADA417DFFE5200769A12 /* BEPCaptureVideoViewController.h */,
 				0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */,
 				0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */,
 			);
-			name = "Chapter 5";
+			name = Video;
 			sourceTree = "<group>";
 		};
-		0394AD9A17DFFDB600769A12 /* Chapter 6 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 6";
-			sourceTree = "<group>";
-		};
-		0394AD9B17DFFDBD00769A12 /* Chapter 14 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 14";
-			sourceTree = "<group>";
-		};
-		0394AD9C17DFFDC600769A12 /* Chapter 13 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 13";
-			sourceTree = "<group>";
-		};
-		0394AD9D17DFFDCE00769A12 /* Chapter 12 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 12";
-			sourceTree = "<group>";
-		};
-		0394AD9E17DFFDD500769A12 /* Chapter 11 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 11";
-			sourceTree = "<group>";
-		};
-		0394ADA017DFFDF300769A12 /* Chapter 10 */ = {
+		0394ADA017DFFDF300769A12 /* Multipeer */ = {
 			isa = PBXGroup;
 			children = (
 				8727AA3817E0B96200B728C8 /* BEPMultipeerConnectivityViewController.h */,
@@ -256,28 +209,17 @@
 				8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */,
 				8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */,
 			);
-			name = "Chapter 10";
+			name = Multipeer;
 			sourceTree = "<group>";
 		};
-		0394ADA117DFFDFC00769A12 /* Chapter 9 */ = {
+		0394ADA117DFFDFC00769A12 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				03362E0017E14D3E003829C9 /* BEPMapViewController.h */,
+				03362E0117E14D3E003829C9 /* BEPMapViewController.m */,
+				03362E0217E14D3E003829C9 /* BEPMapViewController.xib */,
 			);
-			name = "Chapter 9";
-			sourceTree = "<group>";
-		};
-		0394ADA217DFFE0300769A12 /* Chapter 8 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 8";
-			sourceTree = "<group>";
-		};
-		0394ADA317DFFE0900769A12 /* Chapter 7 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Chapter 7";
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		3C3EA82917D3C76F000122BD = {
@@ -303,6 +245,8 @@
 		3C3EA83417D3C76F000122BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03362E0917E158FC003829C9 /* CoreLocation.framework */,
+				03362E0717E1520C003829C9 /* MapKit.framework */,
 				8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */,
 				3C3EA86A17D3C81F000122BD /* libBepBopLibrary.a */,
 				3C3EA83517D3C76F000122BD /* UIKit.framework */,
@@ -472,6 +416,7 @@
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
 				175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */,
+				03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
 				8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */,
 				3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */,
@@ -517,6 +462,7 @@
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
 				03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */,
 				0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */,
+				03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,
 			);
