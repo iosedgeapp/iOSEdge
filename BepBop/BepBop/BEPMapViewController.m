@@ -30,7 +30,15 @@
 {
     [super viewDidLoad];
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:NO];
+
+    // DEVTODO: put a 3D button on the map?
+    
+    double latitudeOffset = 0.001; // TODO: play with this number
+    CLLocationDegrees latitude = self.mapView.centerCoordinate.latitude - latitudeOffset;
+    CLLocationCoordinate2D eyeCoordinate = CLLocationCoordinate2DMake(latitude, self.mapView.centerCoordinate.longitude);
+    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:self.mapView.centerCoordinate fromEyeCoordinate:eyeCoordinate eyeAltitude:1];
+    [self.mapView setCamera:camera animated:NO]; // TODO: animate if desired
 }
 
 - (void)didReceiveMemoryWarning

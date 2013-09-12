@@ -12,6 +12,7 @@
 		03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03362E0117E14D3E003829C9 /* BEPMapViewController.m */; };
 		03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03362E0217E14D3E003829C9 /* BEPMapViewController.xib */; };
 		03362E0817E1520C003829C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03362E0717E1520C003829C9 /* MapKit.framework */; };
+		03362E0A17E158FC003829C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03362E0917E158FC003829C9 /* CoreLocation.framework */; };
 		0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */; };
 		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
@@ -73,6 +74,7 @@
 		03362E0117E14D3E003829C9 /* BEPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMapViewController.m; sourceTree = "<group>"; };
 		03362E0217E14D3E003829C9 /* BEPMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPMapViewController.xib; sourceTree = "<group>"; };
 		03362E0717E1520C003829C9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		03362E0917E158FC003829C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0394ADA417DFFE5200769A12 /* BEPCaptureVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPCaptureVideoViewController.h; sourceTree = "<group>"; };
 		0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPCaptureVideoViewController.m; sourceTree = "<group>"; };
 		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03362E0A17E158FC003829C9 /* CoreLocation.framework in Frameworks */,
 				03362E0817E1520C003829C9 /* MapKit.framework in Frameworks */,
 				8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */,
 				3C3EA86B17D3C81F000122BD /* libBepBopLibrary.a in Frameworks */,
@@ -239,6 +242,7 @@
 		3C3EA83417D3C76F000122BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03362E0917E158FC003829C9 /* CoreLocation.framework */,
 				03362E0717E1520C003829C9 /* MapKit.framework */,
 				8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */,
 				3C3EA86A17D3C81F000122BD /* libBepBopLibrary.a */,
