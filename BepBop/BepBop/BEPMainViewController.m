@@ -121,7 +121,7 @@
     }
     else if (indexPath.row == kDynamicTypeRow)
     {
-        viewController = [[BEPDynamicTypeViewController alloc] init];
+        viewController = [[BEPDynamicTypeViewController alloc] initWithNibName:nil bundle:nil];
     }
     else if (indexPath.row == kMultipeerRow)
     {
