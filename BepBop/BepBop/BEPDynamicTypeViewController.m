@@ -47,6 +47,7 @@
     self.headlineLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     self.subheadLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
     self.bodyLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.footnoteLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
 }
 
 - (void) dealloc

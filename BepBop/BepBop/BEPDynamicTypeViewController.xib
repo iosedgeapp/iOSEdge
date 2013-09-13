@@ -19,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="iOS 7 With Redesigned Interface and New Features Available September 18" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="a7o-IR-AFK">
-                    <rect key="frame" x="20" y="80" width="280" height="70"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="iOS 7 With Redesigned Interface and New Features Available September 18" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="a7o-IR-AFK">
+                    <rect key="frame" x="20" y="80" width="280" height="62"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="nzl-VR-pU8"/>
@@ -29,33 +29,35 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="September 10, 2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2J-4S-o8f">
-                    <rect key="frame" x="20" y="158" width="280" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 10, 2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2J-4S-o8f">
+                    <rect key="frame" x="20" y="150" width="280" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="KB2-pG-J5u"/>
                         <constraint firstAttribute="width" constant="280" id="sgh-PP-V09"/>
                     </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5Bo-fa-H6y">
-                    <rect key="frame" x="20" y="187" width="280" height="332"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5Bo-fa-H6y">
+                    <rect key="frame" x="20" y="179" width="280" height="340"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="bDi-6e-5cf"/>
                     </constraints>
-                    <mutableString key="text">Apple today announced that iOS 7 will be available starting September 18 to iPhone, iPad, and iPod touch users as a free software update. iOS 7 has a completely redesigned user interface and hundreds of new features, including Control Center, Notification Center, improved Multitasking, AirDrop, enhanced Siri, and more. And it introduces iTunes Radio, a free Internet radio service based on the music you listen to on iTunes. In addition, iOS 7 has been engineered with deep technical and design integration with both iPhone 5s and iPhone 5c. “iOS 7 is completely redesigned with an entirely new user interface and over 200 new features, so it’s like getting a brand new device, but one that will still be instantly familiar to our users,” said Craig Federighi, Apple’s senior vice president of Software Engineering.</mutableString>
+                    <string key="text">Apple today announced that iOS 7 will be available starting September 18 to iPhone, iPad, and iPod touch users as a free software update. iOS 7 has a completely redesigned user interface and hundreds of new features, including Control Center, Notification Center, improved Multitasking, AirDrop, enhanced Siri, and more. And it introduces iTunes Radio, a free Internet radio service based on the music you listen to on iTunes. In addition, iOS 7 has been engineered with deep technical and design integration with both iPhone 5s and iPhone 5c. “iOS 7 is completely redesigned with an entirely new user interface and over 200 new features, so it’s like getting a brand new device, but one that will still be instantly familiar to our users,” said Craig Federighi, Apple’s senior vice president of Software Engineering.</string>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Read more: apple.com/ios" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-sH-wan">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read more: apple.com/ios" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-sH-wan">
                     <rect key="frame" x="20" y="527" width="280" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="cyX-yQ-2Km"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="dnM-CM-VVi"/>
                     </constraints>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
