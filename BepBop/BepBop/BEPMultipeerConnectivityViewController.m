@@ -8,6 +8,9 @@
 
 #import "BEPMultipeerConnectivityViewController.h"
 #import "BEPSimpleImageViewController.h"
+#import "BEPAirDropHandler.h"
+#import "BEPSimpleWebViewController.h"
+
 
 
 @interface BEPMultipeerConnectivityViewController ()
@@ -20,6 +23,9 @@
 @property (nonatomic) NSUInteger bytesSent;
 @property (nonatomic) NSUInteger bytesReceived;
 
+@property (nonatomic, strong) NSArray * airDropItems;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) BEPArrayTableDataSource * tableDataSource;
 @end
 
 @implementation BEPMultipeerConnectivityViewController
@@ -77,6 +83,34 @@
     _assistant.delegate = self;
 
     [_assistant start];
+    
+    BEPConfigureCellBlock configureCell = ^(UITableViewCell* cell, id item) {
+        NSURL * url = (NSURL*)item;
+        NSLog(@"config cell with URL: %@", url);
+        cell.textLabel.text = [url lastPathComponent];
+    };
+    
+    NSFileManager * fm = [NSFileManager defaultManager];
+    
+    NSError * error;
+    self.airDropItems = [fm contentsOfDirectoryAtURL:[[BEPAirDropHandler sharedInstance] airDropDocumentsDirectory]
+                          includingPropertiesForKeys:nil
+                                             options:NSDirectoryEnumerationSkipsHiddenFiles
+                                               error:&error];
+    
+    if (_airDropItems == nil) {
+        NSLog(@"could not fecth airdrop files: %@", error);
+        self.airDropItems = @[];
+    }
+
+    static NSString * CellIdentifier = @"AirDropCell";
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    // tableView.dataSource is a weak property. We need to assign our data source to a strong property to prevent an untimely release
+    self.tableDataSource = [[BEPArrayTableDataSource alloc] initWithItems:_airDropItems
+                                                           cellIdentifier:CellIdentifier
+                                                           configureBlock:configureCell];
+    self.tableView.dataSource = _tableDataSource;
+    self.tableView.delegate = self;
 
 
     [self updateUIState];
@@ -266,6 +300,28 @@
 - (void) imagePickerControllerDidCancel:(UIImagePickerController*)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Table Delegate
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSURL * url = [self.tableDataSource itemAtIndexPath:indexPath];
+    
+    if (url) {
+        BEPSimpleWebViewController * wvc = [[BEPSimpleWebViewController alloc] initWithNibName:nil bundle:nil];
+        
+        wvc.url = url;
+        
+        [self.navigationController pushViewController:wvc animated:YES];
+    }
+    
+
 }
 
 @end

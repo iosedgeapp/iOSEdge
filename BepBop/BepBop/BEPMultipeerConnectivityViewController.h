@@ -16,7 +16,7 @@
                                                                             MCBrowserViewControllerDelegate,
                                                                             MCSessionDelegate,
                                                                             UINavigationControllerDelegate,// just to prevent compiler warning.
-                                                                            UIImagePickerControllerDelegate>
+                                                                            UIImagePickerControllerDelegate, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel* peerCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel* bytesSentLabel;

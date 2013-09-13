@@ -26,6 +26,7 @@
 		8727AA4F17E0D81900B728C8 /* RIButtonItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4C17E0D78600B728C8 /* RIButtonItem.h */; };
 		8727AA5017E0D81900B728C8 /* UIActionSheet+Blocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4617E0D76B00B728C8 /* UIActionSheet+Blocks.h */; };
 		8727AA5117E0D81900B728C8 /* UIAlertView+Blocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4817E0D76B00B728C8 /* UIAlertView+Blocks.h */; };
+		87A5211117E3381C0060D931 /* BEPArrayTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5211017E3381C0060D931 /* BEPArrayTableDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		8727AA4C17E0D78600B728C8 /* RIButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
 		8727AA4D17E0D78600B728C8 /* RIButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
+		87A5210F17E3381C0060D931 /* BEPArrayTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPArrayTableDataSource.h; sourceTree = "<group>"; };
+		87A5211017E3381C0060D931 /* BEPArrayTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPArrayTableDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 		3C3EA87317D3CA6E000122BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				87A5210F17E3381C0060D931 /* BEPArrayTableDataSource.h */,
+				87A5211017E3381C0060D931 /* BEPArrayTableDataSource.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */,
 				175C202217E15F9B008D6F4E /* BEPTintedLabel.m in Sources */,
 				8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */,
+				87A5211117E3381C0060D931 /* BEPArrayTableDataSource.m in Sources */,
 				8727AA4E17E0D78600B728C8 /* RIButtonItem.m in Sources */,
 				175C201E17E15B90008D6F4E /* UIColor+Extensions.m in Sources */,
 			);

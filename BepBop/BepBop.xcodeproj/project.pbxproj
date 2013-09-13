@@ -36,6 +36,8 @@
 		3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */; };
 		3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */; };
 		3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */; };
+		871F714517E3446E00DC00EF /* BEPSimpleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871F714317E3446E00DC00EF /* BEPSimpleWebViewController.m */; };
+		871F714617E3446E00DC00EF /* BEPSimpleWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871F714417E3446E00DC00EF /* BEPSimpleWebViewController.xib */; };
 		8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA3917E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m */; };
 		8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8727AA3D17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib */; };
 		8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */; };
@@ -52,6 +54,8 @@
 		8796466517E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796466317E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m */; };
 		8796466617E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8796466417E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib */; };
 		8796466917E20B87009B989A /* BEPModalTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796466817E20B87009B989A /* BEPModalTransitionAnimator.m */; };
+		87A5210E17E335E00060D931 /* BEPAirDropTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5210D17E335E00060D931 /* BEPAirDropTableDataSource.m */; };
+		87A5211417E33D980060D931 /* BEPAirDropHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5211317E33D980060D931 /* BEPAirDropHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,9 @@
 		3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPThemedViewController.m; sourceTree = "<group>"; };
 		3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationController.h; sourceTree = "<group>"; };
 		3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationController.m; sourceTree = "<group>"; };
+		871F714217E3446E00DC00EF /* BEPSimpleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPSimpleWebViewController.h; sourceTree = "<group>"; };
+		871F714317E3446E00DC00EF /* BEPSimpleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPSimpleWebViewController.m; sourceTree = "<group>"; };
+		871F714417E3446E00DC00EF /* BEPSimpleWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPSimpleWebViewController.xib; sourceTree = "<group>"; };
 		8727AA3817E0B96200B728C8 /* BEPMultipeerConnectivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMultipeerConnectivityViewController.h; sourceTree = "<group>"; };
 		8727AA3917E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultipeerConnectivityViewController.m; sourceTree = "<group>"; };
 		8727AA3D17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPMultipeerConnectivityViewController.xib; sourceTree = "<group>"; };
@@ -145,6 +152,10 @@
 		8796466417E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPNavigationTransitionsRootViewController.xib; sourceTree = "<group>"; };
 		8796466717E20B87009B989A /* BEPModalTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPModalTransitionAnimator.h; sourceTree = "<group>"; };
 		8796466817E20B87009B989A /* BEPModalTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPModalTransitionAnimator.m; sourceTree = "<group>"; };
+		87A5210C17E335E00060D931 /* BEPAirDropTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPAirDropTableDataSource.h; sourceTree = "<group>"; };
+		87A5210D17E335E00060D931 /* BEPAirDropTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPAirDropTableDataSource.m; sourceTree = "<group>"; };
+		87A5211217E33D980060D931 /* BEPAirDropHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPAirDropHandler.h; sourceTree = "<group>"; };
+		87A5211317E33D980060D931 /* BEPAirDropHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPAirDropHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +253,13 @@
 				8727AA5217E0D9A500B728C8 /* BEPSimpleImageViewController.h */,
 				8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */,
 				8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */,
+				87A5210C17E335E00060D931 /* BEPAirDropTableDataSource.h */,
+				87A5210D17E335E00060D931 /* BEPAirDropTableDataSource.m */,
+				87A5211217E33D980060D931 /* BEPAirDropHandler.h */,
+				87A5211317E33D980060D931 /* BEPAirDropHandler.m */,
+				871F714217E3446E00DC00EF /* BEPSimpleWebViewController.h */,
+				871F714317E3446E00DC00EF /* BEPSimpleWebViewController.m */,
+				871F714417E3446E00DC00EF /* BEPSimpleWebViewController.xib */,
 			);
 			name = Multipeer;
 			sourceTree = "<group>";
@@ -489,6 +507,7 @@
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
 				8796466117E1E740009B989A /* Canyon.jpg in Resources */,
 				8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */,
+				871F714617E3446E00DC00EF /* BEPSimpleWebViewController.xib in Resources */,
 				3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */,
 				8796466617E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib in Resources */,
 			);
@@ -525,14 +544,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A5211417E33D980060D931 /* BEPAirDropHandler.m in Sources */,
 				3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */,
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
 				8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
 				8796465D17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m in Sources */,
+				871F714517E3446E00DC00EF /* BEPSimpleWebViewController.m in Sources */,
 				8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */,
 				8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */,
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
+				87A5210E17E335E00060D931 /* BEPAirDropTableDataSource.m in Sources */,
 				03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */,
 				8796464B17E1C133009B989A /* BEPPresentationTransitionsViewController.m in Sources */,
 				8796464417E1C0F9009B989A /* BEPTabbarTransitionsViewController.m in Sources */,
