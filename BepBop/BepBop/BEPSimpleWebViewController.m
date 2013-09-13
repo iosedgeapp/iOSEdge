@@ -10,6 +10,8 @@
 
 @interface BEPSimpleWebViewController ()
 
+@property (weak, nonatomic) IBOutlet UIWebView *webview;
+
 @end
 
 @implementation BEPSimpleWebViewController
@@ -26,7 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    if (_url) {
+        [self.webview loadRequest:[NSURLRequest requestWithURL:_url]];
+        self.title = [_url lastPathComponent];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +39,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

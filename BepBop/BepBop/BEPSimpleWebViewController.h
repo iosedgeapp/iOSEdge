@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPSimpleWebViewController : UIViewController
+@interface BEPSimpleWebViewController : UIViewController <UIWebViewDelegate>
+
+@property (nonatomic, strong) NSURL * url;
 
 @end
