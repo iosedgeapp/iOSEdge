@@ -45,13 +45,8 @@
 - (void) handleContentSizeDidChange:(NSNotification*)aNotification
 {
     self.headlineLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    [self.headlineLabel sizeToFit];
-    
     self.subheadLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-    [self.subheadLabel sizeToFit];
-    
     self.bodyLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-    [self.bodyLabel sizeToFit];
 }
 
 - (void) dealloc
