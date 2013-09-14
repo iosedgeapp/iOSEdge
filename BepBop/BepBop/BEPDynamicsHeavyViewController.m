@@ -10,9 +10,11 @@
 
 @interface BEPDynamicsHeavyViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *heavyLabel;
+@property (nonatomic,weak) IBOutlet UILabel *heavyLabel;
 @property (nonatomic) UIDynamicAnimator *animator;
 @property (nonatomic) UIGravityBehavior *gravity;
+
+@property (nonatomic,weak) IBOutlet UILabel *directionLabel;
 
 @end
 
@@ -52,9 +54,11 @@
     if (self.gravity.gravityDirection.dy > 0) {
         // If gravity is pulling down, make it pull up!
         self.gravity.gravityDirection = CGVectorMake(0, -1);
+        self.directionLabel.text = @"↑";
     } else {
         // Switch to normal gravity
         self.gravity.gravityDirection = CGVectorMake(0, 1);
+        self.directionLabel.text = @"↓";
     }
 }
 

@@ -125,6 +125,12 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ou6-S0-RSm">
+                                <rect key="frame" x="258" y="527" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
@@ -133,6 +139,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vIM-Cl-hfU"/>
                     <connections>
+                        <outlet property="directionLabel" destination="Ou6-S0-RSm" id="ucN-sX-xgs"/>
                         <outlet property="heavyLabel" destination="dOe-ts-u3s" id="mmP-9G-Ybn"/>
                     </connections>
                 </viewController>
