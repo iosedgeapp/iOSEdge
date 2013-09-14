@@ -17,7 +17,6 @@
 		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
 		03F31BD417E294CE00369D31 /* BEPDynamicTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */; };
 		175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */; };
-		3C00928A17E403F400E61B38 /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -27,14 +26,15 @@
 		3C3EA84817D3C76F000122BD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3EA84717D3C76F000122BD /* Default.png */; };
 		3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3EA84917D3C76F000122BD /* Default@2x.png */; };
 		3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C3EA84B17D3C76F000122BD /* Default-568h@2x.png */; };
-		3C3EA85417D3C76F000122BD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA85317D3C76F000122BD /* SenTestingKit.framework */; };
-		3C3EA85517D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
-		3C3EA85617D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
-		3C3EA85E17D3C76F000122BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3EA85C17D3C76F000122BD /* InfoPlist.strings */; };
-		3C3EA86117D3C76F000122BD /* BepBopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3EA86017D3C76F000122BD /* BepBopTests.m */; };
 		3C3EA86B17D3C81F000122BD /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA86A17D3C81F000122BD /* libBepBopLibrary.a */; };
 		3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 3C3EA87917D3D032000122BD /* BepBopLibrary.xcodeproj */; };
+		3C76F11017E40D8700078BB3 /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */; };
 		3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */; };
+		3CACB1FC17E40C3A00B715DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C00929117E40A2900E61B38 /* XCTest.framework */; };
+		3CACB1FD17E40C3A00B715DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
+		3CACB1FE17E40C3A00B715DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
+		3CACB20417E40C3A00B715DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CACB20217E40C3A00B715DE /* InfoPlist.strings */; };
+		3CACB20617E40C3A00B715DE /* BepBopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACB20517E40C3A00B715DE /* BepBopTests.m */; };
 		3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */; };
 		3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */; };
 		871F714517E3446E00DC00EF /* BEPSimpleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871F714317E3446E00DC00EF /* BEPSimpleWebViewController.m */; };
@@ -60,7 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C3EA85717D3C76F000122BD /* PBXContainerItemProxy */ = {
+		3CACB20817E40C3B00B715DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C3EA82A17D3C76F000122BD /* Project object */;
 			proxyType = 1;
@@ -98,6 +98,7 @@
 		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
 		03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPDynamicTypeViewController.xib; sourceTree = "<group>"; };
 		175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPLookAndFeelView.xib; sourceTree = "<group>"; };
+		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C3EA83717D3C76F000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,16 +112,15 @@
 		3C3EA84717D3C76F000122BD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3C3EA84917D3C76F000122BD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3C3EA84B17D3C76F000122BD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3C3EA85217D3C76F000122BD /* BepBopTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BepBopTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C3EA85317D3C76F000122BD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3C3EA85B17D3C76F000122BD /* BepBopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BepBopTests-Info.plist"; sourceTree = "<group>"; };
-		3C3EA85D17D3C76F000122BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3C3EA85F17D3C76F000122BD /* BepBopTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BepBopTests.h; sourceTree = "<group>"; };
-		3C3EA86017D3C76F000122BD /* BepBopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopTests.m; sourceTree = "<group>"; };
 		3C3EA86A17D3C81F000122BD /* libBepBopLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBepBopLibrary.a; path = "/Volumes/ramdisk/Builds/iOSEdge-cnemuugjxvelkvfjryweafmcrhhe/Build/Products/Debug-iphoneos/libBepBopLibrary.a"; sourceTree = "<absolute>"; };
 		3C3EA87917D3D032000122BD /* BepBopLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BepBopLibrary.xcodeproj; path = ../BepBopLibrary/BepBopLibrary.xcodeproj; sourceTree = "<group>"; };
 		3C9DF0B317E0149C002F5FB9 /* BEPLookAndFeelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPLookAndFeelViewController.h; sourceTree = "<group>"; };
 		3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPLookAndFeelViewController.m; sourceTree = "<group>"; };
+		3CACB1FB17E40C3A00B715DE /* BepBopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BepBopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CACB20117E40C3A00B715DE /* BepBopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BepBopTests-Info.plist"; sourceTree = "<group>"; };
+		3CACB20317E40C3A00B715DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3CACB20517E40C3A00B715DE /* BepBopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopTests.m; sourceTree = "<group>"; };
+		3CACB20717E40C3A00B715DE /* BepBopTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopTests-Prefix.pch"; sourceTree = "<group>"; };
 		3CD0FD1217E00C67007CA40E /* BEPThemedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPThemedViewController.h; sourceTree = "<group>"; };
 		3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPThemedViewController.m; sourceTree = "<group>"; };
 		3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPNavigationController.h; sourceTree = "<group>"; };
@@ -175,14 +175,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C3EA84E17D3C76F000122BD /* Frameworks */ = {
+		3CACB1F817E40C3A00B715DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C00928A17E403F400E61B38 /* libBepBopLibrary.a in Frameworks */,
-				3C3EA85417D3C76F000122BD /* SenTestingKit.framework in Frameworks */,
-				3C3EA85517D3C76F000122BD /* UIKit.framework in Frameworks */,
-				3C3EA85617D3C76F000122BD /* Foundation.framework in Frameworks */,
+				3C76F11017E40D8700078BB3 /* libBepBopLibrary.a in Frameworks */,
+				3CACB1FC17E40C3A00B715DE /* XCTest.framework in Frameworks */,
+				3CACB1FE17E40C3A00B715DE /* UIKit.framework in Frameworks */,
+				3CACB1FD17E40C3A00B715DE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +281,7 @@
 			children = (
 				3C3EA87917D3D032000122BD /* BepBopLibrary.xcodeproj */,
 				3C3EA83B17D3C76F000122BD /* BepBop */,
-				3C3EA85917D3C76F000122BD /* BepBopTests */,
+				3CACB1FF17E40C3A00B715DE /* BepBopTests */,
 				3C3EA83417D3C76F000122BD /* Frameworks */,
 				3C3EA83317D3C76F000122BD /* Products */,
 			);
@@ -291,7 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				3C3EA83217D3C76F000122BD /* BepBop.app */,
-				3C3EA85217D3C76F000122BD /* BepBopTests.octest */,
+				3CACB1FB17E40C3A00B715DE /* BepBopTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,6 +299,7 @@
 		3C3EA83417D3C76F000122BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C00929117E40A2900E61B38 /* XCTest.framework */,
 				8796465E17E1E54D009B989A /* QuartzCore.framework */,
 				03362E0917E158FC003829C9 /* CoreLocation.framework */,
 				03362E0717E1520C003829C9 /* MapKit.framework */,
@@ -307,7 +308,6 @@
 				3C3EA83517D3C76F000122BD /* UIKit.framework */,
 				3C3EA83717D3C76F000122BD /* Foundation.framework */,
 				3C3EA83917D3C76F000122BD /* CoreGraphics.framework */,
-				3C3EA85317D3C76F000122BD /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -338,21 +338,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3C3EA85917D3C76F000122BD /* BepBopTests */ = {
+		3CACB1FF17E40C3A00B715DE /* BepBopTests */ = {
 			isa = PBXGroup;
 			children = (
-				3C3EA85F17D3C76F000122BD /* BepBopTests.h */,
-				3C3EA86017D3C76F000122BD /* BepBopTests.m */,
-				3C3EA85A17D3C76F000122BD /* Supporting Files */,
+				3CACB20517E40C3A00B715DE /* BepBopTests.m */,
+				3CACB20017E40C3A00B715DE /* Supporting Files */,
 			);
 			path = BepBopTests;
 			sourceTree = "<group>";
 		};
-		3C3EA85A17D3C76F000122BD /* Supporting Files */ = {
+		3CACB20017E40C3A00B715DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C3EA85B17D3C76F000122BD /* BepBopTests-Info.plist */,
-				3C3EA85C17D3C76F000122BD /* InfoPlist.strings */,
+				3CACB20117E40C3A00B715DE /* BepBopTests-Info.plist */,
+				3CACB20217E40C3A00B715DE /* InfoPlist.strings */,
+				3CACB20717E40C3A00B715DE /* BepBopTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */,
-				3CBCDCE317D3D23A000FC414 /* BepBopLibraryTests.octest */,
+				3CBCDCE317D3D23A000FC414 /* BepBopLibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -417,24 +417,23 @@
 			productReference = 3C3EA83217D3C76F000122BD /* BepBop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3C3EA85117D3C76F000122BD /* BepBopTests */ = {
+		3CACB1FA17E40C3A00B715DE /* BepBopTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C3EA86717D3C76F000122BD /* Build configuration list for PBXNativeTarget "BepBopTests" */;
+			buildConfigurationList = 3CACB20A17E40C3B00B715DE /* Build configuration list for PBXNativeTarget "BepBopTests" */;
 			buildPhases = (
-				3C3EA84D17D3C76F000122BD /* Sources */,
-				3C3EA84E17D3C76F000122BD /* Frameworks */,
-				3C3EA84F17D3C76F000122BD /* Resources */,
-				3C3EA85017D3C76F000122BD /* ShellScript */,
+				3CACB1F717E40C3A00B715DE /* Sources */,
+				3CACB1F817E40C3A00B715DE /* Frameworks */,
+				3CACB1F917E40C3A00B715DE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3C3EA85817D3C76F000122BD /* PBXTargetDependency */,
+				3CACB20917E40C3B00B715DE /* PBXTargetDependency */,
 			);
 			name = BepBopTests;
 			productName = BepBopTests;
-			productReference = 3C3EA85217D3C76F000122BD /* BepBopTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 3CACB1FB17E40C3A00B715DE /* BepBopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -448,6 +447,9 @@
 				TargetAttributes = {
 					3C3EA83117D3C76F000122BD = {
 						DevelopmentTeam = MFRY9RPA96;
+					};
+					3CACB1FA17E40C3A00B715DE = {
+						TestTargetID = 3C3EA83117D3C76F000122BD;
 					};
 				};
 			};
@@ -470,7 +472,7 @@
 			projectRoot = "";
 			targets = (
 				3C3EA83117D3C76F000122BD /* BepBop */,
-				3C3EA85117D3C76F000122BD /* BepBopTests */,
+				3CACB1FA17E40C3A00B715DE /* BepBopTests */,
 			);
 		};
 /* End PBXProject section */
@@ -483,10 +485,10 @@
 			remoteRef = 3CBCDCE017D3D23A000FC414 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3CBCDCE317D3D23A000FC414 /* BepBopLibraryTests.octest */ = {
+		3CBCDCE317D3D23A000FC414 /* BepBopLibraryTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = BepBopLibraryTests.octest;
+			path = BepBopLibraryTests.xctest;
 			remoteRef = 3CBCDCE217D3D23A000FC414 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -515,31 +517,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C3EA84F17D3C76F000122BD /* Resources */ = {
+		3CACB1F917E40C3A00B715DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3EA85E17D3C76F000122BD /* InfoPlist.strings in Resources */,
+				3CACB20417E40C3A00B715DE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3C3EA85017D3C76F000122BD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C3EA82E17D3C76F000122BD /* Sources */ = {
@@ -570,21 +556,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C3EA84D17D3C76F000122BD /* Sources */ = {
+		3CACB1F717E40C3A00B715DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3EA86117D3C76F000122BD /* BepBopTests.m in Sources */,
+				3CACB20617E40C3A00B715DE /* BepBopTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C3EA85817D3C76F000122BD /* PBXTargetDependency */ = {
+		3CACB20917E40C3B00B715DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3C3EA83117D3C76F000122BD /* BepBop */;
-			targetProxy = 3C3EA85717D3C76F000122BD /* PBXContainerItemProxy */;
+			targetProxy = 3CACB20817E40C3B00B715DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -597,10 +583,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3C3EA85C17D3C76F000122BD /* InfoPlist.strings */ = {
+		3CACB20217E40C3A00B715DE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3C3EA85D17D3C76F000122BD /* en */,
+				3CACB20317E40C3A00B715DE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -612,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -636,6 +623,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -643,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -661,6 +650,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -704,55 +694,88 @@
 			};
 			name = Release;
 		};
-		3C3EA86817D3C76F000122BD /* Debug */ = {
+		3CACB20B17E40C3B00B715DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BepBop.app/BepBop";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
+				GCC_PREFIX_HEADER = "BepBopTests/BepBopTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"",
 				);
 				INFOPLIST_FILE = "BepBopTests/BepBopTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
-					"-Objc",
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		3C3EA86917D3C76F000122BD /* Release */ = {
+		3CACB20C17E40C3B00B715DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BepBop.app/BepBop";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
+				GCC_PREFIX_HEADER = "BepBopTests/BepBopTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"",
 				);
 				INFOPLIST_FILE = "BepBopTests/BepBopTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
-					"-Objc",
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -777,11 +800,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C3EA86717D3C76F000122BD /* Build configuration list for PBXNativeTarget "BepBopTests" */ = {
+		3CACB20A17E40C3B00B715DE /* Build configuration list for PBXNativeTarget "BepBopTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C3EA86817D3C76F000122BD /* Debug */,
-				3C3EA86917D3C76F000122BD /* Release */,
+				3CACB20B17E40C3B00B715DE /* Debug */,
+				3CACB20C17E40C3B00B715DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

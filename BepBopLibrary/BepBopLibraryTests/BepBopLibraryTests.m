@@ -2,31 +2,35 @@
 //  BepBopLibraryTests.m
 //  BepBopLibraryTests
 //
-//  Created by Hiedi Utley on 9/1/13.
+//  Created by Hiedi Utley on 9/13/13.
 //  Copyright (c) 2013 Bleeding Edge Press. All rights reserved.
 //
 
-#import "BepBopLibraryTests.h"
+#import <XCTest/XCTest.h>
+#import "UIView+Dimensions.h"
+
+@interface BepBopLibraryTests : XCTestCase
+
+@end
 
 @implementation BepBopLibraryTests
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
+    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in BepBopLibraryTests");
+    UIView* view = [[UIView alloc] init];
+    XCTAssertEqual(0.0f, view.height);
 }
 
 @end

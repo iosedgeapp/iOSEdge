@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0460"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C3EA85117D3C76F000122BD"
-               BuildableName = "BepBopTests.octest"
+               BlueprintIdentifier = "3CACB1FA17E40C3A00B715DE"
+               BuildableName = "BepBopTests.xctest"
                BlueprintName = "BepBopTests"
                ReferencedContainer = "container:BepBop.xcodeproj">
             </BuildableReference>
