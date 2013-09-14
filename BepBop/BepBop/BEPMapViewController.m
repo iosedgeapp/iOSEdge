@@ -30,7 +30,7 @@
 @end
 
 @implementation BEPMapViewController
-@synthesize listOfCameras, bondiBeachCoordinate, sydneyOperaHouseCoordinate, stepperValue;
+@synthesize listOfCameras, bondiBeachCoordinate, sydneyOperaHouseCoordinate, stepperValue, statusView;
 
 - (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -137,8 +137,26 @@
     
 }
 
+- (void)updateStats{
+    float altitude = self.mapView.camera.altitude;
+    float pitch = self.mapView.camera.pitch;
+    float heading = self.mapView.camera.heading;
+    float lat = self.mapView.centerCoordinate.latitude;
+    float longt = self.mapView.centerCoordinate.longitude;
+    
+    
+    
+    
+    statusView.text = [NSString stringWithFormat:@"Altitude - %f Heading -%f Pitch -%f, Latitude -%f, Longtitude -%f", altitude, heading, pitch, lat, longt];
+}
+
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    
+    statusView.hidden = NO;
+    
+    [self updateStats];
+    
     if (animated) //if we are animated go to next camera
         [self goToNextCamera];
 }

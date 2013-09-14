@@ -11,5 +11,6 @@
 #import <MapKit/MapKit.h>
 @interface BEPMapViewController : UIViewController <MKMapViewDelegate>
 - (IBAction)changePitch:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *statusView;
 - (IBAction)changeCameraView:(id)sender ;
 @end
