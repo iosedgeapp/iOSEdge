@@ -10,7 +10,7 @@
 #import "BEPMultitaskingDetailViewController.h"
 #import "BEPMultitaskingListItem.h"
 
-#warning To run this sample correctly, you must set an appropriate URL here.
+//TODO: To run this sample correctly, you must set an appropriate URL here.
 static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%d/";
 
 @interface BEPMultitaskingMasterViewController ()

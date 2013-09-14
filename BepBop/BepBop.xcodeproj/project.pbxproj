@@ -13,7 +13,7 @@
 		03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03362E0217E14D3E003829C9 /* BEPMapViewController.xib */; };
 		03362E0817E1520C003829C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03362E0717E1520C003829C9 /* MapKit.framework */; };
 		03362E0A17E158FC003829C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03362E0917E158FC003829C9 /* CoreLocation.framework */; };
-		03535C1017E49A750053327C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03535C0F17E49A750053327C /* AVFoundation.framework */; };
+		03535C1017E49A750053327C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03535C0F17E49A750053327C /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		03535C1617E4A0000053327C /* BEPTextToSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03535C1417E4A0000053327C /* BEPTextToSpeechViewController.m */; };
 		03535C1717E4A0000053327C /* BEPTextToSpeechViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03535C1517E4A0000053327C /* BEPTextToSpeechViewController.xib */; };
 		03535C2017E4A8E50053327C /* BEPAccessibilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03535C1E17E4A8E50053327C /* BEPAccessibilityViewController.m */; };
@@ -118,6 +118,7 @@
 		0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPCaptureVideoViewController.m; sourceTree = "<group>"; };
 		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
 		03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPDynamicTypeViewController.xib; sourceTree = "<group>"; };
+		170B5DC617E4E72100DFC89B /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = build.sh; path = ../build.sh; sourceTree = "<group>"; };
 		175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPLookAndFeelView.xib; sourceTree = "<group>"; };
 		21FB549717E3F9310064F290 /* BEPMultitaskingMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMultitaskingMasterViewController.h; sourceTree = "<group>"; };
 		21FB549817E3F9310064F290 /* BEPMultitaskingMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultitaskingMasterViewController.m; sourceTree = "<group>"; };
@@ -318,6 +319,14 @@
 			name = Maps;
 			sourceTree = "<group>";
 		};
+		170B5DC417E4E55B00DFC89B /* BuildScripts */ = {
+			isa = PBXGroup;
+			children = (
+				170B5DC617E4E72100DFC89B /* build.sh */,
+			);
+			name = BuildScripts;
+			sourceTree = "<group>";
+		};
 		21FB547F17E3F8270064F290 /* Multitasking */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +358,7 @@
 				3C3EA87917D3D032000122BD /* BepBopLibrary.xcodeproj */,
 				3C3EA83B17D3C76F000122BD /* BepBop */,
 				3CACB1FF17E40C3A00B715DE /* BepBopTests */,
+				170B5DC417E4E55B00DFC89B /* BuildScripts */,
 				3C3EA83417D3C76F000122BD /* Frameworks */,
 				3C3EA83317D3C76F000122BD /* Products */,
 			);
@@ -820,7 +830,6 @@
 					"-framework",
 					XCTest,
 					"-ObjC",
-					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -861,7 +870,6 @@
 					"-framework",
 					XCTest,
 					"-ObjC",
-					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
