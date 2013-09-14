@@ -10,7 +10,7 @@
             <objects>
                 <tableViewController title="UI Dynamics" id="T8Y-aP-je2" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eMA-Uq-I7T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -112,11 +112,11 @@
             <objects>
                 <viewController id="Dxm-Lj-Tne" customClass="BEPDynamicsHeavyViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kHr-33-ZIg"/>
-                        <viewControllerLayoutGuide type="bottom" id="4pt-Hh-NMa"/>
+                        <viewControllerLayoutGuide type="top" id="Zyz-IE-RfP"/>
+                        <viewControllerLayoutGuide type="bottom" id="2SN-40-wfZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UtM-jE-mNR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heavy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOe-ts-u3s">
@@ -140,28 +140,42 @@
         <!--Dynamics Snap View Controller-->
         <scene sceneID="5yo-Js-bCK">
             <objects>
-                <viewController id="NEt-pC-6rk" customClass="BEPDynamicsSnapViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="NEt-pC-6rk" customClass="BEPDynamicsSnapViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fnl-a6-6H7"/>
-                        <viewControllerLayoutGuide type="bottom" id="ful-A6-UW5"/>
+                        <viewControllerLayoutGuide type="top" id="won-t2-heI"/>
+                        <viewControllerLayoutGuide type="bottom" id="d1V-74-1ai"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mjb-MX-rSy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snappy!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8E-Gc-2fB">
-                                <rect key="frame" x="113" y="260" width="95" height="47"/>
+                                <rect key="frame" x="113" y="225" width="95" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="off-9r-Mrb">
+                                <rect key="frame" x="77" y="427" width="166" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="dampingChanged:" destination="NEt-pC-6rk" eventType="valueChanged" id="tyQ-Pq-niq"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Damping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-CL-PeN">
+                                <rect key="frame" x="124" y="405" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="Yhl-3I-ZhM" appends="YES" id="e1F-Pm-945"/>
+                            <outletCollection property="gestureRecognizers" destination="Yhl-3I-ZhM" appends="YES" id="A5L-sq-1W4"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="aLA-Sh-ILr"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="snapView" destination="z8E-Gc-2fB" id="Zmu-1T-p9g"/>
                     </connections>
@@ -178,17 +192,17 @@
         <!--Dynamics Attachment View Controller-->
         <scene sceneID="UAt-r6-4EX">
             <objects>
-                <viewController id="m70-8y-kPn" customClass="BEPDynamicsAttachmentViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="m70-8y-kPn" customClass="BEPDynamicsAttachmentViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0ko-3z-aCD"/>
-                        <viewControllerLayoutGuide type="bottom" id="CLd-BN-HLw"/>
+                        <viewControllerLayoutGuide type="top" id="To7-Hd-fn5"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb5-ru-0SA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ir5-Ng-uZa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hwx-0P-oxF">
-                                <rect key="frame" x="90" y="377" width="140" height="0.0"/>
+                                <rect key="frame" x="90" y="377" width="140" height="61"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-HU-2MY">
@@ -230,6 +244,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
