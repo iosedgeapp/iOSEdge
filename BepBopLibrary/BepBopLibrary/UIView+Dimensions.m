@@ -18,8 +18,9 @@
 - (void) setWidth:(CGFloat)width
 {
     CGRect frame = self.frame;
+
     frame.size.width = width;
-    self.frame = frame;
+    self.frame       = frame;
 }
 
 - (CGSize) size
@@ -27,9 +28,10 @@
     return self.frame.size;
 }
 
--(void) setSize:(CGSize)size
+- (void) setSize:(CGSize)size
 {
     CGRect frame = self.frame;
+
     frame.size = size;
     self.frame = frame;
 }
@@ -42,15 +44,18 @@
 - (void) setHeight:(CGFloat)height
 {
     CGRect frame = self.frame;
+
     frame.size.height = height;
-    self.frame = frame;
+    self.frame        = frame;
 }
 
 - (void) setWidth:(CGFloat)width height:(CGFloat)height
 {
     CGRect frame = self.frame;
+
     frame.size.height = height;
-    frame.size.width = width;
-    self.frame = frame;
+    frame.size.width  = width;
+    self.frame        = frame;
 }
+
 @end

@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPTabbarTransitionsViewController : UITabBarController
-<
-    UITabBarControllerDelegate,
-    UIViewControllerAnimatedTransitioning
->
+@interface BEPTabbarTransitionsViewController : UITabBarController<UITabBarControllerDelegate,
+                                                                   UIViewControllerAnimatedTransitioning>
 
 @end

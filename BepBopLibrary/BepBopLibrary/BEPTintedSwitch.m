@@ -11,7 +11,7 @@
 @implementation BEPTintedSwitch
 
 
--(void)tintColorDidChange
+- (void) tintColorDidChange
 {
     if ([self respondsToSelector:@selector(tintColor)])
     {

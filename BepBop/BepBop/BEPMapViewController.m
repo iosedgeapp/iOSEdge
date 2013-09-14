@@ -26,15 +26,17 @@
 @property (nonatomic, assign) CLLocationCoordinate2D  sydneyOperaHouseCoordinate;
 @property (nonatomic, assign) CLLocationCoordinate2D  bondiBeachCoordinate;
 @property (nonatomic, assign) float stepperValue;
+
 @end
 
 @implementation BEPMapViewController
 @synthesize listOfCameras, bondiBeachCoordinate, sydneyOperaHouseCoordinate, stepperValue;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -44,7 +46,8 @@
     [super viewDidAppear:animated];
 }
 
-- (void)viewDidLoad
+
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     
@@ -76,7 +79,6 @@
 
     //camera.altitude = 1500;
     [self.mapView setCamera:camera animated:NO];
-
     
 }
 
@@ -111,8 +113,9 @@
         [super decodeRestorableStateWithCoder:coder];
     }
     
-    
-- (void)didReceiveMemoryWarning
+
+
+- (void) didReceiveMemoryWarning
 {
         [super didReceiveMemoryWarning];
         // Dispose of any resources that can be recreated.

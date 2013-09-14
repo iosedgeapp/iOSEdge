@@ -12,24 +12,25 @@
 		175C202B17E1734E008D6F4E /* BEPTintedSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C202A17E1734E008D6F4E /* BEPTintedSwitch.m */; };
 		3C3EA80217D3C752000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA80117D3C752000122BD /* Foundation.framework */; };
 		3C3EA80717D3C752000122BD /* BepBopLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C3EA80617D3C752000122BD /* BepBopLibrary.h */; };
-		3C3EA81117D3C752000122BD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA81017D3C752000122BD /* SenTestingKit.framework */; };
-		3C3EA81317D3C752000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA81217D3C752000122BD /* UIKit.framework */; };
-		3C3EA81417D3C752000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA80117D3C752000122BD /* Foundation.framework */; };
-		3C3EA81717D3C752000122BD /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */; };
-		3C3EA81D17D3C753000122BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3EA81B17D3C753000122BD /* InfoPlist.strings */; };
-		3C3EA82017D3C753000122BD /* BepBopLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3EA81F17D3C753000122BD /* BepBopLibraryTests.m */; };
 		3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3EA86F17D3CA4A000122BD /* UIView+Dimensions.m */; };
 		3C3EA87817D3CBC8000122BD /* UIView+Dimensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C3EA86E17D3CA4A000122BD /* UIView+Dimensions.h */; };
+		3C76F10D17E40D2400078BB3 /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */; };
+		3CACB1E617E40C0600B715DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C00928F17E408BE00E61B38 /* XCTest.framework */; };
+		3CACB1E717E40C0600B715DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA80117D3C752000122BD /* Foundation.framework */; };
+		3CACB1E817E40C0600B715DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CACB1DB17E40B3300B715DE /* UIKit.framework */; };
+		3CACB1EE17E40C0600B715DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CACB1EC17E40C0600B715DE /* InfoPlist.strings */; };
+		3CACB1F017E40C0600B715DE /* BepBopLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACB1EF17E40C0600B715DE /* BepBopLibraryTests.m */; };
 		8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4717E0D76B00B728C8 /* UIActionSheet+Blocks.m */; };
 		8727AA4B17E0D76B00B728C8 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */; };
 		8727AA4E17E0D78600B728C8 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4D17E0D78600B728C8 /* RIButtonItem.m */; };
 		8727AA4F17E0D81900B728C8 /* RIButtonItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4C17E0D78600B728C8 /* RIButtonItem.h */; };
 		8727AA5017E0D81900B728C8 /* UIActionSheet+Blocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4617E0D76B00B728C8 /* UIActionSheet+Blocks.h */; };
 		8727AA5117E0D81900B728C8 /* UIAlertView+Blocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8727AA4817E0D76B00B728C8 /* UIAlertView+Blocks.h */; };
+		87A5211117E3381C0060D931 /* BEPArrayTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5211017E3381C0060D931 /* BEPArrayTableDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C3EA81517D3C752000122BD /* PBXContainerItemProxy */ = {
+		3CACB1F217E40C0600B715DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C3EA7F617D3C752000122BD /* Project object */;
 			proxyType = 1;
@@ -62,25 +63,29 @@
 		175C202117E15F9B008D6F4E /* BEPTintedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedLabel.m; sourceTree = "<group>"; };
 		175C202917E1734E008D6F4E /* BEPTintedSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPTintedSwitch.h; sourceTree = "<group>"; };
 		175C202A17E1734E008D6F4E /* BEPTintedSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedSwitch.m; sourceTree = "<group>"; };
+		3C00928F17E408BE00E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBepBopLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA80117D3C752000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C3EA80517D3C752000122BD /* BepBopLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopLibrary-Prefix.pch"; sourceTree = "<group>"; };
 		3C3EA80617D3C752000122BD /* BepBopLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BepBopLibrary.h; sourceTree = "<group>"; };
-		3C3EA80F17D3C752000122BD /* BepBopLibraryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BepBopLibraryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA81017D3C752000122BD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA81217D3C752000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		3C3EA81A17D3C753000122BD /* BepBopLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BepBopLibraryTests-Info.plist"; sourceTree = "<group>"; };
-		3C3EA81C17D3C753000122BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3C3EA81E17D3C753000122BD /* BepBopLibraryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BepBopLibraryTests.h; sourceTree = "<group>"; };
-		3C3EA81F17D3C753000122BD /* BepBopLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopLibraryTests.m; sourceTree = "<group>"; };
 		3C3EA86E17D3CA4A000122BD /* UIView+Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Dimensions.h"; sourceTree = "<group>"; };
 		3C3EA86F17D3CA4A000122BD /* UIView+Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Dimensions.m"; sourceTree = "<group>"; };
+		3CACB1DB17E40B3300B715DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3CACB1E517E40C0600B715DE /* BepBopLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BepBopLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CACB1EB17E40C0600B715DE /* BepBopLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BepBopLibraryTests-Info.plist"; sourceTree = "<group>"; };
+		3CACB1ED17E40C0600B715DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3CACB1EF17E40C0600B715DE /* BepBopLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopLibraryTests.m; sourceTree = "<group>"; };
+		3CACB1F117E40C0600B715DE /* BepBopLibraryTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopLibraryTests-Prefix.pch"; sourceTree = "<group>"; };
 		8727AA4617E0D76B00B728C8 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
 		8727AA4717E0D76B00B728C8 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		8727AA4817E0D76B00B728C8 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		8727AA4C17E0D78600B728C8 /* RIButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
 		8727AA4D17E0D78600B728C8 /* RIButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
+		87A5210F17E3381C0060D931 /* BEPArrayTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPArrayTableDataSource.h; sourceTree = "<group>"; };
+		87A5211017E3381C0060D931 /* BEPArrayTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPArrayTableDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,14 +97,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C3EA80B17D3C752000122BD /* Frameworks */ = {
+		3CACB1E217E40C0600B715DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3EA81117D3C752000122BD /* SenTestingKit.framework in Frameworks */,
-				3C3EA81317D3C752000122BD /* UIKit.framework in Frameworks */,
-				3C3EA81417D3C752000122BD /* Foundation.framework in Frameworks */,
-				3C3EA81717D3C752000122BD /* libBepBopLibrary.a in Frameworks */,
+				3C76F10D17E40D2400078BB3 /* libBepBopLibrary.a in Frameworks */,
+				3CACB1E617E40C0600B715DE /* XCTest.framework in Frameworks */,
+				3CACB1E817E40C0600B715DE /* UIKit.framework in Frameworks */,
+				3CACB1E717E40C0600B715DE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				3C3EA80317D3C752000122BD /* BepBopLibrary */,
-				3C3EA81817D3C752000122BD /* BepBopLibraryTests */,
+				3CACB1E917E40C0600B715DE /* BepBopLibraryTests */,
 				3C3EA80017D3C752000122BD /* Frameworks */,
 				3C3EA7FF17D3C752000122BD /* Products */,
 			);
@@ -120,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */,
-				3C3EA80F17D3C752000122BD /* BepBopLibraryTests.octest */,
+				3CACB1E517E40C0600B715DE /* BepBopLibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +133,8 @@
 		3C3EA80017D3C752000122BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CACB1DB17E40B3300B715DE /* UIKit.framework */,
+				3C00928F17E408BE00E61B38 /* XCTest.framework */,
 				3C3EA80117D3C752000122BD /* Foundation.framework */,
 				3C3EA81017D3C752000122BD /* SenTestingKit.framework */,
 				3C3EA81217D3C752000122BD /* UIKit.framework */,
@@ -152,25 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				3C3EA80517D3C752000122BD /* BepBopLibrary-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3C3EA81817D3C752000122BD /* BepBopLibraryTests */ = {
-			isa = PBXGroup;
-			children = (
-				3C3EA81E17D3C753000122BD /* BepBopLibraryTests.h */,
-				3C3EA81F17D3C753000122BD /* BepBopLibraryTests.m */,
-				3C3EA81917D3C753000122BD /* Supporting Files */,
-			);
-			path = BepBopLibraryTests;
-			sourceTree = "<group>";
-		};
-		3C3EA81917D3C753000122BD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3C3EA81A17D3C753000122BD /* BepBopLibraryTests-Info.plist */,
-				3C3EA81B17D3C753000122BD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -213,8 +201,29 @@
 		3C3EA87317D3CA6E000122BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				87A5210F17E3381C0060D931 /* BEPArrayTableDataSource.h */,
+				87A5211017E3381C0060D931 /* BEPArrayTableDataSource.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3CACB1E917E40C0600B715DE /* BepBopLibraryTests */ = {
+			isa = PBXGroup;
+			children = (
+				3CACB1EF17E40C0600B715DE /* BepBopLibraryTests.m */,
+				3CACB1EA17E40C0600B715DE /* Supporting Files */,
+			);
+			path = BepBopLibraryTests;
+			sourceTree = "<group>";
+		};
+		3CACB1EA17E40C0600B715DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CACB1EB17E40C0600B715DE /* BepBopLibraryTests-Info.plist */,
+				3CACB1EC17E40C0600B715DE /* InfoPlist.strings */,
+				3CACB1F117E40C0600B715DE /* BepBopLibraryTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,24 +246,23 @@
 			productReference = 3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3C3EA80E17D3C752000122BD /* BepBopLibraryTests */ = {
+		3CACB1E417E40C0600B715DE /* BepBopLibraryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C3EA82617D3C753000122BD /* Build configuration list for PBXNativeTarget "BepBopLibraryTests" */;
+			buildConfigurationList = 3CACB1F417E40C0600B715DE /* Build configuration list for PBXNativeTarget "BepBopLibraryTests" */;
 			buildPhases = (
-				3C3EA80A17D3C752000122BD /* Sources */,
-				3C3EA80B17D3C752000122BD /* Frameworks */,
-				3C3EA80C17D3C752000122BD /* Resources */,
-				3C3EA80D17D3C752000122BD /* ShellScript */,
+				3CACB1E117E40C0600B715DE /* Sources */,
+				3CACB1E217E40C0600B715DE /* Frameworks */,
+				3CACB1E317E40C0600B715DE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3C3EA81617D3C752000122BD /* PBXTargetDependency */,
+				3CACB1F317E40C0600B715DE /* PBXTargetDependency */,
 			);
 			name = BepBopLibraryTests;
 			productName = BepBopLibraryTests;
-			productReference = 3C3EA80F17D3C752000122BD /* BepBopLibraryTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 3CACB1E517E40C0600B715DE /* BepBopLibraryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -262,8 +270,13 @@
 		3C3EA7F617D3C752000122BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Bleeding Edge Press";
+				TargetAttributes = {
+					3CACB1E417E40C0600B715DE = {
+						TestTargetID = 3C3EA7FD17D3C752000122BD;
+					};
+				};
 			};
 			buildConfigurationList = 3C3EA7F917D3C752000122BD /* Build configuration list for PBXProject "BepBopLibrary" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -278,37 +291,21 @@
 			projectRoot = "";
 			targets = (
 				3C3EA7FD17D3C752000122BD /* BepBopLibrary */,
-				3C3EA80E17D3C752000122BD /* BepBopLibraryTests */,
+				3CACB1E417E40C0600B715DE /* BepBopLibraryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3C3EA80C17D3C752000122BD /* Resources */ = {
+		3CACB1E317E40C0600B715DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3EA81D17D3C753000122BD /* InfoPlist.strings in Resources */,
+				3CACB1EE17E40C0600B715DE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3C3EA80D17D3C752000122BD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C3EA7FA17D3C752000122BD /* Sources */ = {
@@ -320,34 +317,35 @@
 				3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */,
 				175C202217E15F9B008D6F4E /* BEPTintedLabel.m in Sources */,
 				8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */,
+				87A5211117E3381C0060D931 /* BEPArrayTableDataSource.m in Sources */,
 				8727AA4E17E0D78600B728C8 /* RIButtonItem.m in Sources */,
 				175C201E17E15B90008D6F4E /* UIColor+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C3EA80A17D3C752000122BD /* Sources */ = {
+		3CACB1E117E40C0600B715DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3EA82017D3C753000122BD /* BepBopLibraryTests.m in Sources */,
+				3CACB1F017E40C0600B715DE /* BepBopLibraryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C3EA81617D3C752000122BD /* PBXTargetDependency */ = {
+		3CACB1F317E40C0600B715DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3C3EA7FD17D3C752000122BD /* BepBopLibrary */;
-			targetProxy = 3C3EA81517D3C752000122BD /* PBXContainerItemProxy */;
+			targetProxy = 3CACB1F217E40C0600B715DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3C3EA81B17D3C753000122BD /* InfoPlist.strings */ = {
+		3CACB1EC17E40C0600B715DE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3C3EA81C17D3C753000122BD /* en */,
+				3CACB1ED17E40C0600B715DE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -382,6 +380,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -405,12 +404,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
 		3C3EA82417D3C753000122BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/BepBopLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBopLibrary/BepBopLibrary-Prefix.pch";
@@ -424,6 +425,7 @@
 		3C3EA82517D3C753000122BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/BepBopLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBopLibrary/BepBopLibrary-Prefix.pch";
@@ -434,33 +436,74 @@
 			};
 			name = Release;
 		};
-		3C3EA82717D3C753000122BD /* Debug */ = {
+		3CACB1F517E40C0600B715DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BepBopLibrary/BepBopLibrary-Prefix.pch";
+				GCC_PREFIX_HEADER = "BepBopLibraryTests/BepBopLibraryTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "BepBopLibraryTests/BepBopLibraryTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		3C3EA82817D3C753000122BD /* Release */ = {
+		3CACB1F617E40C0600B715DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BepBopLibrary/BepBopLibrary-Prefix.pch";
+				GCC_PREFIX_HEADER = "BepBopLibraryTests/BepBopLibraryTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "BepBopLibraryTests/BepBopLibraryTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -485,11 +528,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C3EA82617D3C753000122BD /* Build configuration list for PBXNativeTarget "BepBopLibraryTests" */ = {
+		3CACB1F417E40C0600B715DE /* Build configuration list for PBXNativeTarget "BepBopLibraryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C3EA82717D3C753000122BD /* Debug */,
-				3C3EA82817D3C753000122BD /* Release */,
+				3CACB1F517E40C0600B715DE /* Debug */,
+				3CACB1F617E40C0600B715DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

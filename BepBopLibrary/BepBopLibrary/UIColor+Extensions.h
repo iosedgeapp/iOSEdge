@@ -10,6 +10,6 @@
 
 @interface UIColor (Extensions)
 
-+(UIColor*) randomColor;
++ (UIColor*) randomColor;
 
 @end

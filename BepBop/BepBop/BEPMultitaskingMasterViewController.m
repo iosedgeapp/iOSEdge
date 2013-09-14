@@ -1,18 +1,18 @@
 //
-//  BEPTransitionsMasterViewController.m
+//  BEPMultitaskingMasterViewController.m
 //  BepBop
 //
-//  Created by Engin Kurutepe on 9/12/13.
+//  Created by Cody A. Ray on 9/13/13.
 //  Copyright (c) 2013 Bleeding Edge Press. All rights reserved.
 //
 
-#import "BEPTransitionsMasterViewController.h"
+#import "BEPMultitaskingMasterViewController.h"
 
-@interface BEPTransitionsMasterViewController ()
+@interface BEPMultitaskingMasterViewController ()
 
 @end
 
-@implementation BEPTransitionsMasterViewController
+@implementation BEPMultitaskingMasterViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,9 +23,25 @@
     return self;
 }
 
+#pragma mark - background fetch
+
+- (void)performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"GOT BG FETCH");
+    [UIApplication sharedApplication].applicationIconBadgeNumber++;
+
+    /*
+     At the end of the fetch, invoke the completion handler.
+     */
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+#pragma mark - view controller
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Chapter 4";
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,9 +60,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -59,7 +73,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
     // Configure the cell...
     
@@ -106,15 +123,21 @@
 */
 
 /*
-#pragma mark - Navigation
+#pragma mark - Table view delegate
 
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+    // Navigation logic may go here, for example:
+    // Create the next view controller.
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
 
+    // Pass the selected object to the new view controller.
+    
+    // Push the view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+ 
  */
 
 @end

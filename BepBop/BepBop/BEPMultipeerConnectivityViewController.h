@@ -12,25 +12,22 @@
 
 #define BEPMultipeerConnectivityServiceType @"bep-demoservice"
 
-@interface BEPMultipeerConnectivityViewController : BEPThemedViewController
-<
-    MCAdvertiserAssistantDelegate,
-    MCBrowserViewControllerDelegate,
-    MCSessionDelegate,
-    UINavigationControllerDelegate, // just to prevent compiler warning.
-    UIImagePickerControllerDelegate
->
+@interface BEPMultipeerConnectivityViewController : BEPThemedViewController<MCAdvertiserAssistantDelegate,
+                                                                            MCBrowserViewControllerDelegate,
+                                                                            MCSessionDelegate,
+                                                                            UINavigationControllerDelegate,// just to prevent compiler warning.
+                                                                            UIImagePickerControllerDelegate, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *peerCountLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bytesSentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bytesReceivedLabel;
+@property (weak, nonatomic) IBOutlet UILabel* peerCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel* bytesSentLabel;
+@property (weak, nonatomic) IBOutlet UILabel* bytesReceivedLabel;
 
-@property (weak, nonatomic) IBOutlet UIButton *browseButton;
-@property (weak, nonatomic) IBOutlet UIButton *sendButton;
-@property (weak, nonatomic) IBOutlet UIButton *disconnectButton;
+@property (weak, nonatomic) IBOutlet UIButton* browseButton;
+@property (weak, nonatomic) IBOutlet UIButton* sendButton;
+@property (weak, nonatomic) IBOutlet UIButton* disconnectButton;
 
-- (IBAction)browseButtonTapped:(UIButton *)sender;
-- (IBAction)sendButtonTapped:(UIButton *)sender;
-- (IBAction)disconnectTapped:(UIButton *)sender;
+- (IBAction) browseButtonTapped:(UIButton*)sender;
+- (IBAction) sendButtonTapped:(UIButton*)sender;
+- (IBAction) disconnectTapped:(UIButton*)sender;
 
 @end

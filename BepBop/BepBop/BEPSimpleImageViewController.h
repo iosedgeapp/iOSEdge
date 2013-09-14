@@ -10,7 +10,7 @@
 
 @interface BEPSimpleImageViewController : UIViewController
 
-@property (strong, nonatomic) UIImage * image;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage* image;
+@property (weak, nonatomic) IBOutlet UIImageView* imageView;
 
 @end
