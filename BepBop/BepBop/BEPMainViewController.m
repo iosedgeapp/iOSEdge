@@ -10,7 +10,7 @@
 #import "BEPLookAndFeelViewController.h"
 #import "BEPAccessibilityViewController.h"
 #import "BEPMultipeerConnectivityViewController.h"
-#import "BEPMultitaskingMasterViewController.h"
+#import "BEPMultitaskingViewController.h"
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
 #import "BEPDynamicsViewController.h"
@@ -60,7 +60,7 @@
                 @[[[BEPLookAndFeelViewController alloc] init],
                   [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil],
                   [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
-                  [[BEPMultitaskingMasterViewController alloc] initWithNibName:nil bundle:nil],
+                  [[BEPMultitaskingViewController alloc] initWithNibName:nil bundle:nil],
                   [NSNull null],
                   [[BEPTabbarTransitionsViewController alloc] init],
                   [[BEPDynamicsViewController alloc] init],

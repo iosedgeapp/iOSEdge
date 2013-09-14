@@ -10,7 +10,7 @@
 #import "BEPMainViewController.h"
 #import "BEPNavigationController.h"
 #import "BEPAirDropHandler.h"
-#import "BEPMultitaskingMasterViewController.h"
+#import "BEPMultitaskingViewController.h"
 
 @interface BEPAppDelegate ()
 @property BEPMainViewController* mainViewController;
@@ -59,8 +59,14 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    BEPMultitaskingMasterViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
-    [multitaskingViewController performFetchWithCompletionHandler:completionHandler];
+    BEPMultitaskingViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
+    BOOL newData = [multitaskingViewController performBackgroundTransfer];
+    if (newData) {
+        [UIApplication sharedApplication].applicationIconBadgeNumber++;
+        completionHandler(UIBackgroundFetchResultNewData);
+    } else {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
