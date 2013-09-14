@@ -20,10 +20,11 @@
 
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    if (IS_IOS_7) {
+        [[BEPAirDropHandler sharedInstance] handleSavedAirDropURLs];
+        [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    }
     
-    [[BEPAirDropHandler sharedInstance] handleSavedAirDropURLs];
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

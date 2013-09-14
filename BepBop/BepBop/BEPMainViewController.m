@@ -55,16 +55,21 @@
               @"Taking advantage of the new build improvements",
               @"Unit Testing on Steroids"];
 
-        self.chapterViewControllers =
-            @[[[BEPLookAndFeelViewController alloc] init],
-              [[BEPDynamicTypeViewController alloc] initWithNibName:nil bundle:nil],
-              [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
-              [[BEPMultitaskingMasterViewController alloc] initWithNibName:nil bundle:nil],
-              [NSNull null],
-              [[BEPTabbarTransitionsViewController alloc] init],
-              [[BEPDynamicsViewController alloc] init],
-              [NSNull null],
-              [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
+        if (IS_IOS_7) {
+            self.chapterViewControllers =
+                @[[[BEPLookAndFeelViewController alloc] init],
+                  [[BEPDynamicTypeViewController alloc] initWithNibName:nil bundle:nil],
+                  [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
+                  [[BEPMultitaskingMasterViewController alloc] initWithNibName:nil bundle:nil],
+                  [NSNull null],
+                  [[BEPTabbarTransitionsViewController alloc] init],
+                  [[BEPDynamicsViewController alloc] init],
+                  [NSNull null],
+                  [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
+        } else {
+            // Most of the examples make use of features exclusively available in iOS7
+            self.chapterViewControllers = @[[[BEPLookAndFeelViewController alloc] init]];
+        }
     }
     return self;
 }
@@ -97,7 +102,7 @@
 
 - (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (IS_IOS_7 ? [self.chapterHeadings count] : 1);
+    return ([self.chapterViewControllers count]); // On iOS6 only the supported chapters are present
 }
 
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath

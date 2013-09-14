@@ -43,9 +43,12 @@
 {
     [super viewWillAppear:animated];
     _navController = self.navigationController;
-    self.savedTintColor = _navController.view.tintColor;
     
-    [self changeTintColorTo:[UIColor randomColor]];
+    if ([_navController.view respondsToSelector:@selector(tintColor:)]) {
+        self.savedTintColor = _navController.view.tintColor;
+        
+        [self changeTintColorTo:[UIColor randomColor]];
+    }
 }
 
 - (void) viewDidDisappear:(BOOL)animated
