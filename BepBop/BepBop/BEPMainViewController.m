@@ -7,8 +7,8 @@
 //
 
 #import "BEPMainViewController.h"
-#import "BEPDynamicTypeViewController.h"
 #import "BEPLookAndFeelViewController.h"
+#import "BEPAccessibilityViewController.h"
 #import "BEPMultipeerConnectivityViewController.h"
 #import "BEPMultitaskingMasterViewController.h"
 #import "BEPMapViewController.h"
@@ -55,8 +55,8 @@
               @"Unit Testing on Steroids"];
 
         self.chapterViewControllers =
-            @[[[BEPLookAndFeelViewController alloc] init],
-              [[BEPDynamicTypeViewController alloc] initWithNibName:nil bundle:nil],
+            @[[[BEPLookAndFeelViewController alloc] initWithNibName:nil bundle:nil],
+              [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil],
               [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
               [[BEPMultitaskingMasterViewController alloc] initWithNibName:nil bundle:nil],
               [NSNull null],
