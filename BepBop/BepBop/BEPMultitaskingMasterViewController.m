@@ -9,7 +9,7 @@
 #import "BEPMultitaskingMasterViewController.h"
 
 @interface BEPMultitaskingMasterViewController ()
-
+@property (nonatomic) NSMutableArray *objects;
 @end
 
 @implementation BEPMultitaskingMasterViewController
@@ -28,12 +28,28 @@
 - (void)performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     NSLog(@"GOT BG FETCH");
+    [self insertObject:[NSDate date]];
     [UIApplication sharedApplication].applicationIconBadgeNumber++;
 
     /*
      At the end of the fetch, invoke the completion handler.
      */
     completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)insertObject:(id)newObject
+{
+    [self.objects insertObject:newObject atIndex:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(NSMutableArray *)objects
+{
+    if (_objects == nil) {
+        _objects = [[NSMutableArray alloc] init];
+    }
+    return _objects;
 }
 
 #pragma mark - view controller
@@ -65,9 +81,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.objects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,8 +92,18 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    static NSDateFormatter *dateFormatter = nil;
+    if (dateFormatter == nil)
+    {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        NSString *dateFormatString = [NSDateFormatter dateFormatFromTemplate:@"MMM d, hh:mm:ss a" options:0 locale:[NSLocale currentLocale]];
+        [dateFormatter setDateFormat:dateFormatString];
+    }
+
     // Configure the cell...
-    
+    NSDate *date = self.objects[indexPath.row];
+    cell.textLabel.text = [dateFormatter stringFromDate:date];
+
     return cell;
 }
 
