@@ -13,6 +13,7 @@
 #import "BEPMultitaskingMasterViewController.h"
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
+#import "BEPDynamicsViewController.h"
 
 @interface BEPMainViewController ()
 
@@ -61,7 +62,7 @@
               [[BEPMultitaskingMasterViewController alloc] initWithNibName:nil bundle:nil],
               [NSNull null],
               [[BEPTabbarTransitionsViewController alloc] init],
-              [NSNull null],
+              [[BEPDynamicsViewController alloc] init],
               [NSNull null],
               [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
     }
