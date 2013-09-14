@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-
-@interface BEPMapViewController : UIViewController
-- (IBAction)changeMapType:(UISegmentedControl *)control;
+#import <MapKit/MapKit.h>
+@interface BEPMapViewController : UIViewController <MKMapViewDelegate>
+- (IBAction)changePitch:(id)sender;
+- (IBAction)changeCameraView:(id)sender ;
 @end

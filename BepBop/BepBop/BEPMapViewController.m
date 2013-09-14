@@ -22,11 +22,14 @@
 @interface BEPMapViewController ()
 
 @property IBOutlet MKMapView *mapView;
-@property (nonatomic, assign) MKCoordinateRegion boundingRegion;
-
+@property (strong, nonatomic) NSMutableArray* listOfCameras;
+@property (nonatomic, assign) CLLocationCoordinate2D  sydneyOperaHouseCoordinate;
+@property (nonatomic, assign) CLLocationCoordinate2D  bondiBeachCoordinate;
+@property (nonatomic, assign) float stepperValue;
 @end
 
 @implementation BEPMapViewController
+@synthesize listOfCameras, bondiBeachCoordinate, sydneyOperaHouseCoordinate, stepperValue;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,16 +48,16 @@
 {
     [super viewDidLoad];
     
-    
-    CLLocationCoordinate2D  sydneyOperaHouseCoordinate = CLLocationCoordinate2DMake(kLAT, kLONG);
-    CLLocationCoordinate2D  bondiBeachCoordiante = CLLocationCoordinate2DMake(kLATBondi, kLONGBondi);
+    sydneyOperaHouseCoordinate = CLLocationCoordinate2DMake(kLAT, kLONG);
+    bondiBeachCoordinate = CLLocationCoordinate2DMake(kLATBondi, kLONGBondi);
     CLLocationCoordinate2D  lunaParkCoordinate = CLLocationCoordinate2DMake(kLATLunaPark, kLONGLunaPark);
     
     MKCoordinateRegion sydneyOperaHouseRegion = MKCoordinateRegionMakeWithDistance(sydneyOperaHouseCoordinate, 100, 100);
-    MKCoordinateRegion bondiBeachRegion = MKCoordinateRegionMakeWithDistance(bondiBeachCoordiante, 100, 100);
     MKCoordinateRegion lunaParkRegion = MKCoordinateRegionMakeWithDistance(lunaParkCoordinate, 100, 100);
     
     self.mapView.region = sydneyOperaHouseRegion;
+    [self.mapView setShowsPointsOfInterest:YES];
+    self.mapView.delegate = self;
     //Annotations    
     MKPointAnnotation *pointOperaHouse = [[MKPointAnnotation alloc] init];
     pointOperaHouse.coordinate = CLLocationCoordinate2DMake(kLAT, kLONG);
@@ -66,23 +69,11 @@
     [self.mapView addAnnotations:@[pointOperaHouse, pointBondiBeach]];
     [self.mapView selectAnnotation:pointOperaHouse animated:YES];
     
-    //[self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    //[self.mapView setCenterCoordinate:sydneyOperaHouseCoordinate animated:NO];
-    
-    
-    //Map Camera
-    
-    //Centre Coordinate - Point on ground
-    
-    //Altitude - Height above map
-    
-    //Heading - Direction camera faces
-    
-    //Pitch - Angle camera tilts
-    
-    
+
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:sydneyOperaHouseRegion.center  fromEyeCoordinate:lunaParkRegion.center eyeAltitude:900];
     camera.pitch = 60;
+    stepperValue = camera.pitch;
+
     //camera.altitude = 1500;
     [self.mapView setCamera:camera animated:NO];
 
@@ -125,6 +116,86 @@
 {
         [super didReceiveMemoryWarning];
         // Dispose of any resources that can be recreated.
+}
+
+- (void)goToNextCamera{
+    if (listOfCameras.count ==0){
+        return;
+    }
+    
+    MKMapCamera* nextCamera = [listOfCameras firstObject];
+    [listOfCameras removeObject:0];
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.mapView.camera = nextCamera;
+                     } completion:NULL];
+    
+}
+
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    if (animated) //if we are animated go to next camera
+        [self goToNextCamera];
+}
+
+- (void)goToCoordinate:(CLLocationCoordinate2D)coordionate{
+    MKMapCamera* end = [MKMapCamera cameraLookingAtCenterCoordinate:coordionate
+                                                   fromEyeCoordinate:coordionate
+                                                        eyeAltitude:500];
+    end.pitch = 55;
+    
+    CLLocationCoordinate2D startingCoordinate = self.mapView.centerCoordinate;
+    MKMapPoint startingPoint = MKMapPointForCoordinate(startingCoordinate);
+    MKMapPoint endPoint = MKMapPointForCoordinate(end.centerCoordinate);
+    
+    MKMapPoint midPoint = MKMapPointMake(startingPoint.x + ((endPoint.y - startingPoint.y) / 2.0),
+                                         startingPoint.y + ((endPoint.y - startingPoint.y) / 2.0)
+                                        );
+    
+    CLLocationCoordinate2D midCoord = MKCoordinateForMapPoint(midPoint);
+    
+    CLLocationDistance midAltitude = end.altitude * 4; // zoom out 4 times
+    
+    MKMapCamera* midCamera = [MKMapCamera cameraLookingAtCenterCoordinate:end.centerCoordinate
+                                                        fromEyeCoordinate:midCoord
+                                                              eyeAltitude:midAltitude];
+    
+    listOfCameras = [[NSMutableArray alloc] init];
+    
+    [listOfCameras addObject:midCamera];
+    [listOfCameras addObject:end];
+    [self goToNextCamera];
+    
+    
+    
+    
+    
+}
+
+- (IBAction)changePitch:(id)sender{
+    UISlider* slider = (UISlider*)sender;
+    NSLog(@"value %f", slider.value);
+    
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if (slider.value < 55.0f)
+                         self.mapView.camera.pitch =slider.value;
+                     } completion:NULL];
+
+}
+
+- (IBAction)changeCameraView:(id)sender {
+    UISegmentedControl *segment=(UISegmentedControl*)sender;
+    
+    if (segment.selectedSegmentIndex == 0)
+        [self goToCoordinate:sydneyOperaHouseCoordinate];
+    else
+        [self goToCoordinate:bondiBeachCoordinate];
+    
 }
 
 @end
