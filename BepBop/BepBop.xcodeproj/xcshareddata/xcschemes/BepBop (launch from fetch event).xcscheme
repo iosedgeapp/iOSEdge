@@ -33,8 +33,28 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3CACB1FA17E40C3A00B715DE"
-               BuildableName = "BepBopTests.xctest"
-               BlueprintName = "BepBopTests"
+               BuildableName = "BepBopXCTests.xctest"
+               BlueprintName = "BepBopXCTests"
+               ReferencedContainer = "container:BepBop.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "17D117EF17E50C5700A3150E"
+               BuildableName = "BepBopTests copy.xctest"
+               BlueprintName = "BepBopTests copy"
+               ReferencedContainer = "container:BepBop.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "17D1180517E50CC700A3150E"
+               BuildableName = "BepBopOCUnitTests.octest"
+               BlueprintName = "BepBopOCUnitTests"
                ReferencedContainer = "container:BepBop.xcodeproj">
             </BuildableReference>
          </TestableReference>

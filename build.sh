@@ -22,10 +22,15 @@ IPHONE_RETINA="iPhone Retina (3.5-inch)";
 IPHONE_RETINA_4INCH="iPhone Retina (4-inch)";
 IPHONE_RETINA_4INCH_64BIT="iPhone Retina (4-inch 64-bit)";
 
-xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBop' \
--destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_70}" \
--destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH},OS=${IOS_70}" \
--destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH_64BIT},OS=${IOS_70}" \
--configuration Release test
+#xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBopAndXCTests' \
+#-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_70}" \
+#-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH},OS=${IOS_70}" \
+#-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH_64BIT},OS=${IOS_70}" \
+#-configuration Release test
 
+
+xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBopAndOCUnitTests' \
+-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_61}" \
+-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_70}" \
+-configuration Release test
 
