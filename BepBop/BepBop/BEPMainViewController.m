@@ -10,16 +10,9 @@
 #import "BEPDynamicTypeViewController.h"
 #import "BEPLookAndFeelViewController.h"
 #import "BEPMultipeerConnectivityViewController.h"
+#import "BEPMultitaskingMasterViewController.h"
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
-
-#define kLookAndFeelRow 0
-#define kDynamicTypeRow 1
-#define kMultipeerRow   2
-#define kTransitionsRow 5
-#define kMapsRow        8
-
-
 
 @interface BEPMainViewController ()
 
@@ -60,6 +53,17 @@
               @"Map directions in 3D",
               @"Taking advantage of the new build improvements",
               @"Unit Testing on Steroids"];
+
+        self.chapterViewControllers =
+            @[[[BEPLookAndFeelViewController alloc] init],
+              [[BEPDynamicTypeViewController alloc] initWithNibName:nil bundle:nil],
+              [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
+              [[BEPMultitaskingMasterViewController alloc] initWithNibName:nil bundle:nil],
+              [NSNull null],
+              [[BEPTabbarTransitionsViewController alloc] init],
+              [NSNull null],
+              [NSNull null],
+              [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
     }
     return self;
 }
@@ -113,30 +117,8 @@
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    UIViewController* viewController;
-
-    if (indexPath.row == kLookAndFeelRow)
-    {
-        viewController = [[BEPLookAndFeelViewController alloc] init];
-    }
-    else if (indexPath.row == kDynamicTypeRow)
-    {
-        viewController = [[BEPDynamicTypeViewController alloc] initWithNibName:nil bundle:nil];
-    }
-    else if (indexPath.row == kMultipeerRow)
-    {
-        viewController = [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil];
-    }
-    else if (indexPath.row == kTransitionsRow)
-    {
-        viewController = [[BEPTabbarTransitionsViewController alloc] init];
-    }
-    else if (indexPath.row == kMapsRow)
-    {
-        viewController = [[BEPMapViewController alloc] initWithNibName:nil bundle:nil];
-    }
-
-    if (viewController)
+    UIViewController* viewController = [self.chapterViewControllers objectAtIndex:indexPath.row];
+    if (viewController != (id)[NSNull null])
     {
         [self.navigationController pushViewController:viewController animated:YES];
     }

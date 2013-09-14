@@ -10,7 +10,11 @@
 #import "BEPMainViewController.h"
 #import "BEPNavigationController.h"
 #import "BEPAirDropHandler.h"
+#import "BEPMultitaskingMasterViewController.h"
 
+@interface BEPAppDelegate ()
+@property BEPMainViewController* mainViewController;
+@end
 
 @implementation BEPAppDelegate
 
@@ -18,14 +22,15 @@
 {
     
     [[BEPAirDropHandler sharedInstance] handleSavedAirDropURLs];
-    
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-    BEPMainViewController* mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
+    self.mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
 
-    BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:mainViewController];
+    BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:self.mainViewController];
     navigationController.navigationBar.translucent = IS_IOS_7;
 
     if ([navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
@@ -39,6 +44,11 @@
     return YES;
 }
 
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    BEPMultitaskingMasterViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
+    [multitaskingViewController performFetchWithCompletionHandler:completionHandler];
+}
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
@@ -73,6 +83,7 @@
 - (void) applicationWillEnterForeground:(UIApplication*)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void) applicationDidBecomeActive:(UIApplication*)application
