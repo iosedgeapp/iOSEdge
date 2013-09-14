@@ -17,6 +17,7 @@
 		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
 		03F31BD417E294CE00369D31 /* BEPDynamicTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */; };
 		175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */; };
+		3C00928A17E403F400E61B38 /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -178,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C00928A17E403F400E61B38 /* libBepBopLibrary.a in Frameworks */,
 				3C3EA85417D3C76F000122BD /* SenTestingKit.framework in Frameworks */,
 				3C3EA85517D3C76F000122BD /* UIKit.framework in Frameworks */,
 				3C3EA85617D3C76F000122BD /* Foundation.framework in Frameworks */,
@@ -671,10 +673,7 @@
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
 				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"/Volumes/ramdisk/Builds/iOSEdge-cnemuugjxvelkvfjryweafmcrhhe/Build/Products/Debug-iphoneos\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -694,10 +693,7 @@
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
 				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"/Volumes/ramdisk/Builds/iOSEdge-cnemuugjxvelkvfjryweafmcrhhe/Build/Products/Debug-iphoneos\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -718,7 +714,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"",
+				);
 				INFOPLIST_FILE = "BepBopTests/BepBopTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -735,7 +740,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"",
+				);
 				INFOPLIST_FILE = "BepBopTests/BepBopTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
