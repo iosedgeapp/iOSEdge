@@ -60,7 +60,7 @@
                 @[[[BEPLookAndFeelViewController alloc] init],
                   [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil],
                   [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
-                  [[BEPMultitaskingViewController alloc] initWithNibName:nil bundle:nil],
+                  [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain],
                   [NSNull null],
                   [[BEPTabbarTransitionsViewController alloc] init],
                   [[BEPDynamicsViewController alloc] init],

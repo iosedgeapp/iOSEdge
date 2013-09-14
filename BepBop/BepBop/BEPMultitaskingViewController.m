@@ -14,46 +14,154 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
 
 @interface BEPMultitaskingViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
-
+@property (nonatomic) NSMutableArray *images;
+@property (nonatomic) NSMutableArray *progressViews;
+@property (nonatomic) NSMutableArray *downloadTasks;
+@property (nonatomic) NSDateFormatter *formatter;
 @property (nonatomic) NSURLSession *session;
-@property (nonatomic) NSURLSessionDownloadTask *downloadTask;
 
 @end
 
 @implementation BEPMultitaskingViewController
 
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+        self.images = [NSMutableArray array];
+        self.progressViews = [NSMutableArray array];
+        self.downloadTasks = [NSMutableArray array];
+        self.formatter = [[NSDateFormatter alloc] init];
+        [self.formatter setDateFormat:@"MMM d, h:mm:ss a"];
+        [self setupRefreshControl];
+        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+        [self setupFooter];
+    }
+    return self;
+}
+
+// this is just t hide the empty rows ~ http://stackoverflow.com/a/6738534/337735
+- (void)setupFooter
+{
+    UIView *emptyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
+    emptyView.backgroundColor = [UIColor whiteColor];
+    [self.tableView setTableFooterView:emptyView];
+}
+
+#pragma mark - Refresh Control
+
+- (void)setupRefreshControl
+{
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshControlRequest) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to refresh"];
+}
+
+- (void)refreshControlRequest
+{
+    [self performSelector:@selector(performBackgroundTransfer)];
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@", [self.formatter stringFromDate:[NSDate date]]];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+    [self.refreshControl endRefreshing];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 
     self.session = [self backgroundSession];
+    self.title = NSLocalizedString(@"Chapter 4", nil);
 
-    self.progressView.progress = 0;
-    self.imageView.hidden = NO;
-    self.progressView.hidden = YES;
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return self.images.count; // same as [self.progressViews count] and [self.downloadTasks count]
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    // Configure the cell...
+    UIImage *image = [self.images objectAtIndex:indexPath.row];
+    if (image != (id)[NSNull null]) {
+        cell.imageView.image = image;
+        cell.imageView.contentMode = UIViewContentModeScaleToFill;//UIViewContentModeScaleAspectFill;//UIViewContentModeScaleAspectFit;
+        cell.textLabel.text = [self.formatter stringFromDate:[NSDate date]];
+    } else {
+        cell.textLabel.text = @"Loading...";
+    }
+    
+    return cell;
+}
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.images removeObjectAtIndex:indexPath.row];
+        [self.progressViews removeObjectAtIndex:indexPath.row];
+        [self.downloadTasks removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        [self performBackgroundTransfer];
+    }
+}
+
+#pragma mark - Background Transfer
 
 - (BOOL)performBackgroundTransfer
 {
     BLog();
-    if (self.downloadTask)
-    {
-        return NO;
-    }
-
-    /*
-     Create a new download task using the URL session. Tasks start in the “suspended” state; to start a task you need to explicitly call -resume on a task after creating it.
-     */
     NSURL *downloadURL = [NSURL URLWithString:DownloadURLString];
 	NSURLRequest *request = [NSURLRequest requestWithURL:downloadURL];
-	self.downloadTask = [self.session downloadTaskWithRequest:request];
-    [self.downloadTask resume];
+	NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithRequest:request];
+    [downloadTask resume];
 
-    self.imageView.hidden = YES;
-    self.progressView.hidden = NO;
+        BLog(@"#BRows: %d %d %d", [self.images count], [self.progressViews count], [self.downloadTasks count]);
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:DownloadURLString]]];
+        [self.images insertObject:[NSNull null] atIndex:0];
+        [self.progressViews insertObject:[NSNull null] atIndex:0];
+        [self.downloadTasks insertObject:downloadTask atIndex:0];
+        BLog(@"#ARows: %d %d %d", [self.images count], [self.progressViews count], [self.downloadTasks count]);
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
     return YES;
 }
 
@@ -81,14 +189,14 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
      If you created more than one task, you might keep references to them and report on them individually.
      */
 
-    if (downloadTask == self.downloadTask)
-    {
-        double progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
-        BLog(@"DownloadTask: %@ progress: %lf", downloadTask, progress);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.progressView.progress = progress;
-        });
-    }
+//    if (downloadTask == self.downloadTask)
+//    {
+//        double progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
+//        BLog(@"DownloadTask: %@ progress: %lf", downloadTask, progress);
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.progressView.progress = progress;
+//        });
+//    }
 }
 
 
@@ -117,9 +225,14 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImage *image = [UIImage imageWithContentsOfFile:[destinationURL path]];
-            self.imageView.image = image;
-            self.imageView.hidden = NO;
-            self.progressView.hidden = YES;
+            for (int i = 0; i < [self.downloadTasks count]; i++) {
+                if ([self.downloadTasks objectAtIndex:i] == downloadTask) {
+                    [self.images replaceObjectAtIndex:i withObject:image];
+                    // now reload this row with the image
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                }
+            }
         });
     }
     else
@@ -145,12 +258,12 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
         NSLog(@"Task: %@ completed with error: %@", task, [error localizedDescription]);
     }
 
-    double progress = (double)task.countOfBytesReceived / (double)task.countOfBytesExpectedToReceive;
-	dispatch_async(dispatch_get_main_queue(), ^{
-		self.progressView.progress = progress;
-	});
+//    double progress = (double)task.countOfBytesReceived / (double)task.countOfBytesExpectedToReceive;
+//	dispatch_async(dispatch_get_main_queue(), ^{
+//		self.progressView.progress = progress;
+//	});
 
-    self.downloadTask = nil;
+//    self.downloadTask = nil;
 }
 
 
