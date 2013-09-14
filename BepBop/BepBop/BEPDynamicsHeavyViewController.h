@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPDynamicsHeavyViewController : UIViewController
+@interface BEPDynamicsHeavyViewController : UIViewController <UICollisionBehaviorDelegate>
 
 @end
