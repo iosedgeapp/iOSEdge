@@ -219,6 +219,7 @@
 				0394ADA017DFFDF300769A12 /* Multipeer */,
 				21FB547F17E3F8270064F290 /* Multitasking */,
 				8796463F17E1C097009B989A /* VC Transitions */,
+				295B765F17E49F5500E5CFB7 /* UI Dynamics */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -353,7 +354,6 @@
 			children = (
 				21FB549E17E3F9630064F290 /* BepBop.entitlements */,
 				03175DE317DEB275005D3C62 /* View Controllers */,
-				295B765F17E49F5500E5CFB7 /* UI Dynamics */,
 				3C3EA84417D3C76F000122BD /* BEPAppDelegate.h */,
 				3C3EA84517D3C76F000122BD /* BEPAppDelegate.m */,
 				3C3EA83C17D3C76F000122BD /* Supporting Files */,
