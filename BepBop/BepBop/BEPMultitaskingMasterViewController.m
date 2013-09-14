@@ -40,7 +40,7 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%d/
 - (void)performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     NSLog(@"GOT BG FETCH");
-    [self insertNewObject];
+    [self startNewBackgroundFetch];
     [UIApplication sharedApplication].applicationIconBadgeNumber++;
 
     /*
@@ -49,7 +49,7 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%d/
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
-- (void)insertNewObject
+- (void)startNewBackgroundFetch
 {
     NSLog(@"insertNewObject");
     u_int32_t r = arc4random_uniform(10);

@@ -15,7 +15,7 @@
 
 @implementation BEPMultitaskingDetailViewController
 - (IBAction)start:(id)sender {
-    [self.masterController insertNewObject];
+    [self.masterController startNewBackgroundFetch];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
