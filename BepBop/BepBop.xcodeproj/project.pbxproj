@@ -31,6 +31,7 @@
 		21FB54AD17E4BBED0064F290 /* BEPMultitaskingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB54AC17E4BBED0064F290 /* BEPMultitaskingListItem.m */; };
 		295B768E17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295B768D17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard */; };
 		295B769317E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769217E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m */; };
+		295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -131,6 +132,8 @@
 		295B768D17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BEPDynamicsStoryboard.storyboard; sourceTree = "<group>"; };
 		295B769117E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsHeavyViewController.h; sourceTree = "<group>"; };
 		295B769217E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsHeavyViewController.m; sourceTree = "<group>"; };
+		295B769417E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsAttachmentViewController.h; sourceTree = "<group>"; };
+		295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsAttachmentViewController.m; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -339,6 +342,8 @@
 				295B768D17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard */,
 				295B769117E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.h */,
 				295B769217E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m */,
+				295B769417E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.h */,
+				295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */,
 			);
 			name = "UI Dynamics";
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				8796465D17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m in Sources */,
 				871F714517E3446E00DC00EF /* BEPSimpleWebViewController.m in Sources */,
 				8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */,
+				295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */,
 				8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */,
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
 				87A5210E17E335E00060D931 /* BEPAirDropTableDataSource.m in Sources */,
