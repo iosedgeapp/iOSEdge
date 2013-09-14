@@ -1,5 +1,5 @@
 //
-//  BEPDynamicsViewController.h
+//  BEPDynamicsHeavyViewController.h
 //  BepBop
 //
 //  Created by mangtronix on 9/14/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPDynamicsViewController : UIViewController
-
-@property UIDynamicAnimator *animator;
+@interface BEPDynamicsHeavyViewController : UIViewController
 
 @end
