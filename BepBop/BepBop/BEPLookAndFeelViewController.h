@@ -12,5 +12,6 @@
 @interface BEPLookAndFeelViewController : BEPThemedViewController
 
 - (IBAction) changeTintColor:(id)sender;
+- (IBAction) showAlert:(id)sender;
 
 @end

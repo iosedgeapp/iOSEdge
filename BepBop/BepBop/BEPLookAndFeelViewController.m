@@ -83,4 +83,9 @@
     }
 }
 
+- (IBAction) showAlert:(id)sender
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Tint Color Demo" message:@"The tint colors on the UI should now have a disabled appearance!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
 @end
