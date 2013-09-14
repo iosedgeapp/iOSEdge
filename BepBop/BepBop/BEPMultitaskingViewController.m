@@ -10,13 +10,14 @@
 
 #define BLog(formatString, ...) NSLog((@"%s " formatString), __PRETTY_FUNCTION__, ##__VA_ARGS__);
 
-static NSString *DownloadURLString = @"http://localhost/bigImage.png";
+static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/";
 
 @interface BEPMultitaskingViewController ()
 
 @property (nonatomic) NSMutableArray *images;
 @property (nonatomic) NSMutableArray *progressViews;
 @property (nonatomic) NSMutableArray *downloadTasks;
+@property (nonatomic) NSMutableSet *seenImages;
 @property (nonatomic) NSDateFormatter *formatter;
 @property (nonatomic) NSURLSession *session;
 
@@ -29,13 +30,15 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.title = NSLocalizedString(@"Chapter 4", nil);
         self.images = [NSMutableArray array];
         self.progressViews = [NSMutableArray array];
         self.downloadTasks = [NSMutableArray array];
+        self.seenImages = [NSMutableSet set];
         self.formatter = [[NSDateFormatter alloc] init];
-        [self.formatter setDateFormat:@"MMM d, h:mm:ss a"];
+        self.formatter.dateFormat = @"MMM d, h:mm:ss a";
+        self.session = [self backgroundSession];
         [self setupRefreshControl];
-        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
         [self setupFooter];
     }
     return self;
@@ -66,44 +69,22 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
     [self.refreshControl endRefreshing];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    self.session = [self backgroundSession];
-    self.title = NSLocalizedString(@"Chapter 4", nil);
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return self.images.count; // same as [self.progressViews count] and [self.downloadTasks count]
+    return self.images.count; // same as self.progressViews.count and self.downloadTasks.count
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
@@ -112,7 +93,6 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
     UIImage *image = [self.images objectAtIndex:indexPath.row];
     if (image != (id)[NSNull null]) {
         cell.imageView.image = image;
-        cell.imageView.contentMode = UIViewContentModeScaleToFill;//UIViewContentModeScaleAspectFill;//UIViewContentModeScaleAspectFit;
         cell.textLabel.text = [self.formatter stringFromDate:[NSDate date]];
     } else {
         cell.textLabel.text = @"Loading...";
@@ -120,15 +100,6 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -148,32 +119,39 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
 - (BOOL)performBackgroundTransfer
 {
     BLog();
-    NSURL *downloadURL = [NSURL URLWithString:DownloadURLString];
-	NSURLRequest *request = [NSURLRequest requestWithURL:downloadURL];
-	NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithRequest:request];
+
+    u_int32_t r = 1 + arc4random_uniform(10); // 1-10 inclusive
+    NSString *key = [NSString stringWithFormat:@"%d", r];
+    if ([self.seenImages containsObject:key]) {
+        return NO;
+    }
+
+    [self.seenImages addObject:key];
+    NSURL *downloadURL = [NSURL URLWithString:[NSString stringWithFormat:DownloadURLString, key]];
+    BLog(@"URL %@", downloadURL);
+	NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithURL:downloadURL];
+    if (downloadTask == nil) {
+        BLog(@"Got nil downloadTask. Why?");
+        return NO;
+    }
     [downloadTask resume];
 
-        BLog(@"#BRows: %d %d %d", [self.images count], [self.progressViews count], [self.downloadTasks count]);
-//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:DownloadURLString]]];
-        [self.images insertObject:[NSNull null] atIndex:0];
-        [self.progressViews insertObject:[NSNull null] atIndex:0];
-        [self.downloadTasks insertObject:downloadTask atIndex:0];
-        BLog(@"#ARows: %d %d %d", [self.images count], [self.progressViews count], [self.downloadTasks count]);
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    // Add it to our data structures and the table
+    [self.images insertObject:[NSNull null] atIndex:0];
+    [self.progressViews insertObject:[NSNull null] atIndex:0];
+    [self.downloadTasks insertObject:downloadTask atIndex:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 
     return YES;
 }
 
 - (NSURLSession *)backgroundSession
 {
-    /*
-     Using disptach_once here ensures that multiple background sessions with the same identifier are not created in this instance of the application. If you want to support multiple background sessions within a single process, you should create each session with its own identifier.
-     */
 	static NSURLSession *session = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfiguration:@"com.example.apple-samplecode.SimpleBackgroundTransfer.BackgroundSession"];
+		NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfiguration:@"com.bleedingedgepress.iosedge"];
 		session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
 	});
 	return session;
@@ -205,8 +183,7 @@ static NSString *DownloadURLString = @"http://localhost/bigImage.png";
     BLog();
 
     /*
-     The download completed, you need to copy the file at targetPath before the end of this block.
-     As an example, copy the file to the Documents directory of your app.
+     Copy the downloaded file from the downloadURL to the Documents directory of our app.
      */
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
