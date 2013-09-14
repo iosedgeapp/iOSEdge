@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *heavyLabel;
 @property (nonatomic) UIDynamicAnimator *animator;
+@property (nonatomic) UIGravityBehavior *gravity;
 
 @end
 
@@ -37,6 +38,7 @@
     
     UIGravityBehavior *basicGravity = [[UIGravityBehavior alloc] initWithItems:@[self.heavyLabel]];
     [self.animator addBehavior:basicGravity];
+    self.gravity = basicGravity;
     
     // Without any collision behavior, the heavy label would fall right off the screen
     UICollisionBehavior *collideWithBounds = [[UICollisionBehavior alloc] initWithItems:@[self.heavyLabel]];
@@ -45,7 +47,16 @@
 
 }
 
-
+- (IBAction)handleTapGesture:(UIGestureRecognizer*)gesture
+{
+    if (self.gravity.gravityDirection.dy > 0) {
+        // If gravity is pulling down, make it pull up!
+        self.gravity.gravityDirection = CGVectorMake(0, -1);
+    } else {
+        // Switch to normal gravity
+        self.gravity.gravityDirection = CGVectorMake(0, 1);
+    }
+}
 
 
 @end
