@@ -28,13 +28,18 @@
 - (void)performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     NSLog(@"GOT BG FETCH");
-    [self insertObject:[NSDate date]];
+    [self insertNewObject];
     [UIApplication sharedApplication].applicationIconBadgeNumber++;
 
     /*
      At the end of the fetch, invoke the completion handler.
      */
     completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)insertNewObject
+{
+    [self insertObject:[NSDate date]];
 }
 
 - (void)insertObject:(id)newObject
@@ -107,28 +112,30 @@
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.objects removeObjectAtIndex:indexPath.row];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        [self insertNewObject];
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -146,7 +153,7 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -162,6 +169,5 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
  
- */
 
 @end
