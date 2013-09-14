@@ -28,6 +28,13 @@
 		21FB549D17E3F9310064F290 /* BEPMultitaskingMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB549917E3F9310064F290 /* BEPMultitaskingMasterViewController.xib */; };
 		295B766317E49FCD00E5CFB7 /* BEPDynamicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B766117E49FCD00E5CFB7 /* BEPDynamicsViewController.m */; };
 		295B766417E49FCD00E5CFB7 /* BEPDynamicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295B766217E49FCD00E5CFB7 /* BEPDynamicsViewController.xib */; };
+		21FB54A317E4943B0064F290 /* BEPMultitaskingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB54A117E4943B0064F290 /* BEPMultitaskingDetailViewController.m */; };
+		21FB54A417E4943B0064F290 /* BEPMultitaskingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB54A117E4943B0064F290 /* BEPMultitaskingDetailViewController.m */; };
+		21FB54A517E4943B0064F290 /* BEPMultitaskingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB54A217E4943B0064F290 /* BEPMultitaskingDetailViewController.xib */; };
+		21FB54A617E4943B0064F290 /* BEPMultitaskingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB54A217E4943B0064F290 /* BEPMultitaskingDetailViewController.xib */; };
+		21FB54AD17E4BBED0064F290 /* BEPMultitaskingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB54AC17E4BBED0064F290 /* BEPMultitaskingListItem.m */; };
+		21FB54AE17E4BBED0064F290 /* BEPMultitaskingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB54AC17E4BBED0064F290 /* BEPMultitaskingListItem.m */; };
+		3C00928A17E403F400E61B38 /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -124,6 +131,11 @@
 		295B766117E49FCD00E5CFB7 /* BEPDynamicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsViewController.m; sourceTree = "<group>"; };
 		295B766217E49FCD00E5CFB7 /* BEPDynamicsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPDynamicsViewController.xib; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		21FB54A017E4943B0064F290 /* BEPMultitaskingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMultitaskingDetailViewController.h; sourceTree = "<group>"; };
+		21FB54A117E4943B0064F290 /* BEPMultitaskingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultitaskingDetailViewController.m; sourceTree = "<group>"; };
+		21FB54A217E4943B0064F290 /* BEPMultitaskingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPMultitaskingDetailViewController.xib; sourceTree = "<group>"; };
+		21FB54AB17E4BBED0064F290 /* BEPMultitaskingListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMultitaskingListItem.h; sourceTree = "<group>"; };
+		21FB54AC17E4BBED0064F290 /* BEPMultitaskingListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultitaskingListItem.m; sourceTree = "<group>"; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C3EA83717D3C76F000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -316,6 +328,11 @@
 				21FB549717E3F9310064F290 /* BEPMultitaskingMasterViewController.h */,
 				21FB549817E3F9310064F290 /* BEPMultitaskingMasterViewController.m */,
 				21FB549917E3F9310064F290 /* BEPMultitaskingMasterViewController.xib */,
+				21FB54A017E4943B0064F290 /* BEPMultitaskingDetailViewController.h */,
+				21FB54A117E4943B0064F290 /* BEPMultitaskingDetailViewController.m */,
+				21FB54A217E4943B0064F290 /* BEPMultitaskingDetailViewController.xib */,
+				21FB54AB17E4BBED0064F290 /* BEPMultitaskingListItem.h */,
+				21FB54AC17E4BBED0064F290 /* BEPMultitaskingListItem.m */,
 			);
 			name = Multitasking;
 			sourceTree = "<group>";
@@ -568,6 +585,7 @@
 				8796464C17E1C133009B989A /* BEPPresentationTransitionsViewController.xib in Resources */,
 				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
+				21FB54A517E4943B0064F290 /* BEPMultitaskingDetailViewController.xib in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
 				21FB549C17E3F9310064F290 /* BEPMultitaskingMasterViewController.xib in Resources */,
 				03535C2117E4A8E50053327C /* BEPAccessibilityViewController.xib in Resources */,
@@ -591,6 +609,8 @@
 			files = (
 				3CACB20417E40C3A00B715DE /* InfoPlist.strings in Resources */,
 				21FB549D17E3F9310064F290 /* BEPMultitaskingMasterViewController.xib in Resources */,
+				3C3EA85E17D3C76F000122BD /* InfoPlist.strings in Resources */,
+				21FB54A617E4943B0064F290 /* BEPMultitaskingDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +624,7 @@
 				87A5211417E33D980060D931 /* BEPAirDropHandler.m in Sources */,
 				3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */,
 				03535C2017E4A8E50053327C /* BEPAccessibilityViewController.m in Sources */,
+				21FB54AD17E4BBED0064F290 /* BEPMultitaskingListItem.m in Sources */,
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
 				8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
@@ -621,6 +642,7 @@
 				0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */,
 				03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */,
 				21FB549A17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */,
+				21FB54A317E4943B0064F290 /* BEPMultitaskingDetailViewController.m in Sources */,
 				8796466517E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				8796466917E20B87009B989A /* BEPModalTransitionAnimator.m in Sources */,
@@ -635,6 +657,9 @@
 			files = (
 				3CACB20617E40C3A00B715DE /* BepBopTests.m in Sources */,
 				21FB549B17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */,
+				3C3EA86117D3C76F000122BD /* BepBopTests.m in Sources */,
+				21FB54AE17E4BBED0064F290 /* BEPMultitaskingListItem.m in Sources */,
+				21FB54A417E4943B0064F290 /* BEPMultitaskingDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

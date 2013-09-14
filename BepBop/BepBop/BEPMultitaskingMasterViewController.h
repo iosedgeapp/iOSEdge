@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPMultitaskingMasterViewController : UITableViewController
+@interface BEPMultitaskingMasterViewController : UITableViewController <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
+- (void)insertNewObject;
 
 - (void)performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
