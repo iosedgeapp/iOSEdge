@@ -14,7 +14,7 @@
 @property (nonatomic) UIAttachmentBehavior *attachmentBehavior;
 
 // Shows our touch point
-@property (nonatomic, weak) IBOutlet UIView *anchorView;
+@property (nonatomic, weak) IBOutlet UIView *touchView;
 
 // The big orange block
 @property (nonatomic, weak) IBOutlet UIView *orangeView;
@@ -54,15 +54,15 @@
     self.animator = animator;
     
     // Set up the attachment behavior
-    UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.anchorView.center];
+    UIAttachmentBehavior *touchAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.touchView.center];
     
     // Make the attachment springy
-    attachmentBehavior.damping = 0.4;
-    attachmentBehavior.frequency = 1.5;
+    touchAttachmentBehavior.damping = 0.4;
+    touchAttachmentBehavior.frequency = 1.5;
     
     // Add the attachment behavior
-    [self.animator addBehavior:attachmentBehavior];
-    self.attachmentBehavior = attachmentBehavior;
+    [self.animator addBehavior:touchAttachmentBehavior];
+    self.attachmentBehavior = touchAttachmentBehavior;
     
     // Connect the blue and green blocks into a "snake" with green tail
     [self connectSnakeViews];
@@ -120,7 +120,7 @@
     [self.attachmentBehavior setAnchorPoint:touchPoint];
     
     // Update the displayed anchor
-    self.anchorView.center = touchPoint;
+    self.touchView.center = touchPoint;
     
 }
 

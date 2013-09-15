@@ -314,13 +314,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="yz7-VF-LlC"/>
                     <connections>
-                        <outlet property="anchorView" destination="5KS-Ci-hy6" id="EbW-12-2vb"/>
                         <outlet property="attachmentView" destination="cdL-aM-6eu" id="rnp-02-sCA"/>
                         <outlet property="blueView1" destination="Cjs-ql-yr1" id="rld-JE-gq9"/>
                         <outlet property="blueView2" destination="8lE-o6-C1d" id="CLv-Sw-7qR"/>
                         <outlet property="blueView3" destination="8eC-Ae-wPF" id="Trw-T6-hXN"/>
                         <outlet property="greenView" destination="lX0-7R-cph" id="74C-MI-MWL"/>
                         <outlet property="orangeView" destination="HJl-uY-ENn" id="nmf-RR-Sqi"/>
+                        <outlet property="touchView" destination="5KS-Ci-hy6" id="S4l-aB-UbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ns-0z-Df1" userLabel="First Responder" sceneMemberID="firstResponder"/>
