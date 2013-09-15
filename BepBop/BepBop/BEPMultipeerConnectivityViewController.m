@@ -39,11 +39,13 @@
     if (connectedPeerCount > 0)
     {
         self.sendButton.enabled       = YES;
+        self.sendHelloButton.enabled  = YES;
         self.disconnectButton.enabled = YES;
     }
     else
     {
         self.sendButton.enabled       = NO;
+        self.sendHelloButton.enabled  = NO;
         self.disconnectButton.enabled = NO;
     }
 }
@@ -155,6 +157,28 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+- (IBAction)sendHelloTapped:(UIButton *)sender {
+
+    NSDictionary * message = @{@"message": @"Hello World!"};
+    
+    NSString * errorString = nil;
+    NSData * data = [NSPropertyListSerialization dataFromPropertyList:message
+                                                               format:NSPropertyListXMLFormat_v1_0
+                                                     errorDescription:&errorString];
+    
+    if (errorString) {
+        NSLog(@"could not serialize\n%@\n%@", message, errorString);
+        // we don't have data to send.
+    }
+    else {
+        NSError * error;
+        [_session sendData:data
+                   toPeers:[_session connectedPeers]
+                  withMode:MCSessionSendDataReliable
+                     error:&error];
+    }
+}
+
 - (IBAction) disconnectTapped:(UIButton*)sender
 {
     [self.session disconnect];
@@ -162,6 +186,8 @@
     _bytesSent     = 0;
     [self updateByteCounters];
 }
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Advertising Assistant Delegate
@@ -234,31 +260,43 @@
                    ^{
                        [self updateByteCounters];
                    });
+    
+    NSPropertyListFormat fmt;
+    NSError * error;
+    NSDictionary * dict = [NSPropertyListSerialization propertyListWithData:data
+                                              options:NSPropertyListImmutable
+                                               format:&fmt
+                                                error:&error];
+    
+    if (dict == nil) {
+        NSLog(@"could not parse received data: %@\n%@", error, data);
+        return;
+    }
 
-    NSString* alertTitle       = NSLocalizedString(@"Image Received", @"alert title");
+    NSString* alertTitle       = NSLocalizedString(@"Message Received", @"alert title");
     NSString* alertDescription = [NSString stringWithFormat:
-                                  NSLocalizedString(@"Received %d bytes image data from %@", @"alert format"),
-                                  [data length], peerID.displayName];
-
+                                  NSLocalizedString(@"Received \"%@\" from %@", @"alert format"),
+                                  dict[@"message"], peerID.displayName];
+//
     RIButtonItem* cancelItem = [[RIButtonItem alloc] init];
-    cancelItem.label  = NSLocalizedString(@"Dismiss", @"button title");
+    cancelItem.label  = NSLocalizedString(@"OK", @"button title");
     cancelItem.action = nil;
-
-    RIButtonItem* openItem = [[RIButtonItem alloc] init];
-    openItem.label  = NSLocalizedString(@"Show", @"button title");
-    openItem.action = ^{
-        UIImage* image = [[UIImage alloc] initWithData:data];
-
-        BEPSimpleImageViewController* sivc = [[BEPSimpleImageViewController alloc] initWithNibName:nil bundle:nil];
-        sivc.image = image;
-
-        [self.navigationController pushViewController:sivc animated:YES];
-    };
+//
+//    RIButtonItem* openItem = [[RIButtonItem alloc] init];
+//    openItem.label  = NSLocalizedString(@"Show", @"button title");
+//    openItem.action = ^{
+//        UIImage* image = [[UIImage alloc] initWithData:data];
+//
+//        BEPSimpleImageViewController* sivc = [[BEPSimpleImageViewController alloc] initWithNibName:nil bundle:nil];
+//        sivc.image = image;
+//
+//        [self.navigationController pushViewController:sivc animated:YES];
+//    };
 
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:alertTitle
                                                     message:alertDescription
                                            cancelButtonItem:cancelItem
-                                           otherButtonItems:openItem, nil];
+                                           otherButtonItems:nil];
 
 
     dispatch_async(dispatch_get_main_queue(), ^{

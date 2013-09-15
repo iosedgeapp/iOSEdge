@@ -25,9 +25,11 @@
 @property (weak, nonatomic) IBOutlet UIButton* browseButton;
 @property (weak, nonatomic) IBOutlet UIButton* sendButton;
 @property (weak, nonatomic) IBOutlet UIButton* disconnectButton;
+@property (weak, nonatomic) IBOutlet UIButton *sendHelloButton;
 
 - (IBAction) browseButtonTapped:(UIButton*)sender;
 - (IBAction) sendButtonTapped:(UIButton*)sender;
 - (IBAction) disconnectTapped:(UIButton*)sender;
+- (IBAction)sendHelloTapped:(UIButton *)sender;
 
 @end
