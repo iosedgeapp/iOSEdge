@@ -17,6 +17,7 @@
 
 @interface BEPMainViewController : UITableViewController
 
-@property NSArray* chapterViewControllers;
+@property NSMutableDictionary* chapterViewControllers;
+@property NSArray* chapterViewControllerCreationBlocks;
 
 @end
