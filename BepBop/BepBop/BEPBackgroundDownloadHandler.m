@@ -8,10 +8,6 @@
 
 #import "BEPBackgroundDownloadHandler.h"
 
-#define BLog(formatString, ...) NSLog((@"%s " formatString), __PRETTY_FUNCTION__, ##__VA_ARGS__);
-
-static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/";
-
 @interface BEPBackgroundDownloadHandler ()
 
 @property (nonatomic) NSMutableArray *images;
@@ -50,33 +46,49 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
 
 - (void)refreshWithCompletionHandler:(BEPRefreshCompletionHandler)completionHandler
 {
-    BLog();
+    NSLog(@"Refreshing...");
+
+    NSURL *downloadURL = [self downloadUrl];
+    if ([self.seenImages containsObject:downloadURL]) {
+        completionHandler(NO, nil);
+        return;
+    }
+
+    // downloadTaskWithURL: shouldn't return nil. Workaround for iOS bug.
+	NSURLSessionDownloadTask *downloadTask = [self downloadTaskWithURL:downloadURL];
+    if (downloadTask == nil) {
+        completionHandler(NO, [NSError errorWithDomain:@"Unable to get download task" code:1 userInfo:nil]);
+    }
+    [downloadTask resume];
+
+    // Add it to our data
+    [self.seenImages addObject:downloadURL];
+    [self.images insertObject:[NSNull null] atIndex:0];
+    [self.downloadTasks insertObject:downloadTask atIndex:0];
+
+    completionHandler(YES, nil);
+}
+
+- (NSURLSessionDownloadTask *)downloadTaskWithURL:(NSURL *)downloadURL
+{
+    static int numRetries = 10;
+    NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithURL:downloadURL];
+    for (int i = 0; downloadTask == nil && i < numRetries; i++) {
+        downloadTask = [self.session downloadTaskWithURL:downloadURL];
+    }
+    return downloadTask;
+}
+
+- (NSURL *)downloadUrl
+{
+    static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%d/";
 
     /*
      * As a way of simulating limited content, we only request 10 different images.
      * If we've already seen the requested image (random number), then we say there's no new content.
      */
-    u_int32_t r = 1 + arc4random_uniform(10); // 1-10 inclusive
-    NSString *key = [NSString stringWithFormat:@"%d", r];
-    if ([self.seenImages containsObject:key]) {
-        completionHandler(NO, nil);
-        return;
-    }
-
-    NSURL *downloadURL = [NSURL URLWithString:[NSString stringWithFormat:DownloadURLString, key]];
-	NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithURL:downloadURL];
-    // downloadTaskWithURL: shouldn't return nil. Workaround for iOS bug.
-    while (downloadTask == nil) {
-        downloadTask = [self.session downloadTaskWithURL:downloadURL];
-    }
-    [downloadTask resume];
-
-    // Add it to our data
-    [self.seenImages addObject:key];
-    [self.images insertObject:[NSNull null] atIndex:0];
-    [self.downloadTasks insertObject:downloadTask atIndex:0];
-
-    completionHandler(YES, nil);
+    u_int32_t key = 1 + arc4random_uniform(10); // 1-10 inclusive
+    return [NSURL URLWithString:[NSString stringWithFormat:DownloadURLString, key]];
 }
 
 - (NSURLSession *)backgroundSession
@@ -130,29 +142,21 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)downloadURL
 {
-    BLog();
-
-    /*
-     Copy the downloaded file from the downloadURL to the Documents directory of our app.
-     */
+    // Copy the file from the downloadURL to the Documents directory of our app.
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] objectAtIndex:0];
+    NSURL *destinationURL = [documentsDirectory URLByAppendingPathComponent:[[[downloadTask originalRequest] URL] lastPathComponent]];
 
-    NSArray *URLs = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    NSURL *documentsDirectory = [URLs objectAtIndex:0];
-
-    NSURL *originalURL = [[downloadTask originalRequest] URL];
-    NSURL *destinationURL = [documentsDirectory URLByAppendingPathComponent:[originalURL lastPathComponent]];
+    // We don't care if we've already downloaded this file. Just remove it.
     NSError *errorCopy;
-
-    // For the purposes of testing, remove any esisting file at the destination.
     [fileManager removeItemAtURL:destinationURL error:NULL];
     BOOL success = [fileManager copyItemAtURL:downloadURL toURL:destinationURL error:&errorCopy];
 
     if (success) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIImage *image = [UIImage imageWithContentsOfFile:[destinationURL path]];
             for (int i = 0; i < [self.downloadTasks count]; i++) {
                 if ([self.downloadTasks objectAtIndex:i] == downloadTask) {
+                    UIImage *image = [UIImage imageWithContentsOfFile:[destinationURL path]];
                     [self.images replaceObjectAtIndex:i withObject:image];
                     [self.downloadTasks replaceObjectAtIndex:i withObject:[NSNull null]];
                     NSNotification* notification = [NSNotification notificationWithName:@"BackgroundTransferComplete" object:self userInfo:@{@"id": [NSNumber numberWithInt:i]}];
@@ -161,13 +165,13 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
             }
         });
     } else {
-        BLog(@"Error during the copy: %@", [errorCopy localizedDescription]);
+        NSLog(@"Error copying the downloaded file: %@", [errorCopy localizedDescription]);
     }
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
-    BLog();
+    // Nothing to do. Wish this was optional.
 }
 
 #pragma mark - NSURLSessionTaskDelegate
@@ -191,7 +195,7 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
 {
-    BLog();
+    // Nothing to do. Wish this was optional.
 }
 
 @end
