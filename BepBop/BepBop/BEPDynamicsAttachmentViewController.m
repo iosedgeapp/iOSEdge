@@ -38,7 +38,7 @@
 	// Do any additional setup after loading the view.
     
     // Set up animator
-    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] init];
+    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     self.animator = animator;
     
     // By default items are attached at the center. To make things more
@@ -48,9 +48,10 @@
     self.attachmentOffset = [self offsetFromCenter:self.attachmentView.center inView:self.orangeView];
     
     // Set up the attachment behavior. The attachment is made between the orange view (offset
-    // from the center of the view) to the anchor point.  The anchor point will by updated
-    // by our code to follow the finger on the screen.
-    UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.touchView.center];
+    // from the center) to the center of the red view. The attachment anchor point
+    // will by updated by our code to follow the finger on the screen.
+    CGPoint initialAnchorPoint = self.touchView.center;
+    UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:initialAnchorPoint];
     [self.animator addBehavior:attachmentBehavior];
     self.attachmentBehavior = attachmentBehavior;
 
@@ -66,7 +67,7 @@
 {
     // Get location of touch relative to reference view
     CGPoint touchPoint = [gesture locationInView:self.view];
-
+    
     // If starting a drag, update the length of the attachment, for a more
     // natural interaction - like dragging a stick starting from the touch point
     if (UIGestureRecognizerStateBegan == gesture.state) {
