@@ -45,6 +45,12 @@
 		21FB555B17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB555717E4F4F50064F290 /* BEPMultitaskingViewController.xib */; };
 		295B766317E49FCD00E5CFB7 /* BEPDynamicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B766117E49FCD00E5CFB7 /* BEPDynamicsViewController.m */; };
 		295B766417E49FCD00E5CFB7 /* BEPDynamicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295B766217E49FCD00E5CFB7 /* BEPDynamicsViewController.xib */; };
+		295B768E17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295B768D17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard */; };
+		295B769317E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769217E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m */; };
+		295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */; };
+		295B769917E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */; };
+		295B769C17E5263700E5CFB7 /* BEPDynamicsCannonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769B17E5263700E5CFB7 /* BEPDynamicsCannonViewController.m */; };
+		295B769F17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -163,6 +169,17 @@
 		295B766017E49FCD00E5CFB7 /* BEPDynamicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsViewController.h; sourceTree = "<group>"; };
 		295B766117E49FCD00E5CFB7 /* BEPDynamicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsViewController.m; sourceTree = "<group>"; };
 		295B766217E49FCD00E5CFB7 /* BEPDynamicsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPDynamicsViewController.xib; sourceTree = "<group>"; };
+		295B768D17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BEPDynamicsStoryboard.storyboard; sourceTree = "<group>"; };
+		295B769117E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsHeavyViewController.h; sourceTree = "<group>"; };
+		295B769217E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsHeavyViewController.m; sourceTree = "<group>"; };
+		295B769417E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsAttachmentViewController.h; sourceTree = "<group>"; };
+		295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsAttachmentViewController.m; sourceTree = "<group>"; };
+		295B769717E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsSnapViewController.h; sourceTree = "<group>"; };
+		295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSnapViewController.m; sourceTree = "<group>"; };
+		295B769A17E5263700E5CFB7 /* BEPDynamicsCannonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsCannonViewController.h; sourceTree = "<group>"; };
+		295B769B17E5263700E5CFB7 /* BEPDynamicsCannonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsCannonViewController.m; sourceTree = "<group>"; };
+		295B769D17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsSpringViewController.h; sourceTree = "<group>"; };
+		295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSpringViewController.m; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -401,9 +418,17 @@
 		295B765F17E49F5500E5CFB7 /* UI Dynamics */ = {
 			isa = PBXGroup;
 			children = (
-				295B766017E49FCD00E5CFB7 /* BEPDynamicsViewController.h */,
-				295B766117E49FCD00E5CFB7 /* BEPDynamicsViewController.m */,
-				295B766217E49FCD00E5CFB7 /* BEPDynamicsViewController.xib */,
+				295B768D17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard */,
+				295B769117E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.h */,
+				295B769217E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m */,
+				295B769417E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.h */,
+				295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */,
+				295B769D17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.h */,
+				295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */,
+				295B769717E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.h */,
+				295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */,
+				295B769A17E5263700E5CFB7 /* BEPDynamicsCannonViewController.h */,
+				295B769B17E5263700E5CFB7 /* BEPDynamicsCannonViewController.m */,
 			);
 			name = "UI Dynamics";
 			sourceTree = "<group>";
@@ -687,6 +712,7 @@
 				03535C1717E4A0000053327C /* BEPTextToSpeechViewController.xib in Resources */,
 				03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */,
 				21FB555A17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */,
+				295B768E17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard in Resources */,
 				03F31BD417E294CE00369D31 /* BEPDynamicTypeViewController.xib in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
 				8796466117E1E740009B989A /* Canyon.jpg in Resources */,
@@ -694,7 +720,6 @@
 				871F714617E3446E00DC00EF /* BEPSimpleWebViewController.xib in Resources */,
 				3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */,
 				8796466617E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib in Resources */,
-				295B766417E49FCD00E5CFB7 /* BEPDynamicsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,16 +749,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295B769F17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m in Sources */,
+				295B769317E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m in Sources */,
 				87A5211417E33D980060D931 /* BEPAirDropHandler.m in Sources */,
 				3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */,
+				295B769C17E5263700E5CFB7 /* BEPDynamicsCannonViewController.m in Sources */,
 				03535C2017E4A8E50053327C /* BEPAccessibilityViewController.m in Sources */,
 				3C3EA84217D3C76F000122BD /* main.m in Sources */,
 				8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */,
 				3C3EA84617D3C76F000122BD /* BEPAppDelegate.m in Sources */,
 				8796465D17E1D121009B989A /* BEPNavigationTransitionsPushAnimator.m in Sources */,
 				871F714517E3446E00DC00EF /* BEPSimpleWebViewController.m in Sources */,
-				295B766317E49FCD00E5CFB7 /* BEPDynamicsViewController.m in Sources */,
 				8796465617E1CB4C009B989A /* BEPNavigationTransitionsViewController.m in Sources */,
+				295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */,
 				8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */,
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
 				87A5210E17E335E00060D931 /* BEPAirDropTableDataSource.m in Sources */,
@@ -743,6 +771,9 @@
 				03535C1617E4A0000053327C /* BEPTextToSpeechViewController.m in Sources */,
 				0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */,
 				03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */,
+				295B769917E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m in Sources */,
+				21FB549A17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */,
+				21FB54A317E4943B0064F290 /* BEPMultitaskingDetailViewController.m in Sources */,
 				8796466517E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				8796466917E20B87009B989A /* BEPModalTransitionAnimator.m in Sources */,

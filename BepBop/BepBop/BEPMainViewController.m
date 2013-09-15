@@ -13,7 +13,6 @@
 #import "BEPMultitaskingViewController.h"
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
-#import "BEPDynamicsViewController.h"
 
 @interface BEPMainViewController ()
 
@@ -63,7 +62,7 @@
                   [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain],
                   [NSNull null],
                   [[BEPTabbarTransitionsViewController alloc] init],
-                  [[BEPDynamicsViewController alloc] init],
+                  [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController],
                   [NSNull null],
                   [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
         } else {
