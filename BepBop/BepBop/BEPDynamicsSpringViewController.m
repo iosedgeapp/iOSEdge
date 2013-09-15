@@ -54,18 +54,6 @@
     self.animator = animator;
     
     
-    // Set up the attachment behavior that we'll use to drag the orange block
-    UIAttachmentBehavior *touchAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.touchView.center];
-    
-    // Make the attachment springy
-    touchAttachmentBehavior.damping = 0.4;
-    touchAttachmentBehavior.frequency = 1.5;
-    
-    // Add the attachment behavior
-    [self.animator addBehavior:touchAttachmentBehavior];
-    self.attachmentBehavior = touchAttachmentBehavior;
-    
-    
     // Don't let the orange block spin
     UIDynamicItemBehavior *disableRotationBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.orangeView]];
     disableRotationBehavior.allowsRotation = NO;
@@ -126,7 +114,27 @@
     // If starting a drag, update the length of the attachment, for a more
     // natural interaction - like dragging a stick starting from the touch point
     if (UIGestureRecognizerStateBegan == gesture.state) {
-        self.attachmentBehavior.length = [self distanceBetweenTouchAndAttachmentPoint:touchPoint];
+        // Set up the attachment behavior that we'll use to drag the orange block
+        UIAttachmentBehavior *touchAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.touchView.center];
+        
+        // Make the attachment springy
+        touchAttachmentBehavior.damping = 0.4;
+        touchAttachmentBehavior.frequency = 1.5;
+        
+        // Add the attachment behavior
+        [self.animator addBehavior:touchAttachmentBehavior];
+        self.attachmentBehavior = touchAttachmentBehavior;
+        
+        // Show that the drag is active
+        self.touchView.alpha = 1.0;
+        
+    } else if (UIGestureRecognizerStateEnded == gesture.state) {
+        // The pan ended, so remove the behavior. Let that orange block run free!
+        [self.animator removeBehavior:self.attachmentBehavior];
+        self.attachmentBehavior = nil;
+        
+        // Hide touch point, since drag is not active
+        self.touchView.alpha = 0;
     }
     
     // Update the displayed anchor
