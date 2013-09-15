@@ -56,8 +56,6 @@ typedef UIViewController* (^ViewControllerBlock)();
               @"Taking advantage of the new build improvements",
               @"Unit Testing on Steroids"];
         
-        self.chapterViewControllers = [NSMutableDictionary dictionary];
-
         if (IS_IOS_7) {
             self.chapterViewControllerCreationBlocks =
                 @[
@@ -128,21 +126,12 @@ typedef UIViewController* (^ViewControllerBlock)();
     return cell;
 }
 
-// Creates the view controller for a chapter when it's accessed for the first time
+// Creates the view controller for a chapter
 - (UIViewController *)chapterViewControllerForIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *chapterTitle = self.chapterTitles[indexPath.row];
-    
-    // See if we already have created a view controller for this chapter
-    UIViewController *chapterViewController = [self.chapterViewControllers objectForKey:chapterTitle];
-    
-    if (chapterViewController == nil) {
-        // Create the view controller
-        ViewControllerBlock createViewController = self.chapterViewControllerCreationBlocks[indexPath.row];
-        chapterViewController = createViewController();
-        [self.chapterViewControllers setObject:chapterViewController forKey:chapterTitle];
-    }
-    return chapterViewController;
+    // Get the block used to create the controller, and call it!
+    ViewControllerBlock createViewController = self.chapterViewControllerCreationBlocks[indexPath.row];
+    return createViewController();
 }
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
