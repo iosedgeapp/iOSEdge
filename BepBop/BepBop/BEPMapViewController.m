@@ -57,6 +57,8 @@
     
     MKCoordinateRegion sydneyOperaHouseRegion = MKCoordinateRegionMakeWithDistance(sydneyOperaHouseCoordinate, 100, 100);
     MKCoordinateRegion lunaParkRegion = MKCoordinateRegionMakeWithDistance(lunaParkCoordinate, 100, 100);
+
+    
     
     self.mapView.region = sydneyOperaHouseRegion;
     [self.mapView setShowsPointsOfInterest:YES];
@@ -195,7 +197,20 @@
     
 }
 
-- (IBAction)changePitch:(id)sender{
+- (IBAction)changeEyeAltitude:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    NSLog(@"value %f", slider.value);
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.mapView.camera.altitude = slider.value;
+                     
+                    } completion:NULL];
+}
+
+
+- (IBAction)changePitch:(id)sender {
     UISlider* slider = (UISlider*)sender;
     NSLog(@"value %f", slider.value);
     
@@ -203,10 +218,9 @@
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         if (slider.value < 55.0f)
-                         self.mapView.camera.pitch =slider.value;
+                         if (slider.value < 60)
+                             self.mapView.camera.pitch = slider.value;
                      } completion:NULL];
-
 }
 
 - (IBAction)changeCameraView:(id)sender {
