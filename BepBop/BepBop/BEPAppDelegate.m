@@ -10,7 +10,7 @@
 #import "BEPMainViewController.h"
 #import "BEPNavigationController.h"
 #import "BEPAirDropHandler.h"
-#import "BEPMultitaskingMasterViewController.h"
+#import "BEPMultitaskingViewController.h"
 
 @interface BEPAppDelegate ()
 @property BEPMainViewController* mainViewController;
@@ -20,10 +20,11 @@
 
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    if (IS_IOS_7) {
+        [[BEPAirDropHandler sharedInstance] handleSavedAirDropURLs];
+        [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    }
     
-    [[BEPAirDropHandler sharedInstance] handleSavedAirDropURLs];
-    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -58,8 +59,14 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    BEPMultitaskingMasterViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
-    [multitaskingViewController performFetchWithCompletionHandler:completionHandler];
+    BEPMultitaskingViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
+    BOOL newData = [multitaskingViewController performBackgroundTransfer];
+    if (newData) {
+        [UIApplication sharedApplication].applicationIconBadgeNumber++;
+        completionHandler(UIBackgroundFetchResultNewData);
+    } else {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -78,6 +85,15 @@
     }
 
     return NO;
+}
+
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier
+  completionHandler:(void (^)())completionHandler
+{
+    /*
+     Store the completion handler. The completion handler is invoked by the view controller's checkForAllDownloadsHavingCompleted method (if all the download tasks have been completed).
+     */
+	self.backgroundSessionCompletionHandler = completionHandler;
 }
 
 - (void) applicationWillResignActive:(UIApplication*)application
