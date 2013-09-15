@@ -99,7 +99,7 @@
                                                error:&error];
     
     if (_airDropItems == nil) {
-        NSLog(@"could not fecth airdrop files: %@", error);
+        NSLog(@"could not fetch airdrop files: %@", error);
         self.airDropItems = @[];
     }
 

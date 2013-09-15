@@ -10,10 +10,10 @@
 #import "BEPMainViewController.h"
 #import "BEPNavigationController.h"
 #import "BEPAirDropHandler.h"
-#import "BEPMultitaskingViewController.h"
+#import "BEPBackgroundDownloadHandler.h"
 
 @interface BEPAppDelegate ()
-@property BEPMainViewController* mainViewController;
+
 @end
 
 @implementation BEPAppDelegate
@@ -29,9 +29,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-    self.mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
+    BEPMainViewController *mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
 
-    BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:self.mainViewController];
+    BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:mainViewController];
     navigationController.navigationBar.translucent = IS_IOS_7;
 
     if ([navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
@@ -56,17 +56,18 @@
     return YES;
 }
 
-
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    BEPMultitaskingViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
-    BOOL newData = [multitaskingViewController performBackgroundTransfer];
-    if (newData) {
-        [UIApplication sharedApplication].applicationIconBadgeNumber++;
-        completionHandler(UIBackgroundFetchResultNewData);
-    } else {
-        completionHandler(UIBackgroundFetchResultNoData);
-    }
+    [[BEPBackgroundDownloadHandler sharedInstance] refreshWithCompletionHandler:^(BOOL didReceiveNewImage, NSError *error) {
+        if (error) {
+            completionHandler(UIBackgroundFetchResultFailed);
+        } else if (didReceiveNewImage) {
+            [UIApplication sharedApplication].applicationIconBadgeNumber++;
+            completionHandler(UIBackgroundFetchResultNewData);
+        } else {
+            completionHandler(UIBackgroundFetchResultNoData);
+        }
+    }];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

@@ -14,10 +14,18 @@
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
 
+#define kLookAndFeelRow  0
+#define kDynamicTypeRow  1
+#define kMultipeerRow    2
+#define kMultitaskingRow 3
+#define kTransitionsRow  5
+#define kMapsRow         8
+
 @interface BEPMainViewController ()
 
-@property NSArray* chapterHeadings;
-@property NSArray* chapterTitles;
+@property (nonatomic) NSArray* chapterHeadings;
+@property (nonatomic) NSArray* chapterTitles;
+@property (nonatomic) NSArray* chapterViewControllerClasses;
 
 @end
 
@@ -55,19 +63,19 @@
               @"Unit Testing on Steroids"];
 
         if (IS_IOS_7) {
-            self.chapterViewControllers =
-                @[[[BEPLookAndFeelViewController alloc] init],
-                  [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil],
-                  [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
-                  [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain],
+            self.chapterViewControllerClasses =
+                @[[BEPLookAndFeelViewController class],
+                  [BEPAccessibilityViewController class],
+                  [BEPMultipeerConnectivityViewController class],
+                  [BEPMultitaskingViewController class],
                   [NSNull null],
-                  [[BEPTabbarTransitionsViewController alloc] init],
-                  [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController],
+                  [BEPTabbarTransitionsViewController class],
+                  [UIStoryboard class],
                   [NSNull null],
-                  [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
+                  [BEPMapViewController class]];
         } else {
             // Most of the examples make use of features exclusively available in iOS7
-            self.chapterViewControllers = @[[[BEPLookAndFeelViewController alloc] init]];
+            self.chapterViewControllerClasses = @[[BEPLookAndFeelViewController class]];
         }
     }
     return self;
@@ -92,16 +100,11 @@
     self.title = @"Bleeding Edge Press";
 }
 
-#pragma mark - UITableViewController
-
-- (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView
-{
-    return 1;
-}
+#pragma mark - UITableViewDataSource
 
 - (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return ([self.chapterViewControllers count]); // On iOS6 only the supported chapters are present
+    return ([self.chapterViewControllerClasses count]); // On iOS6 only the supported chapters are present
 }
 
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -120,11 +123,19 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    UIViewController* viewController = [self.chapterViewControllers objectAtIndex:indexPath.row];
-    if (viewController != (id)[NSNull null])
+    id viewControllerClass = [self.chapterViewControllerClasses objectAtIndex:indexPath.row];
+    if (viewControllerClass != [NSNull null])
     {
+        UIViewController* viewController;
+        if (viewControllerClass == [UIStoryboard class]) {
+            viewController = [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController];
+        } else {
+            viewController = [[viewControllerClass alloc] initWithNibName:nil bundle:nil];
+        }
         [self.navigationController pushViewController:viewController animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

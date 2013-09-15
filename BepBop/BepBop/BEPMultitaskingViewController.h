@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPMultitaskingViewController : UITableViewController <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
-
-- (BOOL)performBackgroundTransfer;
+@interface BEPMultitaskingViewController : UITableViewController
 
 @end
