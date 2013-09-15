@@ -42,7 +42,8 @@
     [self.animator addBehavior:basicGravity];
     self.gravity = basicGravity;
     
-    // Without any collision behavior, the heavy label would fall right off the screen
+    // Without any collision behavior, the heavy label would fall right off the screen.
+    // Try commenting out this section and see what happens.
     UICollisionBehavior *collideWithBounds = [[UICollisionBehavior alloc] initWithItems:@[self.heavyLabel]];
     collideWithBounds.translatesReferenceBoundsIntoBoundary = YES; // Simple way to make bounds of reference view into a collision boundary
     [self.animator addBehavior:collideWithBounds];
