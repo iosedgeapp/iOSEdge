@@ -71,7 +71,9 @@
     collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     [self.animator addBehavior:collisionBehavior];
     
-    
+    // Set ourselves as delegate so that we receive collision events
+    collisionBehavior.collisionDelegate = self;
+
     
 }
 
@@ -85,7 +87,7 @@
     [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView1 offsetFromCenter:offsetRight attachedToItem:self.blueView2 offsetFromCenter:offsetLeft]];
     
     // Attach blue 2 to 3 adn add to animator
-    [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView2 offsetFromCenter:offsetRight attachedToItem:self.blueView3 offsetFromCenter:offsetRight]];
+    [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView2 offsetFromCenter:offsetRight attachedToItem:self.blueView3 offsetFromCenter:offsetLeft]];
 }
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer*)gesture
@@ -99,5 +101,26 @@
     // Update the displayed anchor
     self.anchorView.center = touchPoint;
     
+}
+
+#pragma mark CollisionBehaviorDelegate methods
+
+- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p
+{
+    if (identifier == nil) {
+        // Collided with default boundary
+        if ([item isKindOfClass:[UIView class]]) {
+            UIView *collidedView = (UIView*)item;
+            collidedView.alpha = 0.5;
+        }
+    }
+}
+
+- (void)collisionBehavior:(UICollisionBehavior *)behavior endedContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier
+{
+    if ([item isKindOfClass:[UIView class]]) {
+        UIView *collidedView = (UIView*)item;
+        collidedView.alpha = 1.0;
+    }
 }
 @end
