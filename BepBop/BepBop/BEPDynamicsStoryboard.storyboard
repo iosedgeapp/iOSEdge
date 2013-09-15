@@ -287,19 +287,24 @@
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjs-ql-yr1">
-                                <rect key="frame" x="20" y="138" width="62" height="23"/>
+                                <rect key="frame" x="28" y="227" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8lE-o6-C1d">
-                                <rect key="frame" x="95" y="138" width="62" height="23"/>
+                                <rect key="frame" x="96" y="227" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8eC-Ae-wPF">
-                                <rect key="frame" x="168" y="138" width="62" height="23"/>
+                                <rect key="frame" x="164" y="227" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lX0-7R-cph">
+                                <rect key="frame" x="232" y="227" width="60" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -314,6 +319,7 @@
                         <outlet property="blueView1" destination="Cjs-ql-yr1" id="rld-JE-gq9"/>
                         <outlet property="blueView2" destination="8lE-o6-C1d" id="CLv-Sw-7qR"/>
                         <outlet property="blueView3" destination="8eC-Ae-wPF" id="Trw-T6-hXN"/>
+                        <outlet property="greenView" destination="lX0-7R-cph" id="74C-MI-MWL"/>
                         <outlet property="orangeView" destination="HJl-uY-ENn" id="nmf-RR-Sqi"/>
                     </connections>
                 </viewController>

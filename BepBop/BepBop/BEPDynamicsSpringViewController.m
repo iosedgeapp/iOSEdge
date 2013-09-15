@@ -24,6 +24,8 @@
 @property (nonatomic, weak) IBOutlet UIView *blueView2;
 @property (nonatomic, weak) IBOutlet UIView *blueView3;
 
+@property (nonatomic, weak) IBOutlet UIView *greenView;
+
 @property (nonatomic, assign) UIOffset attachmentOffset;
 
 @end
@@ -63,21 +65,30 @@
     self.attachmentBehavior = attachmentBehavior;
     
     // Connect blue views together
-    [self connectBlueViews];
+    [self connectSnakeViews];
     
     // Make blocks collide with each other
-    NSArray *coloredBlocks = @[self.orangeView, self.blueView1, self.blueView2, self.blueView3];
+    NSArray *coloredBlocks = @[self.orangeView, self.blueView1, self.blueView2, self.blueView3, self.greenView];
     UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:coloredBlocks];
-    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    
+    // Instead of going right to the edges of the view, we inset the boundary
+    UIEdgeInsets boundaryInset = UIEdgeInsetsMake(60, 24, 24, 24);
+    [collisionBehavior setTranslatesReferenceBoundsIntoBoundaryWithInsets:boundaryInset];
     [self.animator addBehavior:collisionBehavior];
     
     // Set ourselves as delegate so that we receive collision events
     collisionBehavior.collisionDelegate = self;
 
+    // Make the "tail" of the snake light and easier to spin
+    UIDynamicItemBehavior *lightBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.greenView]];
+    lightBehavior.density = 0.1;
+    lightBehavior.angularResistance = 0.1;
+    lightBehavior.resistance = 0.1;
+    [self.animator addBehavior:lightBehavior];
     
 }
 
-- (void)connectBlueViews
+- (void)connectSnakeViews
 {
     // We offset the connection points to make it more like a "snake"
     UIOffset offsetLeft = UIOffsetMake(-25, 0);
@@ -86,8 +97,11 @@
     // Connect blue 1 to 2 and add to animator
     [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView1 offsetFromCenter:offsetRight attachedToItem:self.blueView2 offsetFromCenter:offsetLeft]];
     
-    // Attach blue 2 to 3 adn add to animator
+    // Attach blue 2 to 3 and add to animator
     [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView2 offsetFromCenter:offsetRight attachedToItem:self.blueView3 offsetFromCenter:offsetLeft]];
+    
+    // Attach the tail
+    [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView3 offsetFromCenter:offsetRight attachedToItem:self.greenView offsetFromCenter:offsetLeft]];
 }
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer*)gesture
