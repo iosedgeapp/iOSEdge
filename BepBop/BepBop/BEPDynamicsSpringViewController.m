@@ -77,11 +77,15 @@
 
 - (void)connectBlueViews
 {
+    // We offset the connection points to make it more like a "snake"
+    UIOffset offsetLeft = UIOffsetMake(-25, 0);
+    UIOffset offsetRight = UIOffsetMake(25, 0);
+    
     // Connect blue 1 to 2 and add to animator
-    [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView1 attachedToItem:self.blueView2]];
+    [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView1 offsetFromCenter:offsetRight attachedToItem:self.blueView2 offsetFromCenter:offsetLeft]];
     
     // Attach blue 2 to 3 adn add to animator
-    [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView2 attachedToItem:self.blueView3]];
+    [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView2 offsetFromCenter:offsetRight attachedToItem:self.blueView3 offsetFromCenter:offsetRight]];
 }
 
 - (IBAction)handleAttachmentGesture:(UIPanGestureRecognizer*)gesture
