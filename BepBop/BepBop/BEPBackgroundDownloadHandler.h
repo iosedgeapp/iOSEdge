@@ -14,7 +14,6 @@ typedef void (^BEPRefreshCompletionHandler)(BOOL didReceiveNewImage, NSError *er
 
 + (instancetype)sharedInstance;
 
-- (void)refresh;
 - (void)refreshWithCompletionHandler:(BEPRefreshCompletionHandler)completionHandler;
 
 @end

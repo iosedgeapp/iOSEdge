@@ -20,13 +20,27 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Chapter 4", nil);
-    self.tableView.dataSource = [BEPBackgroundDownloadHandler sharedInstance];
-    [self setupRefreshControl];
-    // hide the empty rows ~ http://stackoverflow.com/a/6738534/337735
-    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)]];
     self.formatter = [[NSDateFormatter alloc] init];
     self.formatter.dateFormat = @"MMM d, h:mm:ss a";
+
+    self.title = NSLocalizedString(@"Chapter 4", nil);
+    self.tableView.dataSource = [BEPBackgroundDownloadHandler sharedInstance];
+
+    [self setupRefreshControl];
+
+    // hide the empty rows ~ http://stackoverflow.com/a/6738534/337735
+    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)]];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(transferComplete:) name:@"BackgroundTransferComplete" object:nil];
+}
+
+#pragma mark - Notifications
+
+- (void)transferComplete:(NSNotification *)notification
+{
+    int row = [[[notification userInfo] objectForKey:@"id"] integerValue];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row  inSection:0];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - Refresh Control

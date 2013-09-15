@@ -41,14 +41,11 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
         self.images = [NSMutableArray array];
         self.downloadTasks = [NSMutableArray array];
         self.seenImages = [NSMutableSet set];
+        self.formatter = [[NSDateFormatter alloc] init];
+        self.formatter.dateFormat = @"MMM d, h:mm:ss a";
         self.session = [self backgroundSession];
     }
     return self;
-}
-
-- (void)refresh
-{
-    [self refreshWithCompletionHandler:^(BOOL didReceiveNewImage, NSError *error) {}];
 }
 
 - (void)refreshWithCompletionHandler:(BEPRefreshCompletionHandler)completionHandler
@@ -159,9 +156,8 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
             for (int i = 0; i < [self.downloadTasks count]; i++) {
                 if ([self.downloadTasks objectAtIndex:i] == downloadTask) {
                     [self.images replaceObjectAtIndex:i withObject:image];
-                    // now reload this row with the image
-//                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-//                    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                    NSNotification* notification = [NSNotification notificationWithName:@"BackgroundTransferComplete" object:self userInfo:@{@"id": [NSNumber numberWithInt:i]}];
+                    [[NSNotificationCenter defaultCenter] postNotification:notification];
                 }
             }
         });
@@ -181,8 +177,6 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
     } else {
         NSLog(@"Task: %@ completed with error: %@", task, [error localizedDescription]);
     }
-
-    //    self.downloadTask = nil;
 }
 
 /*
