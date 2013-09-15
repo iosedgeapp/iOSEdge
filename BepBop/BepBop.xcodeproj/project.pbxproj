@@ -17,7 +17,6 @@
 		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
 		03F31BD417E294CE00369D31 /* BEPDynamicTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */; };
 		175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */; };
-		3C00928A17E403F400E61B38 /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */; };
 		21FB549A17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB549817E3F9310064F290 /* BEPMultitaskingMasterViewController.m */; };
 		21FB549B17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB549817E3F9310064F290 /* BEPMultitaskingMasterViewController.m */; };
 		21FB549C17E3F9310064F290 /* BEPMultitaskingMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB549917E3F9310064F290 /* BEPMultitaskingMasterViewController.xib */; };
@@ -103,11 +102,11 @@
 		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
 		03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPDynamicTypeViewController.xib; sourceTree = "<group>"; };
 		175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPLookAndFeelView.xib; sourceTree = "<group>"; };
-		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		21FB549717E3F9310064F290 /* BEPMultitaskingMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMultitaskingMasterViewController.h; sourceTree = "<group>"; };
 		21FB549817E3F9310064F290 /* BEPMultitaskingMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultitaskingMasterViewController.m; sourceTree = "<group>"; };
 		21FB549917E3F9310064F290 /* BEPMultitaskingMasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPMultitaskingMasterViewController.xib; sourceTree = "<group>"; };
 		21FB549E17E3F9630064F290 /* BepBop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BepBop.entitlements; sourceTree = "<group>"; };
+		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C3EA83717D3C76F000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -553,7 +552,6 @@
 			files = (
 				3CACB20417E40C3A00B715DE /* InfoPlist.strings in Resources */,
 				21FB549D17E3F9310064F290 /* BEPMultitaskingMasterViewController.xib in Resources */,
-				3C3EA85E17D3C76F000122BD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +593,6 @@
 			files = (
 				3CACB20617E40C3A00B715DE /* BepBopTests.m in Sources */,
 				21FB549B17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */,
-				3C3EA86117D3C76F000122BD /* BepBopTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
