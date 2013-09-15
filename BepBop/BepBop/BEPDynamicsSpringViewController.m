@@ -53,7 +53,8 @@
     UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     self.animator = animator;
     
-    // Set up the attachment behavior
+    
+    // Set up the attachment behavior that we'll use to drag the orange block
     UIAttachmentBehavior *touchAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.touchView.center];
     
     // Make the attachment springy
@@ -64,23 +65,16 @@
     [self.animator addBehavior:touchAttachmentBehavior];
     self.attachmentBehavior = touchAttachmentBehavior;
     
+    
+    // Don't let the orange block spin
+    UIDynamicItemBehavior *disableRotationBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.orangeView]];
+    disableRotationBehavior.allowsRotation = NO;
+    [self.animator addBehavior:disableRotationBehavior];
+    
+    
     // Connect the blue and green blocks into a "snake" with green tail
     [self connectSnakeViews];
     
-    // Make blocks collide with each other
-    NSArray *coloredBlocks = @[self.orangeView, self.blueView1, self.blueView2, self.blueView3, self.greenView];
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:coloredBlocks];
-    
-    // Instead of going right to the edges of the view, we inset the boundary
-    UIEdgeInsets boundaryInset = UIEdgeInsetsMake(60, 24, 24, 24);
-    [collisionBehavior setTranslatesReferenceBoundsIntoBoundaryWithInsets:boundaryInset];
-    
-    // Set ourselves as delegate so that we receive collision events
-    collisionBehavior.collisionDelegate = self;
-    
-    // Add the collision behavior to the animator
-    [self.animator addBehavior:collisionBehavior];
-
     // Make the "tail" of the snake light and easier to spin
     UIDynamicItemBehavior *lightBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.greenView]];
     lightBehavior.density = 0.1;
@@ -88,11 +82,21 @@
     lightBehavior.resistance = 0.1;
     [self.animator addBehavior:lightBehavior];
     
-    // Don't let the orange block spin
-    UIDynamicItemBehavior *disableRotationBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.orangeView]];
-    disableRotationBehavior.allowsRotation = NO;
-    [self.animator addBehavior:disableRotationBehavior];
     
+    // Make blocks collide with each other
+    NSArray *coloredBlocks = @[self.orangeView, self.blueView1, self.blueView2, self.blueView3, self.greenView];
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:coloredBlocks];
+    
+    // Set up a collision boundary along the bounds of the reference view.
+    // Collisions with this boundary will have a nil identifier.
+    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    
+    // Set ourselves as delegate so that we receive collision events
+    collisionBehavior.collisionDelegate = self;
+    
+    // Add the collision behavior to the animator
+    [self.animator addBehavior:collisionBehavior];
+
 }
 
 - (void)connectSnakeViews
@@ -119,10 +123,29 @@
     // Update the anchor point
     [self.attachmentBehavior setAnchorPoint:touchPoint];
     
+    // If starting a drag, update the length of the attachment, for a more
+    // natural interaction - like dragging a stick starting from the touch point
+    if (UIGestureRecognizerStateBegan == gesture.state) {
+        self.attachmentBehavior.length = [self distanceBetweenTouchAndAttachmentPoint:touchPoint];
+    }
+    
     // Update the displayed anchor
     self.touchView.center = touchPoint;
     
 }
+
+- (CGFloat)distanceBetweenTouchAndAttachmentPoint:(CGPoint)touchPoint
+{
+    // Get the location of the attachment point (the center of the blue square)
+    // relative to the reference view
+    CGPoint attachmentPoint = [self.view convertPoint:self.attachmentView.center fromView:self.orangeView];
+    
+    CGFloat xDist = (touchPoint.x - attachmentPoint.x);
+    CGFloat yDist = (touchPoint.y - attachmentPoint.y);
+    CGFloat distance = sqrt((xDist * xDist) + (yDist * yDist)); // Pythagoras
+    return distance;
+}
+
 
 #pragma mark CollisionBehaviorDelegate methods
 
@@ -144,4 +167,5 @@
         collidedView.alpha = 1.0;
     }
 }
+
 @end
