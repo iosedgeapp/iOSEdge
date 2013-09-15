@@ -126,7 +126,6 @@
 
 #pragma mark Storing and Restoring State
 
-
 -(void)encodeRestorableStateWithCoder:(NSCoder *)coder{
     MKMapCamera* camera = [self.mapView camera];
     
@@ -151,7 +150,7 @@
         [self.mapView setCamera:camera];
         
         [super decodeRestorableStateWithCoder:coder];
-    }
+}
     
 
 
@@ -394,7 +393,8 @@
                          
                      } completion:NULL];
     
-    }
+ 
+}
 
 
 @end
