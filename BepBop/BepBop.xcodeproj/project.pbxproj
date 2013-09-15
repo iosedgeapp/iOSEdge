@@ -28,15 +28,9 @@
 		17D1181017E50CC800A3150E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17D1180E17E50CC800A3150E /* InfoPlist.strings */; };
 		17D1181217E50CC800A3150E /* BepBopOCUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1181117E50CC800A3150E /* BepBopOCUnitTests.m */; };
 		17D1181917E50DBA00A3150E /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */; };
-		21FB549B17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB549817E3F9310064F290 /* BEPMultitaskingMasterViewController.m */; };
-		21FB549D17E3F9310064F290 /* BEPMultitaskingMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB549917E3F9310064F290 /* BEPMultitaskingMasterViewController.xib */; };
 		21FB555817E4F4F50064F290 /* BEPMultitaskingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB555617E4F4F50064F290 /* BEPMultitaskingViewController.m */; };
-		21FB555917E4F4F50064F290 /* BEPMultitaskingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB555617E4F4F50064F290 /* BEPMultitaskingViewController.m */; };
 		21FB555A17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB555717E4F4F50064F290 /* BEPMultitaskingViewController.xib */; };
-		21FB555B17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FB555717E4F4F50064F290 /* BEPMultitaskingViewController.xib */; };
 		21FB556317E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB556217E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m */; };
-		21FB556417E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB556217E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m */; };
-		21FB556517E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB556217E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m */; };
 		295B768E17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295B768D17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard */; };
 		295B769317E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769217E4FB8E00E5CFB7 /* BEPDynamicsHeavyViewController.m */; };
 		295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */; };
@@ -56,7 +50,7 @@
 		3C3EA87A17D3D032000122BD /* BepBopLibrary.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 3C3EA87917D3D032000122BD /* BepBopLibrary.xcodeproj */; };
 		3C76F11017E40D8700078BB3 /* libBepBopLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBCDCE117D3D23A000FC414 /* libBepBopLibrary.a */; };
 		3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */; };
-		3CACB1FC17E40C3A00B715DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C00929117E40A2900E61B38 /* XCTest.framework */; };
+		3CACB1FC17E40C3A00B715DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C00929117E40A2900E61B38 /* XCTest.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		3CACB1FD17E40C3A00B715DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3CACB1FE17E40C3A00B715DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3CACB20417E40C3A00B715DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CACB20217E40C3A00B715DE /* InfoPlist.strings */; };
@@ -67,7 +61,7 @@
 		871F714617E3446E00DC00EF /* BEPSimpleWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871F714417E3446E00DC00EF /* BEPSimpleWebViewController.xib */; };
 		8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA3917E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m */; };
 		8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8727AA3D17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib */; };
-		8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */; };
+		8727AA4017E0BB1D00B728C8 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8727AA3F17E0BB1D00B728C8 /* MultipeerConnectivity.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8727AA5517E0D9A500B728C8 /* BEPSimpleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */; };
 		8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */; };
 		8796464417E1C0F9009B989A /* BEPTabbarTransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796464317E1C0F9009B989A /* BEPTabbarTransitionsViewController.m */; };
@@ -145,8 +139,6 @@
 		17D1180F17E50CC800A3150E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17D1181117E50CC800A3150E /* BepBopOCUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopOCUnitTests.m; sourceTree = "<group>"; };
 		17D1181317E50CC800A3150E /* BepBopOCUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopOCUnitTests-Prefix.pch"; sourceTree = "<group>"; };
-		21FB549817E3F9310064F290 /* BEPMultitaskingMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultitaskingMasterViewController.m; sourceTree = "<group>"; };
-		21FB549917E3F9310064F290 /* BEPMultitaskingMasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPMultitaskingMasterViewController.xib; sourceTree = "<group>"; };
 		21FB549E17E3F9630064F290 /* BepBop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BepBop.entitlements; sourceTree = "<group>"; };
 		21FB555517E4F4F50064F290 /* BEPMultitaskingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPMultitaskingViewController.h; sourceTree = "<group>"; };
 		21FB555617E4F4F50064F290 /* BEPMultitaskingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPMultitaskingViewController.m; sourceTree = "<group>"; };
@@ -716,9 +708,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21FB555B17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */,
 				3CACB20417E40C3A00B715DE /* InfoPlist.strings in Resources */,
-				21FB549D17E3F9310064F290 /* BEPMultitaskingMasterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,7 +719,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21FB556517E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m in Sources */,
 				17D1181217E50CC800A3150E /* BepBopOCUnitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,10 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21FB555917E4F4F50064F290 /* BEPMultitaskingViewController.m in Sources */,
-				21FB556417E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m in Sources */,
 				3CACB20617E40C3A00B715DE /* BepBopTests.m in Sources */,
-				21FB549B17E3F9310064F290 /* BEPMultitaskingMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
