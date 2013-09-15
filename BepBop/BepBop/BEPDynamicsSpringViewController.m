@@ -64,7 +64,7 @@
     [self.animator addBehavior:attachmentBehavior];
     self.attachmentBehavior = attachmentBehavior;
     
-    // Connect blue views together
+    // Connect the blue and green blocks into a "snake" with green tail
     [self connectSnakeViews];
     
     // Make blocks collide with each other
@@ -74,10 +74,12 @@
     // Instead of going right to the edges of the view, we inset the boundary
     UIEdgeInsets boundaryInset = UIEdgeInsetsMake(60, 24, 24, 24);
     [collisionBehavior setTranslatesReferenceBoundsIntoBoundaryWithInsets:boundaryInset];
-    [self.animator addBehavior:collisionBehavior];
     
     // Set ourselves as delegate so that we receive collision events
     collisionBehavior.collisionDelegate = self;
+    
+    // Add the collision behavior to the animator
+    [self.animator addBehavior:collisionBehavior];
 
     // Make the "tail" of the snake light and easier to spin
     UIDynamicItemBehavior *lightBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.greenView]];
@@ -85,6 +87,11 @@
     lightBehavior.angularResistance = 0.1;
     lightBehavior.resistance = 0.1;
     [self.animator addBehavior:lightBehavior];
+    
+    // Don't let the orange block spin
+    UIDynamicItemBehavior *disableRotationBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.orangeView]];
+    disableRotationBehavior.allowsRotation = NO;
+    [self.animator addBehavior:disableRotationBehavior];
     
 }
 
