@@ -27,7 +27,6 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
 @property IBOutlet UIBarButtonItem *pauseResumeButton;
 
 @property AVSpeechSynthesizer *synthesizer;
-@property AVSpeechUtterance *utterance;
 
 @end
 
@@ -47,6 +46,13 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
+    
+    AVSpeechUtterance *helloUtterance = [AVSpeechUtterance speechUtteranceWithString:@"Hello, there!"];
+    AVSpeechUtterance *howAreYouUtterance = [AVSpeechUtterance speechUtteranceWithString:@"How are you?"];
+    [synthesizer speakUtterance:helloUtterance];
+    [synthesizer speakUtterance:howAreYouUtterance];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -60,15 +66,6 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
 {
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:self.bodyLabel.text];
     
-    /*
-     English voices:
-     en-GB
-     en-US
-     en-AU
-     en-IE
-     en-ZA
-     */
-
     utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
     utterance.volume = self.volumeSlider.value;
     utterance.pitchMultiplier = self.pitchSlider.value;
@@ -90,7 +87,6 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
     }
     utterance.rate = rate;
     
-    self.utterance = utterance;
     [self.synthesizer speakUtterance:utterance];
 }
 
