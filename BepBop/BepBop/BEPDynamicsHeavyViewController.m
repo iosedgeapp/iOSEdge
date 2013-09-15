@@ -38,6 +38,7 @@
     UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     self.animator = animator;
     
+    // Create a basic gravity behavior and have it affect the heavy label
     UIGravityBehavior *basicGravity = [[UIGravityBehavior alloc] initWithItems:@[self.heavyLabel]];
     [self.animator addBehavior:basicGravity];
     self.gravity = basicGravity;

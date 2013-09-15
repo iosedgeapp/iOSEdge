@@ -243,15 +243,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="fUY-Fs-dg7"/>
                     <connections>
-                        <outlet property="anchorView" destination="QDl-AE-oSD" id="aMq-Pf-pPk"/>
                         <outlet property="attachmentView" destination="5Sq-HU-2MY" id="goJ-Z5-Xj3"/>
                         <outlet property="orangeView" destination="Hwx-0P-oxF" id="AsM-Xo-qrs"/>
+                        <outlet property="touchView" destination="QDl-AE-oSD" id="qnL-4k-8u8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0b-1e-qwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Bew-tH-0Si">
                     <connections>
-                        <action selector="handleAttachmentGesture:" destination="m70-8y-kPn" id="o7b-Ob-vQc"/>
+                        <action selector="handlePanGesture:" destination="m70-8y-kPn" id="aPk-cb-ImZ"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
