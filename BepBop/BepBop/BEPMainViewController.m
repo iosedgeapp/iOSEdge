@@ -150,7 +150,7 @@ typedef UIViewController* (^ViewControllerBlock)();
     UIViewController *chapterViewController;
     chapterViewController = [self chapterViewControllerForIndexPath:indexPath];
     
-    if (chapterViewController) {
+    if ([chapterViewController isKindOfClass:[UIViewController class]]) {
         [self.navigationController pushViewController:chapterViewController animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
