@@ -110,10 +110,10 @@
     
     // Update the anchor point
     [self.attachmentBehavior setAnchorPoint:touchPoint];
-    
-    // If starting a drag, update the length of the attachment, for a more
-    // natural interaction - like dragging a stick starting from the touch point
-    if (UIGestureRecognizerStateBegan == gesture.state) {
+
+    // When starting a drag, we create a new attachment behavior for dragging
+    // the orange block and add it to the animator.
+    if (gesture.state == UIGestureRecognizerStateBegan) {
         // Set up the attachment behavior that we'll use to drag the orange block
         UIAttachmentBehavior *touchAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.touchView.center];
         
@@ -128,7 +128,7 @@
         // Show that the drag is active
         self.touchView.alpha = 1.0;
         
-    } else if (UIGestureRecognizerStateEnded == gesture.state) {
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
         // The pan ended, so remove the behavior. Let that orange block run free!
         [self.animator removeBehavior:self.attachmentBehavior];
         self.attachmentBehavior = nil;
