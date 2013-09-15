@@ -10,6 +10,10 @@
 		175C201E17E15B90008D6F4E /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C201D17E15B90008D6F4E /* UIColor+Extensions.m */; };
 		175C202217E15F9B008D6F4E /* BEPTintedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C202117E15F9B008D6F4E /* BEPTintedLabel.m */; };
 		175C202B17E1734E008D6F4E /* BEPTintedSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 175C202A17E1734E008D6F4E /* BEPTintedSwitch.m */; };
+		17D1181F17E62F4500A3150E /* UIView+DimensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1181E17E62F4500A3150E /* UIView+DimensionsTests.m */; };
+		17D1182117E6334300A3150E /* UIColor+ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1182017E6334300A3150E /* UIColor+ExtensionsTests.m */; };
+		17D1182917E63A9800A3150E /* BEPTintedLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1182817E63A9800A3150E /* BEPTintedLabelTests.m */; };
+		17D1182B17E63C1500A3150E /* BEPTintedSwitchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1182A17E63C1500A3150E /* BEPTintedSwitchTests.m */; };
 		3C3EA80217D3C752000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA80117D3C752000122BD /* Foundation.framework */; };
 		3C3EA80717D3C752000122BD /* BepBopLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C3EA80617D3C752000122BD /* BepBopLibrary.h */; };
 		3C3EA87017D3CA4A000122BD /* UIView+Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3EA86F17D3CA4A000122BD /* UIView+Dimensions.m */; };
@@ -19,7 +23,6 @@
 		3CACB1E717E40C0600B715DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA80117D3C752000122BD /* Foundation.framework */; };
 		3CACB1E817E40C0600B715DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CACB1DB17E40B3300B715DE /* UIKit.framework */; };
 		3CACB1EE17E40C0600B715DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CACB1EC17E40C0600B715DE /* InfoPlist.strings */; };
-		3CACB1F017E40C0600B715DE /* BepBopLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACB1EF17E40C0600B715DE /* BepBopLibraryTests.m */; };
 		8727AA4A17E0D76B00B728C8 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4717E0D76B00B728C8 /* UIActionSheet+Blocks.m */; };
 		8727AA4B17E0D76B00B728C8 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4917E0D76B00B728C8 /* UIAlertView+Blocks.m */; };
 		8727AA4E17E0D78600B728C8 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8727AA4D17E0D78600B728C8 /* RIButtonItem.m */; };
@@ -63,6 +66,10 @@
 		175C202117E15F9B008D6F4E /* BEPTintedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedLabel.m; sourceTree = "<group>"; };
 		175C202917E1734E008D6F4E /* BEPTintedSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPTintedSwitch.h; sourceTree = "<group>"; };
 		175C202A17E1734E008D6F4E /* BEPTintedSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedSwitch.m; sourceTree = "<group>"; };
+		17D1181E17E62F4500A3150E /* UIView+DimensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DimensionsTests.m"; sourceTree = "<group>"; };
+		17D1182017E6334300A3150E /* UIColor+ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ExtensionsTests.m"; sourceTree = "<group>"; };
+		17D1182817E63A9800A3150E /* BEPTintedLabelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedLabelTests.m; sourceTree = "<group>"; };
+		17D1182A17E63C1500A3150E /* BEPTintedSwitchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPTintedSwitchTests.m; sourceTree = "<group>"; };
 		3C00928F17E408BE00E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA7FE17D3C752000122BD /* libBepBopLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBepBopLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA80117D3C752000122BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,7 +83,6 @@
 		3CACB1E517E40C0600B715DE /* BepBopLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BepBopLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CACB1EB17E40C0600B715DE /* BepBopLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BepBopLibraryTests-Info.plist"; sourceTree = "<group>"; };
 		3CACB1ED17E40C0600B715DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3CACB1EF17E40C0600B715DE /* BepBopLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopLibraryTests.m; sourceTree = "<group>"; };
 		3CACB1F117E40C0600B715DE /* BepBopLibraryTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopLibraryTests-Prefix.pch"; sourceTree = "<group>"; };
 		8727AA4617E0D76B00B728C8 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
 		8727AA4717E0D76B00B728C8 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
@@ -210,8 +216,11 @@
 		3CACB1E917E40C0600B715DE /* BepBopLibraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				3CACB1EF17E40C0600B715DE /* BepBopLibraryTests.m */,
+				17D1182817E63A9800A3150E /* BEPTintedLabelTests.m */,
 				3CACB1EA17E40C0600B715DE /* Supporting Files */,
+				17D1182017E6334300A3150E /* UIColor+ExtensionsTests.m */,
+				17D1181E17E62F4500A3150E /* UIView+DimensionsTests.m */,
+				17D1182A17E63C1500A3150E /* BEPTintedSwitchTests.m */,
 			);
 			path = BepBopLibraryTests;
 			sourceTree = "<group>";
@@ -327,7 +336,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CACB1F017E40C0600B715DE /* BepBopLibraryTests.m in Sources */,
+				17D1181F17E62F4500A3150E /* UIView+DimensionsTests.m in Sources */,
+				17D1182B17E63C1500A3150E /* BEPTintedSwitchTests.m in Sources */,
+				17D1182917E63A9800A3150E /* BEPTintedLabelTests.m in Sources */,
+				17D1182117E6334300A3150E /* UIColor+ExtensionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
