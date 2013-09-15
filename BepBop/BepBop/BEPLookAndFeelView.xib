@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BEPLookAndFeelViewController">
             <connections>
                 <outlet property="changeTintButton" destination="zV1-sX-oKn" id="u7b-hz-Krp"/>
+                <outlet property="showAlertButton" destination="AMX-nA-rUL" id="m6L-92-4rQ"/>
                 <outlet property="tintedLabel" destination="E6w-63-SD0" id="I68-9p-JMW"/>
                 <outlet property="view" destination="Gls-om-Pj5" id="weF-QG-zQR"/>
             </connections>
