@@ -58,14 +58,25 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    void (^loggingCompletionHandler)(UIBackgroundFetchResult) = ^(UIBackgroundFetchResult result) {
+        NSString* resultStr;
+        switch (result) {
+            case UIBackgroundFetchResultFailed: resultStr = @"failed"; break;
+            case UIBackgroundFetchResultNoData: resultStr = @"no data"; break;
+            case UIBackgroundFetchResultNewData: resultStr = @"new data"; break;
+        }
+        NSLog(@"Background fetch returning: %@", resultStr);
+        completionHandler(result);
+    };
+
     [[BEPBackgroundDownloadHandler sharedInstance] refreshWithCompletionHandler:^(BOOL didReceiveNewImage, NSError *error) {
         if (error) {
-            completionHandler(UIBackgroundFetchResultFailed);
+            loggingCompletionHandler(UIBackgroundFetchResultFailed);
         } else if (didReceiveNewImage) {
             [UIApplication sharedApplication].applicationIconBadgeNumber++;
-            completionHandler(UIBackgroundFetchResultNewData);
+            loggingCompletionHandler(UIBackgroundFetchResultNewData);
         } else {
-            completionHandler(UIBackgroundFetchResultNoData);
+            loggingCompletionHandler(UIBackgroundFetchResultNoData);
         }
     }];
 }

@@ -52,6 +52,10 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
 {
     BLog();
 
+    /*
+     * As a way of simulating limited content, we only request 10 different images.
+     * If we've already seen the requested image (random number), then we say there's no new content.
+     */
     u_int32_t r = 1 + arc4random_uniform(10); // 1-10 inclusive
     NSString *key = [NSString stringWithFormat:@"%d", r];
     if ([self.seenImages containsObject:key]) {
@@ -59,17 +63,16 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
         return;
     }
 
-    [self.seenImages addObject:key];
     NSURL *downloadURL = [NSURL URLWithString:[NSString stringWithFormat:DownloadURLString, key]];
-    BLog(@"URL %@", downloadURL);
 	NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithURL:downloadURL];
-    if (downloadTask == nil) {
-        BLog(@"Got nil downloadTask. Why?");
-        return completionHandler(NO, [NSError errorWithDomain:@"Got nil downloadTask" code:1 userInfo:nil]);
+    // downloadTaskWithURL: shouldn't return nil. Workaround for iOS bug.
+    while (downloadTask == nil) {
+        downloadTask = [self.session downloadTaskWithURL:downloadURL];
     }
     [downloadTask resume];
 
-    // Add it to our data structures and the table
+    // Add it to our data
+    [self.seenImages addObject:key];
     [self.images insertObject:[NSNull null] atIndex:0];
     [self.downloadTasks insertObject:downloadTask atIndex:0];
 
@@ -96,7 +99,7 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"BEPBackgroundDownloadHandler";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -125,11 +128,6 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
 
 #pragma mark - NSURLSessionDownloadDelegate
 
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
-{
-    BLog();
-}
-
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)downloadURL
 {
     BLog();
@@ -156,6 +154,7 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
             for (int i = 0; i < [self.downloadTasks count]; i++) {
                 if ([self.downloadTasks objectAtIndex:i] == downloadTask) {
                     [self.images replaceObjectAtIndex:i withObject:image];
+                    [self.downloadTasks replaceObjectAtIndex:i withObject:[NSNull null]];
                     NSNotification* notification = [NSNotification notificationWithName:@"BackgroundTransferComplete" object:self userInfo:@{@"id": [NSNumber numberWithInt:i]}];
                     [[NSNotificationCenter defaultCenter] postNotification:notification];
                 }
@@ -166,18 +165,12 @@ static NSString *DownloadURLString = @"http://lorempixel.com/400/200/animals/%@/
     }
 }
 
-#pragma mark - NSURLSessionTaskDelegate
-
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
     BLog();
-
-    if (error == nil) {
-        NSLog(@"Task: %@ completed successfully", task);
-    } else {
-        NSLog(@"Task: %@ completed with error: %@", task, [error localizedDescription]);
-    }
 }
+
+#pragma mark - NSURLSessionTaskDelegate
 
 /*
  If an application has received an -application:handleEventsForBackgroundURLSession:completionHandler: message, the session delegate will receive this message to indicate that all messages previously enqueued for this session have been delivered. At this time it is safe to invoke the previously stored completion handler, or to begin any internal updates that will result in invoking the completion handler.
