@@ -13,4 +13,5 @@
 - (IBAction)changePitch:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *statusView;
 - (IBAction)changeCameraView:(id)sender ;
+- (IBAction)getDirectionsFromOperaHouseToBondiBeach:(id)sender;
 @end

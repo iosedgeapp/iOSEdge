@@ -263,9 +263,9 @@
 }
 
 
-#pragma mark - Local Search
+#pragma mark - Local Search methods and delegate
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+- (void)searchButtonClicked:(UISearchBar *) searchBar
 {
     [searchBar resignFirstResponder];
 }
@@ -280,25 +280,24 @@
     [searchBar setShowsCancelButton:NO animated:YES];
 }
 
-- (void)startSearch:(NSString *)searchString
+- (void)beginSearch:(NSString *)searchString
 {
     if (self.localSearch.searching)
     {
         [self.localSearch cancel];
     }
     
-    // confine the map search area to the user's current location
-    MKCoordinateRegion newRegion;
-    newRegion.center.latitude = sydneyOperaHouseCoordinate.latitude;
-    newRegion.center.longitude = sydneyOperaHouseCoordinate.longitude;
+    MKCoordinateRegion constrainedArea;
+    constrainedArea.center.latitude = sydneyOperaHouseCoordinate.latitude;
+    constrainedArea.center.longitude = sydneyOperaHouseCoordinate.longitude;
 
-    newRegion.span.latitudeDelta = 0.212872;
-    newRegion.span.longitudeDelta = 0.209863;
+    constrainedArea.span.latitudeDelta = 0.212872;
+    constrainedArea.span.longitudeDelta = 0.209863;
     
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     
     request.naturalLanguageQuery = searchString;
-    request.region = newRegion;
+    request.region = constrainedArea;
     
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
     {
@@ -335,39 +334,9 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
+    [self beginSearch:searchBar.text];
     
-    // check to see if Location Services is enabled, there are two state possibilities:
-    // 1) disabled for entire device, 2) disabled just for this app
-    //
-    NSString *causeStr = nil;
     
-    // check whether location services are enabled on the device
-    if ([CLLocationManager locationServicesEnabled] == NO)
-    {
-        causeStr = @"device";
-    }
-    // check the application’s explicit authorization status:
-    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)
-    {
-        causeStr = @"app";
-    }
-    else
-    {
-        // we are good to go, start the search
-        [self startSearch:searchBar.text];
-    }
-    
-    if (causeStr != nil)
-    {
-        NSString *alertMessage = [NSString stringWithFormat:@"You currently have location services disabled for this %@. Please refer to \"Settings\" app to turn on Location Services.", causeStr];
-        
-        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
-                                                                        message:alertMessage
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-        [servicesDisabledAlert show];
-    }
 }
 
 - (void)addPlacesAnnotation{
@@ -381,8 +350,51 @@
 }
 
 
+#pragma mark Directions API 
 
+- (IBAction)getDirectionsFromOperaHouseToBondiBeach:(id)sender{
+    //You could instead pass dynamic MKMApItems to search for directions between two places.
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:sydneyOperaHouseCoordinate addressDictionary:nil];
+    MKMapItem *source = [[MKMapItem alloc] initWithPlacemark:placemark];
+    
+    MKPlacemark *placemark2 = [[MKPlacemark alloc] initWithCoordinate:bondiBeachCoordinate addressDictionary:nil];
+    MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:placemark2];
+    
+    
+    
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+    request.source = source;
+    request.destination = destination;
+    request.requestsAlternateRoutes = YES;
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+    [directions calculateDirectionsWithCompletionHandler:
+     ^(MKDirectionsResponse *response, NSError *error) {
+         if (error) {
+             //handle error
+         } else {
+             [self displayDirectionsWithResponse:response];
+         } }];
+    
+    
+}
 
+-(void)displayDirectionsWithResponse:(MKDirectionsResponse*)response{
+   // self.response = response;
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         for (MKRoute *route in response.routes) {
+                             [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+                         }
+                         
+                         self.mapView.camera.altitude = 10000;
+
+                         
+                     } completion:NULL];
+    
+    }
 
 
 @end
