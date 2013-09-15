@@ -320,7 +320,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ns-0z-Df1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="v8e-bm-jIx">
                     <connections>
-                        <action selector="handleAttachmentGesture:" destination="PeD-ax-PA5" id="SVW-r3-3TN"/>
+                        <action selector="handlePanGesture:" destination="PeD-ax-PA5" id="cVY-Dp-iBu"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

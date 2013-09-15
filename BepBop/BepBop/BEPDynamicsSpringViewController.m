@@ -88,7 +88,7 @@
     [self.animator addBehavior:[[UIAttachmentBehavior alloc] initWithItem:self.blueView2 offsetFromCenter:offsetRight attachedToItem:self.blueView3 offsetFromCenter:offsetRight]];
 }
 
-- (IBAction)handleAttachmentGesture:(UIPanGestureRecognizer*)gesture
+- (IBAction)handlePanGesture:(UIPanGestureRecognizer*)gesture
 {
     // Get location of touch relative to reference view
     CGPoint touchPoint = [gesture locationInView:self.view];
