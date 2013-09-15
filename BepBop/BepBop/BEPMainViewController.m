@@ -136,13 +136,19 @@ typedef UIViewController* (^ViewControllerBlock)();
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
+    [self selectChapterNumber:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void) selectChapterNumber:(NSUInteger)chapterNumber
+{
     UIViewController *chapterViewController;
-    chapterViewController = [self chapterViewControllerForIndexPath:indexPath];
+    chapterViewController = [self chapterViewControllerForIndexPath:[NSIndexPath indexPathForRow:chapterNumber inSection:0]];
     
     if ([chapterViewController isKindOfClass:[UIViewController class]]) {
         [self.navigationController pushViewController:chapterViewController animated:YES];
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
 @end

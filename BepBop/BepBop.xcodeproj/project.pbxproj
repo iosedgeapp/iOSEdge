@@ -21,6 +21,9 @@
 		0394ADA717DFFE5200769A12 /* BEPCaptureVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394ADA517DFFE5200769A12 /* BEPCaptureVideoViewController.m */; };
 		0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */; };
 		03F31BD417E294CE00369D31 /* BEPDynamicTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */; };
+		171256BA17E6578500351217 /* BEPBepBopAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 171256B917E6578500351217 /* BEPBepBopAppTests.m */; };
+		171256BE17E65C1F00351217 /* BEPLookAndFeelControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 171256BD17E65C1F00351217 /* BEPLookAndFeelControllerTests.m */; };
+		171256C017E65C4D00351217 /* BEPBaseAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 171256BF17E65C4D00351217 /* BEPBaseAppTests.m */; };
 		175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */; };
 		17D1180817E50CC800A3150E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D1180717E50CC800A3150E /* SenTestingKit.framework */; };
 		17D1180917E50CC800A3150E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
@@ -54,7 +57,7 @@
 		3CACB1FD17E40C3A00B715DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3CACB1FE17E40C3A00B715DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3CACB20417E40C3A00B715DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CACB20217E40C3A00B715DE /* InfoPlist.strings */; };
-		3CACB20617E40C3A00B715DE /* BepBopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACB20517E40C3A00B715DE /* BepBopTests.m */; };
+		3CACB20617E40C3A00B715DE /* BEPNavigationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACB20517E40C3A00B715DE /* BEPNavigationControllerTests.m */; };
 		3CD0FD1417E00C67007CA40E /* BEPThemedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */; };
 		3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */; };
 		871F714517E3446E00DC00EF /* BEPSimpleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871F714317E3446E00DC00EF /* BEPSimpleWebViewController.m */; };
@@ -132,6 +135,10 @@
 		0394ADA617DFFE5200769A12 /* BEPCaptureVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPCaptureVideoViewController.xib; sourceTree = "<group>"; };
 		03F31BD317E294CE00369D31 /* BEPDynamicTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPDynamicTypeViewController.xib; sourceTree = "<group>"; };
 		170B5DC617E4E72100DFC89B /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = build.sh; path = ../build.sh; sourceTree = "<group>"; };
+		171256B917E6578500351217 /* BEPBepBopAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPBepBopAppTests.m; sourceTree = "<group>"; };
+		171256BD17E65C1F00351217 /* BEPLookAndFeelControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPLookAndFeelControllerTests.m; sourceTree = "<group>"; };
+		171256BF17E65C4D00351217 /* BEPBaseAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPBaseAppTests.m; sourceTree = "<group>"; };
+		171256C117E65C6D00351217 /* BEPBaseAppTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPBaseAppTests.h; sourceTree = "<group>"; };
 		175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPLookAndFeelView.xib; sourceTree = "<group>"; };
 		17D1180617E50CC700A3150E /* BepBopOCUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BepBopOCUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D1180717E50CC800A3150E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -177,7 +184,7 @@
 		3CACB1FB17E40C3A00B715DE /* BepBopXCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BepBopXCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CACB20117E40C3A00B715DE /* BepBopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BepBopTests-Info.plist"; sourceTree = "<group>"; };
 		3CACB20317E40C3A00B715DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3CACB20517E40C3A00B715DE /* BepBopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BepBopTests.m; sourceTree = "<group>"; };
+		3CACB20517E40C3A00B715DE /* BEPNavigationControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BEPNavigationControllerTests.m; sourceTree = "<group>"; };
 		3CACB20717E40C3A00B715DE /* BepBopTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BepBopTests-Prefix.pch"; sourceTree = "<group>"; };
 		3CD0FD1217E00C67007CA40E /* BEPThemedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPThemedViewController.h; sourceTree = "<group>"; };
 		3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPThemedViewController.m; sourceTree = "<group>"; };
@@ -367,6 +374,7 @@
 			children = (
 				17D1181117E50CC800A3150E /* BepBopOCUnitTests.m */,
 				17D1180C17E50CC800A3150E /* Supporting Files */,
+				171256B917E6578500351217 /* BEPBepBopAppTests.m */,
 			);
 			path = BepBopOCUnitTests;
 			sourceTree = "<group>";
@@ -482,7 +490,10 @@
 		3CACB1FF17E40C3A00B715DE /* BepBopXCTests */ = {
 			isa = PBXGroup;
 			children = (
-				3CACB20517E40C3A00B715DE /* BepBopTests.m */,
+				171256C117E65C6D00351217 /* BEPBaseAppTests.h */,
+				171256BF17E65C4D00351217 /* BEPBaseAppTests.m */,
+				171256BD17E65C1F00351217 /* BEPLookAndFeelControllerTests.m */,
+				3CACB20517E40C3A00B715DE /* BEPNavigationControllerTests.m */,
 				3CACB20017E40C3A00B715DE /* Supporting Files */,
 			);
 			name = BepBopXCTests;
@@ -720,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D1181217E50CC800A3150E /* BepBopOCUnitTests.m in Sources */,
+				171256BA17E6578500351217 /* BEPBepBopAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,7 +776,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CACB20617E40C3A00B715DE /* BepBopTests.m in Sources */,
+				171256C017E65C4D00351217 /* BEPBaseAppTests.m in Sources */,
+				171256BE17E65C1F00351217 /* BEPLookAndFeelControllerTests.m in Sources */,
+				3CACB20617E40C3A00B715DE /* BEPNavigationControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

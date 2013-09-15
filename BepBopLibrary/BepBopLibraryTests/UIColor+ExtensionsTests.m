@@ -28,6 +28,7 @@
         XCTAssertNotEqualObjects(color, color2);
         color = color2;
     }
+    
 }
 
 @end
