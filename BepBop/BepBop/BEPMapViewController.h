@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-@interface BEPMapViewController : UIViewController <MKMapViewDelegate>
+@interface BEPMapViewController : UIViewController <MKMapViewDelegate,UISearchBarDelegate>
 - (IBAction)changePitch:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *statusView;
 - (IBAction)changeCameraView:(id)sender ;

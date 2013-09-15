@@ -25,12 +25,15 @@
 @property (strong, nonatomic) NSMutableArray* listOfCameras;
 @property (nonatomic, assign) CLLocationCoordinate2D  sydneyOperaHouseCoordinate;
 @property (nonatomic, assign) CLLocationCoordinate2D  bondiBeachCoordinate;
+@property (nonatomic, strong) MKGeodesicPolyline* geodesic;
 @property (nonatomic, assign) float stepperValue;
+@property (nonatomic, strong) NSArray *places;
+@property (nonatomic, strong) MKLocalSearch *localSearch;
 
 @end
 
 @implementation BEPMapViewController
-@synthesize listOfCameras, bondiBeachCoordinate, sydneyOperaHouseCoordinate, stepperValue, statusView;
+@synthesize listOfCameras, bondiBeachCoordinate, sydneyOperaHouseCoordinate, stepperValue, statusView, geodesic;
 
 - (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -71,8 +74,22 @@
     MKPointAnnotation *pointBondiBeach = [[MKPointAnnotation alloc] init];
     pointBondiBeach.coordinate = CLLocationCoordinate2DMake(kLATBondi, kLONGBondi);
     pointBondiBeach.title = @"Bondi Beach";
-    [self.mapView addAnnotations:@[pointOperaHouse, pointBondiBeach]];
+    
+    MKPointAnnotation *pointLuna= [[MKPointAnnotation alloc] init];
+    pointBondiBeach.coordinate = CLLocationCoordinate2DMake(kLATLunaPark, kLONGLunaPark);
+    pointBondiBeach.title = @"Luna Park Sydney";
+    
+    
+    [self.mapView addAnnotations:@[pointOperaHouse, pointBondiBeach,pointLuna]];
+    //[self.mapView showAnnotations:@[pointOperaHouse, pointBondiBeach] animated:YES];
     [self.mapView selectAnnotation:pointOperaHouse animated:YES];
+    
+    
+    
+    //Add an overlay
+    CLLocationCoordinate2D points[] = {lunaParkCoordinate, sydneyOperaHouseCoordinate};
+    geodesic = [MKGeodesicPolyline polylineWithCoordinates:points count:2];
+    [self.mapView addOverlay:geodesic level:MKOverlayLevelAboveRoads];
     
 
     MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:sydneyOperaHouseRegion.center  fromEyeCoordinate:lunaParkRegion.center eyeAltitude:900];
@@ -84,7 +101,28 @@
     
 }
 
+#pragma mark - Map Overlay Delegate
 
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView
+            rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolylineRenderer *renderer =
+    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.lineWidth = 3.0;
+    renderer.strokeColor = [UIColor greenColor];
+    return renderer;
+}
+
+
+- (void)updateStats{
+    float altitude = self.mapView.camera.altitude;
+    float pitch = self.mapView.camera.pitch;
+    float heading = self.mapView.camera.heading;
+    float lat = self.mapView.centerCoordinate.latitude;
+    float longt = self.mapView.centerCoordinate.longitude;
+    
+    statusView.text = [NSString stringWithFormat:@"Altitude - %f Heading -%f Pitch -%f, Latitude -%f, Longtitude -%f", altitude, heading, pitch, lat, longt];
+}
 
 #pragma mark Storing and Restoring State
 
@@ -123,6 +161,8 @@
         // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - MKMapCamera Animation
+
 - (void)goToNextCamera{
     if (listOfCameras.count ==0){
         return;
@@ -139,18 +179,7 @@
     
 }
 
-- (void)updateStats{
-    float altitude = self.mapView.camera.altitude;
-    float pitch = self.mapView.camera.pitch;
-    float heading = self.mapView.camera.heading;
-    float lat = self.mapView.centerCoordinate.latitude;
-    float longt = self.mapView.centerCoordinate.longitude;
-    
-    
-    
-    
-    statusView.text = [NSString stringWithFormat:@"Altitude - %f Heading -%f Pitch -%f, Latitude -%f, Longtitude -%f", altitude, heading, pitch, lat, longt];
-}
+
 
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
@@ -232,5 +261,128 @@
         [self goToCoordinate:bondiBeachCoordinate];
     
 }
+
+
+#pragma mark - Local Search
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
+- (void)startSearch:(NSString *)searchString
+{
+    if (self.localSearch.searching)
+    {
+        [self.localSearch cancel];
+    }
+    
+    // confine the map search area to the user's current location
+    MKCoordinateRegion newRegion;
+    newRegion.center.latitude = sydneyOperaHouseCoordinate.latitude;
+    newRegion.center.longitude = sydneyOperaHouseCoordinate.longitude;
+
+    newRegion.span.latitudeDelta = 0.212872;
+    newRegion.span.longitudeDelta = 0.209863;
+    
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    
+    request.naturalLanguageQuery = searchString;
+    request.region = newRegion;
+    
+    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
+    {
+        if (error != nil)
+        {
+            NSString *errorStr = [[error userInfo] valueForKey:NSLocalizedDescriptionKey];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not find places"
+                                                            message:errorStr
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            NSLog(@"response %@", response.mapItems);
+            self.places = [response mapItems];
+            [self addPlacesAnnotation];
+            
+        }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    };
+    
+    if (self.localSearch != nil)
+    {
+        self.localSearch = nil;
+    }
+    self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
+    
+    [self.localSearch startWithCompletionHandler:completionHandler];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    
+    // check to see if Location Services is enabled, there are two state possibilities:
+    // 1) disabled for entire device, 2) disabled just for this app
+    //
+    NSString *causeStr = nil;
+    
+    // check whether location services are enabled on the device
+    if ([CLLocationManager locationServicesEnabled] == NO)
+    {
+        causeStr = @"device";
+    }
+    // check the application’s explicit authorization status:
+    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)
+    {
+        causeStr = @"app";
+    }
+    else
+    {
+        // we are good to go, start the search
+        [self startSearch:searchBar.text];
+    }
+    
+    if (causeStr != nil)
+    {
+        NSString *alertMessage = [NSString stringWithFormat:@"You currently have location services disabled for this %@. Please refer to \"Settings\" app to turn on Location Services.", causeStr];
+        
+        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
+                                                                        message:alertMessage
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+        [servicesDisabledAlert show];
+    }
+}
+
+- (void)addPlacesAnnotation{
+    for (MKMapItem *item in self.places)
+    {
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        annotation.coordinate = item.placemark.location.coordinate;
+        annotation.title = item.name;
+        [self.mapView addAnnotation:annotation];
+    }
+}
+
+
+
+
+
 
 @end
