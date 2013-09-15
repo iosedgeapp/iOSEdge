@@ -168,14 +168,16 @@
     
     if (errorString) {
         NSLog(@"could not serialize\n%@\n%@", message, errorString);
-        // we don't have data to send.
     }
     else {
         NSError * error;
-        [_session sendData:data
+        if (![_session sendData:data
                    toPeers:[_session connectedPeers]
                   withMode:MCSessionSendDataReliable
-                     error:&error];
+                          error:&error])
+        {
+            NSLog(@"failed sending data");
+        }
     }
 }
 
@@ -250,6 +252,35 @@
 - (void) session:(MCSession*)session didFinishReceivingResourceWithName:(NSString*)resourceName fromPeer:(MCPeerID*)peerID atURL:(NSURL*)localURL withError:(NSError*)error
 {
     NSLog(@"did finish downloading \"%@\" from %@", resourceName, peerID.displayName);
+    
+    NSString* alertTitle       = NSLocalizedString(@"Message Received", @"alert title");
+    NSString* alertDescription = [NSString stringWithFormat:
+                                  NSLocalizedString(@"Received \"%@\" from %@", @"alert format"),
+                                  resourceName, peerID.displayName];
+    
+    RIButtonItem* cancelItem = [[RIButtonItem alloc] init];
+    cancelItem.label  = NSLocalizedString(@"Dismiss", @"button title");
+    cancelItem.action = nil;
+
+    RIButtonItem* openItem = [[RIButtonItem alloc] init];
+    openItem.label  = NSLocalizedString(@"Show", @"button title");
+    openItem.action = ^{
+        UIImage* image = [[UIImage alloc] initWithContentsOfFile:[localURL path]];
+
+        BEPSimpleImageViewController* sivc = [[BEPSimpleImageViewController alloc] initWithNibName:nil bundle:nil];
+        sivc.image = image;
+
+        [self.navigationController pushViewController:sivc animated:YES];
+    };
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                    message:alertDescription
+                                           cancelButtonItem:cancelItem
+                                           otherButtonItems:openItem, nil];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [alert show];
+    });
 }
 
 - (void) session:(MCSession*)session didReceiveData:(NSData*)data fromPeer:(MCPeerID*)peerID
@@ -277,21 +308,11 @@
     NSString* alertDescription = [NSString stringWithFormat:
                                   NSLocalizedString(@"Received \"%@\" from %@", @"alert format"),
                                   dict[@"message"], peerID.displayName];
-//
+    
     RIButtonItem* cancelItem = [[RIButtonItem alloc] init];
     cancelItem.label  = NSLocalizedString(@"OK", @"button title");
     cancelItem.action = nil;
-//
-//    RIButtonItem* openItem = [[RIButtonItem alloc] init];
-//    openItem.label  = NSLocalizedString(@"Show", @"button title");
-//    openItem.action = ^{
-//        UIImage* image = [[UIImage alloc] initWithData:data];
-//
-//        BEPSimpleImageViewController* sivc = [[BEPSimpleImageViewController alloc] initWithNibName:nil bundle:nil];
-//        sivc.image = image;
-//
-//        [self.navigationController pushViewController:sivc animated:YES];
-//    };
+
 
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:alertTitle
                                                     message:alertDescription
@@ -316,21 +337,54 @@
 - (void) imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
 {
     UIImage* image     = info[UIImagePickerControllerOriginalImage];
-    NSData*  imageData = UIImageJPEGRepresentation(image, 0.5);
-    NSError* error     = nil;
+    NSData*  imageData = UIImageJPEGRepresentation(image, 0.6);
+//    NSError* error     = nil;
+    
+    NSString * path = [NSTemporaryDirectory() stringByAppendingString:@"photo.jpg"];
+    
+    NSURL * tempURL = [NSURL fileURLWithPath:path];
+    [imageData writeToURL:tempURL
+               atomically:NO];
+    
+    id completionHandler = ^(NSError* error){
+        NSString * alertTitle = nil;
+        NSString * alertDescription = nil;
+        if (error) {
+            alertTitle = @"Error";
+            alertTitle = [@"Failed to send the selected photo: " stringByAppendingString:error.localizedFailureReason];
+        }
+        else {
+            alertTitle = @"Photo Sent!";
+            alertTitle = @"Selected photo was sent successfully";
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[[UIAlertView alloc] initWithTitle:alertTitle
+                                        message:alertDescription
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
 
-    if (![_session sendData:imageData
-                    toPeers:_session.connectedPeers
-                   withMode:MCSessionSendDataReliable
-                      error:&error])
-    {
-        NSLog(@"could not send data: %@", error);
-    }
-    else
-    {
-        self.bytesSent += imageData.length;
-        [self updateByteCounters];
-    }
+        });
+    };
+    
+    [_session sendResourceAtURL:tempURL
+                       withName:[tempURL lastPathComponent]
+                         toPeer:[_session.connectedPeers lastObject]
+          withCompletionHandler:completionHandler];
+
+//    if (![_session sendData:imageData
+//                    toPeers:_session.connectedPeers
+//                   withMode:MCSessionSendDataReliable
+//                      error:&error])
+//    {
+//        NSLog(@"could not send data: %@", error);
+//    }
+//    else
+//    {
+//        self.bytesSent += imageData.length;
+//        [self updateByteCounters];
+//    }
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }

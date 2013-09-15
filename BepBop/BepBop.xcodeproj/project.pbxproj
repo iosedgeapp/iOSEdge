@@ -617,6 +617,7 @@
 						TestTargetID = 3C3EA83117D3C76F000122BD;
 					};
 					3C3EA83117D3C76F000122BD = {
+						DevelopmentTeam = MFRY9RPA96;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
