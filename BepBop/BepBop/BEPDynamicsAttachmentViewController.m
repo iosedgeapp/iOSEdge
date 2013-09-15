@@ -66,16 +66,16 @@
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer*)gesture
 {
     // Get location of touch relative to reference view
-    CGPoint touchPoint = [gesture locationInView:self.view];
+    CGPoint touchPoint = [gesture locationInView:self.animator.referenceView];
     
+    // Update the anchor point
+    [self.attachmentBehavior setAnchorPoint:touchPoint];
+
     // If starting a drag, update the length of the attachment, for a more
     // natural interaction - like dragging a stick starting from the touch point
     if (UIGestureRecognizerStateBegan == gesture.state) {
         self.attachmentBehavior.length = [self distanceBetweenTouchAndAttachmentPoint:touchPoint];
     }
-    
-    // Update the anchor point
-    [self.attachmentBehavior setAnchorPoint:touchPoint];
     
     // Update the displayed anchor
     self.touchView.center = touchPoint;
