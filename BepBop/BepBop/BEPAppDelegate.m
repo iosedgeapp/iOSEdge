@@ -59,7 +59,7 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    BEPMultitaskingViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
+    BEPMultitaskingViewController* multitaskingViewController = self.mainViewController.chapterViewControllerCreationBlocks[kMultitaskingRow];
     BOOL newData = [multitaskingViewController performBackgroundTransfer];
     if (newData) {
         [UIApplication sharedApplication].applicationIconBadgeNumber++;
