@@ -10,4 +10,6 @@
 
 @interface BEPMainViewController : UITableViewController
 
+@property NSArray* chapterViewControllers;
+
 @end

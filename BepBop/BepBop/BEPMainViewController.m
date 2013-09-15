@@ -23,9 +23,8 @@
 
 @interface BEPMainViewController ()
 
-@property (nonatomic) NSArray* chapterHeadings;
-@property (nonatomic) NSArray* chapterTitles;
-@property (nonatomic) NSArray* chapterViewControllerClasses;
+@property NSArray* chapterHeadings;
+@property NSArray* chapterTitles;
 
 @end
 
@@ -63,19 +62,19 @@
               @"Unit Testing on Steroids"];
 
         if (IS_IOS_7) {
-            self.chapterViewControllerClasses =
-                @[[BEPLookAndFeelViewController class],
-                  [BEPAccessibilityViewController class],
-                  [BEPMultipeerConnectivityViewController class],
-                  [BEPMultitaskingViewController class],
+            self.chapterViewControllers =
+                @[[[BEPLookAndFeelViewController alloc] init],
+                  [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil],
+                  [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
+                  [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain],
                   [NSNull null],
-                  [BEPTabbarTransitionsViewController class],
-                  [UIStoryboard class],
+                  [[BEPTabbarTransitionsViewController alloc] init],
+                  [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController],
                   [NSNull null],
-                  [BEPMapViewController class]];
+                  [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
         } else {
             // Most of the examples make use of features exclusively available in iOS7
-            self.chapterViewControllerClasses = @[[BEPLookAndFeelViewController class]];
+            self.chapterViewControllers = @[[[BEPLookAndFeelViewController alloc] init]];
         }
     }
     return self;
@@ -100,11 +99,16 @@
     self.title = @"Bleeding Edge Press";
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewController
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView
+{
+    return 1;
+}
 
 - (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return ([self.chapterViewControllerClasses count]); // On iOS6 only the supported chapters are present
+    return ([self.chapterViewControllers count]); // On iOS6 only the supported chapters are present
 }
 
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -123,19 +127,11 @@
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
-
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    id viewControllerClass = [self.chapterViewControllerClasses objectAtIndex:indexPath.row];
-    if (viewControllerClass != [NSNull null])
+    UIViewController* viewController = [self.chapterViewControllers objectAtIndex:indexPath.row];
+    if (viewController != (id)[NSNull null])
     {
-        UIViewController* viewController;
-        if (viewControllerClass == [UIStoryboard class]) {
-            viewController = [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController];
-        } else {
-            viewController = [[viewControllerClass alloc] initWithNibName:nil bundle:nil];
-        }
         [self.navigationController pushViewController:viewController animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
