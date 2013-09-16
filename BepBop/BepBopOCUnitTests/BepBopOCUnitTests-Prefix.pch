@@ -9,4 +9,5 @@
     #import <Foundation/Foundation.h>
     #import "BepBopLibrary/BepBopLibrary.h"
     #import "BEPAppDelegate.h"
+    #import "BEPBaseOCUnitTests.h"
 #endif
