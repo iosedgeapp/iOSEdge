@@ -84,11 +84,11 @@
     static const CGFloat InitialVelocity     = 0.5;
     static const CGFloat PaddingBetweenViews = 20;
 
-    UIView* inView = [transitionContext containerView];
+    UIView* inView           = [transitionContext containerView];
     UIViewController* fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIView* fromView         = [fromVC view];
     UIViewController* toVC   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIView* toView = [toVC view];
+    UIView* toView           = [toVC view];
 
     inView.backgroundColor = [UIColor blackColor];
 
