@@ -243,15 +243,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="fUY-Fs-dg7"/>
                     <connections>
-                        <outlet property="anchorView" destination="QDl-AE-oSD" id="aMq-Pf-pPk"/>
                         <outlet property="attachmentView" destination="5Sq-HU-2MY" id="goJ-Z5-Xj3"/>
                         <outlet property="orangeView" destination="Hwx-0P-oxF" id="AsM-Xo-qrs"/>
+                        <outlet property="touchView" destination="QDl-AE-oSD" id="qnL-4k-8u8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0b-1e-qwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Bew-tH-0Si">
                     <connections>
-                        <action selector="handleAttachmentGesture:" destination="m70-8y-kPn" id="o7b-Ob-vQc"/>
+                        <action selector="handlePanGesture:" destination="m70-8y-kPn" id="aPk-cb-ImZ"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
@@ -260,7 +260,7 @@
         <!--Dynamics Spring View Controller-->
         <scene sceneID="7jA-8x-cx7">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="PeD-ax-PA5" customClass="BEPDynamicsSpringViewController" sceneMemberID="viewController">
+                <viewController id="PeD-ax-PA5" customClass="BEPDynamicsSpringViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tL7-vC-R1K"/>
                         <viewControllerLayoutGuide type="bottom" id="wwt-bV-wCU"/>
@@ -276,7 +276,7 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdL-aM-6eu">
                                         <rect key="frame" x="25" y="25" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -287,19 +287,24 @@
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjs-ql-yr1">
-                                <rect key="frame" x="20" y="138" width="62" height="23"/>
+                                <rect key="frame" x="28" y="227" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8lE-o6-C1d">
-                                <rect key="frame" x="95" y="138" width="62" height="23"/>
+                                <rect key="frame" x="96" y="227" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8eC-Ae-wPF">
-                                <rect key="frame" x="168" y="138" width="62" height="23"/>
+                                <rect key="frame" x="164" y="227" width="60" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lX0-7R-cph">
+                                <rect key="frame" x="232" y="227" width="60" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -309,18 +314,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="yz7-VF-LlC"/>
                     <connections>
-                        <outlet property="anchorView" destination="5KS-Ci-hy6" id="EbW-12-2vb"/>
                         <outlet property="attachmentView" destination="cdL-aM-6eu" id="rnp-02-sCA"/>
                         <outlet property="blueView1" destination="Cjs-ql-yr1" id="rld-JE-gq9"/>
                         <outlet property="blueView2" destination="8lE-o6-C1d" id="CLv-Sw-7qR"/>
                         <outlet property="blueView3" destination="8eC-Ae-wPF" id="Trw-T6-hXN"/>
+                        <outlet property="greenView" destination="lX0-7R-cph" id="74C-MI-MWL"/>
                         <outlet property="orangeView" destination="HJl-uY-ENn" id="nmf-RR-Sqi"/>
+                        <outlet property="touchView" destination="5KS-Ci-hy6" id="S4l-aB-UbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ns-0z-Df1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="v8e-bm-jIx">
                     <connections>
-                        <action selector="handleAttachmentGesture:" destination="PeD-ax-PA5" id="SVW-r3-3TN"/>
+                        <action selector="handlePanGesture:" destination="PeD-ax-PA5" id="cVY-Dp-iBu"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
