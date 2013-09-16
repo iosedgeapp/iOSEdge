@@ -10,75 +10,95 @@
 #import "BEPMainViewController.h"
 #import "BEPNavigationController.h"
 #import "BEPAirDropHandler.h"
-#import "BEPMultitaskingViewController.h"
+#import "BEPBackgroundDownloadHandler.h"
 
 @interface BEPAppDelegate ()
-@property BEPMainViewController* mainViewController;
+
 @end
 
 @implementation BEPAppDelegate
 
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    if (IS_IOS_7) {
+    if (IS_IOS_7)
+    {
         [[BEPAirDropHandler sharedInstance] handleSavedAirDropURLs];
         [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     }
-    
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-    self.mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
+    BEPMainViewController* mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
 
-    BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:self.mainViewController];
+    BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:mainViewController];
     navigationController.navigationBar.translucent = IS_IOS_7;
 
     if ([navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
     {
         navigationController.navigationBar.barTintColor = [UIColor lightGrayColor];
     }
-    
+
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-
--(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+- (BOOL) application:(UIApplication*)application shouldRestoreApplicationState:(NSCoder*)coder
 {
     return YES;
 }
 
--(BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+- (BOOL) application:(UIApplication*)application shouldSaveApplicationState:(NSCoder*)coder
 {
     return YES;
 }
 
-
--(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+- (void) application:(UIApplication*)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    BEPMultitaskingViewController* multitaskingViewController = self.mainViewController.chapterViewControllers[kMultitaskingRow];
-    BOOL newData = [multitaskingViewController performBackgroundTransfer];
-    if (newData) {
-        [UIApplication sharedApplication].applicationIconBadgeNumber++;
-        completionHandler(UIBackgroundFetchResultNewData);
-    } else {
-        completionHandler(UIBackgroundFetchResultNoData);
-    }
+    void (^loggingCompletionHandler)(UIBackgroundFetchResult) = ^(UIBackgroundFetchResult result) {
+        NSString* resultStr;
+        switch (result)
+        {
+            case UIBackgroundFetchResultFailed: resultStr  = @"failed"; break;
+            case UIBackgroundFetchResultNoData: resultStr  = @"no data"; break;
+            case UIBackgroundFetchResultNewData: resultStr = @"new data"; break;
+        }
+        NSLog(@"Background fetch returning: %@", resultStr);
+        completionHandler(result);
+    };
+
+    [[BEPBackgroundDownloadHandler sharedInstance] refreshWithCompletionHandler:^(BOOL didReceiveNewImage, NSError* error) {
+         if (error)
+         {
+             loggingCompletionHandler(UIBackgroundFetchResultFailed);
+         }
+         else if (didReceiveNewImage)
+         {
+             [UIApplication sharedApplication].applicationIconBadgeNumber++;
+             loggingCompletionHandler(UIBackgroundFetchResultNewData);
+         }
+         else
+         {
+             loggingCompletionHandler(UIBackgroundFetchResultNoData);
+         }
+     }];
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+- (BOOL) application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation
 {
     if (sourceApplication == nil &&
         [[url absoluteString] rangeOfString:@"Documents/Inbox"].location != NSNotFound) // Incoming AirDrop
     {
         NSLog(@"%@ sent from %@ with annotation %@", url, sourceApplication, [annotation description]);
-        if (application.protectedDataAvailable) {
+        if (application.protectedDataAvailable)
+        {
             [[BEPAirDropHandler sharedInstance] moveToLocalDirectoryAirDropURL:url];
         }
-        else {
+        else
+        {
             [[BEPAirDropHandler sharedInstance] saveAirDropURL:url];
         }
         return YES;
@@ -87,13 +107,13 @@
     return NO;
 }
 
-- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier
-  completionHandler:(void (^)())completionHandler
+- (void)  application:(UIApplication*)application handleEventsForBackgroundURLSession:(NSString*)identifier
+    completionHandler:(void (^)())completionHandler
 {
     /*
      Store the completion handler. The completion handler is invoked by the view controller's checkForAllDownloadsHavingCompleted method (if all the download tasks have been completed).
      */
-	self.backgroundSessionCompletionHandler = completionHandler;
+    self.backgroundSessionCompletionHandler = completionHandler;
 }
 
 - (void) applicationWillResignActive:(UIApplication*)application
@@ -123,9 +143,5 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-
-
-
 
 @end

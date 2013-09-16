@@ -14,6 +14,8 @@
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
 
+typedef UIViewController* (^ViewControllerBlock)();
+
 @interface BEPMainViewController ()
 
 @property NSArray* chapterHeadings;
@@ -54,20 +56,27 @@
               @"Taking advantage of the new build improvements",
               @"Unit Testing on Steroids"];
 
-        if (IS_IOS_7) {
-            self.chapterViewControllers =
-                @[[[BEPLookAndFeelViewController alloc] init],
-                  [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil],
-                  [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil],
-                  [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain],
-                  [NSNull null],
-                  [[BEPTabbarTransitionsViewController alloc] init],
-                  [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController],
-                  [NSNull null],
-                  [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]];
-        } else {
+        if (IS_IOS_7)
+        {
+            self.chapterViewControllerCreationBlocks =
+                @[
+                    ^{ return [[BEPLookAndFeelViewController alloc] init]; },
+                    ^{ return [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil]; },
+                    ^{ return [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil]; },
+                    ^{ return [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain]; },
+                    ^{ return [NSNull null]; },
+                    ^{ return [[BEPTabbarTransitionsViewController alloc] init]; },
+                    ^{ return [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController]; },
+                    ^{ return [NSNull null]; },
+                    ^{ return [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]; }
+                ];
+        }
+        else
+        {
             // Most of the examples make use of features exclusively available in iOS7
-            self.chapterViewControllers = @[[[BEPLookAndFeelViewController alloc] init]];
+            self.chapterViewControllerCreationBlocks = @[
+                    ^{ return [[BEPLookAndFeelViewController alloc] init]; }
+                ];
         }
     }
     return self;
@@ -101,7 +110,7 @@
 
 - (NSInteger) tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return ([self.chapterViewControllers count]); // On iOS6 only the supported chapters are present
+    return ([self.chapterViewControllerCreationBlocks count]); // On iOS6 only the supported chapters are present
 }
 
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -120,14 +129,31 @@
     return cell;
 }
 
+// Creates the view controller for a chapter
+- (UIViewController*) chapterViewControllerForIndexPath:(NSIndexPath*)indexPath
+{
+    // Get the block used to create the controller, and call it!
+    ViewControllerBlock createViewController = self.chapterViewControllerCreationBlocks[indexPath.row];
+
+    return createViewController();
+}
+
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    UIViewController* viewController = [self.chapterViewControllers objectAtIndex:indexPath.row];
-    if (viewController != (id)[NSNull null])
-    {
-        [self.navigationController pushViewController:viewController animated:YES];
-    }
+    [self selectChapterNumber:indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void) selectChapterNumber:(NSUInteger)chapterNumber
+{
+    UIViewController* chapterViewController;
+
+    chapterViewController = [self chapterViewControllerForIndexPath:[NSIndexPath indexPathForRow:chapterNumber inSection:0]];
+
+    if ([chapterViewController isKindOfClass:[UIViewController class]])
+    {
+        [self.navigationController pushViewController:chapterViewController animated:YES];
+    }
 }
 
 @end

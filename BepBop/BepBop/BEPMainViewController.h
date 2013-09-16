@@ -8,15 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#define kLookAndFeelRow  0
-#define kDynamicTypeRow  1
-#define kMultipeerRow    2
-#define kMultitaskingRow 3
-#define kTransitionsRow  5
-#define kMapsRow         8
-
 @interface BEPMainViewController : UITableViewController
 
-@property NSArray* chapterViewControllers;
+@property NSArray* chapterViewControllerCreationBlocks;
+
+- (void) selectChapterNumber:(NSUInteger)chapterNumber;
 
 @end

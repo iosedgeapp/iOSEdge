@@ -29,11 +29,11 @@ IPHONE_RETINA_4INCH_64BIT="iPhone Retina (4-inch 64-bit)";
 #################################################
 # XCTEST ONLY SUPPORTED ON IOS 7.0
 #################################################
-#xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBopAndXCTests' \
-#-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_70}" \
-#-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH},OS=${IOS_70}" \
-#-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH_64BIT},OS=${IOS_70}" \
-#-configuration Release test
+xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBopAndXCTests' \
+-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_70}" \
+-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH},OS=${IOS_70}" \
+-destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH_64BIT},OS=${IOS_70}" \
+-configuration Release test
 
 #################################################
 # OCUNIT CAN RUN ON ANY IOS

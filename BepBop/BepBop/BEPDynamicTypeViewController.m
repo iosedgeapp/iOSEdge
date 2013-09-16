@@ -10,10 +10,10 @@
 
 @interface BEPDynamicTypeViewController ()
 
-@property IBOutlet UILabel *headlineLabel;
-@property IBOutlet UILabel *subheadLabel;
-@property IBOutlet UILabel *bodyLabel;
-@property IBOutlet UILabel *footnoteLabel;
+@property IBOutlet UILabel* headlineLabel;
+@property IBOutlet UILabel* subheadLabel;
+@property IBOutlet UILabel* bodyLabel;
+@property IBOutlet UILabel* footnoteLabel;
 
 @end
 
@@ -37,16 +37,16 @@
 
     [[NSNotificationCenter defaultCenter]
      addObserver:self
-     selector:@selector(handleContentSizeDidChange:)
-     name:UIContentSizeCategoryDidChangeNotification
-     object:nil];
+        selector:@selector(handleContentSizeDidChange:)
+            name:UIContentSizeCategoryDidChangeNotification
+          object:nil];
 }
 
 - (void) handleContentSizeDidChange:(NSNotification*)aNotification
 {
     self.headlineLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    self.subheadLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-    self.bodyLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.subheadLabel.font  = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+    self.bodyLabel.font     = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     self.footnoteLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
 }
 

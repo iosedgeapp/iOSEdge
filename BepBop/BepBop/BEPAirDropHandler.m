@@ -12,14 +12,16 @@
 
 #define BEPDefaultsStoredAirDropURLsKey @"BEPDefaultsStoredAirDropURLsKey"
 
-+ (instancetype)sharedInstance {
-    static BEPAirDropHandler * __sharedInstance = nil;
-    
++ (instancetype) sharedInstance
+{
+    static BEPAirDropHandler* __sharedInstance = nil;
+
     static dispatch_once_t onceToken;
+
     dispatch_once(&onceToken, ^{
-        __sharedInstance = [[BEPAirDropHandler alloc] init];
-    });
-    
+                      __sharedInstance = [[BEPAirDropHandler alloc] init];
+                  });
+
     return __sharedInstance;
 }
 
@@ -28,76 +30,82 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-- (void)saveAirDropURL:(NSURL *)url
+- (void) saveAirDropURL:(NSURL*)url
 {
     // we dont' have access to the file let's just remember the url for later handling
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray * currentStoredURLs = [defaults arrayForKey:BEPDefaultsStoredAirDropURLsKey];
-    
-    if (currentStoredURLs == nil) {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSArray*        currentStoredURLs = [defaults arrayForKey:BEPDefaultsStoredAirDropURLsKey];
+
+    if (currentStoredURLs == nil)
+    {
         currentStoredURLs = @[];
     }
-    
-    NSArray * updatedStoredURLs = [currentStoredURLs arrayByAddingObject:url];
-    
+
+    NSArray* updatedStoredURLs = [currentStoredURLs arrayByAddingObject:url];
+
     [defaults setObject:updatedStoredURLs forKey:BEPDefaultsStoredAirDropURLsKey];
-    
+
     [defaults synchronize];
 }
 
-- (BOOL)moveToLocalDirectoryAirDropURL:(NSURL *)url
+- (BOOL) moveToLocalDirectoryAirDropURL:(NSURL*)url
 {
-    NSFileManager * fm = [NSFileManager defaultManager];
-    
-    NSURL * localUrl = [[self airDropDocumentsDirectory] URLByAppendingPathComponent:[url lastPathComponent]];
-    NSError * error;
-    BOOL ret = [fm moveItemAtURL:url
-                           toURL:localUrl
-                           error:&error];
-    
-    if (!ret) {
+    NSFileManager* fm = [NSFileManager defaultManager];
+
+    NSURL*   localUrl = [[self airDropDocumentsDirectory] URLByAppendingPathComponent:[url lastPathComponent]];
+    NSError* error;
+    BOOL     ret = [fm moveItemAtURL:url
+                               toURL:localUrl
+                               error:&error];
+
+    if (!ret)
+    {
         NSLog(@"could not move file from %@ to %@: %@", url, localUrl, error);
     }
-    
+
     return ret;
 }
 
-- (NSURL*)airDropDocumentsDirectory
+- (NSURL*) airDropDocumentsDirectory
 {
-    NSFileManager * fm = [NSFileManager defaultManager];
-    NSURL * documentsDirectory = [[fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    
-    NSURL * airDropDirectory = [documentsDirectory URLByAppendingPathComponent:@"AirDrop"];
-    
-    NSError * error;
-    if (![fm createDirectoryAtURL:airDropDirectory
-      withIntermediateDirectories:YES
-                       attributes:nil
-                            error:&error]) {
+    NSFileManager* fm = [NSFileManager defaultManager];
+    NSURL*         documentsDirectory = [[fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+
+    NSURL* airDropDirectory = [documentsDirectory URLByAppendingPathComponent:@"AirDrop"];
+
+    NSError* error;
+
+    if (![fm     createDirectoryAtURL:airDropDirectory
+          withIntermediateDirectories:YES
+                           attributes:nil
+                                error:&error])
+    {
         NSLog(@"couldn not create %@: %@", airDropDirectory, error);
         return nil;
     }
-    
+
     return airDropDirectory;
-    
 }
 
-- (void)handleSavedAirDropURLs
+- (void) handleSavedAirDropURLs
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray * currentStoredURLs = [defaults arrayForKey:BEPDefaultsStoredAirDropURLsKey];
-    
-    if ([currentStoredURLs count]) {
-        NSMutableArray * unsavedURLs = [NSMutableArray arrayWithCapacity:[currentStoredURLs count]];
-        for (NSURL * url in currentStoredURLs) {
-            if (![self moveToLocalDirectoryAirDropURL:url]) {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSArray*        currentStoredURLs = [defaults arrayForKey:BEPDefaultsStoredAirDropURLsKey];
+
+    if ([currentStoredURLs count])
+    {
+        NSMutableArray* unsavedURLs = [NSMutableArray arrayWithCapacity:[currentStoredURLs count]];
+        for (NSURL* url in currentStoredURLs)
+        {
+            if (![self moveToLocalDirectoryAirDropURL:url])
+            {
                 [unsavedURLs addObject:url];
             }
         }
-        
+
         [defaults setObject:[NSArray arrayWithArray:unsavedURLs]
                      forKey:BEPDefaultsStoredAirDropURLsKey];
-        
+
         [defaults synchronize];
     }
 }

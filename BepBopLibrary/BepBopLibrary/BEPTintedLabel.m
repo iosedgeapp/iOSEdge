@@ -16,9 +16,35 @@
     self = [super init];
     if (self)
     {
-        self.backgroundColor = [UIColor clearColor];
+        [self prep];
     }
     return self;
+}
+
+- (id) initWithCoder:(NSCoder*)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self prep];
+    }
+    return self;
+}
+
+- (id) initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        [self prep];
+    }
+    return self;
+}
+
+- (void) prep
+{
+    self.backgroundColor = [UIColor clearColor];
+    [self tintColorDidChange];
 }
 
 - (void) tintColorDidChange

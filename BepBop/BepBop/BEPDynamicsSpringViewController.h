@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPDynamicsSpringViewController : UIViewController
+@interface BEPDynamicsSpringViewController : UIViewController <UICollisionBehaviorDelegate>
 
 @end

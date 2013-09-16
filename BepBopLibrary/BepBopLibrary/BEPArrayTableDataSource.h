@@ -13,10 +13,10 @@ typedef void (^BEPConfigureCellBlock)(UITableViewCell*, id);
 
 @interface BEPArrayTableDataSource : NSObject <UITableViewDataSource>
 
-- (instancetype)initWithItems:(NSArray*)items
-               cellIdentifier:(NSString*)cellId
-               configureBlock:(BEPConfigureCellBlock)block;
+- (instancetype) initWithItems:(NSArray*)items
+                cellIdentifier:(NSString*)cellId
+                configureBlock:(BEPConfigureCellBlock)block;
 
-- (id)itemAtIndexPath:(NSIndexPath*)indexPath;
+- (id) itemAtIndexPath:(NSIndexPath*)indexPath;
 
 @end
