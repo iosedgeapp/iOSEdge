@@ -28,6 +28,36 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3CACB1FA17E40C3A00B715DE"
+               BuildableName = "BepBopXCTests.xctest"
+               BlueprintName = "BepBopXCTests"
+               ReferencedContainer = "container:BepBop.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "17D1180517E50CC700A3150E"
+               BuildableName = "BepBopOCUnitTests.octest"
+               BlueprintName = "BepBopOCUnitTests"
+               ReferencedContainer = "container:BepBop.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3CACB1E417E40C0600B715DE"
+               BuildableName = "BepBopLibraryTests.xctest"
+               BlueprintName = "BepBopLibraryTests"
+               ReferencedContainer = "container:../BepBopLibrary/BepBopLibrary.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

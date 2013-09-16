@@ -16,9 +16,9 @@
     
     self.appDelegate  = [[UIApplication sharedApplication] delegate];
     self.navController = (id)self.appDelegate.window.rootViewController;
-    XCTAssertTrue([self.navController isMemberOfClass:[BEPNavigationController class]]);
+    STAssertTrue([self.navController isMemberOfClass:[BEPNavigationController class]], @"Where's my Nav Controller!!?");
     self.mainVC = (id)self.navController.topViewController;
-    XCTAssertTrue([self.mainVC isMemberOfClass:[BEPMainViewController class]]);
+    STAssertTrue([self.mainVC isMemberOfClass:[BEPMainViewController class]], @"Where's my Main Controller!!?");
     
 }
 
