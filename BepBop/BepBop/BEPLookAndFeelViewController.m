@@ -13,6 +13,7 @@
 @property (nonatomic, weak) UINavigationController* navController;
 @property (nonatomic, weak) IBOutlet UILabel* tintedLabel;
 @property (nonatomic, weak) IBOutlet UIButton* changeTintButton;
+@property (nonatomic, weak) IBOutlet UIButton* showAlertButton;
 
 @property (nonatomic, strong) UIColor* savedTintColor;
 
@@ -34,9 +35,10 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    
+    _showAlertButton.backgroundColor = (IS_IOS_7 ? [UIColor lightGrayColor] : [UIColor clearColor]);
+    _changeTintButton.backgroundColor = (IS_IOS_7 ? [UIColor lightGrayColor] : [UIColor clearColor]);
 
-    //_tintedLabel.hidden = !IS_IOS_7;
-    //_changeTintButton.hidden = !IS_IOS_7;
 }
 
 - (void) viewWillAppear:(BOOL)animated

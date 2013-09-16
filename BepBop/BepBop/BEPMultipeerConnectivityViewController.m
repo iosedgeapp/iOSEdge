@@ -253,7 +253,7 @@
 {
     NSLog(@"did finish downloading \"%@\" from %@", resourceName, peerID.displayName);
     
-    NSString* alertTitle       = NSLocalizedString(@"Message Received", @"alert title");
+    NSString* alertTitle       = NSLocalizedString(@"Photo Received", @"alert title");
     NSString* alertDescription = [NSString stringWithFormat:
                                   NSLocalizedString(@"Received \"%@\" from %@", @"alert format"),
                                   resourceName, peerID.displayName];
@@ -338,7 +338,6 @@
 {
     UIImage* image     = info[UIImagePickerControllerOriginalImage];
     NSData*  imageData = UIImageJPEGRepresentation(image, 0.6);
-//    NSError* error     = nil;
     
     NSString * path = [NSTemporaryDirectory() stringByAppendingString:@"photo.jpg"];
     
@@ -367,24 +366,13 @@
 
         });
     };
-    
-    [_session sendResourceAtURL:tempURL
-                       withName:[tempURL lastPathComponent]
-                         toPeer:[_session.connectedPeers lastObject]
-          withCompletionHandler:completionHandler];
+    for (MCPeerID * peer in _session.connectedPeers) {
+        [_session sendResourceAtURL:tempURL
+                           withName:[tempURL lastPathComponent]
+                             toPeer:peer
+              withCompletionHandler:completionHandler];
 
-//    if (![_session sendData:imageData
-//                    toPeers:_session.connectedPeers
-//                   withMode:MCSessionSendDataReliable
-//                      error:&error])
-//    {
-//        NSLog(@"could not send data: %@", error);
-//    }
-//    else
-//    {
-//        self.bytesSent += imageData.length;
-//        [self updateByteCounters];
-//    }
+    }
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }
