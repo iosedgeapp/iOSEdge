@@ -55,25 +55,28 @@ typedef UIViewController* (^ViewControllerBlock)();
               @"Map directions in 3D",
               @"Taking advantage of the new build improvements",
               @"Unit Testing on Steroids"];
-        
-        if (IS_IOS_7) {
+
+        if (IS_IOS_7)
+        {
             self.chapterViewControllerCreationBlocks =
                 @[
-                  ^{ return [[BEPLookAndFeelViewController alloc] init]; },
-                  ^{ return [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil]; },
-                  ^{ return [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil]; },
-                  ^{ return [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain]; },
-                  ^{ return [NSNull null]; },
-                  ^{ return [[BEPTabbarTransitionsViewController alloc] init]; },
-                  ^{ return [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController]; },
-                  ^{ return [NSNull null]; },
-                  ^{ return [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]; }
+                    ^{ return [[BEPLookAndFeelViewController alloc] init]; },
+                    ^{ return [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil]; },
+                    ^{ return [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil]; },
+                    ^{ return [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain]; },
+                    ^{ return [NSNull null]; },
+                    ^{ return [[BEPTabbarTransitionsViewController alloc] init]; },
+                    ^{ return [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController]; },
+                    ^{ return [NSNull null]; },
+                    ^{ return [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]; }
                 ];
-        } else {
+        }
+        else
+        {
             // Most of the examples make use of features exclusively available in iOS7
             self.chapterViewControllerCreationBlocks = @[
-                                                         ^{ return [[BEPLookAndFeelViewController alloc] init]; }
-                                                        ];
+                    ^{ return [[BEPLookAndFeelViewController alloc] init]; }
+                ];
         }
     }
     return self;
@@ -127,10 +130,11 @@ typedef UIViewController* (^ViewControllerBlock)();
 }
 
 // Creates the view controller for a chapter
-- (UIViewController *)chapterViewControllerForIndexPath:(NSIndexPath *)indexPath
+- (UIViewController*) chapterViewControllerForIndexPath:(NSIndexPath*)indexPath
 {
     // Get the block used to create the controller, and call it!
     ViewControllerBlock createViewController = self.chapterViewControllerCreationBlocks[indexPath.row];
+
     return createViewController();
 }
 
@@ -140,15 +144,16 @@ typedef UIViewController* (^ViewControllerBlock)();
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void) selectChapterNumber:(NSUInteger)chapterNumber
+- (void) selectChapterNumber:(NSUInteger)chapterNumber
 {
-    UIViewController *chapterViewController;
+    UIViewController* chapterViewController;
+
     chapterViewController = [self chapterViewControllerForIndexPath:[NSIndexPath indexPathForRow:chapterNumber inSection:0]];
-    
-    if ([chapterViewController isKindOfClass:[UIViewController class]]) {
+
+    if ([chapterViewController isKindOfClass:[UIViewController class]])
+    {
         [self.navigationController pushViewController:chapterViewController animated:YES];
     }
-
 }
 
 @end

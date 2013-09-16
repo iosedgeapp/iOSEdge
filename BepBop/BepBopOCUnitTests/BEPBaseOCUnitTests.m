@@ -10,23 +10,21 @@
 
 @implementation BEPBaseOCUnitTests
 
-- (void)setUp
+- (void) setUp
 {
     [super setUp];
-    
-    self.appDelegate  = [[UIApplication sharedApplication] delegate];
+
+    self.appDelegate   = [[UIApplication sharedApplication] delegate];
     self.navController = (id)self.appDelegate.window.rootViewController;
     STAssertTrue([self.navController isMemberOfClass:[BEPNavigationController class]], @"Where's my Nav Controller!!?");
     self.mainVC = (id)self.navController.topViewController;
     STAssertTrue([self.mainVC isMemberOfClass:[BEPMainViewController class]], @"Where's my Main Controller!!?");
-    
 }
 
-- (void)tearDown
+- (void) tearDown
 {
     [super tearDown];
     [self.navController popToRootViewControllerAnimated:NO];
-    
 }
 
 @end

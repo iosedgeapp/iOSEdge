@@ -15,7 +15,7 @@
 @interface BEPMultipeerConnectivityViewController : BEPThemedViewController<MCAdvertiserAssistantDelegate,
                                                                             MCBrowserViewControllerDelegate,
                                                                             MCSessionDelegate,
-                                                                            UINavigationControllerDelegate,// just to prevent compiler warning.
+                                                                            UINavigationControllerDelegate, // just to prevent compiler warning.
                                                                             UIImagePickerControllerDelegate, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel* peerCountLabel;
@@ -25,11 +25,11 @@
 @property (weak, nonatomic) IBOutlet UIButton* browseButton;
 @property (weak, nonatomic) IBOutlet UIButton* sendButton;
 @property (weak, nonatomic) IBOutlet UIButton* disconnectButton;
-@property (weak, nonatomic) IBOutlet UIButton *sendHelloButton;
+@property (weak, nonatomic) IBOutlet UIButton* sendHelloButton;
 
 - (IBAction) browseButtonTapped:(UIButton*)sender;
 - (IBAction) sendButtonTapped:(UIButton*)sender;
 - (IBAction) disconnectTapped:(UIButton*)sender;
-- (IBAction)sendHelloTapped:(UIButton *)sender;
+- (IBAction) sendHelloTapped:(UIButton*)sender;
 
 @end

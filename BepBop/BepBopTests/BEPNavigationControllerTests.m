@@ -15,19 +15,18 @@
 
 @implementation BEPNavigationControllerTests
 
-- (void)testStatusBarStyle
+- (void) testStatusBarStyle
 {
-  
     [self.mainVC selectChapterNumber:0];
-    
+
     XCTAssertEqual(UIStatusBarStyleLightContent, self.navController.preferredStatusBarStyle);
 
-    [self.mainVC  selectChapterNumber:1];
-    
+    [self.mainVC selectChapterNumber:1];
+
     XCTAssertEqual(UIStatusBarStyleDefault, self.navController.preferredStatusBarStyle);
 
-    [self.mainVC  selectChapterNumber:0];
-    
+    [self.mainVC selectChapterNumber:0];
+
     XCTAssertEqual(UIStatusBarStyleLightContent, self.navController.preferredStatusBarStyle);
 }
 

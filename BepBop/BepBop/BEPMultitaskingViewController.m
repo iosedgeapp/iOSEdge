@@ -11,7 +11,7 @@
 
 @interface BEPMultitaskingViewController ()
 
-@property (nonatomic) NSDateFormatter *formatter;
+@property (nonatomic) NSDateFormatter* formatter;
 
 @end
 
@@ -24,7 +24,7 @@
     self.formatter.dateFormat = @"MMM d, h:mm:ss a";
 
     self.title = NSLocalizedString(@"Chapter 4", nil);
-    self.tableView.dataSource = [BEPBackgroundDownloadHandler sharedInstance];
+    self.tableView.dataSource      = [BEPBackgroundDownloadHandler sharedInstance];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)]; // hide empty rows ~ http://stackoverflow.com/a/6738534/337735
 
     [self setupRefreshControl];
@@ -34,32 +34,34 @@
 
 #pragma mark - Refresh Control
 
-- (void)setupRefreshControl
+- (void) setupRefreshControl
 {
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to refresh"];
     [self.refreshControl addTarget:self action:@selector(refreshControlRequest) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)refreshControlRequest
+- (void) refreshControlRequest
 {
-    [[BEPBackgroundDownloadHandler sharedInstance] refreshWithCompletionHandler:^(BOOL didReceiveNewImage, NSError *error) {
-        if (didReceiveNewImage) {
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@", [self.formatter stringFromDate:[NSDate date]]];
-            self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
-        }
-        [self.refreshControl endRefreshing];
-    }];
+    [[BEPBackgroundDownloadHandler sharedInstance] refreshWithCompletionHandler:^(BOOL didReceiveNewImage, NSError* error) {
+         if (didReceiveNewImage)
+         {
+             NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+             [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+             NSString* lastUpdated = [NSString stringWithFormat:@"Last updated on %@", [self.formatter stringFromDate:[NSDate date]]];
+             self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+         }
+         [self.refreshControl endRefreshing];
+     }];
 }
 
 #pragma mark - Notifications
 
-- (void)transferComplete:(NSNotification *)notification
+- (void) transferComplete:(NSNotification*)notification
 {
     int row = [[[notification userInfo] objectForKey:@"id"] integerValue];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row  inSection:0];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 

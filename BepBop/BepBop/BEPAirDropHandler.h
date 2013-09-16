@@ -10,11 +10,11 @@
 
 @interface BEPAirDropHandler : NSObject
 
-+ (instancetype)sharedInstance;
++ (instancetype) sharedInstance;
 
-- (void)saveAirDropURL:(NSURL *)url;
-- (BOOL)moveToLocalDirectoryAirDropURL:(NSURL *)url;
-- (NSURL*)airDropDocumentsDirectory;
-- (void)handleSavedAirDropURLs;
+- (void) saveAirDropURL:(NSURL*)url;
+- (BOOL) moveToLocalDirectoryAirDropURL:(NSURL*)url;
+- (NSURL*) airDropDocumentsDirectory;
+- (void) handleSavedAirDropURLs;
 
 @end

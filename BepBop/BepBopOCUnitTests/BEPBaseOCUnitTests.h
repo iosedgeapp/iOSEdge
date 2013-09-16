@@ -15,7 +15,7 @@
 @interface BEPBaseOCUnitTests : SenTestCase
 @property (nonatomic, strong) BEPAppDelegate* appDelegate;
 @property (nonatomic, strong) BEPNavigationController* navController;
-@property (nonatomic, strong) BEPMainViewController* mainVC;
+@property (nonatomic, strong) BEPMainViewController*   mainVC;
 
 @end
 

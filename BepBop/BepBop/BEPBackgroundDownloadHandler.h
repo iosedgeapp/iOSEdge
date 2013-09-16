@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^BEPRefreshCompletionHandler)(BOOL didReceiveNewImage, NSError *error);
+typedef void (^BEPRefreshCompletionHandler)(BOOL didReceiveNewImage, NSError* error);
 
 @interface BEPBackgroundDownloadHandler : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate, UITableViewDataSource>
 
-+ (instancetype)sharedInstance;
++ (instancetype) sharedInstance;
 
-- (void)refreshWithCompletionHandler:(BEPRefreshCompletionHandler)completionHandler;
+- (void) refreshWithCompletionHandler:(BEPRefreshCompletionHandler)completionHandler;
 
 @end

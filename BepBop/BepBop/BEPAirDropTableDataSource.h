@@ -10,7 +10,7 @@
 
 @interface BEPAirDropTableDataSource : NSObject <UITableViewDataSource>
 
-- (instancetype)initWithTableView:(UITableView*)tv;
+- (instancetype) initWithTableView:(UITableView*)tv;
 
 
 

@@ -12,6 +12,6 @@
 
 @property NSArray* chapterViewControllerCreationBlocks;
 
--(void) selectChapterNumber:(NSUInteger)chapterNumber;
+- (void) selectChapterNumber:(NSUInteger)chapterNumber;
 
 @end

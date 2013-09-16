@@ -11,9 +11,9 @@
 @interface BEPLookAndFeelViewController ()
 
 @property (nonatomic, weak) UINavigationController* navController;
-@property (nonatomic, weak) IBOutlet UILabel* tintedLabel;
-@property (nonatomic, weak) IBOutlet UIButton* changeTintButton;
-@property (nonatomic, weak) IBOutlet UIButton* showAlertButton;
+@property (nonatomic, weak) IBOutlet UILabel*       tintedLabel;
+@property (nonatomic, weak) IBOutlet UIButton*      changeTintButton;
+@property (nonatomic, weak) IBOutlet UIButton*      showAlertButton;
 
 @property (nonatomic, strong) UIColor* savedTintColor;
 
@@ -35,20 +35,20 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
-    _showAlertButton.backgroundColor = (IS_IOS_7 ? [UIColor lightGrayColor] : [UIColor clearColor]);
-    _changeTintButton.backgroundColor = (IS_IOS_7 ? [UIColor lightGrayColor] : [UIColor clearColor]);
 
+    _showAlertButton.backgroundColor  = (IS_IOS_7 ? [UIColor lightGrayColor] : [UIColor clearColor]);
+    _changeTintButton.backgroundColor = (IS_IOS_7 ? [UIColor lightGrayColor] : [UIColor clearColor]);
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     _navController = self.navigationController;
-    
-    if ([_navController.view respondsToSelector:@selector(tintColor:)]) {
+
+    if ([_navController.view respondsToSelector:@selector(tintColor:)])
+    {
         self.savedTintColor = _navController.view.tintColor;
-        
+
         [self changeTintColorTo:[UIColor randomColor]];
     }
 }
@@ -91,6 +91,8 @@
 - (IBAction) showAlert:(id)sender
 {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Tint Color Demo" message:@"The tint colors on the UI should now have a disabled appearance!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+
     [alert show];
 }
+
 @end

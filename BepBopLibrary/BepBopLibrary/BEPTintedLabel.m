@@ -21,31 +21,32 @@
     return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder
+- (id) initWithCoder:(NSCoder*)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    if(self)
+    if (self)
     {
         [self prep];
     }
     return self;
 }
 
--(id)initWithFrame:(CGRect)frame
+- (id) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if(self)
+    if (self)
     {
         [self prep];
     }
     return self;
-
 }
--(void) prep
+
+- (void) prep
 {
     self.backgroundColor = [UIColor clearColor];
     [self tintColorDidChange];
 }
+
 - (void) tintColorDidChange
 {
     if ([self respondsToSelector:@selector(tintColor)])

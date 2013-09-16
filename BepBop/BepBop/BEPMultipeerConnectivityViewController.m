@@ -23,9 +23,9 @@
 @property (nonatomic) NSUInteger bytesSent;
 @property (nonatomic) NSUInteger bytesReceived;
 
-@property (nonatomic, strong) NSArray * airDropItems;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic,strong) BEPArrayTableDataSource * tableDataSource;
+@property (nonatomic, strong) NSArray* airDropItems;
+@property (weak, nonatomic) IBOutlet UITableView*      tableView;
+@property (nonatomic, strong) BEPArrayTableDataSource* tableDataSource;
 @end
 
 @implementation BEPMultipeerConnectivityViewController
@@ -85,34 +85,35 @@
     _assistant.delegate = self;
 
     [_assistant start];
-    
+
     BEPConfigureCellBlock configureCell = ^(UITableViewCell* cell, id item) {
-        NSURL * url = (NSURL*)item;
+        NSURL* url = (NSURL*)item;
         NSLog(@"config cell with URL: %@", url);
         cell.textLabel.text = [url lastPathComponent];
     };
-    
-    NSFileManager * fm = [NSFileManager defaultManager];
-    
-    NSError * error;
+
+    NSFileManager* fm = [NSFileManager defaultManager];
+
+    NSError* error;
     self.airDropItems = [fm contentsOfDirectoryAtURL:[[BEPAirDropHandler sharedInstance] airDropDocumentsDirectory]
                           includingPropertiesForKeys:nil
                                              options:NSDirectoryEnumerationSkipsHiddenFiles
                                                error:&error];
-    
-    if (_airDropItems == nil) {
+
+    if (_airDropItems == nil)
+    {
         NSLog(@"could not fetch airdrop files: %@", error);
         self.airDropItems = @[];
     }
 
-    static NSString * CellIdentifier = @"AirDropCell";
+    static NSString* CellIdentifier = @"AirDropCell";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     // tableView.dataSource is a weak property. We need to assign our data source to a strong property to prevent an untimely release
     self.tableDataSource = [[BEPArrayTableDataSource alloc] initWithItems:_airDropItems
                                                            cellIdentifier:CellIdentifier
                                                            configureBlock:configureCell];
     self.tableView.dataSource = _tableDataSource;
-    self.tableView.delegate = self;
+    self.tableView.delegate   = self;
 
 
     [self updateUIState];
@@ -157,23 +158,25 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (IBAction)sendHelloTapped:(UIButton *)sender {
+- (IBAction) sendHelloTapped:(UIButton*)sender
+{
+    NSDictionary* message = @{ @"message": @"Hello World!" };
 
-    NSDictionary * message = @{@"message": @"Hello World!"};
-    
-    NSString * errorString = nil;
-    NSData * data = [NSPropertyListSerialization dataFromPropertyList:message
-                                                               format:NSPropertyListXMLFormat_v1_0
-                                                     errorDescription:&errorString];
-    
-    if (errorString) {
+    NSString* errorString = nil;
+    NSData*   data        = [NSPropertyListSerialization dataFromPropertyList:message
+                                                                       format:NSPropertyListXMLFormat_v1_0
+                                                             errorDescription:&errorString];
+
+    if (errorString)
+    {
         NSLog(@"could not serialize\n%@\n%@", message, errorString);
     }
-    else {
-        NSError * error;
+    else
+    {
+        NSError* error;
         if (![_session sendData:data
-                   toPeers:[_session connectedPeers]
-                  withMode:MCSessionSendDataReliable
+                        toPeers:[_session connectedPeers]
+                       withMode:MCSessionSendDataReliable
                           error:&error])
         {
             NSLog(@"failed sending data");
@@ -188,8 +191,6 @@
     _bytesSent     = 0;
     [self updateByteCounters];
 }
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Advertising Assistant Delegate
@@ -252,12 +253,12 @@
 - (void) session:(MCSession*)session didFinishReceivingResourceWithName:(NSString*)resourceName fromPeer:(MCPeerID*)peerID atURL:(NSURL*)localURL withError:(NSError*)error
 {
     NSLog(@"did finish downloading \"%@\" from %@", resourceName, peerID.displayName);
-    
+
     NSString* alertTitle       = NSLocalizedString(@"Photo Received", @"alert title");
     NSString* alertDescription = [NSString stringWithFormat:
                                   NSLocalizedString(@"Received \"%@\" from %@", @"alert format"),
                                   resourceName, peerID.displayName];
-    
+
     RIButtonItem* cancelItem = [[RIButtonItem alloc] init];
     cancelItem.label  = NSLocalizedString(@"Dismiss", @"button title");
     cancelItem.action = nil;
@@ -272,15 +273,15 @@
 
         [self.navigationController pushViewController:sivc animated:YES];
     };
-    
+
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:alertTitle
                                                     message:alertDescription
                                            cancelButtonItem:cancelItem
                                            otherButtonItems:openItem, nil];
-    
+
     dispatch_async(dispatch_get_main_queue(), ^{
-        [alert show];
-    });
+                       [alert show];
+                   });
 }
 
 - (void) session:(MCSession*)session didReceiveData:(NSData*)data fromPeer:(MCPeerID*)peerID
@@ -291,15 +292,16 @@
                    ^{
                        [self updateByteCounters];
                    });
-    
+
     NSPropertyListFormat fmt;
-    NSError * error;
-    NSDictionary * dict = [NSPropertyListSerialization propertyListWithData:data
-                                              options:NSPropertyListImmutable
-                                               format:&fmt
-                                                error:&error];
-    
-    if (dict == nil) {
+    NSError*      error;
+    NSDictionary* dict = [NSPropertyListSerialization propertyListWithData:data
+                                                                   options:NSPropertyListImmutable
+                                                                    format:&fmt
+                                                                     error:&error];
+
+    if (dict == nil)
+    {
         NSLog(@"could not parse received data: %@\n%@", error, data);
         return;
     }
@@ -308,7 +310,7 @@
     NSString* alertDescription = [NSString stringWithFormat:
                                   NSLocalizedString(@"Received \"%@\" from %@", @"alert format"),
                                   dict[@"message"], peerID.displayName];
-    
+
     RIButtonItem* cancelItem = [[RIButtonItem alloc] init];
     cancelItem.label  = NSLocalizedString(@"OK", @"button title");
     cancelItem.action = nil;
@@ -338,40 +340,42 @@
 {
     UIImage* image     = info[UIImagePickerControllerOriginalImage];
     NSData*  imageData = UIImageJPEGRepresentation(image, 0.6);
-    
-    NSString * path = [NSTemporaryDirectory() stringByAppendingString:@"photo.jpg"];
-    
-    NSURL * tempURL = [NSURL fileURLWithPath:path];
+
+    NSString* path = [NSTemporaryDirectory() stringByAppendingString:@"photo.jpg"];
+
+    NSURL* tempURL = [NSURL fileURLWithPath:path];
+
     [imageData writeToURL:tempURL
                atomically:NO];
-    
-    id completionHandler = ^(NSError* error){
-        NSString * alertTitle = nil;
-        NSString * alertDescription = nil;
-        if (error) {
+
+    id completionHandler = ^(NSError* error) {
+        NSString* alertTitle       = nil;
+        NSString* alertDescription = nil;
+        if (error)
+        {
             alertTitle = @"Error";
             alertTitle = [@"Failed to send the selected photo: " stringByAppendingString:error.localizedFailureReason];
         }
-        else {
+        else
+        {
             alertTitle = @"Photo Sent!";
             alertTitle = @"Selected photo was sent successfully";
         }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[[UIAlertView alloc] initWithTitle:alertTitle
-                                        message:alertDescription
-                                       delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil] show];
 
-        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+                           [[[UIAlertView alloc] initWithTitle:alertTitle
+                                                       message:alertDescription
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil] show];
+                       });
     };
-    for (MCPeerID * peer in _session.connectedPeers) {
+    for (MCPeerID* peer in _session.connectedPeers)
+    {
         [_session sendResourceAtURL:tempURL
                            withName:[tempURL lastPathComponent]
                              toPeer:peer
               withCompletionHandler:completionHandler];
-
     }
 
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -382,26 +386,24 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Table Delegate
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    NSURL * url = [self.tableDataSource itemAtIndexPath:indexPath];
-    
-    if (url) {
-        BEPSimpleWebViewController * wvc = [[BEPSimpleWebViewController alloc] initWithNibName:nil bundle:nil];
-        
+
+    NSURL* url = [self.tableDataSource itemAtIndexPath:indexPath];
+
+    if (url)
+    {
+        BEPSimpleWebViewController* wvc = [[BEPSimpleWebViewController alloc] initWithNibName:nil bundle:nil];
+
         wvc.url = url;
-        
+
         [self.navigationController pushViewController:wvc animated:YES];
     }
-    
-
 }
 
 @end

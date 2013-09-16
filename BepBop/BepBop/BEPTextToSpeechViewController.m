@@ -19,38 +19,39 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
 
 @interface BEPTextToSpeechViewController () <AVSpeechSynthesizerDelegate>
 
-@property IBOutlet UILabel *bodyLabel;
-@property IBOutlet UIBarButtonItem *startStopButton;
-@property IBOutlet UISegmentedControl *rateControl;
-@property IBOutlet UISlider *pitchSlider;
-@property IBOutlet UISlider *volumeSlider;
-@property IBOutlet UIBarButtonItem *pauseResumeButton;
+@property IBOutlet UILabel*            bodyLabel;
+@property IBOutlet UIBarButtonItem*    startStopButton;
+@property IBOutlet UISegmentedControl* rateControl;
+@property IBOutlet UISlider*           pitchSlider;
+@property IBOutlet UISlider*           volumeSlider;
+@property IBOutlet UIBarButtonItem*    pauseResumeButton;
 
-@property AVSpeechSynthesizer *synthesizer;
+@property AVSpeechSynthesizer* synthesizer;
 
 @end
 
 @implementation BEPTextToSpeechViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id) initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = NSLocalizedString(@"Text to Speech", nil);
+    if (self)
+    {
+        self.title       = NSLocalizedString(@"Text to Speech", nil);
         self.synthesizer = [[AVSpeechSynthesizer alloc] init];
         self.synthesizer.delegate = self;
     }
     return self;
 }
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
-    
-    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
-    
-    AVSpeechUtterance *helloUtterance = [AVSpeechUtterance speechUtteranceWithString:@"Hello, there!"];
-    AVSpeechUtterance *howAreYouUtterance = [AVSpeechUtterance speechUtteranceWithString:@"How are you?"];
+
+    AVSpeechSynthesizer* synthesizer = [[AVSpeechSynthesizer alloc] init];
+
+    AVSpeechUtterance* helloUtterance     = [AVSpeechUtterance speechUtteranceWithString:@"Hello, there!"];
+    AVSpeechUtterance* howAreYouUtterance = [AVSpeechUtterance speechUtteranceWithString:@"How are you?"];
     [synthesizer speakUtterance:helloUtterance];
     [synthesizer speakUtterance:howAreYouUtterance];
 }
@@ -64,12 +65,12 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
 
 - (IBAction) startSpeaking:(id)sender
 {
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:self.bodyLabel.text];
-    
-    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
+    AVSpeechUtterance* utterance = [AVSpeechUtterance speechUtteranceWithString:self.bodyLabel.text];
+
+    utterance.voice  = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
     utterance.volume = self.volumeSlider.value;
     utterance.pitchMultiplier = self.pitchSlider.value;
-    
+
     CGFloat rate = AVSpeechUtteranceDefaultSpeechRate;
     switch (self.rateControl.selectedSegmentIndex)
     {
@@ -86,7 +87,7 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
             break;
     }
     utterance.rate = rate;
-    
+
     [self.synthesizer speakUtterance:utterance];
 }
 
@@ -107,31 +108,30 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
 
 #pragma mark - AVSpeechSynthesizerDelegate
 
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance
+- (void) speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didStartSpeechUtterance:(AVSpeechUtterance*)utterance
 {
     [self setViewForState:BEPReadingStateStarted];
 }
 
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance *)utterance
+- (void) speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance*)utterance
 {
     [self setViewForState:BEPReadingStatePaused];
 }
 
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance *)utterance
+- (void) speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance*)utterance
 {
     [self setViewForState:BEPReadingStateResumed];
 }
 
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
+- (void) speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance*)utterance
 {
     [self setViewForState:BEPReadingStateStopped];
 }
 
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance *)utterance
+- (void) speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance*)utterance
 {
     [self setViewForState:BEPReadingStateStopped];
 }
-
 
 #pragma mark - Internal
 
@@ -142,17 +142,17 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
         case BEPReadingStateStarted:
             [self setStartStopButtonToStart:NO];
             [self setPauseResumeButtonToPause:YES];
-            self.rateControl.enabled = NO;
-            self.pitchSlider.enabled = NO;
-            self.volumeSlider.enabled = NO;
+            self.rateControl.enabled       = NO;
+            self.pitchSlider.enabled       = NO;
+            self.volumeSlider.enabled      = NO;
             self.pauseResumeButton.enabled = YES;
             break;
         case BEPReadingStateStopped:
             [self setStartStopButtonToStart:YES];
             [self setPauseResumeButtonToPause:YES];
-            self.rateControl.enabled = YES;
-            self.pitchSlider.enabled = YES;
-            self.volumeSlider.enabled = YES;
+            self.rateControl.enabled       = YES;
+            self.pitchSlider.enabled       = YES;
+            self.volumeSlider.enabled      = YES;
             self.pauseResumeButton.enabled = NO;
             break;
         case BEPReadingStatePaused:

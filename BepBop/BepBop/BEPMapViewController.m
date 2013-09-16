@@ -10,25 +10,25 @@
 #import <MapKit/MapKit.h>
 
 
-#define kLAT -33.85822
-#define kLONG 151.21493
+#define kLAT          -33.85822
+#define kLONG         151.21493
 
-#define kLATBondi -33.8910
-#define kLONGBondi 151.2777
+#define kLATBondi     -33.8910
+#define kLONGBondi    151.2777
 
-#define kLATLunaPark -33.8482
+#define kLATLunaPark  -33.8482
 #define kLONGLunaPark 151.2100
 
 @interface BEPMapViewController ()
 
-@property IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) NSMutableArray* listOfCameras;
-@property (nonatomic, assign) CLLocationCoordinate2D  sydneyOperaHouseCoordinate;
-@property (nonatomic, assign) CLLocationCoordinate2D  bondiBeachCoordinate;
-@property (nonatomic, strong) MKGeodesicPolyline* geodesic;
-@property (nonatomic, assign) float stepperValue;
-@property (nonatomic, strong) NSArray *places;
-@property (nonatomic, strong) MKLocalSearch *localSearch;
+@property IBOutlet MKMapView* mapView;
+@property (strong, nonatomic) NSMutableArray*        listOfCameras;
+@property (nonatomic, assign) CLLocationCoordinate2D sydneyOperaHouseCoordinate;
+@property (nonatomic, assign) CLLocationCoordinate2D bondiBeachCoordinate;
+@property (nonatomic, strong) MKGeodesicPolyline*    geodesic;
+@property (nonatomic, assign) float          stepperValue;
+@property (nonatomic, strong) NSArray*       places;
+@property (nonatomic, strong) MKLocalSearch* localSearch;
 
 @end
 
@@ -45,270 +45,270 @@
     return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+- (void) viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
 }
-
 
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
-    sydneyOperaHouseCoordinate = CLLocationCoordinate2DMake(kLAT, kLONG);
-    bondiBeachCoordinate = CLLocationCoordinate2DMake(kLATBondi, kLONGBondi);
-    CLLocationCoordinate2D  lunaParkCoordinate = CLLocationCoordinate2DMake(kLATLunaPark, kLONGLunaPark);
-    
-    MKCoordinateRegion sydneyOperaHouseRegion = MKCoordinateRegionMakeWithDistance(sydneyOperaHouseCoordinate, 100, 100);
-    MKCoordinateRegion lunaParkRegion = MKCoordinateRegionMakeWithDistance(lunaParkCoordinate, 100, 100);
 
-    
-    
+    sydneyOperaHouseCoordinate = CLLocationCoordinate2DMake(kLAT, kLONG);
+    bondiBeachCoordinate       = CLLocationCoordinate2DMake(kLATBondi, kLONGBondi);
+    CLLocationCoordinate2D lunaParkCoordinate = CLLocationCoordinate2DMake(kLATLunaPark, kLONGLunaPark);
+
+    MKCoordinateRegion sydneyOperaHouseRegion = MKCoordinateRegionMakeWithDistance(sydneyOperaHouseCoordinate, 100, 100);
+    MKCoordinateRegion lunaParkRegion         = MKCoordinateRegionMakeWithDistance(lunaParkCoordinate, 100, 100);
+
+
+
     self.mapView.region = sydneyOperaHouseRegion;
     [self.mapView setShowsPointsOfInterest:YES];
     self.mapView.delegate = self;
-    //Annotations    
-    MKPointAnnotation *pointOperaHouse = [[MKPointAnnotation alloc] init];
+    //Annotations
+    MKPointAnnotation* pointOperaHouse = [[MKPointAnnotation alloc] init];
     pointOperaHouse.coordinate = CLLocationCoordinate2DMake(kLAT, kLONG);
-    pointOperaHouse.title = @"Sydney Opera House";
-    
-    MKPointAnnotation *pointBondiBeach = [[MKPointAnnotation alloc] init];
+    pointOperaHouse.title      = @"Sydney Opera House";
+
+    MKPointAnnotation* pointBondiBeach = [[MKPointAnnotation alloc] init];
     pointBondiBeach.coordinate = CLLocationCoordinate2DMake(kLATBondi, kLONGBondi);
-    pointBondiBeach.title = @"Bondi Beach";
-    
-    MKPointAnnotation *pointLuna= [[MKPointAnnotation alloc] init];
+    pointBondiBeach.title      = @"Bondi Beach";
+
+    MKPointAnnotation* pointLuna = [[MKPointAnnotation alloc] init];
     pointBondiBeach.coordinate = CLLocationCoordinate2DMake(kLATLunaPark, kLONGLunaPark);
-    pointBondiBeach.title = @"Luna Park Sydney";
-    
-    
-    [self.mapView addAnnotations:@[pointOperaHouse, pointBondiBeach,pointLuna]];
+    pointBondiBeach.title      = @"Luna Park Sydney";
+
+
+    [self.mapView addAnnotations:@[pointOperaHouse, pointBondiBeach, pointLuna]];
     //[self.mapView showAnnotations:@[pointOperaHouse, pointBondiBeach] animated:YES];
     [self.mapView selectAnnotation:pointOperaHouse animated:YES];
-    
-    
-    
+
+
+
     //Add an overlay
-    CLLocationCoordinate2D points[] = {lunaParkCoordinate, sydneyOperaHouseCoordinate};
+    CLLocationCoordinate2D points[] = { lunaParkCoordinate, sydneyOperaHouseCoordinate };
     geodesic = [MKGeodesicPolyline polylineWithCoordinates:points count:2];
     [self.mapView addOverlay:geodesic level:MKOverlayLevelAboveRoads];
-    
 
-    MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:sydneyOperaHouseRegion.center  fromEyeCoordinate:lunaParkRegion.center eyeAltitude:900];
+
+    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:sydneyOperaHouseRegion.center fromEyeCoordinate:lunaParkRegion.center eyeAltitude:900];
     camera.pitch = 60;
     stepperValue = camera.pitch;
 
     //camera.altitude = 1500;
     [self.mapView setCamera:camera animated:NO];
-    
 }
 
 #pragma mark - Map Overlay Delegate
 
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView
+- (MKOverlayRenderer*) mapView:(MKMapView*)mapView
             rendererForOverlay:(id<MKOverlay>)overlay
 {
-    MKPolylineRenderer *renderer =
-    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
-    renderer.lineWidth = 3.0;
+    MKPolylineRenderer* renderer =
+        [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+
+    renderer.lineWidth   = 3.0;
     renderer.strokeColor = [UIColor greenColor];
     return renderer;
 }
 
-
-- (void)updateStats{
+- (void) updateStats
+{
     float altitude = self.mapView.camera.altitude;
-    float pitch = self.mapView.camera.pitch;
-    float heading = self.mapView.camera.heading;
-    float lat = self.mapView.centerCoordinate.latitude;
-    float longt = self.mapView.centerCoordinate.longitude;
-    
+    float pitch    = self.mapView.camera.pitch;
+    float heading  = self.mapView.camera.heading;
+    float lat      = self.mapView.centerCoordinate.latitude;
+    float longt    = self.mapView.centerCoordinate.longitude;
+
     statusView.text = [NSString stringWithFormat:@"Altitude - %f Heading -%f Pitch -%f, Latitude -%f, Longtitude -%f", altitude, heading, pitch, lat, longt];
 }
 
 #pragma mark Storing and Restoring State
 
 
--(void)encodeRestorableStateWithCoder:(NSCoder *)coder{
+- (void) encodeRestorableStateWithCoder:(NSCoder*)coder
+{
     MKMapCamera* camera = [self.mapView camera];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDir = [paths objectAtIndex: 0];
-    NSString* docFile = [docDir stringByAppendingPathComponent: @"BepBopMap.plist"];
-    
+
+    NSArray*  paths   = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docDir  = [paths objectAtIndex:0];
+    NSString* docFile = [docDir stringByAppendingPathComponent:@"BepBopMap.plist"];
+
     [NSKeyedArchiver archiveRootObject:camera toFile:docFile];
-  
+
     [super encodeRestorableStateWithCoder:coder];
 }
 
+- (void) decodeRestorableStateWithCoder:(NSCoder*)coder
+{
+    NSArray*  paths   = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* docDir  = [paths objectAtIndex:0];
+    NSString* docFile = [docDir stringByAppendingPathComponent:@"BepBopMap.plist"];
 
-    
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder{
-        
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *docDir = [paths objectAtIndex: 0];
-        NSString* docFile = [docDir stringByAppendingPathComponent: @"BepBopMap.plist"];
-        
-        MKMapCamera* camera = [NSKeyedUnarchiver unarchiveObjectWithFile: docFile];
-        [self.mapView setCamera:camera];
-        
-        [super decodeRestorableStateWithCoder:coder];
-    }
-    
+    MKMapCamera* camera = [NSKeyedUnarchiver unarchiveObjectWithFile:docFile];
 
+    [self.mapView setCamera:camera];
+
+    [super decodeRestorableStateWithCoder:coder];
+}
 
 - (void) didReceiveMemoryWarning
 {
-        [super didReceiveMemoryWarning];
-        // Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - MKMapCamera Animation
 
-- (void)goToNextCamera{
-    if (listOfCameras.count ==0){
+- (void) goToNextCamera
+{
+    if (listOfCameras.count == 0)
+    {
         return;
     }
-    
+
     MKMapCamera* nextCamera = [listOfCameras firstObject];
     [listOfCameras removeObject:0];
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         self.mapView.camera = nextCamera;
-                     } completion:NULL];
-    
+         self.mapView.camera = nextCamera;
+     } completion:NULL];
 }
 
-
-
-
--(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-    
+- (void) mapView:(MKMapView*)mapView regionDidChangeAnimated:(BOOL)animated
+{
     statusView.hidden = NO;
-    
+
     [self updateStats];
-    
+
     if (animated) //if we are animated go to next camera
+    {
         [self goToNextCamera];
+    }
 }
 
-- (void)goToCoordinate:(CLLocationCoordinate2D)coordionate{
+- (void) goToCoordinate:(CLLocationCoordinate2D)coordionate
+{
     MKMapCamera* end = [MKMapCamera cameraLookingAtCenterCoordinate:coordionate
-                                                   fromEyeCoordinate:coordionate
+                                                  fromEyeCoordinate:coordionate
                                                         eyeAltitude:500];
+
     end.pitch = 55;
-    
+
     CLLocationCoordinate2D startingCoordinate = self.mapView.centerCoordinate;
     MKMapPoint startingPoint = MKMapPointForCoordinate(startingCoordinate);
-    MKMapPoint endPoint = MKMapPointForCoordinate(end.centerCoordinate);
-    
+    MKMapPoint endPoint      = MKMapPointForCoordinate(end.centerCoordinate);
+
     MKMapPoint midPoint = MKMapPointMake(startingPoint.x + ((endPoint.y - startingPoint.y) / 2.0),
                                          startingPoint.y + ((endPoint.y - startingPoint.y) / 2.0)
-                                        );
-    
+                                         );
+
     CLLocationCoordinate2D midCoord = MKCoordinateForMapPoint(midPoint);
-    
+
     CLLocationDistance midAltitude = end.altitude * 4; // zoom out 4 times
-    
+
     MKMapCamera* midCamera = [MKMapCamera cameraLookingAtCenterCoordinate:end.centerCoordinate
                                                         fromEyeCoordinate:midCoord
                                                               eyeAltitude:midAltitude];
-    
+
     listOfCameras = [[NSMutableArray alloc] init];
-    
+
     [listOfCameras addObject:midCamera];
     [listOfCameras addObject:end];
     [self goToNextCamera];
-    
-    
-    
-    
-    
 }
 
-- (IBAction)changeEyeAltitude:(id)sender {
+- (IBAction) changeEyeAltitude:(id)sender
+{
     UISlider* slider = (UISlider*)sender;
+
     NSLog(@"value %f", slider.value);
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         self.mapView.camera.altitude = slider.value;
-                     
-                    } completion:NULL];
+         self.mapView.camera.altitude = slider.value;
+     } completion:NULL];
 }
 
-
-- (IBAction)changePitch:(id)sender {
+- (IBAction) changePitch:(id)sender
+{
     UISlider* slider = (UISlider*)sender;
+
     NSLog(@"value %f", slider.value);
-    
+
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         if (slider.value < 60)
-                             self.mapView.camera.pitch = slider.value;
-                     } completion:NULL];
+         if (slider.value < 60)
+             self.mapView.camera.pitch = slider.value;
+     } completion:NULL];
 }
 
-- (IBAction)changeCameraView:(id)sender {
-    UISegmentedControl *segment=(UISegmentedControl*)sender;
-    
+- (IBAction) changeCameraView:(id)sender
+{
+    UISegmentedControl* segment = (UISegmentedControl*)sender;
+
     if (segment.selectedSegmentIndex == 0)
+    {
         [self goToCoordinate:sydneyOperaHouseCoordinate];
+    }
     else
+    {
         [self goToCoordinate:bondiBeachCoordinate];
-    
+    }
 }
-
 
 #pragma mark - Local Search methods and delegate
 
-- (void)searchButtonClicked:(UISearchBar *) searchBar
+- (void) searchButtonClicked:(UISearchBar*)searchBar
 {
     [searchBar resignFirstResponder];
 }
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+- (void) searchBarTextDidBeginEditing:(UISearchBar*)searchBar
 {
     [searchBar setShowsCancelButton:YES animated:YES];
 }
 
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+- (void) searchBarTextDidEndEditing:(UISearchBar*)searchBar
 {
     [searchBar setShowsCancelButton:NO animated:YES];
 }
 
-- (void)beginSearch:(NSString *)searchString
+- (void) beginSearch:(NSString*)searchString
 {
     if (self.localSearch.searching)
     {
         [self.localSearch cancel];
     }
-    
+
     MKCoordinateRegion constrainedArea;
-    constrainedArea.center.latitude = sydneyOperaHouseCoordinate.latitude;
+    constrainedArea.center.latitude  = sydneyOperaHouseCoordinate.latitude;
     constrainedArea.center.longitude = sydneyOperaHouseCoordinate.longitude;
 
-    constrainedArea.span.latitudeDelta = 0.212872;
+    constrainedArea.span.latitudeDelta  = 0.212872;
     constrainedArea.span.longitudeDelta = 0.209863;
-    
-    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
-    
+
+    MKLocalSearchRequest* request = [[MKLocalSearchRequest alloc] init];
+
     request.naturalLanguageQuery = searchString;
     request.region = constrainedArea;
-    
-    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
+
+    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse* response, NSError* error)
     {
         if (error != nil)
         {
-            NSString *errorStr = [[error userInfo] valueForKey:NSLocalizedDescriptionKey];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not find places"
-                                                            message:errorStr
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
+            NSString*    errorStr = [[error userInfo] valueForKey:NSLocalizedDescriptionKey];
+            UIAlertView* alert    = [[UIAlertView alloc] initWithTitle:@"Could not find places"
+                                                               message:errorStr
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil];
             [alert show];
         }
         else
@@ -316,85 +316,83 @@
             NSLog(@"response %@", response.mapItems);
             self.places = [response mapItems];
             [self addPlacesAnnotation];
-            
         }
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     };
-    
+
     if (self.localSearch != nil)
     {
         self.localSearch = nil;
     }
     self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
-    
+
     [self.localSearch startWithCompletionHandler:completionHandler];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+- (void) searchBarSearchButtonClicked:(UISearchBar*)searchBar
 {
     [searchBar resignFirstResponder];
     [self beginSearch:searchBar.text];
-    
-    
 }
 
-- (void)addPlacesAnnotation{
-    for (MKMapItem *item in self.places)
+- (void) addPlacesAnnotation
+{
+    for (MKMapItem* item in self.places)
     {
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
         annotation.coordinate = item.placemark.location.coordinate;
-        annotation.title = item.name;
+        annotation.title      = item.name;
         [self.mapView addAnnotation:annotation];
     }
 }
 
+#pragma mark Directions API
 
-#pragma mark Directions API 
-
-- (IBAction)getDirectionsFromOperaHouseToBondiBeach:(id)sender{
+- (IBAction) getDirectionsFromOperaHouseToBondiBeach:(id)sender
+{
     //You could instead pass dynamic MKMApItems to search for directions between two places.
-    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:sydneyOperaHouseCoordinate addressDictionary:nil];
-    MKMapItem *source = [[MKMapItem alloc] initWithPlacemark:placemark];
-    
-    MKPlacemark *placemark2 = [[MKPlacemark alloc] initWithCoordinate:bondiBeachCoordinate addressDictionary:nil];
-    MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:placemark2];
-    
-    
-    
-    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
-    request.source = source;
+    MKPlacemark* placemark = [[MKPlacemark alloc] initWithCoordinate:sydneyOperaHouseCoordinate addressDictionary:nil];
+    MKMapItem*   source    = [[MKMapItem alloc] initWithPlacemark:placemark];
+
+    MKPlacemark* placemark2  = [[MKPlacemark alloc] initWithCoordinate:bondiBeachCoordinate addressDictionary:nil];
+    MKMapItem*   destination = [[MKMapItem alloc] initWithPlacemark:placemark2];
+
+
+
+    MKDirectionsRequest* request = [[MKDirectionsRequest alloc] init];
+
+    request.source      = source;
     request.destination = destination;
     request.requestsAlternateRoutes = YES;
-    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+    MKDirections* directions = [[MKDirections alloc] initWithRequest:request];
     [directions calculateDirectionsWithCompletionHandler:
-     ^(MKDirectionsResponse *response, NSError *error) {
-         if (error) {
+     ^(MKDirectionsResponse* response, NSError* error) {
+         if (error)
+         {
              //handle error
-         } else {
+         }
+         else
+         {
              [self displayDirectionsWithResponse:response];
-         } }];
-    
-    
+         }
+     }];
 }
 
--(void)displayDirectionsWithResponse:(MKDirectionsResponse*)response{
-   // self.response = response;
+- (void) displayDirectionsWithResponse:(MKDirectionsResponse*)response
+{
+    // self.response = response;
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         
-                         for (MKRoute *route in response.routes) {
-                             [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
-                         }
-                         
-                         self.mapView.camera.altitude = 10000;
+         for (MKRoute *route in response.routes)
+         {
+             [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+         }
 
-                         
-                     } completion:NULL];
-    
-    }
-
+         self.mapView.camera.altitude = 10000;
+     } completion:NULL];
+}
 
 @end

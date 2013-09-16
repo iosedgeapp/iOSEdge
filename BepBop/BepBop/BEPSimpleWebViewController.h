@@ -10,6 +10,6 @@
 
 @interface BEPSimpleWebViewController : UIViewController <UIWebViewDelegate>
 
-@property (nonatomic, strong) NSURL * url;
+@property (nonatomic, strong) NSURL* url;
 
 @end
