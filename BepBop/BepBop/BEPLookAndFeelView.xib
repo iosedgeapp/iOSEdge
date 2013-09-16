@@ -57,7 +57,7 @@
                                     </button>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="u4S-iJ-GTU"/>
-                                <barButtonItem title="See Tables" id="ZeZ-p2-xF0"/>
+                                <barButtonItem title="Button" id="ZeZ-p2-xF0"/>
                             </items>
                         </toolbar>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zV1-sX-oKn">

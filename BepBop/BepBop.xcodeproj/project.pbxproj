@@ -272,8 +272,6 @@
 			children = (
 				3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */,
 				3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */,
-				3CD0FD1217E00C67007CA40E /* BEPThemedViewController.h */,
-				3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */,
 				0394AD9317DFFCD300769A12 /* main */,
 				03175DE917DEB5C7005D3C62 /* Look and Feel */,
 				03175DEA17DEB5D2005D3C62 /* Accessibility */,
@@ -290,6 +288,8 @@
 		03175DE917DEB5C7005D3C62 /* Look and Feel */ = {
 			isa = PBXGroup;
 			children = (
+				3CD0FD1217E00C67007CA40E /* BEPThemedViewController.h */,
+				3CD0FD1317E00C67007CA40E /* BEPThemedViewController.m */,
 				3C9DF0B317E0149C002F5FB9 /* BEPLookAndFeelViewController.h */,
 				3C9DF0B417E0149C002F5FB9 /* BEPLookAndFeelViewController.m */,
 				175C201817E15643008D6F4E /* BEPLookAndFeelView.xib */,
