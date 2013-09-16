@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define IS_IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] > 6.1)
+NSUInteger DeviceMajorVersion();
+#define IS_IOS_7 (DeviceMajorVersion() == 7)
 
 @interface BEPAppDelegate : UIResponder <UIApplicationDelegate>
 

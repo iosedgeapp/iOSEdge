@@ -12,6 +12,19 @@
 #import "BEPAirDropHandler.h"
 #import "BEPBackgroundDownloadHandler.h"
 
+NSUInteger DeviceMajorVersion()
+{
+    static NSUInteger s_MajorDeviceVersion = -1;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        s_MajorDeviceVersion = [[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue];
+        
+    });
+    
+    return s_MajorDeviceVersion;
+}
+
 @interface BEPAppDelegate ()
 
 @end
