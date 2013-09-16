@@ -126,9 +126,7 @@
 
 #pragma mark Storing and Restoring State
 
-
-- (void) encodeRestorableStateWithCoder:(NSCoder*)coder
-{
+-(void)encodeRestorableStateWithCoder:(NSCoder *)coder{
     MKMapCamera* camera = [self.mapView camera];
 
     NSArray*  paths   = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -140,18 +138,19 @@
     [super encodeRestorableStateWithCoder:coder];
 }
 
-- (void) decodeRestorableStateWithCoder:(NSCoder*)coder
-{
-    NSArray*  paths   = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* docDir  = [paths objectAtIndex:0];
-    NSString* docFile = [docDir stringByAppendingPathComponent:@"BepBopMap.plist"];
 
-    MKMapCamera* camera = [NSKeyedUnarchiver unarchiveObjectWithFile:docFile];
-
-    [self.mapView setCamera:camera];
-
-    [super decodeRestorableStateWithCoder:coder];
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder{
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docDir = [paths objectAtIndex: 0];
+        NSString* docFile = [docDir stringByAppendingPathComponent: @"BepBopMap.plist"];
+        
+        MKMapCamera* camera = [NSKeyedUnarchiver unarchiveObjectWithFile: docFile];
+        [self.mapView setCamera:camera];
+        
+        [super decodeRestorableStateWithCoder:coder];
 }
+    
 
 - (void) didReceiveMemoryWarning
 {
@@ -386,13 +385,16 @@
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-         for (MKRoute *route in response.routes)
-         {
-             [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
-         }
+                         for (MKRoute *route in response.routes) {
+                             [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+                         }
+                         
+                         self.mapView.camera.altitude = 10000;
 
-         self.mapView.camera.altitude = 10000;
-     } completion:NULL];
+                         
+                     } completion:NULL];
+    
+ 
 }
 
 @end
