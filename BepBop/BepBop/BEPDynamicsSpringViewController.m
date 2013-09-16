@@ -115,7 +115,7 @@
     // the orange block and add it to the animator.
     if (gesture.state == UIGestureRecognizerStateBegan) {
         // Set up the attachment behavior that we'll use to drag the orange block
-        UIAttachmentBehavior *touchAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:self.touchView.center];
+        UIAttachmentBehavior *touchAttachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.orangeView offsetFromCenter:self.attachmentOffset attachedToAnchor:touchPoint];
         
         // Make the attachment springy
         touchAttachmentBehavior.damping = 0.4;
@@ -142,25 +142,12 @@
     
 }
 
-- (CGFloat)distanceBetweenTouchAndAttachmentPoint:(CGPoint)touchPoint
-{
-    // Get the location of the attachment point (the center of the blue square)
-    // relative to the reference view
-    CGPoint attachmentPoint = [self.view convertPoint:self.attachmentView.center fromView:self.orangeView];
-    
-    CGFloat xDist = (touchPoint.x - attachmentPoint.x);
-    CGFloat yDist = (touchPoint.y - attachmentPoint.y);
-    CGFloat distance = sqrt((xDist * xDist) + (yDist * yDist)); // Pythagoras
-    return distance;
-}
-
-
 #pragma mark CollisionBehaviorDelegate methods
 
 - (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p
 {
     if (identifier == nil) {
-        // Collided with default boundary
+        // Collided with default boundary, make view lighter
         if ([item isKindOfClass:[UIView class]]) {
             UIView *collidedView = (UIView*)item;
             collidedView.alpha = 0.5;
@@ -170,6 +157,7 @@
 
 - (void)collisionBehavior:(UICollisionBehavior *)behavior endedContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier
 {
+    // Collision contact ended, make view opaque again
     if ([item isKindOfClass:[UIView class]]) {
         UIView *collidedView = (UIView*)item;
         collidedView.alpha = 1.0;
