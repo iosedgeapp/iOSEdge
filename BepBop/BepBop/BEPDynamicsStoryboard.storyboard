@@ -176,9 +176,6 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="off-9r-Mrb">
                                 <rect key="frame" x="77" y="427" width="166" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="dampingChanged:" destination="NEt-pC-6rk" eventType="valueChanged" id="tyQ-Pq-niq"/>
-                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Damping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-CL-PeN">
                                 <rect key="frame" x="124" y="405" width="73" height="21"/>
@@ -194,6 +191,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aLA-Sh-ILr"/>
                     <connections>
+                        <outlet property="dampingSlider" destination="off-9r-Mrb" id="Ohj-P9-EDC"/>
                         <outlet property="snappyView" destination="z8E-Gc-2fB" id="LZS-fo-v3w"/>
                     </connections>
                 </viewController>
