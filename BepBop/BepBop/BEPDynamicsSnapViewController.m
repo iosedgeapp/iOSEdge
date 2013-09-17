@@ -43,7 +43,7 @@
 
 - (IBAction) handleSnapGesture:(UITapGestureRecognizer*)gesture
 {
-    CGPoint point = [gesture locationInView:self.view];
+    CGPoint point = [gesture locationInView:self.animator.referenceView];
 
     // Create a new snap behavior
     UISnapBehavior* snapBehavior = [[UISnapBehavior alloc] initWithItem:self.snapView snapToPoint:point];
