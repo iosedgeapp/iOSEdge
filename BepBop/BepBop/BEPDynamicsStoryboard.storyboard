@@ -200,7 +200,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzz-Yk-5qt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Yhl-3I-ZhM">
                     <connections>
-                        <action selector="handleSnapGesture:" destination="NEt-pC-6rk" id="URR-4r-wpa"/>
+                        <action selector="handleTapGesture:" destination="NEt-pC-6rk" id="N7N-Lq-DAr"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
