@@ -50,13 +50,9 @@
     [self.navigationController.view addSubview:removeButton];
 
     BEPSimpleImageViewController* ivc = [[BEPSimpleImageViewController alloc] init];
-
     ivc.image = [UIImage imageNamed:@"Canyon.jpg"];
-
     ivc.modalPresentationStyle = UIModalPresentationCustom;
-
     ivc.transitioningDelegate = self;
-
     [self presentViewController:ivc animated:YES completion:nil];
 }
 
@@ -71,7 +67,9 @@
 #pragma mark - Transition Delegate
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (id<UIViewControllerAnimatedTransitioning>) animationControllerForPresentedController:(UIViewController*)presented presentingController:(UIViewController*)presenting sourceController:(UIViewController*)source
+- (id<UIViewControllerAnimatedTransitioning>) animationControllerForPresentedController:(UIViewController*)presented
+                                                                   presentingController:(UIViewController*)presenting
+                                                                       sourceController:(UIViewController*)source
 {
     return [[BEPModalTransitionAnimator alloc] initWithDirection:BEPModelTransitionDirectionPresent];
 }

@@ -39,7 +39,7 @@ static CGFloat _startScale;
             break;
         case UIGestureRecognizerStateChanged: {
             CGFloat percent = (1.0 - scale/_startScale);
-            [self updateInteractiveTransition:(percent <= 0.0) ? 0.0 : percent];
+            [self updateInteractiveTransition:MAX(percent,0.0)];
             break;
         }
         case UIGestureRecognizerStateEnded:
@@ -139,13 +139,9 @@ static CGFloat _startScale;
                                  relativeDuration:0.4
                                        animations:^{
               CATransform3D secondFolding = CATransform3DMakeRotation(M_PI, 1, 0, 0);
-
               bottomRight.layer.transform = CATransform3DConcat(bottomRight.layer.transform, secondFolding);
-
               bottomRight.layer.zPosition = 2;
-
               bottomLeft.layer.transform = secondFolding;
-
               bottomLeft.layer.zPosition = 3;
           }];
 
