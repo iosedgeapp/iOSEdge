@@ -33,6 +33,12 @@
     {
         [self.webview loadRequest:[NSURLRequest requestWithURL:_url]];
         self.title = [_url lastPathComponent];
+        
+        UIBarButtonItem * shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                      target:self
+                                                                                      action:@selector(presentActivities:)];
+        
+        self.navigationItem.rightBarButtonItem = shareButton;
     }
 }
 
@@ -40,6 +46,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)presentActivities:(id)sender
+{
+    UIActivityViewController * activities = [[UIActivityViewController alloc] initWithActivityItems:@[_url]
+                                                                              applicationActivities:nil];
+    
+    [self presentViewController:activities
+                       animated:YES
+                     completion:nil];
 }
 
 @end

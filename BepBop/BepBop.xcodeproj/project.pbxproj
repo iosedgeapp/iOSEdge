@@ -77,8 +77,8 @@
 		8796466517E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796466317E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m */; };
 		8796466617E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8796466417E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib */; };
 		8796466917E20B87009B989A /* BEPModalTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8796466817E20B87009B989A /* BEPModalTransitionAnimator.m */; };
-		87A5210E17E335E00060D931 /* BEPAirDropTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5210D17E335E00060D931 /* BEPAirDropTableDataSource.m */; };
 		87A5211417E33D980060D931 /* BEPAirDropHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5211317E33D980060D931 /* BEPAirDropHandler.m */; };
+		87E9FA6417E8EAE3007588F0 /* Example.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 87E9FA6317E8EAE3007588F0 /* Example.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,10 +216,9 @@
 		8796466417E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEPNavigationTransitionsRootViewController.xib; sourceTree = "<group>"; };
 		8796466717E20B87009B989A /* BEPModalTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPModalTransitionAnimator.h; sourceTree = "<group>"; };
 		8796466817E20B87009B989A /* BEPModalTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPModalTransitionAnimator.m; sourceTree = "<group>"; };
-		87A5210C17E335E00060D931 /* BEPAirDropTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPAirDropTableDataSource.h; sourceTree = "<group>"; };
-		87A5210D17E335E00060D931 /* BEPAirDropTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPAirDropTableDataSource.m; sourceTree = "<group>"; };
 		87A5211217E33D980060D931 /* BEPAirDropHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPAirDropHandler.h; sourceTree = "<group>"; };
 		87A5211317E33D980060D931 /* BEPAirDropHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPAirDropHandler.m; sourceTree = "<group>"; };
+		87E9FA6317E8EAE3007588F0 /* Example.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Example.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,8 +337,6 @@
 				8727AA5217E0D9A500B728C8 /* BEPSimpleImageViewController.h */,
 				8727AA5317E0D9A500B728C8 /* BEPSimpleImageViewController.m */,
 				8727AA5417E0D9A500B728C8 /* BEPSimpleImageViewController.xib */,
-				87A5210C17E335E00060D931 /* BEPAirDropTableDataSource.h */,
-				87A5210D17E335E00060D931 /* BEPAirDropTableDataSource.m */,
 				87A5211217E33D980060D931 /* BEPAirDropHandler.h */,
 				87A5211317E33D980060D931 /* BEPAirDropHandler.m */,
 				871F714217E3446E00DC00EF /* BEPSimpleWebViewController.h */,
@@ -472,6 +469,7 @@
 		3C3EA83C17D3C76F000122BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				87E9FA6317E8EAE3007588F0 /* Example.pdf */,
 				8796466017E1E740009B989A /* Canyon.jpg */,
 				3C3EA83D17D3C76F000122BD /* BepBop-Info.plist */,
 				3C3EA83E17D3C76F000122BD /* InfoPlist.strings */,
@@ -693,6 +691,7 @@
 				8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */,
 				3C3EA84017D3C76F000122BD /* InfoPlist.strings in Resources */,
 				8796464C17E1C133009B989A /* BEPPresentationTransitionsViewController.xib in Resources */,
+				87E9FA6417E8EAE3007588F0 /* Example.pdf in Resources */,
 				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
@@ -751,7 +750,6 @@
 				8727AA3A17E0B96200B728C8 /* BEPMultipeerConnectivityViewController.m in Sources */,
 				3C9DF0B517E0149C002F5FB9 /* BEPLookAndFeelViewController.m in Sources */,
 				21FB556317E5FCFF0064F290 /* BEPBackgroundDownloadHandler.m in Sources */,
-				87A5210E17E335E00060D931 /* BEPAirDropTableDataSource.m in Sources */,
 				03175DED17DEB606005D3C62 /* BEPDynamicTypeViewController.m in Sources */,
 				8796464B17E1C133009B989A /* BEPPresentationTransitionsViewController.m in Sources */,
 				8796464417E1C0F9009B989A /* BEPTabbarTransitionsViewController.m in Sources */,

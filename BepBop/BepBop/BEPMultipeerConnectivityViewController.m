@@ -93,6 +93,18 @@
     };
 
     NSFileManager* fm = [NSFileManager defaultManager];
+    
+    NSURL * examplePDFURL = [[[BEPAirDropHandler sharedInstance] airDropDocumentsDirectory]
+                             URLByAppendingPathComponent:@"Example.pdf"];
+    if (![fm fileExistsAtPath:[examplePDFURL path]]) {
+        NSError * error;
+        
+        if (![fm copyItemAtURL:[[NSBundle mainBundle] URLForResource:@"Example" withExtension:@"pdf"]
+                         toURL:examplePDFURL
+                         error:&error]) {
+            NSLog(@"could not copy item %@", error);
+        }
+    }
 
     NSError* error;
     self.airDropItems = [fm contentsOfDirectoryAtURL:[[BEPAirDropHandler sharedInstance] airDropDocumentsDirectory]
