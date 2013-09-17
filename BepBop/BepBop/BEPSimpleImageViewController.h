@@ -2,7 +2,7 @@
 //  BEPSimpleImageViewController.h
 //  BepBop
 //
-//  Created by Engin Kurutepe on 11/09/13.
+//  Created by Engin Kurutepe – https://twitter.com/ekurutepe on 11/09/13.
 //  Copyright (c) 2013 Bleeding Edge Press. All rights reserved.
 //
 
