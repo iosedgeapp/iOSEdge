@@ -194,7 +194,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aLA-Sh-ILr"/>
                     <connections>
-                        <outlet property="snapView" destination="z8E-Gc-2fB" id="Zmu-1T-p9g"/>
+                        <outlet property="snappyView" destination="z8E-Gc-2fB" id="LZS-fo-v3w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzz-Yk-5qt" userLabel="First Responder" sceneMemberID="firstResponder"/>
