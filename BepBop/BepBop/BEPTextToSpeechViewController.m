@@ -47,13 +47,6 @@ typedef NS_ENUM(NSInteger, BEPReadingState)
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-
-    AVSpeechSynthesizer* synthesizer = [[AVSpeechSynthesizer alloc] init];
-
-    AVSpeechUtterance* helloUtterance     = [AVSpeechUtterance speechUtteranceWithString:@"Hello, there!"];
-    AVSpeechUtterance* howAreYouUtterance = [AVSpeechUtterance speechUtteranceWithString:@"How are you?"];
-    [synthesizer speakUtterance:helloUtterance];
-    [synthesizer speakUtterance:howAreYouUtterance];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
