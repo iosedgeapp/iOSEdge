@@ -39,36 +39,32 @@ typedef UIViewController* (^ViewControllerBlock)();
               @"Chapter 6",
               @"Chapter 7",
               @"Chapter 8",
-              @"Chapter 9",
-              @"Chapter 10",
-              @"Chapter 11"];
+              @"Chapter 9"];
 
         self.chapterTitles =
-            @[@"iOS 6 App Look and Feel Migration",
-              @"Designing accessible interfaces with Dynamic Type",
-              @"Direct Wireless Connectivity with Multipeer Networking, AirDrop, and more",
-              @"Keeping content up to date while running in the background",
-              @"Adding effects to video",
-              @"View transition animations",
-              @"Animating with gravity and collisions",
-              @"Dynamically updating your app snapshot in the App Switcher",
-              @"Map directions in 3D",
-              @"Taking advantage of the new build improvements",
+            @[@"Look and Feel: iOS 6 to 7",
+              @"Dynamic Animations with a Physical Feel",
+              @"View Transition Animations",
+              @"Multitasking in iOS 7",
+              @"Airdrop and Multipeer Connectivity",
+              @"Map Directions in 3D",
+              @"Accessibility in iOS 7",
+              @"Build Improvements and Continuous Integration",
               @"Unit Testing on Steroids"];
 
         if (IS_IOS_7)
         {
             self.chapterViewControllerCreationBlocks =
                 @[
-                    ^{ return [[BEPLookAndFeelViewController alloc] init]; },
-                    ^{ return [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil]; },
-                    ^{ return [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil]; },
-                    ^{ return [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain]; },
-                    ^{ return [NSNull null]; },
+                   ^{ return [[BEPLookAndFeelViewController alloc] init]; },
+                   ^{ return [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController]; },
                     ^{ return [[BEPTabbarTransitionsViewController alloc] init]; },
-                    ^{ return [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController]; },
+                    ^{ return [[BEPMultitaskingViewController alloc] initWithStyle:UITableViewStylePlain]; },
+                    ^{ return [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil]; },
+                    ^{ return [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]; },
+                    ^{ return [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil]; },
                     ^{ return [NSNull null]; },
-                    ^{ return [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]; }
+                    ^{ return [NSNull null]; }
                 ];
         }
         else
