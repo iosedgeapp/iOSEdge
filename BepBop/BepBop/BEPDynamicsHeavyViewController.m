@@ -12,9 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel* heavyLabel;
 @property (nonatomic) UIDynamicAnimator*      animator;
-@property (nonatomic) UIGravityBehavior*      gravity;
-
-@property (nonatomic, weak) IBOutlet UILabel* directionLabel;
 
 @end
 
@@ -34,37 +31,26 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    // Create a basic animator using our view as the reference view
-    UIDynamicAnimator* animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
+    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     self.animator = animator;
-
-    // Create a basic gravity behavior and have it affect the heavy label
-    UIGravityBehavior* basicGravity = [[UIGravityBehavior alloc] initWithItems:@[self.heavyLabel]];
-    [self.animator addBehavior:basicGravity];
-    self.gravity = basicGravity;
-
-    // Without any collision behavior, the heavy label would fall right off the screen.
-    // Try commenting out this section and see what happens.
-    UICollisionBehavior* collideWithBounds = [[UICollisionBehavior alloc] initWithItems:@[self.heavyLabel]];
-    collideWithBounds.translatesReferenceBoundsIntoBoundary = YES; // Simple way to make bounds of reference view into a collision boundary
-    [self.animator addBehavior:collideWithBounds];
-}
-
-- (IBAction) handleTapGesture:(UIGestureRecognizer*)gesture
-{
-    if (self.gravity.gravityDirection.dy > 0)
-    {
-        // If gravity is pulling down, make it pull up!
-        self.gravity.gravityDirection = CGVectorMake(0, -1);
-        self.directionLabel.text      = @"↑";
-    }
-    else
-    {
-        // Switch to normal gravity
-        self.gravity.gravityDirection = CGVectorMake(0, 1);
-        self.directionLabel.text      = @"↓";
-    }
+    
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.heavyLabel]];
+    [self.animator addBehavior:gravity];
+    
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.heavyLabel]];
+    collision.translatesReferenceBoundsIntoBoundary = YES;
+    [self.animator addBehavior:collision];
 }
 
 @end
+
+
+
+
+
+
+
+
+
+

@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heavy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOe-ts-u3s">
-                                <rect key="frame" x="93" y="56" width="135" height="34"/>
+                                <rect key="frame" x="93" y="71" width="135" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <nil key="highlightedColor"/>
@@ -142,16 +142,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="vIM-Cl-hfU"/>
                     <connections>
-                        <outlet property="directionLabel" destination="Ou6-S0-RSm" id="ucN-sX-xgs"/>
                         <outlet property="heavyLabel" destination="dOe-ts-u3s" id="mmP-9G-Ybn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRL-VP-Dr4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="zKd-vd-RSv">
-                    <connections>
-                        <action selector="handleTapGesture:" destination="Dxm-Lj-Tne" id="aYY-MN-zyx"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zKd-vd-RSv"/>
             </objects>
             <point key="canvasLocation" x="1489" y="114"/>
         </scene>
