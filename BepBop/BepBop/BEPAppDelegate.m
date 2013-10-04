@@ -43,7 +43,10 @@ NSUInteger DeviceMajorVersion()
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
+    /*
     BEPMainViewController* mainViewController = [[BEPMainViewController alloc] initWithStyle:(IS_IOS_7 ? UITableViewStylePlain : UITableViewStyleGrouped)];
+    */
+    UIViewController *mainViewController = [[UIStoryboard storyboardWithName:@"BEPDynamicsStoryboard" bundle:nil] instantiateInitialViewController];
 
     BEPNavigationController* navigationController = [[BEPNavigationController alloc] initWithRootViewController:mainViewController];
     navigationController.navigationBar.translucent = IS_IOS_7;
