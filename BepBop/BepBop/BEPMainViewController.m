@@ -63,8 +63,8 @@ typedef UIViewController* (^ViewControllerBlock)();
                     ^{ return [[BEPMultipeerConnectivityViewController alloc] initWithNibName:nil bundle:nil]; },
                     ^{ return [[BEPMapViewController alloc] initWithNibName:nil bundle:nil]; },
                     ^{ return [[BEPAccessibilityViewController alloc] initWithNibName:nil bundle:nil]; },
-                    ^{ return [NSNull null]; },
-                    ^{ return [NSNull null]; }
+                    // ^{ return [NSNull null]; }, // TODO implement
+                    // ^{ return [NSNull null]; }  // TODO implement
                 ];
         }
         else
