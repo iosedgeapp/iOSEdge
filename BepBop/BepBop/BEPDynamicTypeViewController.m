@@ -25,7 +25,7 @@
     if (self)
     {
         // Custom initialization
-        self.title = NSLocalizedString(@"Chapter 2", nil);
+        self.title = NSLocalizedString(@"Dynamic Type", nil);
     }
     return self;
 }
