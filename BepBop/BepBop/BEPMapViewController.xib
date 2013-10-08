@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -43,29 +43,29 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eye Altitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-rA-xwl">
-                    <rect key="frame" x="20" y="402" width="97" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eye Altitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-rA-xwl">
+                    <rect key="frame" x="20" y="392" width="92" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.031372550874948502" green="0.41176474094390869" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUq-Rr-cJE">
-                    <rect key="frame" x="175" y="392" width="44" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUq-Rr-cJE">
+                    <rect key="frame" x="170" y="392" width="40" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.031372550870000002" green="0.41176474089999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="900" minValue="1" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-GQ-Ak5">
-                    <rect key="frame" x="26" y="411" width="132" height="34"/>
+                    <rect key="frame" x="26" y="411" width="127" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
                         <action selector="changeEyeAltitude:" destination="-1" eventType="valueChanged" id="mDR-JA-xog"/>
                     </connections>
                 </slider>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="X1S-Wf-DzS">
-                    <rect key="frame" x="173" y="411" width="117" height="34"/>
+                    <rect key="frame" x="168" y="411" width="122" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
                         <action selector="changePitch:" destination="-1" eventType="valueChanged" id="9je-Cc-53Q"/>
@@ -104,7 +104,7 @@
                 <constraint firstItem="OSN-uy-Qv1" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="6" id="I8p-OH-Mhn"/>
                 <constraint firstItem="EJL-LK-W3n" firstAttribute="top" secondItem="1" secondAttribute="top" id="L3D-7x-lL7"/>
                 <constraint firstItem="dh3-GQ-Ak5" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="28" id="Lrf-hT-mpt"/>
-                <constraint firstItem="QiX-Ox-5Hr" firstAttribute="top" secondItem="vXj-rA-xwl" secondAttribute="bottom" constant="14" id="MI7-v0-8DD"/>
+                <constraint firstItem="QiX-Ox-5Hr" firstAttribute="top" secondItem="vXj-rA-xwl" secondAttribute="bottom" constant="24" id="MI7-v0-8DD"/>
                 <constraint firstItem="X1S-Wf-DzS" firstAttribute="leading" secondItem="dh3-GQ-Ak5" secondAttribute="trailing" constant="19" id="MPo-ua-Nbm"/>
                 <constraint firstItem="X1S-Wf-DzS" firstAttribute="top" secondItem="dh3-GQ-Ak5" secondAttribute="top" id="Sau-FI-AIh"/>
                 <constraint firstAttribute="trailing" secondItem="EJL-LK-W3n" secondAttribute="trailing" id="VtI-Ej-SSw"/>
