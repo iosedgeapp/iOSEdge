@@ -41,6 +41,7 @@
     if (self)
     {
         // Custom initialization
+        self.title = NSLocalizedString(@"Map Directions in 3D", nil);
     }
     return self;
 }
