@@ -39,6 +39,7 @@
 		295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */; };
 		295B769917E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */; };
 		295B769F17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */; };
+		29F057091805B75600AE8AC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F057081805B75600AE8AC7 /* Images.xcassets */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -161,6 +162,7 @@
 		295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSnapViewController.m; sourceTree = "<group>"; };
 		295B769D17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsSpringViewController.h; sourceTree = "<group>"; };
 		295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSpringViewController.m; sourceTree = "<group>"; };
+		29F057081805B75600AE8AC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -461,6 +463,7 @@
 				03175DE317DEB275005D3C62 /* View Controllers */,
 				3C3EA84417D3C76F000122BD /* BEPAppDelegate.h */,
 				3C3EA84517D3C76F000122BD /* BEPAppDelegate.m */,
+				29F057081805B75600AE8AC7 /* Images.xcassets */,
 				3C3EA83C17D3C76F000122BD /* Supporting Files */,
 			);
 			path = BepBop;
@@ -697,6 +700,7 @@
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
 				03535C2117E4A8E50053327C /* BEPAccessibilityViewController.xib in Resources */,
 				175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */,
+				29F057091805B75600AE8AC7 /* Images.xcassets in Resources */,
 				03535C1717E4A0000053327C /* BEPTextToSpeechViewController.xib in Resources */,
 				03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */,
 				21FB555A17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */,
@@ -959,6 +963,8 @@
 		3C3EA86517D3C76F000122BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -979,6 +985,8 @@
 		3C3EA86617D3C76F000122BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
