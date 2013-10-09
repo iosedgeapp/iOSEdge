@@ -56,6 +56,8 @@ NSUInteger DeviceMajorVersion()
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     return YES;
 }
 
