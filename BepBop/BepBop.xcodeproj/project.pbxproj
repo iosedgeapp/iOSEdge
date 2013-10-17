@@ -49,6 +49,7 @@
 		2976759218106F6C009E602A /* iOS6-TOC.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976758F18106F6C009E602A /* iOS6-TOC.png */; };
 		2976759318106F6C009E602A /* iOS6-TOC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976759018106F6C009E602A /* iOS6-TOC@2x.png */; };
 		29767595181097D2009E602A /* Risque-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29767594181097D2009E602A /* Risque-Regular.otf */; };
+		297675981810A5C8009E602A /* BEPChapterBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 297675971810A5C8009E602A /* BEPChapterBarItem.m */; };
 		29F057091805B75600AE8AC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F057081805B75600AE8AC7 /* Images.xcassets */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
@@ -183,6 +184,8 @@
 		2976758F18106F6C009E602A /* iOS6-TOC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC.png"; sourceTree = "<group>"; };
 		2976759018106F6C009E602A /* iOS6-TOC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC@2x.png"; sourceTree = "<group>"; };
 		29767594181097D2009E602A /* Risque-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Risque-Regular.otf"; sourceTree = "<group>"; };
+		297675961810A5C8009E602A /* BEPChapterBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPChapterBarItem.h; sourceTree = "<group>"; };
+		297675971810A5C8009E602A /* BEPChapterBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPChapterBarItem.m; sourceTree = "<group>"; };
 		29F057081805B75600AE8AC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,9 +292,7 @@
 		03175DE317DEB275005D3C62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */,
-				3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */,
-				0394AD9317DFFCD300769A12 /* main */,
+				0394AD9317DFFCD300769A12 /* Main */,
 				03175DE917DEB5C7005D3C62 /* Look and Feel */,
 				03175DEA17DEB5D2005D3C62 /* Accessibility */,
 				0394AD9917DFFDAF00769A12 /* Video */,
@@ -332,13 +333,17 @@
 			name = Accessibility;
 			sourceTree = "<group>";
 		};
-		0394AD9317DFFCD300769A12 /* main */ = {
+		0394AD9317DFFCD300769A12 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				03175DE617DEB2A5005D3C62 /* BEPMainViewController.h */,
 				03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */,
+				3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */,
+				3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */,
+				297675961810A5C8009E602A /* BEPChapterBarItem.h */,
+				297675971810A5C8009E602A /* BEPChapterBarItem.m */,
 			);
-			name = main;
+			name = Main;
 			sourceTree = "<group>";
 		};
 		0394AD9917DFFDAF00769A12 /* Video */ = {
@@ -813,6 +818,7 @@
 				29767581181062EE009E602A /* MTImageMapView.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				8796466917E20B87009B989A /* BEPModalTransitionAnimator.m in Sources */,
+				297675981810A5C8009E602A /* BEPChapterBarItem.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,
 				21FB555817E4F4F50064F290 /* BEPMultitaskingViewController.m in Sources */,
 				8796465A17E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m in Sources */,

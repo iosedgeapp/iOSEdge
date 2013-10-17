@@ -13,6 +13,7 @@
 #import "BEPMultitaskingViewController.h"
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
+#import "BEPChapterBarItem.h"
 
 #import "MTImageMapView.h"
 
@@ -167,8 +168,15 @@ typedef UIViewController* (^ViewControllerBlock)();
     }
     // Get the block used to create the controller, and call it!
     ViewControllerBlock createViewController = self.chapterViewControllerCreationBlocks[indexPath.row];
-
-    return createViewController();
+    UIViewController *viewController = createViewController();
+    
+    // Custom chapter number on right hand side
+    NSInteger chapterNumber = indexPath.row + 1;
+    if (chapterNumber > 1) {
+        viewController.navigationItem.rightBarButtonItem = [BEPChapterBarItem barButtonItemForChapter:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+    }
+    
+    return viewController;
 }
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
