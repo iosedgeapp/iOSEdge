@@ -86,11 +86,17 @@ typedef UIViewController* (^ViewControllerBlock)();
 
     // Do any additional setup after loading the view.
     
-    // Load TOC map image view
+    // Load TOC map image view - varies on iOS version and screen size
+    BOOL belowOS7 = [[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending;
+        
     NSString *imageName = @"TOC";
+    if (belowOS7) {
+        imageName = @"iOS6-TOC";
+    }
+    
     NSString *touchPointsName = @"toc_points";
     if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
-        imageName = @"TOC-568";
+        imageName = [imageName stringByAppendingString:@"-568"];
         touchPointsName = @"toc_points_568";
     }
     MTImageMapView *imageMapView = [[MTImageMapView alloc] initWithImage:[UIImage imageNamed:imageName]];
