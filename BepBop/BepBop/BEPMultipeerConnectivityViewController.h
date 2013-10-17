@@ -12,7 +12,7 @@
 
 #define BEPMultipeerConnectivityServiceType @"bep-demoservice"
 
-@interface BEPMultipeerConnectivityViewController : BEPThemedViewController<MCAdvertiserAssistantDelegate,
+@interface BEPMultipeerConnectivityViewController : UIViewController<MCAdvertiserAssistantDelegate,
                                                                             MCBrowserViewControllerDelegate,
                                                                             MCSessionDelegate,
                                                                             UINavigationControllerDelegate, // just to prevent compiler warning.
