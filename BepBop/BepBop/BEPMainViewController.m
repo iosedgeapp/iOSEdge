@@ -14,6 +14,8 @@
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
 
+#import "MTImageMapView.h"
+
 typedef UIViewController* (^ViewControllerBlock)();
 
 @interface BEPMainViewController ()
@@ -25,9 +27,9 @@ typedef UIViewController* (^ViewControllerBlock)();
 
 @implementation BEPMainViewController
 
-- (id) initWithStyle:(UITableViewStyle)style
+- (id) init
 {
-    self = [super initWithStyle:style];
+    self = [super init];
     if (self)
     {
         self.chapterHeadings =
@@ -82,8 +84,20 @@ typedef UIViewController* (^ViewControllerBlock)();
 {
     [super viewDidLoad];
 
-
     // Do any additional setup after loading the view.
+    
+    // Load TOC map image view
+    NSString *imageName = @"TOC";
+    NSString *touchPointsName = @"toc_points";
+    if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
+        imageName = @"TOC-568";
+        touchPointsName = @"toc_points_568";
+    }
+    MTImageMapView *imageMapView = [[MTImageMapView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    NSArray *touchPoints = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:touchPointsName ofType:@"plist"]];
+    [imageMapView setMapping:touchPoints doneBlock:nil];
+    imageMapView.delegate = self;
+    [self.view addSubview:imageMapView];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle
@@ -102,6 +116,12 @@ typedef UIViewController* (^ViewControllerBlock)();
 {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+#pragma mark MTImageMapViewDelegate
+- (void) imageMapView:(MTImageMapView *)inImageMapView didSelectMapArea:(NSUInteger)inIndexSelected
+{
+    [self selectChapterNumber:inIndexSelected];
 }
 
 #pragma mark - UITableViewController
@@ -135,6 +155,10 @@ typedef UIViewController* (^ViewControllerBlock)();
 // Creates the view controller for a chapter
 - (UIViewController*) chapterViewControllerForIndexPath:(NSIndexPath*)indexPath
 {
+    if (indexPath.row >= [self.chapterViewControllerCreationBlocks count]) {
+        // Invalid chapter
+        return nil;
+    }
     // Get the block used to create the controller, and call it!
     ViewControllerBlock createViewController = self.chapterViewControllerCreationBlocks[indexPath.row];
 

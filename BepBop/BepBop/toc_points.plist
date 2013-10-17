@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>5,165,5,265,105,265,105,165</string>
+	<string>110,265,110,165,210,165,210,265</string>
+	<string>215,265,215,165,315,165,315,265</string>
+	<string>5,370,5,270,105,270,105,370</string>
+	<string>110,270,110,370,210,370,210,270</string>
+	<string>215,270,215,370,315,370,315,270</string>
+	<string>5,475,5,375,105,375,105,475</string>
+	<string>110,475,110,375,210,375,210,475</string>
+	<string>215,375,215,475,315,475,315,375</string>
+</array>
+</plist>

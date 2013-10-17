@@ -39,6 +39,12 @@
 		295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */; };
 		295B769917E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */; };
 		295B769F17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */; };
+		29767581181062EE009E602A /* MTImageMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29767580181062EE009E602A /* MTImageMapView.m */; };
+		29767587181064A7009E602A /* TOC-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29767584181064A7009E602A /* TOC-568@2x.png */; };
+		29767588181064A7009E602A /* TOC.png in Resources */ = {isa = PBXBuildFile; fileRef = 29767585181064A7009E602A /* TOC.png */; };
+		29767589181064A7009E602A /* TOC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29767586181064A7009E602A /* TOC@2x.png */; };
+		2976758B18106643009E602A /* toc_points.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2976758A18106643009E602A /* toc_points.plist */; };
+		2976758D181069F2009E602A /* toc_points_568.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2976758C181069F2009E602A /* toc_points_568.plist */; };
 		29F057091805B75600AE8AC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F057081805B75600AE8AC7 /* Images.xcassets */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
@@ -162,6 +168,13 @@
 		295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSnapViewController.m; sourceTree = "<group>"; };
 		295B769D17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsSpringViewController.h; sourceTree = "<group>"; };
 		295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSpringViewController.m; sourceTree = "<group>"; };
+		2976757F181062EE009E602A /* MTImageMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTImageMapView.h; sourceTree = "<group>"; };
+		29767580181062EE009E602A /* MTImageMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTImageMapView.m; sourceTree = "<group>"; };
+		29767584181064A7009E602A /* TOC-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TOC-568@2x.png"; sourceTree = "<group>"; };
+		29767585181064A7009E602A /* TOC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TOC.png; sourceTree = "<group>"; };
+		29767586181064A7009E602A /* TOC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TOC@2x.png"; sourceTree = "<group>"; };
+		2976758A18106643009E602A /* toc_points.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toc_points.plist; sourceTree = "<group>"; };
+		2976758C181069F2009E602A /* toc_points_568.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toc_points_568.plist; sourceTree = "<group>"; };
 		29F057081805B75600AE8AC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -415,6 +428,15 @@
 			name = "UI Dynamics";
 			sourceTree = "<group>";
 		};
+		2976757E181062EE009E602A /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2976757F181062EE009E602A /* MTImageMapView.h */,
+				29767580181062EE009E602A /* MTImageMapView.m */,
+			);
+			path = ThirdParty;
+			sourceTree = SOURCE_ROOT;
+		};
 		3C3EA82917D3C76F000122BD = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +487,7 @@
 				3C3EA84517D3C76F000122BD /* BEPAppDelegate.m */,
 				29F057081805B75600AE8AC7 /* Images.xcassets */,
 				3C3EA83C17D3C76F000122BD /* Supporting Files */,
+				2976757E181062EE009E602A /* ThirdParty */,
 			);
 			path = BepBop;
 			sourceTree = "<group>";
@@ -472,6 +495,11 @@
 		3C3EA83C17D3C76F000122BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2976758A18106643009E602A /* toc_points.plist */,
+				2976758C181069F2009E602A /* toc_points_568.plist */,
+				29767584181064A7009E602A /* TOC-568@2x.png */,
+				29767585181064A7009E602A /* TOC.png */,
+				29767586181064A7009E602A /* TOC@2x.png */,
 				87E9FA6317E8EAE3007588F0 /* Example.pdf */,
 				8796466017E1E740009B989A /* Canyon.jpg */,
 				3C3EA83D17D3C76F000122BD /* BepBop-Info.plist */,
@@ -691,21 +719,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2976758B18106643009E602A /* toc_points.plist in Resources */,
 				8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */,
 				3C3EA84017D3C76F000122BD /* InfoPlist.strings in Resources */,
 				8796464C17E1C133009B989A /* BEPPresentationTransitionsViewController.xib in Resources */,
 				87E9FA6417E8EAE3007588F0 /* Example.pdf in Resources */,
 				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
+				29767589181064A7009E602A /* TOC@2x.png in Resources */,
+				29767587181064A7009E602A /* TOC-568@2x.png in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
 				03535C2117E4A8E50053327C /* BEPAccessibilityViewController.xib in Resources */,
 				175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */,
+				2976758D181069F2009E602A /* toc_points_568.plist in Resources */,
 				29F057091805B75600AE8AC7 /* Images.xcassets in Resources */,
 				03535C1717E4A0000053327C /* BEPTextToSpeechViewController.xib in Resources */,
 				03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */,
 				21FB555A17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */,
 				295B768E17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard in Resources */,
 				03F31BD417E294CE00369D31 /* BEPDynamicTypeViewController.xib in Resources */,
+				29767588181064A7009E602A /* TOC.png in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
 				8796466117E1E740009B989A /* Canyon.jpg in Resources */,
 				8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */,
@@ -762,6 +795,7 @@
 				03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */,
 				295B769917E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m in Sources */,
 				8796466517E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m in Sources */,
+				29767581181062EE009E602A /* MTImageMapView.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				8796466917E20B87009B989A /* BEPModalTransitionAnimator.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,

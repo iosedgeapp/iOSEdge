@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BEPMainViewController : UITableViewController
+#import "MTImageMapView.h"
+
+@interface BEPMainViewController : UIViewController <MTImageMapDelegate>
 
 @property NSArray* chapterViewControllerCreationBlocks;
 
