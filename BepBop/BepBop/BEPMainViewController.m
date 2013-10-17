@@ -95,6 +95,13 @@ typedef UIViewController* (^ViewControllerBlock)();
 {
     [super viewWillAppear:animated];
     self.title = @"Bleeding Edge Press";
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 #pragma mark - UITableViewController
