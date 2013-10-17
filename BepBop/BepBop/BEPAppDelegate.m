@@ -42,6 +42,8 @@ NSUInteger DeviceMajorVersion()
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self setupAppearance];
 
     BEPMainViewController* mainViewController = [[BEPMainViewController alloc] init];
 
@@ -155,6 +157,13 @@ NSUInteger DeviceMajorVersion()
 - (void) applicationWillTerminate:(UIApplication*)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) setupAppearance
+{
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSFontAttributeName: [UIFont fontWithName:@"Risque-Regular" size:20]
+                                                           }];
 }
 
 @end
