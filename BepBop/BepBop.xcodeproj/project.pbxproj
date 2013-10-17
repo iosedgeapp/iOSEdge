@@ -974,6 +974,7 @@
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
 				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1131,6 +1132,7 @@
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
 				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1153,6 +1155,7 @@
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
 				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
