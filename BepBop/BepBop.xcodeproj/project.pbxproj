@@ -48,6 +48,7 @@
 		2976759118106F6C009E602A /* iOS6-TOC-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976758E18106F6C009E602A /* iOS6-TOC-568@2x.png */; };
 		2976759218106F6C009E602A /* iOS6-TOC.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976758F18106F6C009E602A /* iOS6-TOC.png */; };
 		2976759318106F6C009E602A /* iOS6-TOC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976759018106F6C009E602A /* iOS6-TOC@2x.png */; };
+		29767595181097D2009E602A /* Risque-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29767594181097D2009E602A /* Risque-Regular.otf */; };
 		29F057091805B75600AE8AC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F057081805B75600AE8AC7 /* Images.xcassets */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
@@ -181,6 +182,7 @@
 		2976758E18106F6C009E602A /* iOS6-TOC-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC-568@2x.png"; sourceTree = "<group>"; };
 		2976758F18106F6C009E602A /* iOS6-TOC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC.png"; sourceTree = "<group>"; };
 		2976759018106F6C009E602A /* iOS6-TOC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC@2x.png"; sourceTree = "<group>"; };
+		29767594181097D2009E602A /* Risque-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Risque-Regular.otf"; sourceTree = "<group>"; };
 		29F057081805B75600AE8AC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -518,6 +520,7 @@
 				3C3EA84717D3C76F000122BD /* Default.png */,
 				3C3EA84917D3C76F000122BD /* Default@2x.png */,
 				3C3EA84B17D3C76F000122BD /* Default-568h@2x.png */,
+				29767594181097D2009E602A /* Risque-Regular.otf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -655,7 +658,6 @@
 						TestTargetID = 3C3EA83117D3C76F000122BD;
 					};
 					3C3EA83117D3C76F000122BD = {
-						DevelopmentTeam = VZWGRNPC7L;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -743,6 +745,7 @@
 				2976759218106F6C009E602A /* iOS6-TOC.png in Resources */,
 				03535C2117E4A8E50053327C /* BEPAccessibilityViewController.xib in Resources */,
 				175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */,
+				29767595181097D2009E602A /* Risque-Regular.otf in Resources */,
 				2976758D181069F2009E602A /* toc_points_568.plist in Resources */,
 				29F057091805B75600AE8AC7 /* Images.xcassets in Resources */,
 				03535C1717E4A0000053327C /* BEPTextToSpeechViewController.xib in Resources */,
@@ -980,7 +983,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Backstop Media, LLC. (VZWGRNPC7L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Backstop Media, LLC. (VZWGRNPC7L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
@@ -1138,7 +1141,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
@@ -1161,7 +1164,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
