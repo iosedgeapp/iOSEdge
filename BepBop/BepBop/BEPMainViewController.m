@@ -83,7 +83,7 @@ typedef UIViewController* (^ViewControllerBlock)();
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Do any additional setup after loading the view.
     
     // Load TOC map image view - varies on iOS version and screen size
@@ -114,7 +114,7 @@ typedef UIViewController* (^ViewControllerBlock)();
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"Bleeding Edge Press";
+    self.title = NSLocalizedString(@"Table of Contents", nil);
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 

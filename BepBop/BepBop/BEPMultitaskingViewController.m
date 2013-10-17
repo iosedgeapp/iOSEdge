@@ -23,7 +23,7 @@
     self.formatter = [[NSDateFormatter alloc] init];
     self.formatter.dateFormat = @"MMM d, h:mm:ss a";
 
-    self.title = NSLocalizedString(@"Chapter 4", nil);
+    self.title = NSLocalizedString(@"Multitasking", nil);
     self.tableView.dataSource      = [BEPBackgroundDownloadHandler sharedInstance];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)]; // hide empty rows ~ http://stackoverflow.com/a/6738534/337735
 

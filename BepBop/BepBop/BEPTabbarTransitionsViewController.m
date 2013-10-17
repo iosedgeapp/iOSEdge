@@ -27,6 +27,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+        self.title = NSLocalizedString(@"Transition Animations", nil);
     }
     return self;
 }
