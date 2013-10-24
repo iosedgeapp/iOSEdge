@@ -33,7 +33,7 @@ xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBopAndXCTests' \
 -destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_70}" \
 -destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH},OS=${IOS_70}" \
 -destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA_4INCH_64BIT},OS=${IOS_70}" \
--configuration Release test
+-configuration Debug test
 
 #################################################
 # OCUNIT CAN RUN ON ANY IOS
@@ -41,5 +41,5 @@ xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBopAndXCTests' \
 xcodebuild -workspace 'iOSEdge.xcworkspace' -scheme 'BepBopAndOCUnitTests' \
 -destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_61}" \
 -destination "platform=${IOS_PLATFORM_SIMULATOR},name=${IPHONE_RETINA},OS=${IOS_70}" \
--configuration Release test
+-configuration Debug test
 
