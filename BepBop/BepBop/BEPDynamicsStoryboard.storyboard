@@ -263,7 +263,7 @@
                         <viewControllerLayoutGuide type="top" id="tL7-vC-R1K"/>
                         <viewControllerLayoutGuide type="bottom" id="wwt-bV-wCU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8YV-ZE-7eI">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="8YV-ZE-7eI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
