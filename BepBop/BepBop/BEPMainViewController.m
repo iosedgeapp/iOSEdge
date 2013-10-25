@@ -217,7 +217,7 @@ typedef UIViewController* (^ViewControllerBlock)();
             
         case 5:
             // A little lighter than requested so we don't have to switch the text color
-            color = [UIColor colorWithRed:217/255.0f green:65/255.0f blue:72/255.0f alpha:1.0f];
+            color = [UIColor colorWithRed:245/255.0f green:91/255.0f blue:94/255.0f alpha:1.0f];
             break;
             
         case 2:
