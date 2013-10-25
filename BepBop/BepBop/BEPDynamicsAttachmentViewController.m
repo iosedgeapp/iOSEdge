@@ -59,8 +59,8 @@
 
 - (UIOffset) offsetFromCenter:(CGPoint)point inView:(UIView*)containingView
 {
-    return UIOffsetMake(point.x - containingView.width / 2,
-                        point.y - containingView.height / 2);
+    return UIOffsetMake(point.x - containingView.bounds.size.width / 2,
+                        point.y - containingView.bounds.size.height / 2);
 }
 
 - (IBAction) handlePanGesture:(UIPanGestureRecognizer*)gesture

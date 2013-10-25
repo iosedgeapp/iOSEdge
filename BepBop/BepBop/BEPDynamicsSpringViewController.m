@@ -48,7 +48,7 @@
     // Do any additional setup after loading the view.
 
     // Calculate the attachment offset based off the views in the storyboard
-    self.attachmentOffset = UIOffsetMake(self.attachmentView.center.x - self.orangeView.width / 2, self.attachmentView.center.y - self.orangeView.height / 2);
+    self.attachmentOffset = UIOffsetMake(self.attachmentView.center.x - self.orangeView.bounds.size.width / 2, self.attachmentView.center.y - self.orangeView.bounds.size.height / 2);
 
     // Set up animator
     UIDynamicAnimator* animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
