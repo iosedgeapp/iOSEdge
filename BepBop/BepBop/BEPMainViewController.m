@@ -128,7 +128,7 @@ typedef UIViewController* (^ViewControllerBlock)();
 #pragma mark MTImageMapViewDelegate
 - (void) imageMapView:(MTImageMapView *)inImageMapView didSelectMapArea:(NSUInteger)inIndexSelected
 {
-    [self selectChapterNumber:inIndexSelected];
+    [self selectChapterNumber:inIndexSelected+1];
 }
 
 #pragma mark - UITableViewController
@@ -173,7 +173,7 @@ typedef UIViewController* (^ViewControllerBlock)();
     // Custom chapter number on right hand side
     NSInteger chapterNumber = indexPath.row + 1;
     if (chapterNumber > 1) {
-        viewController.navigationItem.rightBarButtonItem = [BEPChapterBarItem barButtonItemForChapter:[NSString stringWithFormat:@"%d", indexPath.row + 1]];
+        viewController.navigationItem.rightBarButtonItem = [BEPChapterBarItem barButtonItemForChapter:[NSString stringWithFormat:@"%d", chapterNumber]];
     }
     
     return viewController;
@@ -181,7 +181,7 @@ typedef UIViewController* (^ViewControllerBlock)();
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    [self selectChapterNumber:indexPath.row];
+    [self selectChapterNumber:indexPath.row+1];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -189,11 +189,63 @@ typedef UIViewController* (^ViewControllerBlock)();
 {
     UIViewController* chapterViewController;
 
-    chapterViewController = [self chapterViewControllerForIndexPath:[NSIndexPath indexPathForRow:chapterNumber inSection:0]];
+    chapterViewController = [self chapterViewControllerForIndexPath:[NSIndexPath indexPathForRow:chapterNumber-1 inSection:0]];
 
     if ([chapterViewController isKindOfClass:[UIViewController class]])
     {
+        [self updateBarForChapter:chapterNumber];
         [self.navigationController pushViewController:chapterViewController animated:YES];
+    }
+}
+
+- (void) updateBarForChapter:(NSUInteger)chapterNumber
+{
+    if ([self.navigationController.navigationController respondsToSelector:@selector(setBarTintColor:)]) {
+        self.navigationController.navigationBar.translucent = NO;
+        self.navigationController.navigationBar.barTintColor = [self colorForChapter:chapterNumber];
+        self.navigationController.navigationBar.tintColor = [self tintColorForChapter:chapterNumber];
+    }
+}
+
+- (UIColor*) colorForChapter:(NSUInteger)chapterNumber
+{
+    UIColor *color;
+    switch (chapterNumber) {
+        case 1:
+            color = [UIColor lightGrayColor];
+            break;
+            
+        case 5:
+            // A little lighter than requested so we don't have to switch the text color
+            color = [UIColor colorWithRed:217/255.0f green:65/255.0f blue:72/255.0f alpha:1.0f];
+            break;
+            
+        case 2:
+        case 6:
+        case 7:
+            color = [UIColor colorWithRed:252/255.0f green:235/255.0f blue:108/255.0f alpha:1.0f];
+            break;
+            
+        case 3:
+            color = [UIColor colorWithRed:103/255.0f green:192/255.0f blue:236/255.0f alpha:1.0f];
+            break;
+            
+        case 4:
+            color = [UIColor colorWithRed:141/255.0f green:198/255.0f blue:76/255.0f alpha:1.0f];
+            break;
+            
+        default:
+            color = [UIColor lightGrayColor];
+    }
+    return color;
+}
+
+- (UIColor*) tintColorForChapter:(NSUInteger)chapterNumber
+{
+    if (chapterNumber == 1) {
+        return nil; // So example code can set it
+    } else {
+        return [UIColor blackColor];
     }
 }
 
