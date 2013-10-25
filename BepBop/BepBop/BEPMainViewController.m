@@ -200,7 +200,7 @@ typedef UIViewController* (^ViewControllerBlock)();
 
 - (void) updateBarForChapter:(NSUInteger)chapterNumber
 {
-    if ([self.navigationController.navigationController respondsToSelector:@selector(setBarTintColor:)]) {
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)]) {
         self.navigationController.navigationBar.translucent = NO;
         self.navigationController.navigationBar.barTintColor = [self colorForChapter:chapterNumber];
         self.navigationController.navigationBar.tintColor = [self tintColorForChapter:chapterNumber];
