@@ -21,7 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        self.title = @"Presentation";
+        self.title = NSLocalizedString(@"Presentation", nil);
     }
     return self;
 }

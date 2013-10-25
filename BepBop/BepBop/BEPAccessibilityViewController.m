@@ -24,6 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+        self.title = NSLocalizedString(@"Accessibility", nil);
         self.cellTitles =
             @[NSLocalizedString(@"Dynamic Type", nil),
               NSLocalizedString(@"Text to Speech", nil)];

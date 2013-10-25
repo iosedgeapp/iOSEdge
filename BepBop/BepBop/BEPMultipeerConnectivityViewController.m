@@ -62,6 +62,7 @@
     if (self)
     {
         // Custom initialization
+        self.title = NSLocalizedString(@"AirDrop & Multipeer", nil);
     }
     return self;
 }

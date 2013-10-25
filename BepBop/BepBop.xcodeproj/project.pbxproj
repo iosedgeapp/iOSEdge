@@ -39,6 +39,18 @@
 		295B769617E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769517E5035900E5CFB7 /* BEPDynamicsAttachmentViewController.m */; };
 		295B769917E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */; };
 		295B769F17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */; };
+		29767581181062EE009E602A /* MTImageMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29767580181062EE009E602A /* MTImageMapView.m */; };
+		29767587181064A7009E602A /* TOC-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29767584181064A7009E602A /* TOC-568@2x.png */; };
+		29767588181064A7009E602A /* TOC.png in Resources */ = {isa = PBXBuildFile; fileRef = 29767585181064A7009E602A /* TOC.png */; };
+		29767589181064A7009E602A /* TOC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29767586181064A7009E602A /* TOC@2x.png */; };
+		2976758B18106643009E602A /* toc_points.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2976758A18106643009E602A /* toc_points.plist */; };
+		2976758D181069F2009E602A /* toc_points_568.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2976758C181069F2009E602A /* toc_points_568.plist */; };
+		2976759118106F6C009E602A /* iOS6-TOC-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976758E18106F6C009E602A /* iOS6-TOC-568@2x.png */; };
+		2976759218106F6C009E602A /* iOS6-TOC.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976758F18106F6C009E602A /* iOS6-TOC.png */; };
+		2976759318106F6C009E602A /* iOS6-TOC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2976759018106F6C009E602A /* iOS6-TOC@2x.png */; };
+		29767595181097D2009E602A /* Risque-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29767594181097D2009E602A /* Risque-Regular.otf */; };
+		297675981810A5C8009E602A /* BEPChapterBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 297675971810A5C8009E602A /* BEPChapterBarItem.m */; };
+		29F057091805B75600AE8AC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F057081805B75600AE8AC7 /* Images.xcassets */; };
 		3C3EA83617D3C76F000122BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83517D3C76F000122BD /* UIKit.framework */; };
 		3C3EA83817D3C76F000122BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83717D3C76F000122BD /* Foundation.framework */; };
 		3C3EA83A17D3C76F000122BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3EA83917D3C76F000122BD /* CoreGraphics.framework */; };
@@ -161,6 +173,20 @@
 		295B769817E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSnapViewController.m; sourceTree = "<group>"; };
 		295B769D17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPDynamicsSpringViewController.h; sourceTree = "<group>"; };
 		295B769E17E5348D00E5CFB7 /* BEPDynamicsSpringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPDynamicsSpringViewController.m; sourceTree = "<group>"; };
+		2976757F181062EE009E602A /* MTImageMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTImageMapView.h; sourceTree = "<group>"; };
+		29767580181062EE009E602A /* MTImageMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTImageMapView.m; sourceTree = "<group>"; };
+		29767584181064A7009E602A /* TOC-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TOC-568@2x.png"; sourceTree = "<group>"; };
+		29767585181064A7009E602A /* TOC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TOC.png; sourceTree = "<group>"; };
+		29767586181064A7009E602A /* TOC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TOC@2x.png"; sourceTree = "<group>"; };
+		2976758A18106643009E602A /* toc_points.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toc_points.plist; sourceTree = "<group>"; };
+		2976758C181069F2009E602A /* toc_points_568.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toc_points_568.plist; sourceTree = "<group>"; };
+		2976758E18106F6C009E602A /* iOS6-TOC-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC-568@2x.png"; sourceTree = "<group>"; };
+		2976758F18106F6C009E602A /* iOS6-TOC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC.png"; sourceTree = "<group>"; };
+		2976759018106F6C009E602A /* iOS6-TOC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS6-TOC@2x.png"; sourceTree = "<group>"; };
+		29767594181097D2009E602A /* Risque-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Risque-Regular.otf"; sourceTree = "<group>"; };
+		297675961810A5C8009E602A /* BEPChapterBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPChapterBarItem.h; sourceTree = "<group>"; };
+		297675971810A5C8009E602A /* BEPChapterBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPChapterBarItem.m; sourceTree = "<group>"; };
+		29F057081805B75600AE8AC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C00929117E40A2900E61B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C3EA83217D3C76F000122BD /* BepBop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BepBop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3EA83517D3C76F000122BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -266,9 +292,7 @@
 		03175DE317DEB275005D3C62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */,
-				3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */,
-				0394AD9317DFFCD300769A12 /* main */,
+				0394AD9317DFFCD300769A12 /* Main */,
 				03175DE917DEB5C7005D3C62 /* Look and Feel */,
 				03175DEA17DEB5D2005D3C62 /* Accessibility */,
 				0394AD9917DFFDAF00769A12 /* Video */,
@@ -309,13 +333,17 @@
 			name = Accessibility;
 			sourceTree = "<group>";
 		};
-		0394AD9317DFFCD300769A12 /* main */ = {
+		0394AD9317DFFCD300769A12 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				03175DE617DEB2A5005D3C62 /* BEPMainViewController.h */,
 				03175DE717DEB2A5005D3C62 /* BEPMainViewController.m */,
+				3CD0FD1517E00CF4007CA40E /* BEPNavigationController.h */,
+				3CD0FD1617E00CF4007CA40E /* BEPNavigationController.m */,
+				297675961810A5C8009E602A /* BEPChapterBarItem.h */,
+				297675971810A5C8009E602A /* BEPChapterBarItem.m */,
 			);
-			name = main;
+			name = Main;
 			sourceTree = "<group>";
 		};
 		0394AD9917DFFDAF00769A12 /* Video */ = {
@@ -413,6 +441,15 @@
 			name = "UI Dynamics";
 			sourceTree = "<group>";
 		};
+		2976757E181062EE009E602A /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2976757F181062EE009E602A /* MTImageMapView.h */,
+				29767580181062EE009E602A /* MTImageMapView.m */,
+			);
+			path = ThirdParty;
+			sourceTree = SOURCE_ROOT;
+		};
 		3C3EA82917D3C76F000122BD = {
 			isa = PBXGroup;
 			children = (
@@ -461,7 +498,9 @@
 				03175DE317DEB275005D3C62 /* View Controllers */,
 				3C3EA84417D3C76F000122BD /* BEPAppDelegate.h */,
 				3C3EA84517D3C76F000122BD /* BEPAppDelegate.m */,
+				29F057081805B75600AE8AC7 /* Images.xcassets */,
 				3C3EA83C17D3C76F000122BD /* Supporting Files */,
+				2976757E181062EE009E602A /* ThirdParty */,
 			);
 			path = BepBop;
 			sourceTree = "<group>";
@@ -469,6 +508,14 @@
 		3C3EA83C17D3C76F000122BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2976758A18106643009E602A /* toc_points.plist */,
+				2976758C181069F2009E602A /* toc_points_568.plist */,
+				29767584181064A7009E602A /* TOC-568@2x.png */,
+				29767585181064A7009E602A /* TOC.png */,
+				29767586181064A7009E602A /* TOC@2x.png */,
+				2976758E18106F6C009E602A /* iOS6-TOC-568@2x.png */,
+				2976758F18106F6C009E602A /* iOS6-TOC.png */,
+				2976759018106F6C009E602A /* iOS6-TOC@2x.png */,
 				87E9FA6317E8EAE3007588F0 /* Example.pdf */,
 				8796466017E1E740009B989A /* Canyon.jpg */,
 				3C3EA83D17D3C76F000122BD /* BepBop-Info.plist */,
@@ -478,6 +525,7 @@
 				3C3EA84717D3C76F000122BD /* Default.png */,
 				3C3EA84917D3C76F000122BD /* Default@2x.png */,
 				3C3EA84B17D3C76F000122BD /* Default-568h@2x.png */,
+				29767594181097D2009E602A /* Risque-Regular.otf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -615,7 +663,6 @@
 						TestTargetID = 3C3EA83117D3C76F000122BD;
 					};
 					3C3EA83117D3C76F000122BD = {
-						DevelopmentTeam = MFRY9RPA96;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -688,20 +735,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2976758B18106643009E602A /* toc_points.plist in Resources */,
 				8727AA5617E0D9A500B728C8 /* BEPSimpleImageViewController.xib in Resources */,
+				2976759118106F6C009E602A /* iOS6-TOC-568@2x.png in Resources */,
 				3C3EA84017D3C76F000122BD /* InfoPlist.strings in Resources */,
 				8796464C17E1C133009B989A /* BEPPresentationTransitionsViewController.xib in Resources */,
+				2976759318106F6C009E602A /* iOS6-TOC@2x.png in Resources */,
 				87E9FA6417E8EAE3007588F0 /* Example.pdf in Resources */,
 				0394ADA817DFFE5200769A12 /* BEPCaptureVideoViewController.xib in Resources */,
+				29767589181064A7009E602A /* TOC@2x.png in Resources */,
+				29767587181064A7009E602A /* TOC-568@2x.png in Resources */,
 				3C3EA84817D3C76F000122BD /* Default.png in Resources */,
 				3C3EA84A17D3C76F000122BD /* Default@2x.png in Resources */,
+				2976759218106F6C009E602A /* iOS6-TOC.png in Resources */,
 				03535C2117E4A8E50053327C /* BEPAccessibilityViewController.xib in Resources */,
 				175C201917E15643008D6F4E /* BEPLookAndFeelView.xib in Resources */,
+				29767595181097D2009E602A /* Risque-Regular.otf in Resources */,
+				2976758D181069F2009E602A /* toc_points_568.plist in Resources */,
+				29F057091805B75600AE8AC7 /* Images.xcassets in Resources */,
 				03535C1717E4A0000053327C /* BEPTextToSpeechViewController.xib in Resources */,
 				03362E0417E14D3E003829C9 /* BEPMapViewController.xib in Resources */,
 				21FB555A17E4F4F50064F290 /* BEPMultitaskingViewController.xib in Resources */,
 				295B768E17E4F24B00E5CFB7 /* BEPDynamicsStoryboard.storyboard in Resources */,
 				03F31BD417E294CE00369D31 /* BEPDynamicTypeViewController.xib in Resources */,
+				29767588181064A7009E602A /* TOC.png in Resources */,
 				3C3EA84C17D3C76F000122BD /* Default-568h@2x.png in Resources */,
 				8796466117E1E740009B989A /* Canyon.jpg in Resources */,
 				8727AA3E17E0BAC600B728C8 /* BEPMultipeerConnectivityViewController.xib in Resources */,
@@ -758,8 +815,10 @@
 				03362E0317E14D3E003829C9 /* BEPMapViewController.m in Sources */,
 				295B769917E51D6F00E5CFB7 /* BEPDynamicsSnapViewController.m in Sources */,
 				8796466517E1F1B7009B989A /* BEPNavigationTransitionsRootViewController.m in Sources */,
+				29767581181062EE009E602A /* MTImageMapView.m in Sources */,
 				03175DE817DEB2A5005D3C62 /* BEPMainViewController.m in Sources */,
 				8796466917E20B87009B989A /* BEPModalTransitionAnimator.m in Sources */,
+				297675981810A5C8009E602A /* BEPChapterBarItem.m in Sources */,
 				3CD0FD1717E00CF4007CA40E /* BEPNavigationController.m in Sources */,
 				21FB555817E4F4F50064F290 /* BEPMultitaskingViewController.m in Sources */,
 				8796465A17E1D112009B989A /* BEPNavigationTransitionsPopAnimator.m in Sources */,
@@ -898,6 +957,133 @@
 			};
 			name = Release;
 		};
+		29D8C4A21805C17100A4A1EA /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "0677E7BB-1B64-47EA-A1C5-AB9ED70FE6CB";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = "App Store";
+		};
+		29D8C4A31805C17100A4A1EA /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Backstop Media, LLC. (VZWGRNPC7L)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
+				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7011C4A5-5576-4DC2-934F-47FD8A8CFE67";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "App Store";
+		};
+		29D8C4A41805C17100A4A1EA /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BepBop.app/BepBop";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BepBopTests/BepBopTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"",
+				);
+				INFOPLIST_FILE = "BepBopTests/BepBopTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "App Store";
+		};
+		29D8C4A51805C17100A4A1EA /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BepBop.app/BepBop";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BepBopOCUnitTests/BepBopOCUnitTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"",
+				);
+				INFOPLIST_FILE = "BepBopOCUnitTests/BepBopOCUnitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = "App Store";
+		};
 		3C3EA86217D3C76F000122BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -959,12 +1145,15 @@
 		3C3EA86517D3C76F000122BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
 				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -979,12 +1168,15 @@
 		3C3EA86617D3C76F000122BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BepBop/BepBop-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../BepBopLibrary/BepBopLibrary\"";
 				INFOPLIST_FILE = "BepBop/BepBop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1085,6 +1277,7 @@
 			buildConfigurations = (
 				17D1181717E50CC800A3150E /* Debug */,
 				17D1181817E50CC800A3150E /* Release */,
+				29D8C4A51805C17100A4A1EA /* App Store */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1094,6 +1287,7 @@
 			buildConfigurations = (
 				3C3EA86217D3C76F000122BD /* Debug */,
 				3C3EA86317D3C76F000122BD /* Release */,
+				29D8C4A21805C17100A4A1EA /* App Store */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1103,6 +1297,7 @@
 			buildConfigurations = (
 				3C3EA86517D3C76F000122BD /* Debug */,
 				3C3EA86617D3C76F000122BD /* Release */,
+				29D8C4A31805C17100A4A1EA /* App Store */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1112,6 +1307,7 @@
 			buildConfigurations = (
 				3CACB20B17E40C3B00B715DE /* Debug */,
 				3CACB20C17E40C3B00B715DE /* Release */,
+				29D8C4A41805C17100A4A1EA /* App Store */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

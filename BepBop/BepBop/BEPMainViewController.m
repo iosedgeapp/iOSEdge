@@ -13,6 +13,9 @@
 #import "BEPMultitaskingViewController.h"
 #import "BEPMapViewController.h"
 #import "BEPTabbarTransitionsViewController.h"
+#import "BEPChapterBarItem.h"
+
+#import "MTImageMapView.h"
 
 typedef UIViewController* (^ViewControllerBlock)();
 
@@ -25,9 +28,9 @@ typedef UIViewController* (^ViewControllerBlock)();
 
 @implementation BEPMainViewController
 
-- (id) initWithStyle:(UITableViewStyle)style
+- (id) init
 {
-    self = [super initWithStyle:style];
+    self = [super init];
     if (self)
     {
         self.chapterHeadings =
@@ -81,9 +84,27 @@ typedef UIViewController* (^ViewControllerBlock)();
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-
-
+    
     // Do any additional setup after loading the view.
+    
+    // Load TOC map image view - varies on iOS version and screen size
+    BOOL belowOS7 = [[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending;
+        
+    NSString *imageName = @"TOC";
+    if (belowOS7) {
+        imageName = @"iOS6-TOC";
+    }
+    
+    NSString *touchPointsName = @"toc_points";
+    if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
+        imageName = [imageName stringByAppendingString:@"-568"];
+        touchPointsName = @"toc_points_568";
+    }
+    MTImageMapView *imageMapView = [[MTImageMapView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    NSArray *touchPoints = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:touchPointsName ofType:@"plist"]];
+    [imageMapView setMapping:touchPoints doneBlock:nil];
+    imageMapView.delegate = self;
+    [self.view addSubview:imageMapView];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle
@@ -94,7 +115,20 @@ typedef UIViewController* (^ViewControllerBlock)();
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"Bleeding Edge Press";
+    self.title = NSLocalizedString(@"Table of Contents", nil);
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+#pragma mark MTImageMapViewDelegate
+- (void) imageMapView:(MTImageMapView *)inImageMapView didSelectMapArea:(NSUInteger)inIndexSelected
+{
+    [self selectChapterNumber:inIndexSelected+1];
 }
 
 #pragma mark - UITableViewController
@@ -128,15 +162,26 @@ typedef UIViewController* (^ViewControllerBlock)();
 // Creates the view controller for a chapter
 - (UIViewController*) chapterViewControllerForIndexPath:(NSIndexPath*)indexPath
 {
+    if (indexPath.row >= [self.chapterViewControllerCreationBlocks count]) {
+        // Invalid chapter
+        return nil;
+    }
     // Get the block used to create the controller, and call it!
     ViewControllerBlock createViewController = self.chapterViewControllerCreationBlocks[indexPath.row];
-
-    return createViewController();
+    UIViewController *viewController = createViewController();
+    
+    // Custom chapter number on right hand side
+    NSInteger chapterNumber = indexPath.row + 1;
+    if (chapterNumber > 1) {
+        viewController.navigationItem.rightBarButtonItem = [BEPChapterBarItem barButtonItemForChapter:[NSString stringWithFormat:@"%d", chapterNumber]];
+    }
+    
+    return viewController;
 }
 
 - (void) tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    [self selectChapterNumber:indexPath.row];
+    [self selectChapterNumber:indexPath.row+1];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -144,11 +189,63 @@ typedef UIViewController* (^ViewControllerBlock)();
 {
     UIViewController* chapterViewController;
 
-    chapterViewController = [self chapterViewControllerForIndexPath:[NSIndexPath indexPathForRow:chapterNumber inSection:0]];
+    chapterViewController = [self chapterViewControllerForIndexPath:[NSIndexPath indexPathForRow:chapterNumber-1 inSection:0]];
 
     if ([chapterViewController isKindOfClass:[UIViewController class]])
     {
+        [self updateBarForChapter:chapterNumber];
         [self.navigationController pushViewController:chapterViewController animated:YES];
+    }
+}
+
+- (void) updateBarForChapter:(NSUInteger)chapterNumber
+{
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)]) {
+        self.navigationController.navigationBar.translucent = NO;
+        self.navigationController.navigationBar.barTintColor = [self colorForChapter:chapterNumber];
+        self.navigationController.navigationBar.tintColor = [self tintColorForChapter:chapterNumber];
+    }
+}
+
+- (UIColor*) colorForChapter:(NSUInteger)chapterNumber
+{
+    UIColor *color;
+    switch (chapterNumber) {
+        case 1:
+            color = [UIColor lightGrayColor];
+            break;
+            
+        case 5:
+            // A little lighter than requested so we don't have to switch the text color
+            color = [UIColor colorWithRed:245/255.0f green:91/255.0f blue:94/255.0f alpha:1.0f];
+            break;
+            
+        case 2:
+        case 6:
+        case 7:
+            color = [UIColor colorWithRed:252/255.0f green:235/255.0f blue:108/255.0f alpha:1.0f];
+            break;
+            
+        case 3:
+            color = [UIColor colorWithRed:103/255.0f green:192/255.0f blue:236/255.0f alpha:1.0f];
+            break;
+            
+        case 4:
+            color = [UIColor colorWithRed:141/255.0f green:198/255.0f blue:76/255.0f alpha:1.0f];
+            break;
+            
+        default:
+            color = [UIColor lightGrayColor];
+    }
+    return color;
+}
+
+- (UIColor*) tintColorForChapter:(NSUInteger)chapterNumber
+{
+    if (chapterNumber == 1) {
+        return nil; // So example code can set it
+    } else {
+        return [UIColor blackColor];
     }
 }
 
