@@ -10,7 +10,8 @@
 
 @interface DismissableImageViewController : UIViewController
 
-@property (strong,nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)dismissTapped:(id)sender;
 

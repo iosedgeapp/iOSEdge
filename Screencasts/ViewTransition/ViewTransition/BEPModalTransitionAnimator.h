@@ -3,6 +3,7 @@
 //  BepBop
 //
 //  Created by Engin Kurutepe – https://twitter.com/ekurutepe on 9/12/13.
+//  Modified by Michael Ang - https://twitter.com/mangtronix
 //  Copyright (c) 2013 Bleeding Edge Press. All rights reserved.
 //
 

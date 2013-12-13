@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #import "DismissableImageViewController.h"
+#import "BEPModalTransitionAnimator.h"
 
 @interface ViewController ()
 
@@ -25,8 +26,24 @@
 - (IBAction)showModalTapped:(id)sender
 {
     DismissableImageViewController *imageVC = [[DismissableImageViewController alloc] init];
+    imageVC.image = [UIImage imageNamed:@"StreetKite.jpg"];
+    imageVC.modalPresentationStyle = UIModalPresentationCustom;
+    imageVC.transitioningDelegate = self;
     [self presentViewController:imageVC animated:YES completion:nil];
 }
+
+- (id<UIViewControllerAnimatedTransitioning>) animationControllerForPresentedController:(UIViewController*)presented
+presentingController:(UIViewController*)presenting
+sourceController:(UIViewController*)source
+{
+    return [[BEPModalTransitionAnimator alloc] initWithDirection:BEPModelTransitionDirectionPresent];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>) animationControllerForDismissedController:(UIViewController*)dismissed
+{
+    return [[BEPModalTransitionAnimator alloc] initWithDirection:BEPModelTransitionDirectionDismiss];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

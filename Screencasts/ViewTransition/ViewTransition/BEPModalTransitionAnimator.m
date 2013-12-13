@@ -3,6 +3,7 @@
 //  BepBop
 //
 //  Created by Engin Kurutepe – https://twitter.com/ekurutepe on 9/12/13.
+//  Modified by Michael Ang - https://twitter.com/mangtronix
 //  Copyright (c) 2013 Bleeding Edge Press. All rights reserved.
 //
 
@@ -46,13 +47,10 @@
     UIViewController* toVC   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView* toView = [toVC view];
 
-    inView.backgroundColor = [UIColor blackColor];
-
-
     if (self.direction == BEPModelTransitionDirectionPresent)
     {
-        CGRect finalRect   = CGRectInset(fromView.frame, CGRectGetWidth(fromView.frame)/4, CGRectGetHeight(fromView.frame)/4);
-        CGRect initialRect = CGRectOffset(finalRect, 0, -500);
+        CGRect finalRect   = toView.frame;
+        CGRect initialRect = fromView.frame;
         toView.alpha     = 0.0;
         toView.frame     = initialRect;
         toView.transform = CGAffineTransformMakeRotation(M_PI);
