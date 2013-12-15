@@ -52,22 +52,16 @@
     if (self.direction == BEPModelTransitionDirectionPresent)
     {
         CGRect finalRect   = toView.frame;
-        CGRect initialRect = fromView.frame;
-        toView.alpha     = 0.0;
+        CGRect initialRect = CGRectOffset(fromView.frame, -500, 0);
         toView.frame     = initialRect;
-        toView.transform = CGAffineTransformMakeRotation(M_PI);
+        //toView.transform = CGAffineTransformMakeRotation(M_PI);
         
         [containerView insertSubview:toView aboveSubview:fromView];
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
-                              delay:0.0
-             usingSpringWithDamping:DampingConstant
-              initialSpringVelocity:InitialVelocity
-                            options:0
                          animations:^{
-             toView.alpha = 1.0;
-             toView.frame = finalRect;
-             toView.transform = CGAffineTransformIdentity;
+                             toView.frame = finalRect;
+                             //toView.transform = CGAffineTransformIdentity;
          }
                          completion:^(BOOL finished) {
              [transitionContext completeTransition:YES];
@@ -79,10 +73,6 @@
         CGRect finalRect   = CGRectOffset(initialRect, 0, 500);
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
-                              delay:0.0
-             usingSpringWithDamping:DampingConstant
-              initialSpringVelocity:InitialVelocity
-                            options:0
                          animations:^{
              fromView.frame = finalRect;
          }
