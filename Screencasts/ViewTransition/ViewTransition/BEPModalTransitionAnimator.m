@@ -54,9 +54,7 @@
         toView.alpha     = 0.0;
         toView.frame     = initialRect;
         toView.transform = CGAffineTransformMakeRotation(M_PI);
-
-
-
+        
         [inView insertSubview:toView aboveSubview:fromView];
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
@@ -75,6 +73,8 @@
     }
     else
     {
+        [transitionContext completeTransition:YES];
+        /*
         CGRect initialRect = fromView.frame;
         CGRect finalRect   = CGRectOffset(initialRect, 0, 500);
 
@@ -89,6 +89,7 @@
                          completion:^(BOOL finished) {
              [transitionContext completeTransition:YES];
          }];
+         */
     }
 }
 

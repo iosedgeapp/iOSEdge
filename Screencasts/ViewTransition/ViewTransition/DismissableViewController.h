@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DismissableImageViewController : UIViewController
-
-@property (strong, nonatomic) UIImage *image;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@interface DismissableViewController : UIViewController
 
 - (IBAction)dismissTapped:(id)sender;
 

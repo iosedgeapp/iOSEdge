@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 mangtronix. All rights reserved.
 //
 
-#import "DismissableImageViewController.h"
+#import "DismissableViewController.h"
 
-@interface DismissableImageViewController ()
+@interface DismissableViewController ()
 
 @end
 
-@implementation DismissableImageViewController
+@implementation DismissableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,10 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    if (self.image) {
-        self.imageView.image = self.image;
-    }
 }
 
 - (IBAction)dismissTapped:(id)sender
