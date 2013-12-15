@@ -38,9 +38,6 @@
 
 - (void) animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    static const CGFloat DampingConstant = 0.75;
-    static const CGFloat InitialVelocity = 0.0;
-
     UIView* containerView = [transitionContext containerView];
     
     UIViewController* fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -51,16 +48,17 @@
 
     if (self.direction == BEPModelTransitionDirectionPresent)
     {
-        CGRect finalRect   = toView.frame;
-        CGRect initialRect = CGRectOffset(fromView.frame, -500, 0);
-        toView.frame     = initialRect;
+        CGRect startingFrame = CGRectOffset(fromView.frame, -500, 0);
+        CGRect finalFrame = toView.frame;
+        
+        toView.frame     = startingFrame;
         //toView.transform = CGAffineTransformMakeRotation(M_PI);
         
         [containerView insertSubview:toView aboveSubview:fromView];
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                          animations:^{
-                             toView.frame = finalRect;
+                             toView.frame = finalFrame;
                              //toView.transform = CGAffineTransformIdentity;
          }
                          completion:^(BOOL finished) {
@@ -69,12 +67,12 @@
     }
     else
     {
-        CGRect initialRect = fromView.frame;
-        CGRect finalRect   = CGRectOffset(initialRect, 0, 500);
+        CGRect startingFrame = fromView.frame;
+        CGRect finalFrame   = CGRectOffset(startingFrame, 0, 500);
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                          animations:^{
-             fromView.frame = finalRect;
+             fromView.frame = finalFrame;
          }
                          completion:^(BOOL finished) {
              [transitionContext completeTransition:YES];
