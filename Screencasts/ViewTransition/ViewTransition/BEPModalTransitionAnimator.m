@@ -41,11 +41,13 @@
     static const CGFloat DampingConstant = 0.75;
     static const CGFloat InitialVelocity = 0.0;
 
-    UIView* inView = [transitionContext containerView];
+    UIView* containerView = [transitionContext containerView];
+    
     UIViewController* fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIView* fromView         = [fromVC view];
+    UIView* fromView         = fromVC.view;
+    
     UIViewController* toVC   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIView* toView = [toVC view];
+    UIView* toView = toVC.view;
 
     if (self.direction == BEPModelTransitionDirectionPresent)
     {
@@ -55,7 +57,7 @@
         toView.frame     = initialRect;
         toView.transform = CGAffineTransformMakeRotation(M_PI);
         
-        [inView insertSubview:toView aboveSubview:fromView];
+        [containerView insertSubview:toView aboveSubview:fromView];
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                               delay:0.0
@@ -73,8 +75,6 @@
     }
     else
     {
-        [transitionContext completeTransition:YES];
-        /*
         CGRect initialRect = fromView.frame;
         CGRect finalRect   = CGRectOffset(initialRect, 0, 500);
 
@@ -89,7 +89,6 @@
                          completion:^(BOOL finished) {
              [transitionContext completeTransition:YES];
          }];
-         */
     }
 }
 
