@@ -31,6 +31,7 @@
     [self presentViewController:imageVC animated:YES completion:nil];
 }
 
+// Animation controller for presenting modal
 - (id<UIViewControllerAnimatedTransitioning>) animationControllerForPresentedController:(UIViewController*)presented
 presentingController:(UIViewController*)presenting
 sourceController:(UIViewController*)source
@@ -38,6 +39,7 @@ sourceController:(UIViewController*)source
     return [[BEPModalTransitionAnimator alloc] initWithDirection:BEPModelTransitionDirectionPresent];
 }
 
+// Animation controller for dismissing modal
 - (id<UIViewControllerAnimatedTransitioning>) animationControllerForDismissedController:(UIViewController*)dismissed
 {
     return [[BEPModalTransitionAnimator alloc] initWithDirection:BEPModelTransitionDirectionDismiss];
