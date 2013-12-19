@@ -50,7 +50,7 @@
         CGRect startingFrame = CGRectOffset(fromView.frame, -500, 0);
         CGRect finalFrame = toView.frame;
         
-        toView.frame     = startingFrame;
+        toView.frame = startingFrame;
         //toView.transform = CGAffineTransformMakeRotation(M_PI);
         
         [containerView insertSubview:toView aboveSubview:fromView];
@@ -64,7 +64,7 @@
                          }];
     } else {
         CGRect startingFrame = fromView.frame;
-        CGRect finalFrame   = CGRectOffset(startingFrame, 0, 500);
+        CGRect finalFrame = CGRectOffset(startingFrame, 0, 500);
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                          animations:^{
