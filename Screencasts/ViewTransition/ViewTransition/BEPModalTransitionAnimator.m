@@ -47,15 +47,19 @@
     UIView* toView = toVC.view;
 
     if (self.direction == BEPModelTransitionDirectionPresent) {
-        CGRect startingFrame = CGRectOffset(fromView.frame, -500, 0);
         CGRect finalFrame = toView.frame;
         
+        CGRect startingFrame = CGRectOffset(fromView.frame, -500, 0);
         toView.frame = startingFrame;
-        //toView.transform = CGAffineTransformMakeRotation(M_PI);
+        // toView.transform = CGAffineTransformMakeRotation(M_PI);
         
         [containerView insertSubview:toView aboveSubview:fromView];
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
+//                              delay:0
+//             usingSpringWithDamping:0.75
+//              initialSpringVelocity:0.5
+//                            options:0
                          animations:^{
                              toView.frame = finalFrame;
                              //toView.transform = CGAffineTransformIdentity;
