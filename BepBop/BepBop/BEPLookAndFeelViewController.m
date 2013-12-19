@@ -7,6 +7,7 @@
 //
 
 #import "BEPLookAndFeelViewController.h"
+#import "UIColor+Extensions.h"
 
 @interface BEPLookAndFeelViewController ()
 
