@@ -1,18 +1,18 @@
 //
-//  DismissableImageViewController.m
+//  ModalViewController.m
 //  ViewTransition
 //
 //  Created by mangtronix on 12/13/13.
 //  Copyright (c) 2013 mangtronix. All rights reserved.
 //
 
-#import "DismissableViewController.h"
+#import "ModalViewController.h"
 
-@interface DismissableViewController ()
+@interface ModalViewController ()
 
 @end
 
-@implementation DismissableViewController
+@implementation ModalViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

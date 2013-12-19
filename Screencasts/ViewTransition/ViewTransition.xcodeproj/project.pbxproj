@@ -21,8 +21,8 @@
 		29AD9A4B185BB54D005BAB62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AD9A2D185BB54C005BAB62 /* UIKit.framework */; };
 		29AD9A53185BB54D005BAB62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29AD9A51185BB54D005BAB62 /* InfoPlist.strings */; };
 		29AD9A55185BB54D005BAB62 /* ViewTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD9A54185BB54D005BAB62 /* ViewTransitionTests.m */; };
-		29AD9A66185BBB5C005BAB62 /* DismissableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD9A64185BBB5C005BAB62 /* DismissableViewController.m */; };
-		29AD9A67185BBB5C005BAB62 /* DismissableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AD9A65185BBB5C005BAB62 /* DismissableViewController.xib */; };
+		29AD9A66185BBB5C005BAB62 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD9A64185BBB5C005BAB62 /* ModalViewController.m */; };
+		29AD9A67185BBB5C005BAB62 /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AD9A65185BBB5C005BAB62 /* ModalViewController.xib */; };
 		29AD9A69185BBCCC005BAB62 /* StreetKite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29AD9A68185BBCCC005BAB62 /* StreetKite.jpg */; };
 		29AD9A6C185BBFD1005BAB62 /* BEPModalTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD9A6B185BBFD1005BAB62 /* BEPModalTransitionAnimator.m */; };
 /* End PBXBuildFile section */
@@ -57,9 +57,9 @@
 		29AD9A50185BB54D005BAB62 /* ViewTransitionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ViewTransitionTests-Info.plist"; sourceTree = "<group>"; };
 		29AD9A52185BB54D005BAB62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29AD9A54185BB54D005BAB62 /* ViewTransitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewTransitionTests.m; sourceTree = "<group>"; };
-		29AD9A63185BBB5C005BAB62 /* DismissableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissableViewController.h; sourceTree = "<group>"; };
-		29AD9A64185BBB5C005BAB62 /* DismissableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissableViewController.m; sourceTree = "<group>"; };
-		29AD9A65185BBB5C005BAB62 /* DismissableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DismissableViewController.xib; sourceTree = "<group>"; };
+		29AD9A63185BBB5C005BAB62 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		29AD9A64185BBB5C005BAB62 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		29AD9A65185BBB5C005BAB62 /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		29AD9A68185BBCCC005BAB62 /* StreetKite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StreetKite.jpg; sourceTree = "<group>"; };
 		29AD9A6A185BBFD1005BAB62 /* BEPModalTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEPModalTransitionAnimator.h; sourceTree = "<group>"; };
 		29AD9A6B185BBFD1005BAB62 /* BEPModalTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEPModalTransitionAnimator.m; sourceTree = "<group>"; };
@@ -127,9 +127,9 @@
 				29AD9A3B185BB54C005BAB62 /* Main.storyboard */,
 				29AD9A3E185BB54C005BAB62 /* ViewController.h */,
 				29AD9A3F185BB54C005BAB62 /* ViewController.m */,
-				29AD9A63185BBB5C005BAB62 /* DismissableViewController.h */,
-				29AD9A64185BBB5C005BAB62 /* DismissableViewController.m */,
-				29AD9A65185BBB5C005BAB62 /* DismissableViewController.xib */,
+				29AD9A63185BBB5C005BAB62 /* ModalViewController.h */,
+				29AD9A64185BBB5C005BAB62 /* ModalViewController.m */,
+				29AD9A65185BBB5C005BAB62 /* ModalViewController.xib */,
 				29AD9A68185BBCCC005BAB62 /* StreetKite.jpg */,
 				29AD9A6A185BBFD1005BAB62 /* BEPModalTransitionAnimator.h */,
 				29AD9A6B185BBFD1005BAB62 /* BEPModalTransitionAnimator.m */,
@@ -245,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AD9A42185BB54C005BAB62 /* Images.xcassets in Resources */,
-				29AD9A67185BBB5C005BAB62 /* DismissableViewController.xib in Resources */,
+				29AD9A67185BBB5C005BAB62 /* ModalViewController.xib in Resources */,
 				29AD9A34185BB54C005BAB62 /* InfoPlist.strings in Resources */,
 				29AD9A69185BBCCC005BAB62 /* StreetKite.jpg in Resources */,
 				29AD9A3D185BB54C005BAB62 /* Main.storyboard in Resources */,
@@ -270,7 +270,7 @@
 				29AD9A40185BB54C005BAB62 /* ViewController.m in Sources */,
 				29AD9A6C185BBFD1005BAB62 /* BEPModalTransitionAnimator.m in Sources */,
 				29AD9A3A185BB54C005BAB62 /* AppDelegate.m in Sources */,
-				29AD9A66185BBB5C005BAB62 /* DismissableViewController.m in Sources */,
+				29AD9A66185BBB5C005BAB62 /* ModalViewController.m in Sources */,
 				29AD9A36185BB54C005BAB62 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

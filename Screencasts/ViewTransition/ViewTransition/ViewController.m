@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "DismissableViewController.h"
+#import "ModalViewController.h"
 #import "BEPModalTransitionAnimator.h"
 
 @interface ViewController ()
@@ -25,7 +25,7 @@
 
 - (IBAction)showModalTapped:(id)sender
 {
-    DismissableViewController *imageVC = [[DismissableViewController alloc] init];
+    ModalViewController *imageVC = [[ModalViewController alloc] init];
     imageVC.modalPresentationStyle = UIModalPresentationCustom;
     imageVC.transitioningDelegate = self;
     [self presentViewController:imageVC animated:YES completion:nil];

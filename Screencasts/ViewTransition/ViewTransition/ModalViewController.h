@@ -1,5 +1,5 @@
 //
-//  DismissableImageViewController.h
+//  ModalViewController.h
 //  ViewTransition
 //
 //  Created by mangtronix on 12/13/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DismissableViewController : UIViewController
+@interface ModalViewController : UIViewController
 
 - (IBAction)dismissTapped:(id)sender;
 
