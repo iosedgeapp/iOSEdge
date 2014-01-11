@@ -204,6 +204,12 @@ typedef UIViewController* (^ViewControllerBlock)();
         self.navigationController.navigationBar.translucent = NO;
         self.navigationController.navigationBar.barTintColor = [self colorForChapter:chapterNumber];
         self.navigationController.navigationBar.tintColor = [self tintColorForChapter:chapterNumber];
+        
+        if (chapterNumber == 1) {
+            // Use a translucent navigation bar since we're demonstrating
+            // the delta offsets between iOS6 and iOS7
+            self.navigationController.navigationBar.translucent = YES;
+        }
     }
 }
 
