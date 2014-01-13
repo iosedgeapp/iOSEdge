@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6DCC26EB-BC2B-4B74-B579-0D93D63C8DAD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Background Refresh</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BE582D5B-7878-4DF7-851F-27D3346AC6AD</key>
+		<string>ssh://github.com/iosedgeapp/iOSEdge.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Screencasts/Multitasking/Background Refresh/Background Refresh.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BE582D5B-7878-4DF7-851F-27D3346AC6AD</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/iosedgeapp/iOSEdge.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BE582D5B-7878-4DF7-851F-27D3346AC6AD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BE582D5B-7878-4DF7-851F-27D3346AC6AD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSEdge</string>
+		</dict>
+	</array>
+</dict>
+</plist>
