@@ -27,7 +27,6 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
-		<string>newsstand-content</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
