@@ -17,7 +17,7 @@
     
     // Enable background fetch
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-
+    
     return YES;
 }
 
@@ -39,15 +39,9 @@
     
     // Tell the system we got new data
     completionHandler(UIBackgroundFetchResultNewData);
-}
-
-- (NSString*)prettyTime
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
     
-    return [dateFormatter stringFromDate:[NSDate date]];
+    // Or if there was no new data
+    // completionHandler(UIBackgroundFetchResultNoData);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -65,19 +59,28 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    
-    // Reset the badge number
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Reset the badge number
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (NSString*)prettyTime
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    
+    return [dateFormatter stringFromDate:[NSDate date]];
 }
 
 @end
