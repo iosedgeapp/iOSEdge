@@ -467,6 +467,7 @@
 				29C878DD188448ED003491CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29C878DE188448ED003491CA /* Build configuration list for PBXNativeTarget "Background RefreshTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +476,7 @@
 				29C878E0188448ED003491CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
